@@ -1,7 +1,5 @@
 
-[logo]: https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjH8_7U5engAhVPSq0KHS_BCPgQjRx6BAgBEAU&url=http%3A%2F%2Fwww.uacj.mx%2Fcomunicacion%2FPaginas%2FImagen-Institucional-UACJ.aspx&psig=AOvVaw0rSQo4LZjQ3yShO-o-jumg&ust=1551833825846152
-
-
+![](http://www.uacj.mx/comunicacion/PublishingImages/Escudo%20UACJ%202015/firma%20institucional%20uacj-horizontal-%202015-azul-sin%20fondo.png)
 
 # OOP-100-days-of-code
 POO100DaysOfCode Challenge
