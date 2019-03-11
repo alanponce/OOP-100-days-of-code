@@ -1,0 +1,47 @@
+Esquema proceso de hospedadje Hotel:
+
+
+1. Cual(es) habitacion(es):
+2. Cuanto tiempo:
+3. Se registra pago:
+4. Se registra alta huesped(es):
+5. Se registra salida: 
+
+
+
+1. Cual(es) habitacion(es):
+
+       a) Elegir habitaciones (Restricciones:cuantos huespedes seran, 
+           huesped por habitacion y habitaciones usadas actualmente)
+        + 
+        b) el hotel debe tomar el control de quien entra y quien sale
+
+2. Cuanto tiempo:
+
+       a) fechas entrada
+       +
+       b) fecha salida (Restriccion: horario limite de corte : 14:00)
+
+3. Se registra pago:
+ 
+      a) monto correcto expuesto (Restriccion: debe pagar el monto) 
+      +  
+      b) modo de pago: efectivo, cheque, tarjeta de credito, etc 
+
+4. Se registra alta huesped(es): 
+
+       a) A nombre de quien estara
+       +
+       b) #usuarios + habitaciones + #usuariosXhabitacion 
+       +
+       c) fechas + #dias + #diasXtipoHabitacion  
+       +
+       d) pago registrado + modo de pago
+
+5. Se registra salida: 
+
+     a) se confirma identidad del cliente
+     +
+     b) se verifica si no ha pasado de la fecha acordada
+     +      
+     c) se verifica que no ha pasado la hora de corte en la salida: 14:00 
