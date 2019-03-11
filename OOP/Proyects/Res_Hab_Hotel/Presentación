@@ -17,8 +17,6 @@ Definición del problema: Nivel analisis de operacion.-
                      * Manejar la disposicion de habitaciones.
                      * Calcular el monto a pagar.
 
-
-
 El hotel contara con un total de 30 habitaciones que estaran distribuidas de la siguiente manera:
   *Individual: 5
   *Doble de uso individual: 5
