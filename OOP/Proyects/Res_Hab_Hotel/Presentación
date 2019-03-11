@@ -6,4 +6,29 @@ Integrantes:
 // 150204_kaleb
 
 Definición del problema:
-*Aún se esta trabajando en Slack
+El hotel contara con un total de 30 habitaciones que estaran distribuidas de la siguiente manera:
+  *Individual: 5
+  *Doble de uso individual: 5
+  *Habitación doble: 5
+  *Con cama supletoria: 5
+  *Habitación triple: 5
+  *Junior Suites: 2
+  *Suite: 1
+  *Suite nupcial: 2
+Siendo los precios por habitación:
+  *Individual: $500
+  *Doble de uso individual: $1200
+  *Habitación doble: $1000
+  *Con cama supletoria: $800
+  *Habitación triple: $1800
+  *Junior Suites: $2200
+  *Suite: $3000
+  *Suite nupcial: $2500
+  
+  
+*Tendrán que dejar la habitación antes de las 14:00 hrs si la dejan después se cobrara un día más y la salida la tiene que 
+registrar la persona en recepción.
+*Solo el administrador puede dar de alta o baja habitaciones, modificar precios, dar de alta y baja a más usuarios
+*Los usuarios podrán dar de alta y baja a clientes, podrán ver disponibilidad de habitaciones, como lo dijeron anteriormente
+podrán rentar habitaciones de tal fecha a tal fecha siempre corriendo el día a partir de las 14:00 sin importar la hora de 
+registro tendrán que dejarla antes de las 14:00, pasando esa hora será dia extra. 
