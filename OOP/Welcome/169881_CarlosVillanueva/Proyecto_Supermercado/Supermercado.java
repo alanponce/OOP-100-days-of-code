@@ -3,7 +3,7 @@ class Carnes{
   private String Nombre;
   private int Precio;
   private int Cantidad;
-  Private int Total;
+  private int Total;
 }
 class Supermercado{
 public static void main(String[]args){
