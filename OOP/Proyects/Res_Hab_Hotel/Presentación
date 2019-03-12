@@ -1,0 +1,80 @@
+Nombre del proyecto: "Hotel Foráneos CU"
+Integrantes: 
+*163984_Eduardo_Hernández
+//163959_RobertoMartinez
+{ 139947_David_Macias}
+// 150204_kaleb
+
+Definición del problema: Nivel analisis de operacion.-
+
+   objetivo:Llevar el control exacto de las altas y bajas de huespedes 
+            de un hotel, para asi, dar de manera eficaz el cargo a pagar 
+            por parte del cliente.
+
+   identificar los problemas: localizar los elementos que intervienen en ese objetivo
+                     y por tanto en los siguientes procesos. 
+                     * Registrar las altas y bajas de huespedes.
+                     * Manejar la disposicion de habitaciones.
+                     * Calcular el monto a pagar.
+
+El hotel contara con un total de 30 habitaciones que estaran distribuidas de la siguiente manera:
+  *Individual: 5
+  *Doble de uso individual: 5
+  *Habitación doble: 5
+  *Con cama supletoria: 5
+  *Habitación triple: 5
+  *Junior Suites: 2
+  *Suite: 1
+  *Suite nupcial: 2
+Siendo los precios por habitación:
+  *Individual: $500
+  *Doble de uso individual: $1200
+  *Habitación doble: $1000
+  *Con cama supletoria: $800
+  *Habitación triple: $1800
+  *Junior Suites: $2200
+  *Suite: $3000
+  *Suite nupcial: $2500
+  
+ Descripción de las habitaciones:
+ Individual: Ideal para quienes viajan solos. No tienes más espacio del que necesitas, y además el precio se adecúa a las 
+ necesidades de todos aquellos huéspedes que buscan tener un lugar tranquilo para descansar en sus viajes de placer o negocios.
+ 
+
+Doble de uso individual: Este tipo de habitaciones suelen ofrecerse cuando el hotel, a falta de poder ofertar una habitación
+con una cama pequeña, dispone al huésped una habitación diseñada para dos personas; obviamente, al ser de mayor tamaño, su 
+precio se eleva.
+ 
+
+Habitación doble: Como su nombre lo indica, esta clase de habitaciones son para dos personas. Las camas varían, pueden ser 
+matrimoniales o dos camas individuales independientes.
+ 
+
+Con cama supletoria: Estas habitaciones son ideales para quienes viajan con algún menor de edad. Si bien existe un costo por
+la cama adicional, usualmente suele ser más barato que contratar una habitación triple. Dependiendo de la edad del niño se
+coloca la cama que mejor le acomode. Algunos hoteles incluso cuentan con cunas para bebés.
+ 
+
+Habitación triple: Simple: estas habitaciones cuentan con 3 camas, o 2 más una supletoria. Es perfecta para los viajes con
+tus amigos.
+ 
+
+Junior Suites: cuentan con habitación doble, baño y salón.
+ 
+
+Suites: Conocidas por ser las mejores y más lujosas habitaciones en cualquier hotel, cuentan con dos habitaciones dobles,
+2 baños, salón y estancia. Por supuesto, su precio es el más elevado. Las suitse más completas y lujosas suelen recibir el
+nombre de Suite presidencial, y generalmente son reservadas para personajes distinguidos.
+ 
+
+Suite nupcial: Pensada para aquellas parejas recién casadas y que quieren disfrutar de una luna de miel con privacidad e
+intimidad, estas habitaciones en los lugares más exclusivos de los hoteles (generalmente acompañadas sólo por las suite 
+presidencial). Además de una cama matrimonial amplia, generalmente cuentan con jacuzzi y una vista única.
+  
+  
+*Tendrán que dejar la habitación antes de las 14:00 hrs si la dejan después se cobrara un día más y la salida la tiene que 
+registrar la persona en recepción.
+*Solo el administrador puede dar de alta o baja habitaciones, modificar precios, dar de alta y baja a más usuarios
+*Los usuarios podrán dar de alta y baja a clientes, podrán ver disponibilidad de habitaciones, como lo dijeron anteriormente
+podrán rentar habitaciones de tal fecha a tal fecha siempre corriendo el día a partir de las 14:00 sin importar la hora de 
+registro tendrán que dejarla antes de las 14:00, pasando esa hora será dia extra. 
