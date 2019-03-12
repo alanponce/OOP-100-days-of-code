@@ -26,12 +26,14 @@ Finance employee: Is the person in charge of consults the sales, and check thesa
 of the sales employee. Also can check the information about tickets, and trips.
 
 
-Use Cases:
+Use Cases
 
 Classes
 Employee: In this class, we found the different types of employees like Sales Employee
 Manager,Supervisor etc.
 
+Trip:In this class we will find the information regarding the trip, such as the time, the 
+bus number, the destination and the number of passengers.
 
 
 Requirement
