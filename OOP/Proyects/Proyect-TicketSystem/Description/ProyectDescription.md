@@ -1,4 +1,4 @@
-<p>><H1>Descripcion del Proyecto</H1></p>
+<p><H1>Descripcion del Proyecto</H1></p>
 <p><b>Nombre del proyecto:</b> Turísticos del sur Ticket System.</p>
 
 <p ALIGN="justify"”><b>Descripción General del proyecto:</b> Actualmente, Turísticos del Sur opera de una forma análoga. 
