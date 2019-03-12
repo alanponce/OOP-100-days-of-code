@@ -1,2 +1,2 @@
-# Incluir nombres del grupo
+# Incluir matriculas y nombres de los integrantes del  grupo
 Matricula_Nombre
