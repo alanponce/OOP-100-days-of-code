@@ -1,9 +1,9 @@
 import java.util.Scanner;
 class Carnes{
-  private String Nombre;
-  private int Precio;
-  private int Cantidad;
-  private int Total;
+  String Nombre;
+  int Precio;
+  int Cantidad;
+  int Total;
 }
 class Supermercado{
 public static void main(String[]args){
