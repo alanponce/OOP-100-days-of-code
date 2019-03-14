@@ -1,3 +1,7 @@
+//Nombre: Villanueva Aguilar Carlos Raymundo 
+//Día: 13/03/2019
+//Hora de inicio: 07:16
+//Hora de fin: 
 import java.util.Scanner;
 class Carnes{
   String Nombre;
