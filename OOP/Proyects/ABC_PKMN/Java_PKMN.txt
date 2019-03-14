@@ -1,0 +1,26 @@
+*** Proyecto ABC Pokémon ***
+
+Crear una clase pokémon donde se guardarán las caracteristicas básicas
+Crear clases derivadas de pokémon, con diferentes tipos (fuego, agua, elec...)
+
+class pokemon
+* Name
+* HP
+* ATK (Attack)
+* DEF (Defence)
+* VEL (Velocidad)
+// Metodos
+atacar();
+
+// No se utilizara ataque especial ni defensa especial
+// Para evitar mayores complicaciones
+
+class fire
+* Name
+* HP
+* ATK (Attack)
+* DEF (Defence)
+* VEL (Velocidad)
+
+// Primero paso, guardar los pkmn en un archivo de texto
+
