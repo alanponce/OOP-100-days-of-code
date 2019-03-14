@@ -3,19 +3,41 @@
 //Hora de inicio: 07:16
 //Hora de fin: 
 import java.util.Scanner;
+class Empleado{
+  String Nombre;
+  String Puesto;
+  void Saludo(){
+    System.out.println("Hola, soy"+Nombre+" y hoy voy a ser su "+Puesto);
+}
+class Carnicero extends Empleado{
+  String Articulo;
+  int Precio;
+  int Cantidad;
+  int Total;
+  void Proceso(){
+    System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+", Kg")
+  }
+}
 class Carnes{
   String Nombre;
   int Precio;
   int Cantidad;
   int Total;
 }
-class Supermercado{
-public static void main(String[]args){
-System.out.println("Supermercado en línea");
-Carnes Chuleta = new Carnes();
+  Carnes Chuleta = new Carnes();
   Chuleta.Nombre = "Chuleta de Cerdo";
   Chuleta.Precio = 93;
   Chuleta.Cantidad = 2;
   Chuleta.Total = Chuleta.Precio*Chuleta.Cantidad;
-System.out.println(Chuleta.Nombre+", Precio: "+Chuleta.Precio+", cantidad: "+Chuleta.Cantidad+" total: "+Chuleta.Total);
+class Supermercado{
+public static void main(String[]args){
+System.out.println("Carniceria del Supermercado");
+Carnicero.Nombre = "Juan";
+Carnicero.Puesto = "carnicero";
+Carnicero.Saludo();
+Carnicero.Articulo = Chuleta.Nombre;
+Carnicero.Precio = Chuleta.Precio
+Carnicero.Cantidad = Chuleta.Cantidad
+Carnicero.Total = Chuleta.Total
+Carnicero.Proceso();
 }}
