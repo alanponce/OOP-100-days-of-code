@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
 //Día: 13/03/2019
-//Hora de inicio: 07:16
-//Hora de fin: 07:42
+//Hora de inicio: 07:48
+//Hora de fin: 07:
 import java.util.Scanner;
 class Empleado{
   String Nombre;
@@ -15,7 +15,7 @@ class Carnicero extends Empleado{
   int Cantidad;
   int Total;
   void Proceso(){
-    System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+", Kg")
+    System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+", Kg");
   }
 }
 class Carnes{
@@ -36,8 +36,8 @@ Carnicero.Nombre = "Juan";
 Carnicero.Puesto = "carnicero";
 Carnicero.Saludo();
 Carnicero.Articulo = Chuleta.Nombre;
-Carnicero.Precio = Chuleta.Precio
-Carnicero.Cantidad = Chuleta.Cantidad
-Carnicero.Total = Chuleta.Total
+Carnicero.Precio = Chuleta.Precio;
+Carnicero.Cantidad = Chuleta.Cantidad;
+Carnicero.Total = Chuleta.Total;
 Carnicero.Proceso();
 }}
