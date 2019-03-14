@@ -1,0 +1,5 @@
+Name: Pikachu
+HP: 666
+ATK: 50
+DEF: 10
+VEL: 10

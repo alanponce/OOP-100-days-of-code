@@ -1,0 +1,1 @@
+# Siguientes pasos* 1. Implementar clases derivadas, clase fuego, agua, eléctrico, etc.* 2. Diseñar y actualizar el scope
