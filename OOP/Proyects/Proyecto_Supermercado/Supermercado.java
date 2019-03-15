@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 13/03/2019
-//Hora de inicio: 07:48
-//Hora de fin: 08:30
+//Día: 14/03/2019
+//Hora de inicio: 19:01
+//Hora de fin: 
 import java.util.Scanner;
 class Empleado{
   static String Nombre;
