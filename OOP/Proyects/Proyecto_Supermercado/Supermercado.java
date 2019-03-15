@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
 //Día: 14/03/2019
 //Hora de inicio: 19:01
-//Hora de fin: 
+//Hora de fin: 20:10
 
 class Empleado{//La clase empleado se implementa para simular atributos y comportamientos de un empleado de supermercado.
   //Se declaran los atributos de la clase Empleado, que pueden ser heredadas por otras clases.
