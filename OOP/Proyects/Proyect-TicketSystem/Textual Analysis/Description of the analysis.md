@@ -3,16 +3,16 @@
 >## Actors 
 >>### Sales Employee: 
 >>>Its the person in charge of deal with the client, will have to sell the tickets, solve customers cuestions, perform the >>>transaccions like cancelations or payments and make the day report.
->
+>>
 >>### Client: 
 >>>Its any person who enters in the local, and it is not  employde of the company. This person perform buys, questions about her >>>travels, pays etc.
->
+>>
 >>### Manager: 
 >>>Its the highest autority in the copany afther the Owner, who performs the reports about the productivity of the company, he >>>checks the performance of the employees, resolve the major problems of the company and helps the employees if necessary
->
+>>
 >>### Supervisor: 
 >>>The supervisor makes help all day in what is needed, supervises the work of the employees all day and makes reports to the >>>manager if necessary.
-
+>>
 >>### Logistic Employee: 
 >>>Check the information of the trips and the tickets for the elaboration of reports
 
