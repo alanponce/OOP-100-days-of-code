@@ -15,10 +15,10 @@
 >>
 >>### Logistic Employee: 
 >>>Check the information of the trips and the tickets for the elaboration of reports
-
+>>
 >>### Chauffeur: 
 >>>Is the person in charge of wear the client to his destyni.
-
+>>
 >>### Finance employee: 
 >>>Is the person in charge of consults the sales, and check thesales report of the sales employee. Also can check the >>>information about tickets, and trips.
 
