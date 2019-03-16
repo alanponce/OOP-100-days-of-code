@@ -2,35 +2,39 @@
 
 >## Actors 
 >>### Sales Employee: 
->>>Its the person in charge of deal with the client, will have to sell the tickets, solve customers cuestions, perform the >>>transaccions like cancelations or payments and make the day report.
+>>Its the person in charge of deal with the client, will have to sell the tickets, solve customers cuestions, perform the transaccions like cancelations or payments and make the day report.
 >>
 >>### Client: 
->>>Its any person who enters in the local, and it is not  employde of the company. This person perform buys, questions about her >>>travels, pays etc.
+>>Its any person who enters in the local, and it is not  employde of the company. This person perform buys, questions about her travels, pays etc.
 >>
 >>### Manager: 
->>>Its the highest autority in the copany afther the Owner, who performs the reports about the productivity of the company, he >>>checks the performance of the employees, resolve the major problems of the company and helps the employees if necessary
+>>Its the highest autority in the copany afther the Owner, who performs the reports about the productivity of the company, he checks the performance of the employees, resolve the major problems of the company and helps the employees if necessary
 >>
 >>### Supervisor: 
->>>The supervisor makes help all day in what is needed, supervises the work of the employees all day and makes reports to the >>>manager if necessary.
+>>The supervisor makes help all day in what is needed, supervises the work of the employees all day and makes reports to the manager if necessary.
 >>
 >>### Logistic Employee: 
->>>Check the information of the trips and the tickets for the elaboration of reports
+>>Check the information of the trips and the tickets for the elaboration of reports
 >>
 >>### Chauffeur: 
->>>Is the person in charge of wear the client to his destyni.
+>>Is the person in charge of wear the client to his destyni.
 >>
 >>### Finance employee: 
->>>Is the person in charge of consults the sales, and check thesales report of the sales employee. Also can check the >>>information about tickets, and trips.
+>>Is the person in charge of consults the sales, and check thesales report of the sales employee. Also can check the information about tickets, and trips.
 
 
-Use Cases
-Finance Employee:
-Logistic Employee:
+>>## Use Cases
+>>### Finance Employee: 
+>>In this use case, we can watch the interaccion between the system and a Finance Employee with his respective credentials. The interaccion with the system it works from the followin way. The Finance Employye, can check and modify the sales report. Also can generate a new formal report.
+
+### Logistic Employee:
+>>
 Sales Emplooye:
+Manager Emplooye:
 
 
 >## Classes
->>###Employee: 
+>>### Employee: 
 >>>In this class, we found the different types of employees like Sales Employee Manager,Supervisor etc.
 
 >>### Trip:
