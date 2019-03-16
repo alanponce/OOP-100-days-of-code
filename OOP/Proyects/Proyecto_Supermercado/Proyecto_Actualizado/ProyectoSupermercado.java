@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
 //Día: 15/03/2019
 //Hora de inicio: 18:00
-//Hora de fin: 20:10
+//Hora de fin: 19:21
 package proyecto.supermercado;
 import java.util.Scanner;
 public class ProyectoSupermercado {
