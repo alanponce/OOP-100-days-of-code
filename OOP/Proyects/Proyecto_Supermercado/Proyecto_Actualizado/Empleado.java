@@ -33,7 +33,7 @@ class Carnes{//La clase carnes es creada para simular los atributos de un produc
   int Precio;
   int Cantidad;
   int Total;
-  public Carnes(String Nombre, int Precio, int Cantidad){
+  public Carnes(String Nombre, int Precio, int Cantidad){//Se crea un constructor para la clase Carnes
       this.Nombre = Nombre;
       this.Precio = Precio;
       this.Cantidad = Cantidad;
