@@ -21,8 +21,9 @@
 >>
 >>### Finance employee: 
 >>Is the person in charge of consults the sales, and check thesales report of the sales employee. Also can check the information about tickets, and trips.
-
-
+>>
+>>### Data Base Administrator:
+>>The DBA is the person in the charge of organizate the information about the company in the data base. This is a external employee because he not work in the office.
 >## Use Cases
 >>### Finance Employee: 
 >>In this use case, we can watch the interaccion between the system and a Finance Employee with his respective credentials. The interaccion with the system it works from the followin way. The Finance Employye, can check and modify the sales report. Also can generate a new formal report.
