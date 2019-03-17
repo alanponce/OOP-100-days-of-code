@@ -18,11 +18,13 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    System.out.println("Hola, soy "+Nombre+" y hoy voy a ser su "+Puesto);
    }
   //Se crea el método proceso, el cual es propio de la clase Carnicero.
-   public static void Proceso(){
+   void Catalogo(){
+    System.out.println("El día de hoy contamos con: \n1. Chuleta de Cerdo \n2. Carne Molida \n3. Lengua \n4. Salchicha \n5. Chorizo \n0. Salir \nEscoge un número:");
+   }
+   public void Proceso(){
     System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
   }
 }
-
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
  //Se declaran atributos propios de la clase cajero.
  static int Total;
