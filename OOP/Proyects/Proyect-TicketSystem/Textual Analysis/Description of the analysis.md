@@ -33,21 +33,21 @@
 >>The logistics employee controls the information regarding sales and travel in a quantitative manner to generate reports of work plans and travel routes. It interacts with the system through reports of what has already been mentioned.
 >>
 >>### Sales Emplooye:
+>>The sales employee is the person who interacts most with the system, since it is the one who has access to the information of the branches, the section of the seats from reservation or purchase. You can also generate a report of the sales of the day but not see it (modify it) to avoid the alteration of it.
 >>
->### Manager Emplooye:
+>>### Manager Emplooye:
 
 
 >## Classes
 >>### Employee: 
->>>In this class, we found the different types of employees like Sales Employee Manager,Supervisor etc.
-
+>>In this class, we found the different types of employees like Sales Employee Manager,Supervisor etc.
+>>
 >>### Trip:
->>>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the >>>number of passengers.
+>>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the >>number of passengers.
+>>
+>>### Sales:
+>In this class we will wacth the attributes of the sales, like a price, date of the sale, if the client paying the total price of a ticket, or only gave a part of the final price.
+>>
+>>### Tickets: In this class, we will generate the id number, only exist a 1 number for a 1 ticket,we will set the number of pasenger fo the ticket, and we add the destiny
 
->>### Sales:In this class we will wacth the attributes of the sales, like a price, date of the sale, 
-if the client paying the total price of a ticket, or only gave a part of the final price.
 
->>### Tickets: In this class, we will generate the id number, only exist a 1 number for a 1 ticket,
-we will set the number of pasenger fo the ticket, and we add the destiny
-
-Requirement
