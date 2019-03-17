@@ -24,14 +24,17 @@
 >>
 >>### Data Base Administrator:
 >>The DBA is the person in the charge of organizate the information about the company in the data base. This is a external employee because he not work in the office.
+
 >## Use Cases
 >>### Finance Employee: 
 >>In this use case, we can watch the interaccion between the system and a Finance Employee with his respective credentials. The interaccion with the system it works from the followin way. The Finance Employye, can check and modify the sales report. Also can generate a new formal report.
-
->>### Logistic Employee:
 >>
-Sales Emplooye:
-Manager Emplooye:
+>>### Logistic Employee:
+>>The logistics employee controls the information regarding sales and travel in a quantitative manner to generate reports of work plans and travel routes. It interacts with the system through reports of what has already been mentioned.
+>>
+>>### Sales Emplooye:
+>>
+>### Manager Emplooye:
 
 
 >## Classes
