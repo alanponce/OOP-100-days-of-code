@@ -1,3 +1,7 @@
+/* 16/Marzo/2019 10:02 am. 
+Este Script es para crear la base de datos del sistema de tickets, junto con las tablas,
+las relaciones entre ellas y sus restricciones.
+*/
 create database Ticket_System;
 
 use  Ticket_System;
@@ -59,7 +63,9 @@ Amount_Received int,
 Total_Sale int,
 constraint Pk_SalesID primary key (SalesID),
 constraint Fk_EmployeeID foreign key (EmployeeID) references Employee(EmployeeID),
-constraint Fk_TripIDSales foreign key (TripID) references Trip(TripID)
+constraint Fk_TripIDSales foreign key (TripID) references Trip(TripID),
+constraint U_Client_Phone unique (Client_Phone),
+constraint Chk_Client_Phone check (Client_Phone like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 );
 
 Create table Ticket(
@@ -73,3 +79,4 @@ constraint Fk_SalesID foreign key(SalesID) references Sales(SalesID),
 constraint Fk_SeatTripID foreign key(SeatTripID) references Seat(TripID),
 constraint Fk_SeatNumber foreign key(SeatNumber) references Seat(Number)
 );
+
