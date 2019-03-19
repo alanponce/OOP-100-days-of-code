@@ -1,1 +1,3 @@
-# Integrantes del equipo* 169818 Edgar Omar Reyes Olivas* 169840 Héctor Gerardo Sánchez Quiroga* 169819 Juan Pablo Martínez Mata* 169868 Jorge Lozoya Acosta
+# Integrantes del equipo
+* 169840 Héctor Gerardo Sánchez Quiroga
+* 169868 Jorge Lozoya Acosta
