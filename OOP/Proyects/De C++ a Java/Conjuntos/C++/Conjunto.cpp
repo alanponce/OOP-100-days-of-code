@@ -10,8 +10,6 @@ Conjunto::Conjunto()
 void Conjunto::Vaciar(){
 	tam=0;		
 }
-	
-
 
 bool Conjunto::Pertenece(int x){
 	for(int i=0;i<tam;i++)
@@ -35,8 +33,6 @@ bool Conjunto::esVacio(){
 	else
 		return false;
 }
-
-
 
 int Conjunto::tamano(){
 	return tam;	
