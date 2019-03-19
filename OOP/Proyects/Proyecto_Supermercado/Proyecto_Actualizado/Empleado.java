@@ -56,8 +56,8 @@ System.out.print(Cajero.Articulos);
 System.out.println("\nVan a ser "+Total+" pesos.");
 }
 }
-class Articulo{//La clase carnes es creada para simular los atributos de un producto de carne en el supermercado.
-  //Se declaran los atributos de la clase Carnes
+class Articulo{//La clase Artículo es creada para simular los atributos de un Artículo en el supermercado.
+  //Se declaran los atributos de la clase Artículo
   String Nombre;
   int Precio;
   float Cantidad;
