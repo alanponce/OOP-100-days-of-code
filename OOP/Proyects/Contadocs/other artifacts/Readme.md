@@ -12,9 +12,9 @@ Con el software se pretende facilitar el trabajo de archivado que la empresa rea
 
 Nuestro proyecto acerca de la localización y control de archivos en el área de contaduría de la empresa, el cual se encuentra desarrollado mediante los lenguajes de programación analizados (Java y SQL), así como la implementación de una DB (Base de Datos) pueden permitirnos distinguir con claridad las la ubicación exacta de los archivos, actualmente se presentan problemas en la empresa por el motivo de que son realmente pocas las personas que saben dónde se encuentran dichos archivos, el software que estamos proponiendo para nuestro proyecto impactará de manera enorme a la empresa ya que tendrán la facilidad de uso para cualquier usuario autorizado y esto permitiría no solo aumentar la eficiencia en el trabajo actual, sino planificar con mejores resultados las estrategias de organización futura y/o en la que ya se encuentran trabajando actualmente, así como perfeccionar la interacción de archivos físicos con la informática. 
 
-Descripción general del proyecto 
+# Descripción general del proyecto 
 
-Área de la empresa a la que impacta 
+# Área de la empresa a la que impacta 
 
 El proyecto puede ser maleable a distintas áreas de la empresa que necesitaran una organización de archivos más sin embargo en esta ocasión impactara directamente en el área de contaduría, debido a la falta de personal calificado en localización de documentación, así se apoya y agiliza el proceso. 
 
@@ -26,7 +26,7 @@ Proporcionar con una solución basada en software mayor facilidad y agilidad al 
 
 Analizar detalladamente los requerimientos de los colaboradores de la empresa. Generar un plan de acción para la elaboración del programa. Desarrollar un programa que reduzca las acciones realizadas por los administradores en la oficina, generando una interfaz acorde a los dispositivos comúnmente utilizados en la empresa, infraestructura que . Establecer una base de datos para que el programa filtre los datos que sean solicitados. Hacer pruebas al software y corregir errores. 
 
-Los objetivos específicos del proyecto son: 
+# Los objetivos específicos del proyecto son: 
 
 Entrevistarse con los usuarios finales para la adquisición de los requerimientos. 
 
