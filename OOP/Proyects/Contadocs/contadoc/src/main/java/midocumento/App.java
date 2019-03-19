@@ -1,13 +1,18 @@
 package midocumento;
 
 /**
- * Hello world!
+ * George Rodriguez
+ * 17/03/2018
+ * se crea la instancia grafica sin el asistenete
  *
  */
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        //Se crea una vista de la pantalla grafica principal
+        new mydocuments().setVisible(true);
+
     }
 }

@@ -60,13 +60,16 @@
       <version>3.4.GA </version>
       <scope>compile</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.jdesktop</groupId>
+      <artifactId>beansbinding</artifactId>
+      <version>1.2.1</version>
+    </dependency>
   </dependencies>
 
   <build>
     <!-- we dont want the version to be part of the generated war file name -->
-    <finalName
->${project.artifactId}</finalName>
+    <finalName>${project.artifactId}</finalName>
 
     <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -92,9 +95,10 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
           <configuration>
+          <outputDirectory>${project.basedir}</outputDirectory>
             <archive>
               <manifest>
-                <mainClass>midocumento.app</mainClass>
+                <mainClass>midocumento.App</mainClass>
               </manifest>
             </archive>
           </configuration>
