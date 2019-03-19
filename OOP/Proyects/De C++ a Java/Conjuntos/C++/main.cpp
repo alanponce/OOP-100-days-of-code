@@ -1,43 +1,31 @@
-#include <iostream>
-#include "Conjunto.h"
-#include "OperacionesConjuntos.h"
+#include <iostream>	//libreria que es utilizada para las operaciones de entrada y salida "cin" y "cout"
+#include "Conjunto.h"	//Se incluye la clase Conjunto
+#include "OperacionesConjuntos.h"	//Se incluye la clase OperacionesConjuntos
 
-using namespace std;
+using namespace std;	//Permite usar el coun y cin
 
 int main(int argc, char** argv) {
-	Conjunto a, b;
-	OperacionesConjuntos d;
+	Conjunto a, b;	//Se crea objetos a y b de la clase conjunto
+	OperacionesConjuntos d;	  //Se crea un objeto d de la clase OperacionesConjuntos
 	
 	
-	cout<<"Conjunto 1 \n";
-	b.Insertar(1);
-	b.Insertar(2);
-	b.Insertar(3);
-	b.imprimir();
+	cout<<"Conjunto 1 \n";	  //Se imprime que se manejara el conjunto 1
+	b.Insertar(1);	  //Se inserta un valor en el conjunto
+	b.Insertar(2);	  //Se inserta un valor en el conjunto
+	b.Insertar(3);	  //Se inserta un valor en el conjunto
+	b.imprimir();	  //Imprime el conjunto
 	
-	cout<<"\n\nConjunto 2 \n";
-	a.Insertar(3);
-	a.Insertar(4);
-	a.Insertar(5);
-	a.imprimir();
+	cout<<"\n\nConjunto 2 \n";	  //Se imprime que se manejara el conjunto 2
+	a.Insertar(3);	  //Se inserta un valor en el conjunto
+	a.Insertar(4);	  //Se inserta un valor en el conjunto
+	a.Insertar(5);	  //Se inserta un valor en el conjunto
+	a.imprimir();	  //Imprime el conjunto
 	
-	/*	b.Eliminar(1);
+	cout<<"\n\nUnion de conjuntos: \n";	//Se immprime que se hara una union
+	d.Union(b,a);	//Se realiza la union de conjunbtos
 	
-	b.Mostrar(2);
-	
-	b.esVacio();
-	
-	b.Pertenece(1);
-	
-	b.tamano();
-	
-	b.imprimir();  */
-	
-	cout<<"\n\nUnion de conjuntos: \n";
-	d.Union(b,a);
-	
-	cout<<"\n\nIntereseccion de conjuntos: \n";
-	d.Interseccion(b,a);
+	cout<<"\n\nIntereseccion de conjuntos: \n";	//Se imprime que se hara una interseccion
+	d.Interseccion(b,a);	//Se realiza la interseccion
 	
 	return 0;
 }
