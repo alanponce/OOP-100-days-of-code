@@ -11,8 +11,8 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    //Se declaran los atributos propios de la clase carnicero.
    static String Articulo;
    static int Precio;
-   static int Cantidad;
-   static int Total;
+   static float Cantidad;
+   static float Total;
    @Override
    public void Presentacion(){
    System.out.println("Carniceria del Supermercado");
@@ -29,8 +29,8 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
 class Fruteria extends Empleado{
    static String Articulo;
    static int Precio;
-   static int Cantidad;
-   static int Total;
+   static float Cantidad;
+   static float Total;
     @Override
     public void Presentacion(){
     System.out.println("Esta es la sección de frutas y verduras del supermercado");    
@@ -45,7 +45,7 @@ class Fruteria extends Empleado{
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
  //Se declaran atributos propios de la clase cajero.
  static String Articulos = "";
- static int Total;
+ static float Total;
  //Se crea el método caja, el cual es propio de la clase Cajero
  @Override
    public void Presentacion(){
@@ -56,12 +56,12 @@ System.out.print(Cajero.Articulos);
 System.out.println("\nVan a ser "+Total+" pesos.");
 }
 }
-class Articulo{//La clase Artículo es creada para simular los atributos de un Artículo en el supermercado.
-  //Se declaran los atributos de la clase Artículo
+class Articulo{//La clase carnes es creada para simular los atributos de un producto de carne en el supermercado.
+  //Se declaran los atributos de la clase Carnes
   String Nombre;
   int Precio;
-  int Cantidad;
-  int Total;
+  float Cantidad;
+  float Total;
   public Articulo(String Nombre, int Precio, int Cantidad){
       this.Nombre = Nombre;
       this.Precio = Precio;
