@@ -29,18 +29,6 @@ void Conjunto::Insertar(int x){
 		cout<<"No se pudo insertar "<< x <<" ya que ya existe en el conjunto "<<endl;		
 }
 
-
-void Conjunto::Eliminar(int x){
-	bool y=false;
-	
-	for(int i=0;i<tam;i++)
-		if(conjunto[i]==x){	
-			y=true;
-			conjunto[i]=conjunto[tam-1];
-			tam--;
-		}	
-}
-
 bool Conjunto::esVacio(){
 	if(tam==0)
 		return true;
