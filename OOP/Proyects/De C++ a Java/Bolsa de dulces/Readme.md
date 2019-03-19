@@ -5,4 +5,4 @@
 > 3. Total
 > 4. Imprimir (muestra los totales de cada tipo de dulce y el total final)
 
-> ### Se realiza a traves de una sola clase CBolsa.
+> #### Se realiza a traves de una sola clase CBolsa.
