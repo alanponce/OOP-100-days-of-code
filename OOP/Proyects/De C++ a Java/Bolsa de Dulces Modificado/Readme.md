@@ -1,4 +1,4 @@
-### Descripcion
+# Descripcion
 
-Esta es una extension del programa Bolsa de dulces original, la idea principal de tener una modificacion es mostrar la modularidad de este programa.
-> De una clase CBolsa se dividio en dos clases CBolsa y dulces para agilizar el trabajo.
+>Esta es una extension del programa Bolsa de dulces original, la idea principal de tener una modificacion es mostrar la modularidad de este programa, dividiendo asi la clase CBolsa en dos.
+> #### Se utilizan dos clases: CBolsa y dulces.
