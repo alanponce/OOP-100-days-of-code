@@ -33,26 +33,26 @@ public class mydocuments extends javax.swing.JFrame{
         //Se instancia el panel general con tabs
         JTabbedPane panelPrincipal = new JTabbedPane();
         //Se adquiere cada figura para el tab de correspondiente
-        ImageIcon iconBus = createImageIcon("/images/consultas.jpg");
-        ImageIcon iconMov = createImageIcon("/images/movimientos.jpg");
-        ImageIcon iconCliente = createImageIcon("/images/clientes.jpg");
+        ImageIcon iconBus = crearIcono("/images/consultas.jpg");
+        ImageIcon iconMov = crearIcono("/images/movimientos.jpg");
+        ImageIcon iconCliente = crearIcono("/images/clientes.jpg");
         
          //Se instancia un nuevo panel con su respectivo nombre
-        JComponent panelConsulta = makeTextPanel("Consultas");
+        JComponent panelConsulta = colocarTexto("Consultas");
          //Se le agrega el nuevo tab con el nombre, su icono, un pequeño mensaje de ayuda y contenido.
         panelPrincipal.addTab("Consultas", iconBus, panelConsulta, "Busca la ubicación de los documentos");
          //Se le asigna un acceso rápido a la ceja
          panelPrincipal.setMnemonicAt(0, KeyEvent.VK_C);
          
          //Se instancia un nuevo panel con su respectivo nombre
-         JComponent panelMovimientos = makeTextPanel("Movimientos");
+         JComponent panelMovimientos = colocarTexto("Movimientos");
          //Se le agrega el nuevo tab con el nombre, su icono, un pequeño mensaje de ayuda y contenido.
          panelPrincipal.addTab("Movimientos", iconMov, panelMovimientos,"Genera documentos nuevos");
          //Se le asigna un acceso rápido a la ceja
          panelPrincipal.setMnemonicAt(1, KeyEvent.VK_M);
          
          //Se instancia un nuevo panel con su respectivo nombre
-         JComponent panel3 = makeTextPanel("Nuevos Clientes");
+         JComponent panel3 = colocarTexto("Nuevos Clientes");
          //Se le agrega el nuevo tab con el nombre, su icono, un pequeño mensaje de ayuda y contenido.
          panelPrincipal.addTab("Nuevos clientes", iconCliente, panel3,"Genera nuevos clientes");
          panel3.setPreferredSize(new Dimension(210, 50));
@@ -66,23 +66,30 @@ public class mydocuments extends javax.swing.JFrame{
         panelPrincipal.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
     }
      
-    protected JComponent makeTextPanel(String text) {
-
+    protected JComponent colocarTexto(String text) {
+        //Instancia la varible principal con Jpanel
         JPanel panel = new JPanel(false);
+        //Instancia nuestra frase origen con Jlabel
         JLabel filler = new JLabel(text);
+        //Dentro del espacio disponible centra el texto
         filler.setHorizontalAlignment(JLabel.CENTER);
+        //Se genera una malla de elementos para referencia
         panel.setLayout(new GridLayout(1, 10));
+        //Se coloca el texto
         panel.add(filler);
+        //regresa la variable con los atributos propuestos
         return panel;
     }
      
 
-    protected static ImageIcon createImageIcon(String path) {
+    protected static ImageIcon crearIcono(String path) {
         //Solo para depuración, verifica si el icono está presente
         java.net.URL imgURL = mydocuments.class.getResource(path);
         if (imgURL != null) {
+            //ya que comprobó que existe regresa el icono como una entidad nueva a fin de que se instancie 
             return new ImageIcon(imgURL);
         } else {
+            //Manda un mensaje de error
             System.err.println("Archivo no encontrado " + path);
             return null;
         }
@@ -100,7 +107,7 @@ public class mydocuments extends javax.swing.JFrame{
         frame.add(new mydocuments(), BorderLayout.CENTER);
         //Despliega la ventana
         frame.pack();
-        frame.setLocationRelativeTo(null);
+        //Se hace visible la ventana
         frame.setVisible(true);
     }
      
