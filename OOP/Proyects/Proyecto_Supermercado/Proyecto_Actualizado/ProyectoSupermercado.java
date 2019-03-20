@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 18/03/2019
-//Hora de inicio: 20:45
-//Hora de fin: 22:01
+//Día: 19/03/2019
+//Hora de inicio: 19:50
+//Hora de fin: 20:53
 package proyecto.supermercado;
 import java.util.Scanner;
 public class ProyectoSupermercado {
@@ -9,9 +9,9 @@ public class ProyectoSupermercado {
 Scanner N = new Scanner(System.in);
 int D,d;
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
-System.out.println("Estás en el supermercado, desde la entrada se pueden ver las diferentes secciones: \n1.Carniceria \n2.Frutas y Verduras \n0. Cajas \n¿A donde te diriges?: ");
+System.out.println("Estás en el supermercado, desde la entrada se pueden ver las diferentes secciones: \n1.Carniceria \n2.Frutas y Verduras \n3. Pescadería\n0. Cajas \n¿A donde te diriges?: ");
 D = N.nextInt();
-    if(D>=0&&D<=2){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 2 o si no se encuentra entre estos valores.
+    if(D>=0&&D<=3){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 3 o si no se encuentra entre estos valores.
      switch(D){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
 Carnicero.Nombre = "Juan";//Se asigna el atributo de nombre de la clase carnicero como "Juan".
@@ -33,7 +33,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.Total = Carnicero.Total+Chuleta.Precio*Chuleta.Cantidad;//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto chuleta.
             //Verificar si la asignacion de valores a estos atributos de la clase carnicero se puede realizar de una manera que use menos codigo.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Chuleta.Nombre+", $"+Chuleta.Precio+", lleva "+Chuleta.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Chuleta.Nombre+", $"+Chuleta.Precio+", lleva "+Chuleta.Cantidad+" Kg";
             break;
          case 2:
             Articulo Molida = new Articulo("Carne Molida",118,0);
@@ -44,7 +44,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.Cantidad = Molida.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto molida.
             Carnicero.Total = Carnicero.Total+Molida.Precio*Molida.Cantidad;//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto molida.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Molida.Nombre+", $"+Molida.Precio+", lleva "+Molida.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Molida.Nombre+", $"+Molida.Precio+", lleva "+Molida.Cantidad+" Kg";
             break;
          case 3:
             Articulo Lengua = new Articulo("Lengua",260,0);
@@ -55,7 +55,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.Cantidad = Lengua.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Lengua.
             Carnicero.Total = Carnicero.Total+Lengua.Precio*Lengua.Cantidad;//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Lengua.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Lengua.Nombre+", $"+Lengua.Precio+", lleva "+Lengua.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Lengua.Nombre+", $"+Lengua.Precio+", lleva "+Lengua.Cantidad+" Kg";
             break;
          case 4:
             Articulo Salchicha = new Articulo("Salchicha",98,0);
@@ -66,7 +66,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.Cantidad = Salchicha.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Salchicha.
             Carnicero.Total = Carnicero.Total+Salchicha.Precio*Salchicha.Cantidad;//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Salchicha.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Salchicha.Nombre+", $"+Salchicha.Precio+", lleva "+Salchicha.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Salchicha.Nombre+", $"+Salchicha.Precio+", lleva "+Salchicha.Cantidad+" Kg";
             break;
          case 5:
             Articulo Chorizo = new Articulo("Chorizo",60,0);
@@ -77,7 +77,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.Cantidad = Chorizo.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Chorizo.
             Carnicero.Total = Carnicero.Total+Chorizo.Precio*Chorizo.Cantidad;//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Chorizo.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero
-            Cajero.Articulos = Cajero.Articulos+"\n"+Chorizo.Nombre+", $"+Chorizo.Precio+", lleva "+Chorizo.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Chorizo.Nombre+", $"+Chorizo.Precio+", lleva "+Chorizo.Cantidad+" Kg";
             break;
          case 0:
             break;
@@ -106,7 +106,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Manzana.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Manzana.Precio*Manzana.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Manzana.Nombre+", $"+Manzana.Precio+", lleva "+Manzana.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Manzana.Nombre+", $"+Manzana.Precio+", lleva "+Manzana.Cantidad+" Kg";
             break;
          case 2:
             Articulo Naranja = new Articulo("Naranja",13,0);
@@ -117,7 +117,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Naranja.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Naranja.Precio*Naranja.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Naranja.Nombre+", $"+Naranja.Precio+", lleva "+Naranja.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Naranja.Nombre+", $"+Naranja.Precio+", lleva "+Naranja.Cantidad+" Kg";
             break;
          case 3:
             Articulo Platano = new Articulo("Platano",16,0);
@@ -128,7 +128,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Platano.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Platano.Precio*Platano.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Platano.Nombre+", $"+Platano.Precio+", lleva "+Platano.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Platano.Nombre+", $"+Platano.Precio+", lleva "+Platano.Cantidad+" Kg";
             break;
          case 4:
             Articulo Mango = new Articulo("Mango",40,0);
@@ -139,7 +139,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Mango.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Mango.Precio*Mango.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Mango.Nombre+", $"+Mango.Precio+", lleva "+Mango.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Mango.Nombre+", $"+Mango.Precio+", lleva "+Mango.Cantidad+" Kg";
             break;
          case 5:
             Articulo Guayaba = new Articulo("Guayaba",39,0);
@@ -150,7 +150,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Guayaba.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Guayaba.Precio*Guayaba.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Guayaba.Nombre+", $"+Guayaba.Precio+", lleva "+Guayaba.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Guayaba.Nombre+", $"+Guayaba.Precio+", lleva "+Guayaba.Cantidad+" Kg";
             break;
          case 6:
             Articulo Zanahoria = new Articulo("Zanahoria",16,0);
@@ -161,7 +161,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Zanahoria.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Zanahoria.Precio*Zanahoria.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Zanahoria.Nombre+", $"+Zanahoria.Precio+", lleva "+Zanahoria.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Zanahoria.Nombre+", $"+Zanahoria.Precio+", lleva "+Zanahoria.Cantidad+" Kg";
             break;
          case 7:
             Articulo Cebolla = new Articulo("Cebolla",30,0);
@@ -172,7 +172,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Cebolla.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Cebolla.Precio*Cebolla.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Cebolla.Nombre+", $"+Cebolla.Precio+", lleva "+Cebolla.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Cebolla.Nombre+", $"+Cebolla.Precio+", lleva "+Cebolla.Cantidad+" Kg";
             break;
          case 8:
             Articulo Apio = new Articulo("Apio",26,0);
@@ -183,7 +183,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Apio.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Apio.Precio*Apio.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Apio.Nombre+", $"+Apio.Precio+", lleva "+Apio.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Apio.Nombre+", $"+Apio.Precio+", lleva "+Apio.Cantidad+" Kg";
             break;
          case 9:
             Articulo Brocoli = new Articulo("Brócoli",39,0);
@@ -194,7 +194,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Brocoli.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Brocoli.Precio*Brocoli.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Brocoli.Nombre+", $"+Brocoli.Precio+", lleva "+Brocoli.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Brocoli.Nombre+", $"+Brocoli.Precio+", lleva "+Brocoli.Cantidad+" Kg";
             break;
          case 10:
             Articulo Lechuga = new Articulo("Lechuga",18,0);
@@ -205,9 +205,84 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.Cantidad = Lechuga.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
             Fruteria.Total = Fruteria.Total+Lechuga.Precio*Lechuga.Cantidad;//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
             fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
-            Cajero.Articulos = Cajero.Articulos+"\n"+Lechuga.Nombre+", $"+Lechuga.Precio+", lleva "+Lechuga.Cantidad+" KG";
+            Cajero.Articulos = Cajero.Articulos+"\n"+Lechuga.Nombre+", $"+Lechuga.Precio+", lleva "+Lechuga.Cantidad+" Kg";
             break;
             
+         case 0:
+            break;
+     }
+ }
+ else{
+  System.out.println("No seleccionaste un numero valido.");
+ }
+}
+while(d!=0);
+             break;
+         case 3:
+             Pescadero.Nombre = "Pedro";//Se asigna el atributo de nombre de la clase pescadero como "Pedro".
+Pescadero.Puesto = "pescadero";//Se asigna el atributo de puesto de la clase pescadero como "pescadero".
+Pescadero pescadero = new Pescadero();//Se crea un objeto de la clase pescadero.
+pescadero.Presentacion();//Realiza el método Presentacion de la clase Pescadero.
+do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
+pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescadería.
+ d = N.nextInt();//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
+ if(d>=0&&d<=5){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 5 o si no se encuentra entre estos valores.
+     switch(d){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
+         case 1:
+            Articulo FileteB = new Articulo("Filete de Basa",100,0);
+            System.out.println("Va a llevar "+FileteB.Nombre+" ¿Qué Cantidad?");
+            FileteB.Cantidad += N.nextFloat();
+            Pescadero.Articulo = FileteB.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteB.
+            Pescadero.Precio = FileteB.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteB.
+            Pescadero.Cantidad = FileteB.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteB.
+            Pescadero.Total = Pescadero.Total+FileteB.Precio*FileteB.Cantidad;//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteB.
+            pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
+            Cajero.Articulos = Cajero.Articulos+"\n"+FileteB.Nombre+", $"+FileteB.Precio+", lleva "+FileteB.Cantidad+" Kg";
+            break;
+         case 2:
+            Articulo Camaron = new Articulo("Camarón",275,0);
+            System.out.println("Va a llevar "+Camaron.Nombre+" ¿Qué Cantidad?");
+            Camaron.Cantidad += N.nextFloat();
+            Pescadero.Articulo = Camaron.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Camaron.
+            Pescadero.Precio = Camaron.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Camaron.
+            Pescadero.Cantidad = Camaron.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Camaron.
+            Pescadero.Total = Pescadero.Total+Camaron.Precio*Camaron.Cantidad;//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Camaron.
+            pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
+            Cajero.Articulos = Cajero.Articulos+"\n"+Camaron.Nombre+", $"+Camaron.Precio+", lleva "+Camaron.Cantidad+" Kg";
+            break;
+         case 3:
+            Articulo FileteS = new Articulo("Filete de Salmón",375,0);
+            System.out.println("Va a llevar "+FileteS.Nombre+" ¿Qué Cantidad?");
+            FileteS.Cantidad += N.nextFloat();
+            Pescadero.Articulo = FileteS.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteS.
+            Pescadero.Precio = FileteS.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteS.
+            Pescadero.Cantidad = FileteS.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteS.
+            Pescadero.Total = Pescadero.Total+FileteS.Precio*FileteS.Cantidad;//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteS.
+            pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
+            Cajero.Articulos = Cajero.Articulos+"\n"+FileteS.Nombre+", $"+FileteS.Precio+", lleva "+FileteS.Cantidad+" Kg";
+            break;
+         case 4:
+            Articulo FiletePA = new Articulo("Filete de Pescado de Alaska",90,0);
+            System.out.println("Va a llevar "+FiletePA.Nombre+" ¿Qué Cantidad?");
+            FiletePA.Cantidad += N.nextFloat();
+            Pescadero.Articulo = FiletePA.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FiletePA.
+            Pescadero.Precio = FiletePA.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FiletePA.
+            Pescadero.Cantidad = FiletePA.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FiletePA.
+            Pescadero.Total = Pescadero.Total+FiletePA.Precio*FiletePA.Cantidad;//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FiletePA.
+            pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
+            Cajero.Articulos = Cajero.Articulos+"\n"+FiletePA.Nombre+", $"+FiletePA.Precio+", lleva "+FiletePA.Cantidad+" Kg";
+            break;
+         case 5:
+            Articulo FileteM = new Articulo("Filete de Mojarra",105,0);
+            System.out.println("Va a llevar "+FileteM.Nombre+" ¿Qué Cantidad?");
+            FileteM.Cantidad += N.nextFloat();
+            Pescadero.Articulo = FileteM.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteM.
+            Pescadero.Precio = FileteM.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteM.
+            Pescadero.Cantidad = FileteM.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteM.
+            Pescadero.Total = Pescadero.Total+FileteM.Precio*FileteM.Cantidad;//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteM.
+            pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
+            Cajero.Articulos = Cajero.Articulos+"\n"+FileteM.Nombre+", $"+FileteM.Precio+", lleva "+FileteM.Cantidad+" Kg";
+            break;
          case 0:
             break;
      }
@@ -227,7 +302,7 @@ while(d!=0);
  }
 }
 while(D!=0); 
-Cajero.Total = Carnicero.Total+Fruteria.Total;//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
+Cajero.Total = Carnicero.Total+Fruteria.Total+Pescadero.Total;//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
 Cajero.Nombre = "Jorge";//Se asigna el atributo de nombre de la clase carnicero como "Jorge".
 Cajero.Puesto = "cajero";//Se asigna el atributo de puesto de la clase cajero como "cajero".
 System.out.println("Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
