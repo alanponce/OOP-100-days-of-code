@@ -39,7 +39,23 @@ class Fruteria extends Empleado{
         System.out.println("En esta sección hay estantes con diferentes productos: \n1. Manzana \n2. Naranja \n3. Platano \n4. Mango \n5.Guayaba \n6. Zanahoria \n7. Cebolla \n8. Apio \n9. Brócoli \n10. Lechuga \n0. Ir a otra sección");
     }
     public void Eleccion(){
-        System.out.println("Has decidido elegir "+Cantidad+" KG de "+Articulo);
+        System.out.println("Has decidido elegir "+Cantidad+" Kg de "+Articulo);
+    }
+}
+class Pescadero extends Empleado{
+   static String Articulo;
+   static int Precio;
+   static float Cantidad;
+   static float Total;
+    @Override
+    public void Presentacion(){
+    System.out.println("Pescadería del supermercado");    
+    }
+    void Catalogo(){
+        System.out.println("Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n0. Ir a otra sección");
+    }
+    public void Proceso(){
+        System.out.println("Aquí tiene su"+Articulo+", "+Cantidad+" Kg");
     }
 }
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
@@ -56,8 +72,8 @@ System.out.print(Cajero.Articulos);
 System.out.println("\nVan a ser "+Total+" pesos.");
 }
 }
-class Articulo{//La clase Artículo es creada para simular los atributos de un Artículo en el supermercado.
-  //Se declaran los atributos de la clase Artículo
+class Articulo{//La clase carnes es creada para simular los atributos de un producto de carne en el supermercado.
+  //Se declaran los atributos de la clase Carnes
   String Nombre;
   int Precio;
   float Cantidad;
