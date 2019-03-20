@@ -1,0 +1,3 @@
+Name:PikaName:Pika
+ATK: 50
+DEF: 10
