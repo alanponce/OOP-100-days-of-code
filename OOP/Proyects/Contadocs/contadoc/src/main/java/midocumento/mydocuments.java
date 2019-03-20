@@ -12,9 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JComponent;
 // Permite agregar elementos con accesorios, por ejemplo los iconos junto al texto
 import javax.swing.SwingUtilities;
-//Permite modificar atributos de los textos
+//Permite modificar atributos de los textos, organiza los elementos dentro de una ventana
 import java.awt.BorderLayout;
-//Permite modificar las dimensiones de las vantanas
+//Permite modificar las dimensiones de las ventanas
 import java.awt.Dimension;
 // Permite Asigna capas al sistem
 import java.awt.GridLayout;
@@ -74,7 +74,7 @@ public class mydocuments extends javax.swing.JFrame{
         //Dentro del espacio disponible centra el texto
         filler.setHorizontalAlignment(JLabel.CENTER);
         //Se genera una malla de elementos para referencia
-        panel.setLayout(new GridLayout(1, 10));
+        panel.setLayout(new GridLayout(1, 1));
         //Se coloca el texto
         panel.add(filler);
         //regresa la variable con los atributos propuestos
@@ -95,14 +95,15 @@ public class mydocuments extends javax.swing.JFrame{
         }
     }
 
-    private static void createAndShowGUI() {
+    private static void crearInterface() {
         //Crea y configura la ventana
         //Instancia la ventana con su título
         JFrame frame = new JFrame("Contadoc");
+        frame.setLocationRelativeTo(null);
         //Se configura para que la ventana coloque los tres botones que permite minimizar, reducir o cerrar la ventana
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Se le asigna un tamaño por omisión
-        frame.setPreferredSize(new Dimension(400, 300));
+        frame.setPreferredSize(new Dimension(600, 400));
         //Agrega contenido al documento
         frame.add(new mydocuments(), BorderLayout.CENTER);
         //Despliega la ventana
@@ -115,7 +116,7 @@ public class mydocuments extends javax.swing.JFrame{
         //invoca la ventana principal
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-        createAndShowGUI(); //Se manda a llamar la ventana
+        crearInterface(); //Se manda a llamar la ventana
             }
         });
     }
