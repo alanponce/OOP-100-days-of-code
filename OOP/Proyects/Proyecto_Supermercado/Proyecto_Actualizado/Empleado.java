@@ -20,7 +20,7 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    }
   //Se crea el método proceso, el cual es propio de la clase Carnicero.
    void Catalogo(){
-    System.out.println("El día de hoy contamos con: \n1. Chuleta de Cerdo \n2. Carne Molida \n3. Lengua \n4. Salchicha \n5. Chorizo \n0. Ir a otra sección \nEscoge un número:");
+    System.out.println("El día de hoy contamos con: \n1. Chuleta de Cerdo \n2. Carne Molida \n3. Lengua \n4. Salchicha \n5. Chorizo \n6. Chicharrón de Cerdo \n7. Milanesa de Cerdo \n8. Costilla de Cerdo \n9. Sirloin de Ternera \n10. Pata de Res \n0. Ir a otra sección \nEscoge un número:");
    }
    public void Proceso(){
     System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
@@ -52,7 +52,7 @@ class Pescadero extends Empleado{
     System.out.println("Pescadería del supermercado");    
     }
     void Catalogo(){
-        System.out.println("Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n0. Ir a otra sección");
+        System.out.println("Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n6. Barrita de Pescado \n7. Mojarra Entera \n8. Huachinango \n9. Pescado para Caldo \n10. Figuritas de Pescado Empanizado \n0. Ir a otra sección");
     }
     public void Proceso(){
         System.out.println("Aquí tiene su"+Articulo+", "+Cantidad+" Kg");
@@ -72,8 +72,8 @@ System.out.print(Cajero.Articulos);
 System.out.println("\nVan a ser "+Total+" pesos.");
 }
 }
-class Articulo{//La clase carnes es creada para simular los atributos de un producto de carne en el supermercado.
-  //Se declaran los atributos de la clase Carnes
+class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
+  //Se declaran los atributos de la clase Articulo
   String Nombre;
   int Precio;
   float Cantidad;
