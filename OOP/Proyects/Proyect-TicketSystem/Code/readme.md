@@ -8,13 +8,13 @@
       <li>Buy</li>
       <li>Reserve</li>
       <li>Consult Seats</li>
-      <li>Sales Report</li>
+      <li>Make Sales Report</li>
    </ul>
    <li>Usuario Finanzaz <i>Encarcagado: Ivan Valdes</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Day Sales</li>
-     <li>Sales Report</li>
+     <li>Consult Sales Report</li>
    </ul>
    <li>Usuario Logistica <i>Encarcagado: Roberto Mares</i> </li>
    <ul>
