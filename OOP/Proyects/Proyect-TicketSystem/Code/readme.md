@@ -1,7 +1,7 @@
 <h1>Itinerario de Codificacion</h1>
 <p><b>Modulos: </b>
  <ul>
-   <li>Login</li>
+  <li>Login <i>Encarcagado: Ulises Hernandez</i> </li>
    <li>Usuario Ventas: <i>Encarcagados: Brandon Garcia y Luis Santiesteban</i> </li> 
     <ul> 
       <li>Main Menu</li>
