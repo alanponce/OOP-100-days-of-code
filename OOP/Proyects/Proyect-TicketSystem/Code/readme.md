@@ -22,7 +22,7 @@
      <li>Ticket Information</li>
      <li>Trip Information</li>
    </ul>
-   <li>System Manager:<i>Encarcagados: Ulises Hernandez, Ivan Valdes, Roberto Mares</i> </li>
+   <li>System Manager: <i>Encarcagados: Ulises Hernandez, Ivan Valdes, Roberto Mares</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Add User</li>
