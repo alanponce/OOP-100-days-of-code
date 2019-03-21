@@ -3,7 +3,7 @@
 ### Introducción.
 #### Objetivo.
 
-Desarrollar un programa de altas, bajas y cambios, para un carritos de compra de una librería, donde se muestre en pantalla la información que ingresa el personal, así como:
+Desarrollar un programa de altas, bajas y cambios, para un carrito de compra de una librería, donde se muestre en pantalla la información que ingresa el personal, así como:
 
 .-Agregar libros a la librería.
 
@@ -24,3 +24,6 @@ no permite ingresar el mismo ISBN.
 
 Poder facilitar trabajo al personal, mejor organización de información.
 Un programa sencillo de entender, con una interfaz intuitiva. 
+
+
+
