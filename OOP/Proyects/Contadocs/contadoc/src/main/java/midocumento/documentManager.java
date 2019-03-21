@@ -14,8 +14,9 @@ public class documentManager extends javax.swing.JFrame {
     /**
      * Creates new form documentManager
      */
-    public documentManager() {
+    public documentManager() {       
         initComponents();
+        configuracionInicial();
     }
 
     /**
@@ -48,15 +49,15 @@ public class documentManager extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        jLEncabezado = new javax.swing.JLabel();
+        jTFEncabezado = new javax.swing.JTextField();
+        jLTipo = new javax.swing.JLabel();
+        jTFTipo = new javax.swing.JTextField();
+        jLUbicacion = new javax.swing.JLabel();
+        jTFUbicacion = new javax.swing.JTextField();
+        jLReferencia = new javax.swing.JLabel();
+        jTFReferencia = new javax.swing.JTextField();
+        jBGuardar = new javax.swing.JButton();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jTextField9 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -75,8 +76,16 @@ public class documentManager extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Contadoc");
         setName("Contadoc"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+
+        jLayeredPane1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jLayeredPane1FocusLost(evt);
+            }
+        });
 
         jLabel1.setText("Nombre:");
 
@@ -121,7 +130,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(157, 157, 157)
                 .addComponent(jButton1)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -144,7 +153,13 @@ public class documentManager extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("Consultas", jLayeredPane1);
+        jTabbedPane1.addTab(" Consultas  ", new javax.swing.ImageIcon(getClass().getResource("/images/consultas.jpg")), jLayeredPane1); // NOI18N
+
+        jLayeredPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLayeredPane2MouseExited(evt);
+            }
+        });
 
         jLabel3.setText("Nombre:");
 
@@ -182,18 +197,25 @@ public class documentManager extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Encabezado:");
+        jLEncabezado.setText("Encabezado:");
+        jLEncabezado.setName(""); // NOI18N
 
-        jLabel7.setText("Tipo:");
-
-        jLabel8.setText("Ubicación:");
-
-        jLabel9.setText("Referencia:");
-
-        jButton5.setText("Guardar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jTFEncabezado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jTFEncabezadoActionPerformed(evt);
+            }
+        });
+
+        jLTipo.setText("Tipo:");
+
+        jLUbicacion.setText("Ubicación:");
+
+        jLReferencia.setText("Referencia:");
+
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
             }
         });
 
@@ -207,15 +229,15 @@ public class documentManager extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButton5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLEncabezado, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFEncabezado, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLTipo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFTipo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLUbicacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFUbicacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLReferencia, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFReferencia, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jBGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -235,14 +257,15 @@ public class documentManager extends javax.swing.JFrame {
                         .addGap(157, 157, 157)
                         .addComponent(jButton2))
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
+                                .addGap(37, 37, 37)
                                 .addComponent(jLabel5)
                                 .addGap(100, 100, 100))
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
+                                .addGap(21, 21, 21)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -252,29 +275,29 @@ public class documentManager extends javax.swing.JFrame {
                                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                                .addGap(26, 26, 26)
-                                                .addComponent(jLabel6)
+                                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                                        .addGap(26, 26, 26)
+                                                        .addComponent(jLEncabezado))
+                                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                                        .addGap(27, 27, 27)
+                                                        .addComponent(jLTipo)))
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(jLabel7)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jTFEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jTFTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTFReferencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel9)
-                                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel8))
+                                                .addComponent(jLReferencia)
+                                                .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLUbicacion))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                                                .addComponent(jButton5)
+                                                .addComponent(jBGuardar)
                                                 .addGap(61, 61, 61)))))))))
                 .addContainerGap())
         );
@@ -296,7 +319,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addComponent(jButton2)))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11))
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -312,27 +335,27 @@ public class documentManager extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButton3))
                                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(jLEncabezado)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTFEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel7)
+                                        .addComponent(jLTipo)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTFTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(11, 11, 11)
-                                        .addComponent(jLabel8)
+                                        .addComponent(jLUbicacion)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(11, 11, 11)
-                                .addComponent(jLabel9)
+                                .addComponent(jLReferencia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(35, 35, 35)
-                                .addComponent(jButton5)))
+                                .addComponent(jBGuardar)))
                         .addContainerGap())))
         );
 
-        jTabbedPane1.addTab("Movimientos", jLayeredPane2);
+        jTabbedPane1.addTab(" Movimientos  ", new javax.swing.ImageIcon(getClass().getResource("/images/movimientos.jpg")), jLayeredPane2); // NOI18N
 
         jLabel10.setText("Nombre:");
 
@@ -388,7 +411,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6)
@@ -421,12 +444,12 @@ public class documentManager extends javax.swing.JFrame {
                 .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(35, 35, 35))
         );
 
-        jTabbedPane1.addTab("Nuevos clientes", jLayeredPane3);
+        jTabbedPane1.addTab("  Nuevos clientes", new javax.swing.ImageIcon(getClass().getResource("/images/clientes.jpg")), jLayeredPane3); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -442,6 +465,19 @@ public class documentManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void configuracionInicial(){
+        //En la pestaña movimientos es necesario que no estén visibles
+            jLEncabezado.setVisible(false);
+            jLReferencia.setVisible(false);
+            jLTipo.setVisible(false);
+            jLUbicacion.setVisible(false);       
+            jBGuardar.setVisible(false);
+            jTFEncabezado.setVisible(false);
+            jTFReferencia.setVisible(false);
+            jTFTipo.setVisible(false);
+            jTFUbicacion.setVisible(false);       
+
+    }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -460,15 +496,54 @@ public class documentManager extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        //Cuando presionas agregar todos los elementos del registro
+            jLEncabezado.setVisible(true);
+            jLReferencia.setVisible(true);
+            jLTipo.setVisible(true);
+            jLUbicacion.setVisible(true);       
+            jBGuardar.setVisible(true);
+            jTFEncabezado.setVisible(true);
+            jTFReferencia.setVisible(true);
+            jTFTipo.setVisible(true);
+            jTFUbicacion.setVisible(true); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+            jLEncabezado.setVisible(false);
+            jLReferencia.setVisible(false);
+            jLTipo.setVisible(false);
+            jLUbicacion.setVisible(false);       
+            jBGuardar.setVisible(false);
+            jTFEncabezado.setVisible(false);
+            jTFReferencia.setVisible(false);
+            jTFTipo.setVisible(false);
+            jTFUbicacion.setVisible(false); 
+    }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTFEncabezadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFEncabezadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFEncabezadoActionPerformed
+
+    private void jLayeredPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLayeredPane1FocusLost
+ 
+        
+    }//GEN-LAST:event_jLayeredPane1FocusLost
+
+    private void jLayeredPane2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPane2MouseExited
+            jLEncabezado.setVisible(false);
+            jLReferencia.setVisible(false);
+            jLTipo.setVisible(false);
+            jLUbicacion.setVisible(false);       
+            jBGuardar.setVisible(false);
+            jTFEncabezado.setVisible(false);
+            jTFReferencia.setVisible(false);
+            jTFTipo.setVisible(false);
+            jTFUbicacion.setVisible(false);
+    }//GEN-LAST:event_jLayeredPane2MouseExited
 
     /**
      * @param args the command line arguments
@@ -506,12 +581,16 @@ public class documentManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLEncabezado;
+    private javax.swing.JLabel jLReferencia;
+    private javax.swing.JLabel jLTipo;
+    private javax.swing.JLabel jLUbicacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -523,16 +602,16 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField jTFEncabezado;
+    private javax.swing.JTextField jTFReferencia;
+    private javax.swing.JTextField jTFTipo;
+    private javax.swing.JTextField jTFUbicacion;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
@@ -546,10 +625,6 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
