@@ -2,7 +2,7 @@
 <p><b>Modulos: </b>
  <ul>
   <li>Login <i>Encarcagado: Ulises Hernandez</i> </li>
-   <li>Usuario Ventas: <i>Encarcagados: Brandon Garcia y Luis Santiesteban</i> </li> 
+   <li>Usuario Ventas <i>Encarcagados: Brandon Garcia y Luis Santiesteban</i> </li> 
     <ul> 
       <li>Main Menu</li>
       <li>Buy</li>
@@ -10,19 +10,19 @@
       <li>Consult Seats</li>
       <li>Sales Report</li>
    </ul>
-   <li>Usuario Finanzaz: <i>Encarcagado: Ivan Valdes</i> </li>
+   <li>Usuario Finanzaz <i>Encarcagado: Ivan Valdes</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Day Sales</li>
      <li>Sales Report</li>
    </ul>
-   <li>Usuario Logistica: <i>Encarcagado: Roberto Mares</i> </li>
+   <li>Usuario Logistica <i>Encarcagado: Roberto Mares</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Ticket Information</li>
      <li>Trip Information</li>
    </ul>
-   <li>System Manager: <i>Encarcagados: Ulises Hernandez, Ivan Valdes, Roberto Mares</i> </li>
+   <li>System Manager <i>Encarcagados: Ulises Hernandez, Ivan Valdes, Roberto Mares</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Add User</li>
@@ -32,5 +32,5 @@
      <li>Trip Information</li>
    </ul>
 </ul>
-Deadline Tuesday 9th. of April
+Deadline: Tuesday 9th. of April
 </p>
