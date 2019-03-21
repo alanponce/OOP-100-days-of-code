@@ -1,3 +1,5 @@
-Name:PikaName:Pika
-ATK: 50
-DEF: 10
+Name: Charizard
+HP: 5000
+ATK: 200
+DEF: 5000
+VEL: 8000
