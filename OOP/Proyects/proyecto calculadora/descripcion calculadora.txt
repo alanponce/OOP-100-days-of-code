@@ -1,0 +1,33 @@
+Nombre: José Alejandro Roque Leyva
+proyecto: Calculadora
+
+Introducción:
+
+el proyecto fue realizado por una persona en el transcurso de 2 semanas
+(Aproximadamente). El proyecto fue hecho en partes en el centro de computo
+y en el hogar investigando los conocimientos básicos del tema, en una maquina
+asignada.
+
+Definición del tema:
+El proyecto trata sobre la elaboración de una calculadora simple (capaz de
+sumar, restar, dividir y multiplicar)
+también se agregaron las opciones de insertar un PI, y a su vez se 
+introdujo la opción de elevar un numero a una potencia
+
+Una calculadora simple y rápida de usar, ese fue uno de los objetivos
+principales del proyecto, crear una aplicación que no tardara más de
+un minuto en realizar una operación
+
+Se realizo esta calculadora para poder contar con una calculadora que 
+haga todas las operaciones simples en el momento que desea. 
+sin tener que despreciar minutos valiosos y poder continuar con nuestra 
+vida cotidiana
+
+Se sabe que existen muchas calculadoras físicas y virtuales de todo tipo
+como las calculadoras que vienen instaladas de forma predeterminada
+en los celulares, pero esta calculadora, es otra alternativa, ya que 
+calculadoras normales suelen tener diferentes tipos de botones y cada uno
+con una función en específico (son importantes también), pero muchas
+veces no son necesarios, muchas veces solo necesitamos realizar una simple
+suma o resta, es por eso por lo que el tener una calculadora simple, enfocada solo
+en estas operaciones. 
