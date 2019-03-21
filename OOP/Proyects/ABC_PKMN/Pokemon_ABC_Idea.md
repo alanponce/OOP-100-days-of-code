@@ -5,7 +5,7 @@ Se desea crear un sistema de ABC, que estara enfocado con una tematica del video
 Crear el sistema de ABC, esto se lograra con la implementacion del uso del API de Java, tambien se desea conectarse con una base de datos, para poder ingresar el "Pokemon" que se esta utilizando y tener los datos de él guardados. Despues de esto se desea tener un equipo que sera conformado de 6 Pokemones. 
 La forma en el que el sistema de ABC funcionara sera el siguiente:
 - Altas: El Pokemon se registra o es ingresado a un equipo, maximo 6 pokemones, minimo 1. El equipo puede enfrentarse a otros entrenadores. No importa si un equipo tiene mas elementos que el adversario.  Va a regresar un int, que seria la cantidad de pokemones que contiene un equipo.
-- Bajas: Cuando un "Entrenador" desea cambiar un Pokemon de su equipo, este realizara una baja a su equipo para poder ingresar otro. Otra forma para realizar esto seria atravez de una batalla en la que al momento de perder contra otro pokemon, osea al momento de perder toda la vida, este sea dado de baja. Y al momento de tener 0 Pokemones registrados en el equipo pierde el juego.
+- Bajas: Cuando un "Entrenador" desea cambiar un Pokemon de su equipo, este realizara una baja a su equipo para poder ingresar otro. Otra forma para realizar esto seria a través de una batalla en la que al momento de perder contra otro pokemon, osea al momento de perder toda la vida, este sea dado de baja. Y al momento de tener 0 Pokemones registrados en el equipo pierde el juego.
 - Cambios: Como los pokemones son elementos en constante cambio, por cada batalla ellos pueden perder vida, o regenerar esta.
 
 ##### Pokemon:
