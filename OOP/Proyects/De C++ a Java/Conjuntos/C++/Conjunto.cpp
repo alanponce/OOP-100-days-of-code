@@ -1,5 +1,5 @@
-#include "Conjunto.h"
-#include <iostream>
+#include "Conjunto.h"//utilizamoe el include para adicionar el conjunto.h a nuestro codigo
+#include <iostream>//incluimos la biblioteca standard iostream
 using namespace std;
 
 Conjunto::Conjunto()
