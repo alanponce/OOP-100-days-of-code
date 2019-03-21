@@ -32,5 +32,5 @@
      <li>Trip Information</li>
    </ul>
 </ul>
-Deadline Tuesday 9th. April
+Deadline Tuesday 9th. of April
 </p>
