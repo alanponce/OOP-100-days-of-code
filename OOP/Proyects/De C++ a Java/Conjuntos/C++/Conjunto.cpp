@@ -49,7 +49,7 @@ int Conjunto::Mostrar(int posicion){ //funcion de mostrar la posicion del copnun
 void Conjunto::imprimir(){ //funcion para imprimir
 int x;
  cout<<"[ ";
-	for(int i=0;i<tam;i++){ //
+	for(int i=0;i<tam;i++){ //creamos un ciclo for 
  		x=conjunto[i];
 		cout<< x <<",";	 
 	}
