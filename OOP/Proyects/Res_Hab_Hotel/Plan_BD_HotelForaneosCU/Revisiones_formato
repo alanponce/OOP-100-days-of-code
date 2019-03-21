@@ -1,0 +1,4 @@
+Cada vez que se vaya a modificar la base de datos bajar la version mas nueva, modificar el nombre al momento de trabajar con ella 
+y quitando la version dejando el nombre del archivo original para que no cree conflictos. 
+
+Una vez hecho las modificaciones al momento de subir el archivo modificar el nombre y poner la version que es.
