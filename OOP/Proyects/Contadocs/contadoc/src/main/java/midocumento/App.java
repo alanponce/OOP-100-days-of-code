@@ -12,7 +12,7 @@ public class App
     public static void main( String[] args )
     {
         //Se crea una vista de la pantalla grafica principal
-        new mydocuments().setVisible(true);
+        new documentManager().setVisible(true);
 
     }
 }

@@ -22,6 +22,8 @@ import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 //Permite desplegar paneles maestros
 import javax.swing.JPanel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author George Rodriguez
@@ -99,14 +101,18 @@ public class mydocuments extends javax.swing.JFrame{
         //Crea y configura la ventana
         //Instancia la ventana con su título
         JFrame frame = new JFrame("Contadoc");
-        frame.setLocationRelativeTo(null);
+        //frame.setLocationRelativeTo(null);
         //Se configura para que la ventana coloque los tres botones que permite minimizar, reducir o cerrar la ventana
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Se le asigna un tamaño por omisión
-        frame.setPreferredSize(new Dimension(600, 400));
+        //frame.setPreferredSize(new Dimension(600, 400));
         //Agrega contenido al documento
         frame.add(new mydocuments(), BorderLayout.CENTER);
         //Despliega la ventana
+        //frame.setLocationRelativeTo(null);
+        frame.setState(JFrame.ICONIFIED);
+        frame.setSize(400, 400);
+        //frame.setType(javax.swing.JFrame.Type.POPUP);
         frame.pack();
         //Se hace visible la ventana
         frame.setVisible(true);
@@ -114,7 +120,8 @@ public class mydocuments extends javax.swing.JFrame{
      
     public static void main(String[] args) {
         //invoca la ventana principal
-        SwingUtilities.invokeLater(new Runnable() {
+       // SwingUtilities.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
         crearInterface(); //Se manda a llamar la ventana
             }
