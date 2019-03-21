@@ -4,7 +4,7 @@ using namespace std;
 
 Conjunto::Conjunto()
 {
-	tam=0;
+	tam=0;//creamos un arreglo llamado tam y le damos un valor que es cero
 }
 
 void Conjunto::Vaciar(){
