@@ -55,7 +55,7 @@ class Pescadero extends Empleado{
         System.out.println("Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n6. Barrita de Pescado \n7. Mojarra Entera \n8. Huachinango \n9. Pescado para Caldo \n10. Figuritas de Pescado Empanizado \n0. Ir a otra sección");
     }
     public void Proceso(){
-        System.out.println("Aquí tiene su"+Articulo+", "+Cantidad+" Kg");
+        System.out.println("Aquí tiene su "+Articulo+", "+Cantidad+" Kg");
     }
 }
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
