@@ -13,32 +13,34 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    static int Precio;
    static float Cantidad;
    static float Total;
-   @Override
+   @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Carnicero
    public void Presentacion(){
    System.out.println("Carniceria del Supermercado");
    System.out.println("Hola, soy "+Nombre+" y hoy voy a ser su "+Puesto);
    }
-  //Se crea el método proceso, el cual es propio de la clase Carnicero.
+   //Se crea el método Catalogo, que imprime una lista con los artículos disponibles en la carnicería del supermercado.
    void Catalogo(){
     System.out.println("El día de hoy contamos con: \n1. Chuleta de Cerdo \n2. Carne Molida \n3. Lengua \n4. Salchicha \n5. Chorizo \n6. Chicharrón de Cerdo \n7. Milanesa de Cerdo \n8. Costilla de Cerdo \n9. Sirloin de Ternera \n10. Pata de Res \n0. Ir a otra sección \nEscoge un número:");
    }
-   public void Proceso(){
+   public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     System.out.println("Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
   }
 }
-class Fruteria extends Empleado{
-   static String Articulo;
+class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase empleado para simular a la frutería de un supermercado.
+  //Se declaran los atributos propios de la clase Fruteria 
+  static String Articulo;
    static int Precio;
    static float Cantidad;
    static float Total;
-    @Override
+    @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Fruteria
     public void Presentacion(){
     System.out.println("Esta es la sección de frutas y verduras del supermercado");    
     }
-    void Estantes(){
+    //Se crea el método Estantes, que imprime una lista con los artículos disponibles en la frutería del supermercado.
+    void Estantes(){ 
         System.out.println("En esta sección hay estantes con diferentes productos: \n1. Manzana \n2. Naranja \n3. Platano \n4. Mango \n5.Guayaba \n6. Zanahoria \n7. Cebolla \n8. Apio \n9. Brócoli \n10. Lechuga \n0. Ir a otra sección");
     }
-    public void Eleccion(){
+    public void Eleccion(){ //Se crea el método elección, que imprime en pantalla el artículo elegido junto con su cantidad.
         System.out.println("Has decidido elegir "+Cantidad+" Kg de "+Articulo);
     }
 }
@@ -47,14 +49,15 @@ class Pescadero extends Empleado{
    static int Precio;
    static float Cantidad;
    static float Total;
-    @Override
+    @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Pescadero
     public void Presentacion(){
     System.out.println("Pescadería del supermercado");    
     }
+  //Se crea el método Catalogo, que imprime una lista con los artículos disponibles en la pescadería del supermercado.
     void Catalogo(){
         System.out.println("Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n6. Barrita de Pescado \n7. Mojarra Entera \n8. Huachinango \n9. Pescado para Caldo \n10. Figuritas de Pescado Empanizado \n0. Ir a otra sección");
     }
-    public void Proceso(){
+    public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
         System.out.println("Aquí tiene su "+Articulo+", "+Cantidad+" Kg");
     }
 }
@@ -62,12 +65,12 @@ class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado
  //Se declaran atributos propios de la clase cajero.
  static String Articulos = "";
  static float Total;
- //Se crea el método caja, el cual es propio de la clase Cajero
  @Override
    public void Presentacion(){
    System.out.println("Hola, soy "+Nombre+" y hoy voy a ser su "+Puesto);
    }
- static void Caja(){
+ static void Caja(){ /*Se crea el método caja, el cual es propio de la clase Cajero e imprime una lista de los artículos comprados
+ junto con el precio total que se debe pagar.*/
 System.out.print(Cajero.Articulos);
 System.out.println("\nVan a ser "+Total+" pesos.");
 }
@@ -78,7 +81,7 @@ class Articulo{//La clase Articulo es creada para simular los atributos de un pr
   int Precio;
   float Cantidad;
   float Total;
-  public Articulo(String Nombre, int Precio, int Cantidad){
+  public Articulo(String Nombre, int Precio, int Cantidad){ //Se crea un constructor para los atributos de los objetos en la clase Artículo.
       this.Nombre = Nombre;
       this.Precio = Precio;
       this.Cantidad = Cantidad;
