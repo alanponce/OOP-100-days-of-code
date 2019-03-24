@@ -1,11 +1,24 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 20/03/2019
-//Hora de inicio: 19:45
-//Hora de fin:  20:50
+//Día: 23/03/2019
+//Hora de inicio: 18:30
+//Hora de fin:  19:00
 package proyecto.supermercado;
+//Se importan las librerías para conectar con una base de datos.
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
+/*Por el momento no he logrado conectar con el servidor, al tratar de compilar el programa me marca:
+"Exception in thread "main" java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver"
+En lo que soluciono el problema me dedicaré a crear una interfáz gráfica para cada sección del supermercado.*/
 public class ProyectoSupermercado {
-    public static void main(String[]args){
+    public static void main(String[]args) throws ClassNotFoundException, SQLException {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+String connectionUrl = "jdbc:sqlserver://LAPTOP-E06IJ308SQLEXPRESS:1433;"+"databaseName=Supermercado;user=PruebaUser;password=123;";
+Connection Conexion = DriverManager.getConnection(connectionUrl);
+System.out.println("Conectado");
 Scanner N = new Scanner(System.in);
 int D,d;
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
