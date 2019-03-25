@@ -13,13 +13,13 @@ int main(int argc, char** argv) {
 	b.Insertar(1);	  //Se inserta un valor en el conjunto
 	b.Insertar(2);	  //Se inserta un valor en el conjunto
 	b.Insertar(3);	  //Se inserta un valor en el conjunto
-	b.imprimir();	  //Imprime el conjunto
+	b.imprimir();	  //Imprime el primer conjunto
 	
 	cout<<"\n\nConjunto 2 \n";	  //Se imprime que se manejara el conjunto 2
 	a.Insertar(3);	  //Se inserta un valor en el conjunto
 	a.Insertar(4);	  //Se inserta un valor en el conjunto
 	a.Insertar(5);	  //Se inserta un valor en el conjunto
-	a.imprimir();	  //Imprime el conjunto
+	a.imprimir();	  //Imprime el segundo conjunto
 	
 	cout<<"\n\nUnion de conjuntos: \n";	//Se immprime que se hara una union
 	d.Union(b,a);	//Se realiza la union de conjunbtos
