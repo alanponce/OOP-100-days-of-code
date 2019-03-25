@@ -37,10 +37,22 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         btnInicio2 = new javax.swing.JButton();
         panelEmpleados = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        bntNuevoEmpleado = new javax.swing.JButton();
+        btnBajasEmpleado = new javax.swing.JButton();
+        btnListaEmpleado = new javax.swing.JButton();
         btnInicio1 = new javax.swing.JButton();
+        panelAltaEmpleado = new javax.swing.JPanel();
+        lblNombreEmpleado = new javax.swing.JLabel();
+        txtNombreEmpleado = new javax.swing.JTextField();
+        lblApellidoEmpleado = new javax.swing.JLabel();
+        txtApellidoEmpleado = new javax.swing.JTextField();
+        lblNumeroEmpleado = new javax.swing.JLabel();
+        txtNumeroEmpleado = new javax.swing.JTextField();
+        lblNumeroEmpleado1 = new javax.swing.JLabel();
+        lblNombreEmpleado1 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        txtEstablecerNom = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
@@ -69,7 +81,7 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
             .addGroup(panelInicioLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
                 .addComponent(btnAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(btnEmpleados)
                 .addGap(156, 156, 156))
         );
@@ -79,11 +91,11 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
         panelInicioLayout.setVerticalGroup(
             panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInicioLayout.createSequentialGroup()
-                .addGap(197, 197, 197)
+                .addGap(216, 216, 216)
                 .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEmpleados))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         panelInicioLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlumnos, btnEmpleados});
@@ -122,7 +134,7 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
                             .addGap(381, 381, 381)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         panelAlumnosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
@@ -136,7 +148,7 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                 .addComponent(btnInicio2)
                 .addContainerGap())
         );
@@ -145,16 +157,16 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
 
         panelPadre.add(panelAlumnos, "card3");
 
-        jButton4.setText("Nuevo Empleado/Editar Informacion");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bntNuevoEmpleado.setText("Nuevo Empleado/Editar Informacion");
+        bntNuevoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                bntNuevoEmpleadoActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Dar de Baja ");
+        btnBajasEmpleado.setText("Dar de Baja ");
 
-        jButton6.setText("Lista de Empleados");
+        btnListaEmpleado.setText("Lista de Empleados");
 
         btnInicio1.setText("Inicio");
         btnInicio1.addActionListener(new java.awt.event.ActionListener() {
@@ -168,18 +180,18 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
         panelEmpleadosLayout.setHorizontalGroup(
             panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmpleadosLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(164, Short.MAX_VALUE)
                 .addGroup(panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmpleadosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton6))
+                        .addComponent(btnListaEmpleado))
                     .addGroup(panelEmpleadosLayout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(319, 319, 319))
-                    .addGroup(panelEmpleadosLayout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bntNuevoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelEmpleadosLayout.createSequentialGroup()
+                                .addGap(157, 157, 157)
+                                .addComponent(btnBajasEmpleado)))
+                        .addGap(162, 162, 162)))
                 .addGap(67, 67, 67))
             .addGroup(panelEmpleadosLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
@@ -187,25 +199,124 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelEmpleadosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton4, jButton5, jButton6});
+        panelEmpleadosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {bntNuevoEmpleado, btnBajasEmpleado, btnListaEmpleado});
 
         panelEmpleadosLayout.setVerticalGroup(
             panelEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEmpleadosLayout.createSequentialGroup()
                 .addGap(97, 97, 97)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bntNuevoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(btnBajasEmpleado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(btnListaEmpleado)
                 .addGap(92, 92, 92)
                 .addComponent(btnInicio1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        panelEmpleadosLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton4, jButton5, jButton6});
+        panelEmpleadosLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {bntNuevoEmpleado, btnBajasEmpleado, btnListaEmpleado});
 
         panelPadre.add(panelEmpleados, "card4");
+
+        lblNombreEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombreEmpleado.setText("Nombre: ");
+
+        lblApellidoEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblApellidoEmpleado.setText("Apellido: ");
+
+        lblNumeroEmpleado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNumeroEmpleado.setText("# de empleado:");
+
+        txtNumeroEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroEmpleadoActionPerformed(evt);
+            }
+        });
+
+        lblNumeroEmpleado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNumeroEmpleado1.setText("# de empleado:");
+
+        lblNombreEmpleado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombreEmpleado1.setText("Nombre: ");
+
+        jButton4.setText("Dar de Alta");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelAltaEmpleadoLayout = new javax.swing.GroupLayout(panelAltaEmpleado);
+        panelAltaEmpleado.setLayout(panelAltaEmpleadoLayout);
+        panelAltaEmpleadoLayout.setHorizontalGroup(
+            panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton4))
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addComponent(lblApellidoEmpleado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtApellidoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addComponent(lblNombreEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addComponent(lblNumeroEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEstablecerNom))
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addComponent(lblNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                        .addComponent(lblNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(486, Short.MAX_VALUE))
+        );
+
+        panelAltaEmpleadoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblApellidoEmpleado, lblNombreEmpleado});
+
+        panelAltaEmpleadoLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtEstablecerNom, txtNumeroEmpleado});
+
+        panelAltaEmpleadoLayout.setVerticalGroup(
+            panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAltaEmpleadoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellidoEmpleado)
+                    .addComponent(txtApellidoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4)
+                .addGap(30, 30, 30)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumeroEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstablecerNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAltaEmpleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNombreEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(343, Short.MAX_VALUE))
+        );
+
+        panelAltaEmpleadoLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblApellidoEmpleado, lblNombreEmpleado});
+
+        panelAltaEmpleadoLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtEstablecerNom, txtNumeroEmpleado});
+
+        panelPadre.add(panelAltaEmpleado, "card5");
 
         getContentPane().add(panelPadre);
 
@@ -226,9 +337,12 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
        panelPadre.revalidate(); //Revalidates the component hierarchy up to the nearest validate root. Class Component
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void bntNuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntNuevoEmpleadoActionPerformed
+        panelPadre.removeAll(); //Removes all the components from this container.  Class Container
+        panelPadre.add(panelAltaEmpleado); //Appends the specified component to the end of this container. Class Container
+        panelPadre.repaint(); //
+        panelPadre.revalidate(); //Revalidates the component hierarchy up to the nearest validate root. Class Component
+    }//GEN-LAST:event_bntNuevoEmpleadoActionPerformed
 
     private void btnInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio1ActionPerformed
        panelPadre.removeAll(); //Removes all the components from this container.  Class Container
@@ -243,6 +357,18 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
         panelPadre.repaint(); //
         panelPadre.revalidate(); //Revalidates the component hierarchy up to the nearest validate root. Class Component
     }//GEN-LAST:event_btnInicio2ActionPerformed
+
+    private void txtNumeroEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroEmpleadoActionPerformed
+        
+    }//GEN-LAST:event_txtNumeroEmpleadoActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Empleados em1 = new Empleados();
+        String nom = txtNombreEmpleado.getText();
+        em1.establecerNombre(nom);
+        txtEstablecerNom.setText(em1.obtenerNombre());
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,19 +406,31 @@ public class SistemaEscolarGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntNuevoEmpleado;
     private javax.swing.JButton btnAlumnos;
+    private javax.swing.JButton btnBajasEmpleado;
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnInicio1;
     private javax.swing.JButton btnInicio2;
+    private javax.swing.JButton btnListaEmpleado;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel lblApellidoEmpleado;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreEmpleado;
+    private javax.swing.JLabel lblNombreEmpleado1;
+    private javax.swing.JLabel lblNumeroEmpleado;
+    private javax.swing.JLabel lblNumeroEmpleado1;
+    private javax.swing.JPanel panelAltaEmpleado;
     private javax.swing.JPanel panelAlumnos;
     private javax.swing.JPanel panelEmpleados;
     private javax.swing.JPanel panelInicio;
     private javax.swing.JPanel panelPadre;
+    private javax.swing.JTextField txtApellidoEmpleado;
+    private javax.swing.JTextField txtEstablecerNom;
+    private javax.swing.JTextField txtNombreEmpleado;
+    private javax.swing.JTextField txtNumeroEmpleado;
     // End of variables declaration//GEN-END:variables
 }
