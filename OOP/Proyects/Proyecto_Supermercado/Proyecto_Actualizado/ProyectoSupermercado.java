@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 23/03/2019
-//Hora de inicio: 18:30
-//Hora de fin:  19:00
+//Día: 24/03/2019
+//Hora de inicio: 20:10
+//Hora de fin:  20:50
 package proyecto.supermercado;
 //Se importan las librerías para conectar con una base de datos.
 import java.sql.Connection;
@@ -10,9 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
-/*Por el momento no he logrado conectar con el servidor, al tratar de compilar el programa me marca:
-"Exception in thread "main" java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver"
-En lo que soluciono el problema me dedicaré a crear una interfáz gráfica para cada sección del supermercado.*/
+/*Solucioné el error anterior al importar el archivo jar necesario para la base de datos, pero ahora al tratar de compilar el programa me marca:
+"Exception in thread "main" com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host LAPTOP-E06IJ308SQLEXPRESS, port 1433 has failed."*/
 public class ProyectoSupermercado {
     public static void main(String[]args) throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
