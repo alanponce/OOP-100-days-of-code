@@ -14,7 +14,9 @@ public class Empleados {
    private int contador = 0;
    
    public void Empleados(){
+       
        numEmpleado = contador++;
+       
    }
    
    public void establecerNombre(String nombre){
@@ -24,6 +26,15 @@ public class Empleados {
    public String obtenerNombre(){
        System.out.println("El nombre es: " + nombre);
        return nombre;
+   }
+   
+   public void establecerApellido(String apellido){
+       this.apellido = apellido;
+   }
+   
+   public String obtenerApellido(){
+       System.out.println("El apellido es: " + apellido);
+       return apellido;
    }
    
 }
