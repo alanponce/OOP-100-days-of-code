@@ -1,29 +1,15 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 24/03/2019
-//Hora de inicio: 20:10
-//Hora de fin:  20:50
+//Día: 25/03/2019
+//Hora de inicio: 19:00
+//Hora de fin:  20:28
 package proyecto.supermercado;
-//Se importan las librerías para conectar con una base de datos.
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-/*Solucioné el error anterior al importar el archivo jar necesario para la base de datos, pero ahora al tratar de compilar el programa me marca:
-"Exception in thread "main" com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host LAPTOP-E06IJ308SQLEXPRESS, port 1433 has failed."*/
+import javax.swing.*;
 public class ProyectoSupermercado {
-    public static void main(String[]args) throws ClassNotFoundException, SQLException {
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-String connectionUrl = "jdbc:sqlserver://LAPTOP-E06IJ308SQLEXPRESS:1433;"+"databaseName=Supermercado;user=PruebaUser;password=123;";
-Connection Conexion = DriverManager.getConnection(connectionUrl);
-System.out.println("Conectado");
-Scanner N = new Scanner(System.in);
+    public static void main(String[]args){
 int D,d;
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
-System.out.println("Estás en el supermercado, desde la entrada se pueden ver las diferentes secciones: \n1.Carniceria \n2.Frutas y Verduras \n3. Pescadería\n0. Cajas \n¿A donde te diriges?: ");
-D = N.nextInt();
-    if(D>=0&&D<=3){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 3 o si no se encuentra entre estos valores.
+D = Integer.parseInt(JOptionPane.showInputDialog(null,"Estás en el supermercado, desde la entrada se pueden ver las diferentes secciones: \n1.Carniceria \n2.Frutas y Verduras \n3. Pescadería\n0. Cajas \n¿A donde te diriges?: "));    
+if(D>=0&&D<=3){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 3 o si no se encuentra entre estos valores.
      switch(D){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
 Carnicero.Nombre = "Juan";//Se asigna el atributo de nombre de la clase carnicero como "Juan".
@@ -32,13 +18,12 @@ Carnicero carnicero = new Carnicero();//Se crea un objeto de la clase carnicero.
 carnicero.Presentacion();//Realiza el método Presentacion de la clase Carnicero.
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
 carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carniceria.
- d = N.nextInt();//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
+ d = Integer.parseInt(Carnicero.Eleccion);//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
  if(d>=0&&d<=10){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 10 o si no se encuentra entre estos valores.
      switch(d){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
             Articulo Chuleta = new Articulo("Chuleta de Cerdo",92,0);//Se crea una chuleta, la cual es un objeto de la clase carnes.
-            System.out.println("Va a llevar "+Chuleta.Nombre+" ¿Qué Cantidad?");
-            Chuleta.Cantidad += N.nextFloat();
+            Chuleta.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Chuleta.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Chuleta.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto chuleta.
             Carnicero.Precio = Chuleta.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto chuleta.
             Carnicero.Cantidad = Chuleta.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto chuleta.
@@ -49,8 +34,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 2:
             Articulo Molida = new Articulo("Carne Molida",118,0);
-            System.out.println("Va a llevar "+Molida.Nombre+" ¿Qué Cantidad?");
-            Molida.Cantidad += N.nextFloat();
+            Molida.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Molida.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Molida.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto molida.
             Carnicero.Precio = Molida.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto molida.
             Carnicero.Cantidad = Molida.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto molida.
@@ -60,8 +44,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 3:
             Articulo Lengua = new Articulo("Lengua",260,0);
-            System.out.println("Va a llevar "+Lengua.Nombre+" ¿Qué Cantidad?");
-            Lengua.Cantidad += N.nextFloat();
+            Lengua.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Lengua.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Lengua.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Lengua.
             Carnicero.Precio = Lengua.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Lengua.
             Carnicero.Cantidad = Lengua.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Lengua.
@@ -71,8 +54,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 4:
             Articulo Salchicha = new Articulo("Salchicha",98,0);
-            System.out.println("Va a llevar "+Salchicha.Nombre+" ¿Qué Cantidad?");
-            Salchicha.Cantidad += N.nextFloat();
+            Salchicha.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Salchicha.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Salchicha.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Salchicha.
             Carnicero.Precio = Salchicha.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Salchicha.
             Carnicero.Cantidad = Salchicha.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Salchicha.
@@ -82,8 +64,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 5:
             Articulo Chorizo = new Articulo("Chorizo",60,0);
-            System.out.println("Va a llevar "+Chorizo.Nombre+" ¿Qué Cantidad?");
-            Chorizo.Cantidad += N.nextFloat();
+            Chorizo.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Chorizo.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Chorizo.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Chorizo.
             Carnicero.Precio = Chorizo.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Chorizo.
             Carnicero.Cantidad = Chorizo.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Chorizo.
@@ -93,8 +74,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
             case 6:
             Articulo Chicharron = new Articulo("Chicharrón de Cerdo",176,0);
-            System.out.println("Va a llevar "+Chicharron.Nombre+" ¿Qué Cantidad?");
-            Chicharron.Cantidad += N.nextFloat();
+            Chicharron.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Chicharron.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Chicharron.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Chicharron.
             Carnicero.Precio = Chicharron.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Chicharron.
             Carnicero.Cantidad = Chicharron.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Chicharron.
@@ -104,8 +84,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 7:
             Articulo Milanesa = new Articulo("Milanesa de Cerdo",94,0);
-            System.out.println("Va a llevar "+Milanesa.Nombre+" ¿Qué Cantidad?");
-            Milanesa.Cantidad += N.nextFloat();
+            Milanesa.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Milanesa.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Milanesa.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Milanesa.
             Carnicero.Precio = Milanesa.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Milanesa.
             Carnicero.Cantidad = Milanesa.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Milanesa.
@@ -115,8 +94,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 8:
             Articulo Costilla = new Articulo("Costilla de Cerdo",110,0);
-            System.out.println("Va a llevar "+Costilla.Nombre+" ¿Qué Cantidad?");
-            Costilla.Cantidad += N.nextFloat();
+            Costilla.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Costilla.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Costilla.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Costilla.
             Carnicero.Precio = Costilla.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Costilla.
             Carnicero.Cantidad = Costilla.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Costilla.
@@ -126,8 +104,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 9:
             Articulo Sirloin = new Articulo("Sirloin de Ternera",229,0);
-            System.out.println("Va a llevar "+Sirloin.Nombre+" ¿Qué Cantidad?");
-            Sirloin.Cantidad += N.nextFloat();
+            Sirloin.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Sirloin.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Sirloin.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Sirloin.
             Carnicero.Precio = Sirloin.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Sirloin.
             Carnicero.Cantidad = Sirloin.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Sirloin.
@@ -137,8 +114,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             break;
          case 10:
             Articulo Pata = new Articulo("Pata de Res",54,0);
-            System.out.println("Va a llevar "+Pata.Nombre+" ¿Qué Cantidad?");
-            Pata.Cantidad += N.nextFloat();
+            Pata.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Pata.Nombre+" ¿Qué Cantidad?"));
             Carnicero.Articulo = Pata.Nombre;//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Pata.
             Carnicero.Precio = Pata.Precio;//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Pata.
             Carnicero.Cantidad = Pata.Cantidad;//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Pata.
@@ -151,7 +127,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
      }
  }
  else{
-  System.out.println("No seleccionaste un numero valido.");
+  JOptionPane.showMessageDialog(null,"No seleccionaste un numero valido.");
  }
 }
 while(d!=0);
@@ -161,13 +137,12 @@ Fruteria fruteria = new Fruteria();//Se crea un objeto de la clase Fruteria.
 fruteria.Presentacion();//Realiza el método Presentacion de la clase fruteria.
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
 fruteria.Estantes();//Se muestra la estanteria de productos que tiene la sección.
- d = N.nextInt();//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
+ d = Integer.parseInt(Fruteria.Eleccion);//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
  if(d>=0&&d<=10){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 10 o si no se encuentra entre estos valores.
      switch(d){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
             Articulo Manzana = new Articulo("Manzana",35,0);
-            System.out.println("Has decidido llevar "+Manzana.Nombre+" ¿Qué Cantidad?");
-            Manzana.Cantidad += N.nextFloat();
+            Manzana.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Manzana.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Manzana.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Manzana.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Manzana.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -177,8 +152,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 2:
             Articulo Naranja = new Articulo("Naranja",13,0);
-            System.out.println("Has decidido llevar "+Naranja.Nombre+" ¿Qué Cantidad?");
-            Naranja.Cantidad += N.nextFloat();
+            Naranja.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Naranja.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Naranja.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Naranja.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Naranja.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -188,8 +162,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 3:
             Articulo Platano = new Articulo("Platano",16,0);
-            System.out.println("Has decidido llevar "+Platano.Nombre+" ¿Qué Cantidad?");
-            Platano.Cantidad += N.nextFloat();
+            Platano.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Platano.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Platano.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Platano.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Platano.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -199,8 +172,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 4:
             Articulo Mango = new Articulo("Mango",40,0);
-            System.out.println("Has decidido llevar "+Mango.Nombre+" ¿Qué Cantidad?");
-            Mango.Cantidad += N.nextFloat();
+            Mango.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Mango.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Mango.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Mango.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Mango.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -210,8 +182,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 5:
             Articulo Guayaba = new Articulo("Guayaba",39,0);
-            System.out.println("Has decidido llevar "+Guayaba.Nombre+" ¿Qué Cantidad?");
-            Guayaba.Cantidad += N.nextFloat();
+            Guayaba.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Guayaba.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Guayaba.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Guayaba.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Guayaba.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -221,8 +192,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 6:
             Articulo Zanahoria = new Articulo("Zanahoria",16,0);
-            System.out.println("Has decidido llevar "+Zanahoria.Nombre+" ¿Qué Cantidad?");
-            Zanahoria.Cantidad += N.nextFloat();
+            Zanahoria.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Zanahoria.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Zanahoria.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Zanahoria.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Zanahoria.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -232,8 +202,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 7:
             Articulo Cebolla = new Articulo("Cebolla",30,0);
-            System.out.println("Has decidido llevar "+Cebolla.Nombre+" ¿Qué Cantidad?");
-            Cebolla.Cantidad += N.nextFloat();
+            Cebolla.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Cebolla.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Cebolla.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Cebolla.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Cebolla.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -243,8 +212,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 8:
             Articulo Apio = new Articulo("Apio",26,0);
-            System.out.println("Has decidido llevar "+Apio.Nombre+" ¿Qué Cantidad?");
-            Apio.Cantidad += N.nextFloat();
+            Apio.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Apio.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Apio.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Apio.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Apio.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -254,8 +222,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 9:
             Articulo Brocoli = new Articulo("Brócoli",39,0);
-            System.out.println("Has decidido llevar "+Brocoli.Nombre+" ¿Qué Cantidad?");
-            Brocoli.Cantidad += N.nextFloat();
+            Brocoli.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Brocoli.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Brocoli.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Brocoli.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Brocoli.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -265,8 +232,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             break;
          case 10:
             Articulo Lechuga = new Articulo("Lechuga",18,0);
-            System.out.println("Has decidido llevar "+Lechuga.Nombre+" ¿Qué Cantidad?");
-            Lechuga.Cantidad += N.nextFloat();
+            Lechuga.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Has decidido llevar "+Lechuga.Nombre+" ¿Qué Cantidad?"));
             Fruteria.Articulo = Lechuga.Nombre;//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.Precio = Lechuga.Precio;//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.Cantidad = Lechuga.Cantidad;//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
@@ -280,7 +246,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
      }
  }
  else{
-  System.out.println("No seleccionaste un numero valido.");
+  JOptionPane.showMessageDialog(null,"No seleccionaste un numero valido.");
  }
 }
 while(d!=0);
@@ -292,13 +258,12 @@ Pescadero pescadero = new Pescadero();//Se crea un objeto de la clase pescadero.
 pescadero.Presentacion();//Realiza el método Presentacion de la clase Pescadero.
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
 pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescadería.
- d = N.nextInt();//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
+ d = Integer.parseInt(Pescadero.Eleccion);//Se llama al Scanner para asignar en D el valor del proximo numero que se inserte.
  if(d>=0&&d<=10){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 10 o si no se encuentra entre estos valores.
      switch(d){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
             Articulo FileteB = new Articulo("Filete de Basa",100,0);
-            System.out.println("Va a llevar "+FileteB.Nombre+" ¿Qué Cantidad?");
-            FileteB.Cantidad += N.nextFloat();
+            FileteB.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+FileteB.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = FileteB.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteB.
             Pescadero.Precio = FileteB.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteB.
             Pescadero.Cantidad = FileteB.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteB.
@@ -308,8 +273,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 2:
             Articulo Camaron = new Articulo("Camarón",275,0);
-            System.out.println("Va a llevar "+Camaron.Nombre+" ¿Qué Cantidad?");
-            Camaron.Cantidad += N.nextFloat();
+            Camaron.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Camaron.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = Camaron.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Camaron.
             Pescadero.Precio = Camaron.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Camaron.
             Pescadero.Cantidad = Camaron.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Camaron.
@@ -319,8 +283,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 3:
             Articulo FileteS = new Articulo("Filete de Salmón",375,0);
-            System.out.println("Va a llevar "+FileteS.Nombre+" ¿Qué Cantidad?");
-            FileteS.Cantidad += N.nextFloat();
+            FileteS.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+FileteS.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = FileteS.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteS.
             Pescadero.Precio = FileteS.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteS.
             Pescadero.Cantidad = FileteS.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteS.
@@ -330,8 +293,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 4:
             Articulo FiletePA = new Articulo("Filete de Pescado de Alaska",90,0);
-            System.out.println("Va a llevar "+FiletePA.Nombre+" ¿Qué Cantidad?");
-            FiletePA.Cantidad += N.nextFloat();
+            FiletePA.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+FiletePA.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = FiletePA.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FiletePA.
             Pescadero.Precio = FiletePA.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FiletePA.
             Pescadero.Cantidad = FiletePA.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FiletePA.
@@ -341,8 +303,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 5:
             Articulo FileteM = new Articulo("Filete de Mojarra",105,0);
-            System.out.println("Va a llevar "+FileteM.Nombre+" ¿Qué Cantidad?");
-            FileteM.Cantidad += N.nextFloat();
+            FileteM.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+FileteM.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = FileteM.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteM.
             Pescadero.Precio = FileteM.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteM.
             Pescadero.Cantidad = FileteM.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteM.
@@ -352,8 +313,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
             case 6:
             Articulo Barrita = new Articulo("Barrita de Pescado",79,0);
-            System.out.println("Va a llevar "+Barrita.Nombre+" ¿Qué Cantidad?");
-            Barrita.Cantidad += N.nextFloat();
+            Barrita.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Barrita.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = Barrita.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Barrita.
             Pescadero.Precio = Barrita.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Barrita.
             Pescadero.Cantidad = Barrita.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Barrita.
@@ -363,8 +323,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 7:
             Articulo Mojarra = new Articulo("Mojarra Entera",64,0);
-            System.out.println("Va a llevar "+Mojarra.Nombre+" ¿Qué Cantidad?");
-            Mojarra.Cantidad += N.nextFloat();
+            Mojarra.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Mojarra.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = Mojarra.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Mojarra.
             Pescadero.Precio = Mojarra.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Mojarra.
             Pescadero.Cantidad = Mojarra.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Mojarra.
@@ -374,8 +333,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 8:
             Articulo Huachinango = new Articulo("Huachinango",269,0);
-            System.out.println("Va a llevar "+Huachinango.Nombre+" ¿Qué Cantidad?");
-            Huachinango.Cantidad += N.nextFloat();
+            Huachinango.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Huachinango.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = Huachinango.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Huachinango.
             Pescadero.Precio = Huachinango.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Huachinango.
             Pescadero.Cantidad = Huachinango.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Huachinango.
@@ -385,8 +343,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 9:
             Articulo Pescaldo = new Articulo("Pescado para Caldo",85,0);
-            System.out.println("Va a llevar "+Pescaldo.Nombre+" ¿Qué Cantidad?");
-            Pescaldo.Cantidad += N.nextFloat();
+            Pescaldo.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Pescaldo.Nombre+" ¿Qué Cantidad?"));            
             Pescadero.Articulo = Pescaldo.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Pescaldo.
             Pescadero.Precio = Pescaldo.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Pescaldo.
             Pescadero.Cantidad = Pescaldo.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Pescaldo.
@@ -396,8 +353,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             break;
          case 10:
             Articulo Figuritas = new Articulo("Figuritas de Pescado Empanizado",79,0);
-            System.out.println("Va a llevar "+Figuritas.Nombre+" ¿Qué Cantidad?");
-            Figuritas.Cantidad += N.nextFloat();
+            Figuritas.Cantidad += Float.parseFloat(JOptionPane.showInputDialog(null,"Va a llevar "+Figuritas.Nombre+" ¿Qué Cantidad?"));
             Pescadero.Articulo = Figuritas.Nombre;//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Figuritas.
             Pescadero.Precio = Figuritas.Precio;//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Figuritas.
             Pescadero.Cantidad = Figuritas.Cantidad;//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Figuritas.
@@ -410,7 +366,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
      }
  }
  else{
-  System.out.println("No seleccionaste un numero valido.");
+  JOptionPane.showMessageDialog(null,"No seleccionaste un numero valido.");
  }
 }
 while(d!=0);
@@ -420,14 +376,14 @@ while(d!=0);
      }
  }
  else{
-  System.out.println("No seleccionaste un numero valido.");
+  JOptionPane.showMessageDialog(null,"No seleccionaste un numero valido.");
  }
 }
 while(D!=0); 
 Cajero.Total = Carnicero.Total+Fruteria.Total+Pescadero.Total;//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
 Cajero.Nombre = "Jorge";//Se asigna el atributo de nombre de la clase carnicero como "Jorge".
 Cajero.Puesto = "cajero";//Se asigna el atributo de puesto de la clase cajero como "cajero".
-System.out.println("Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
+JOptionPane.showMessageDialog(null,"Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
 Cajero cajero = new Cajero();
 cajero.Presentacion();//Realiza el método Saludo de la clase Cajero.
 Cajero.Caja();//Realiza el método Caja de la clase Cajero.
