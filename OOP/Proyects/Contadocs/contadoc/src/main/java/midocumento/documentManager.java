@@ -37,7 +37,7 @@ public class documentManager extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTFNombreC = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -84,7 +84,6 @@ public class documentManager extends javax.swing.JFrame {
         jDGuardado.setAlwaysOnTop(true);
         jDGuardado.setLocation(new java.awt.Point(250, 200));
         jDGuardado.setMinimumSize(new java.awt.Dimension(350, 150));
-        jDGuardado.setPreferredSize(new java.awt.Dimension(350, 150));
 
         jLabel6.setText("Se han guardado los cambios");
 
@@ -123,7 +122,6 @@ public class documentManager extends javax.swing.JFrame {
         jDEliminar.setAlwaysOnTop(true);
         jDEliminar.setLocation(new java.awt.Point(250, 200));
         jDEliminar.setMinimumSize(new java.awt.Dimension(350, 150));
-        jDEliminar.setPreferredSize(new java.awt.Dimension(350, 150));
 
         jLabel7.setText("¿Desea eliminar el documento?");
 
@@ -189,9 +187,9 @@ public class documentManager extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTFNombreC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTFNombreCActionPerformed(evt);
             }
         });
 
@@ -209,7 +207,7 @@ public class documentManager extends javax.swing.JFrame {
         });
 
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jTFNombreC, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jTextField2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -227,7 +225,7 @@ public class documentManager extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(157, 157, 157)
                 .addComponent(jButton1)
                 .addContainerGap(241, Short.MAX_VALUE))
@@ -241,7 +239,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -609,9 +607,9 @@ public class documentManager extends javax.swing.JFrame {
     }
 
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTFNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreCActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTFNombreCActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -760,6 +758,7 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JTextField jTFAsesorANC;
     private javax.swing.JTextField jTFCorreoNC;
     private javax.swing.JTextField jTFEncabezado;
+    private javax.swing.JTextField jTFNombreC;
     private javax.swing.JTextField jTFNombreNC;
     private javax.swing.JTextField jTFReferencia;
     private javax.swing.JTextField jTFTelefonoNC;
@@ -769,7 +768,6 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
