@@ -2,8 +2,8 @@ package proyecto.supermercado;
 import javax.swing.*;
 public abstract class Empleado{//La clase empleado se implementa para simular atributos y comportamientos de un empleado de supermercado.
   //Se declaran los atributos de la clase Empleado, que pueden ser heredadas por otras clases.
-  static String Nombre;
-  static String Puesto;
+  String Nombre;
+  String Puesto;
   //Se crea el método abstracto saludo, que puede ser heredado por otras clases.
   public abstract void Presentacion();
       
@@ -26,6 +26,10 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    }
    public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
+  }
+    public Carnicero(String Nombre, String Puesto){
+      this.Nombre = Nombre;
+      this.Puesto = Puesto;
   }
 }
 class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase empleado para simular a la frutería de un supermercado.
@@ -64,6 +68,10 @@ class Pescadero extends Empleado{
     public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aquí tiene su "+Articulo+", "+Cantidad+" Kg");
     }
+    public Pescadero(String Nombre, String Puesto){
+      this.Nombre = Nombre;
+      this.Puesto = Puesto;
+  }
 }
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
  //Se declaran atributos propios de la clase cajero.
@@ -78,6 +86,10 @@ class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado
 JOptionPane.showMessageDialog(null,Cajero.Articulos);
 JOptionPane.showMessageDialog(null,"Van a ser "+Total+" pesos.");
 }
+  public Cajero(String Nombre, String Puesto){
+      this.Nombre = Nombre;
+      this.Puesto = Puesto;
+  }
 }
 class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
   //Se declaran los atributos de la clase Articulo

@@ -1,7 +1,7 @@
 //Nombre: Villanueva Aguilar Carlos Raymundo 
-//Día: 25/03/2019
-//Hora de inicio: 19:00
-//Hora de fin:  20:28
+//Día: 26/03/2019
+//Hora de inicio: 21:00
+//Hora de fin:  21:30
 package proyecto.supermercado;
 import javax.swing.*;
 public class ProyectoSupermercado {
@@ -12,9 +12,7 @@ D = Integer.parseInt(JOptionPane.showInputDialog(null,"Estás en el supermercado
 if(D>=0&&D<=3){//Se utiliza el condicional if para indicar que se realizara una u otra accion si D se encuentra entre 0 y 3 o si no se encuentra entre estos valores.
      switch(D){/*Se utiliza la sentencia switch para realizar una serie de acciones dependiendo del valor de D.*/
          case 1:
-Carnicero.Nombre = "Juan";//Se asigna el atributo de nombre de la clase carnicero como "Juan".
-Carnicero.Puesto = "carnicero";//Se asigna el atributo de puesto de la clase carnicero como "carnicero".
-Carnicero carnicero = new Carnicero();//Se crea un objeto de la clase carnicero.
+Carnicero carnicero = new Carnicero("Juan","Carnicero");//Se crea un objeto de la clase carnicero.
 carnicero.Presentacion();//Realiza el método Presentacion de la clase Carnicero.
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
 carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carniceria.
@@ -252,9 +250,7 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
 while(d!=0);
              break;
          case 3:
-             Pescadero.Nombre = "Pedro";//Se asigna el atributo de nombre de la clase pescadero como "Pedro".
-Pescadero.Puesto = "pescadero";//Se asigna el atributo de puesto de la clase pescadero como "pescadero".
-Pescadero pescadero = new Pescadero();//Se crea un objeto de la clase pescadero.
+Pescadero pescadero = new Pescadero("Pedro","Pescadero");//Se crea un objeto de la clase pescadero.
 pescadero.Presentacion();//Realiza el método Presentacion de la clase Pescadero.
 do{//Se inicia este bucle para realizar lo que se indique hasta que se seleccione el numero 0.
 pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescadería.
@@ -381,10 +377,8 @@ while(d!=0);
 }
 while(D!=0); 
 Cajero.Total = Carnicero.Total+Fruteria.Total+Pescadero.Total;//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
-Cajero.Nombre = "Jorge";//Se asigna el atributo de nombre de la clase carnicero como "Jorge".
-Cajero.Puesto = "cajero";//Se asigna el atributo de puesto de la clase cajero como "cajero".
+Cajero cajero = new Cajero("Jorge","Cajero");
 JOptionPane.showMessageDialog(null,"Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
-Cajero cajero = new Cajero();
 cajero.Presentacion();//Realiza el método Saludo de la clase Cajero.
 Cajero.Caja();//Realiza el método Caja de la clase Cajero.
 /*Error solucionado: Al asignar y mostrar primero los atributos y métodos de la clase carnicero, y después asignar y mostrar los
