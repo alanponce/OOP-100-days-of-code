@@ -2,7 +2,7 @@
 package calculadora;
 // se declara un conjutno de clases e interfaces
 // relacionadas entre si
-
+import java.lang.Integer;
 /**
  *
  * @author alex
@@ -61,6 +61,7 @@ public class interfaz extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         potencia = new javax.swing.JButton();
         PI = new javax.swing.JButton();
+        Bina = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -251,6 +252,15 @@ public class interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(PI, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 40, 30));
 
+        Bina.setText("Bina");
+        Bina.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Bina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BinaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bina, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 40, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -418,10 +428,20 @@ public class interfaz extends javax.swing.JFrame {
         // en este caso imprimiria 3.1416
     
     }//GEN-LAST:event_PIActionPerformed
+
+    private void BinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinaActionPerformed
+        if(!etiqueta3.getText().equals("")|| contador!=0){
+            // la parte de getText es para obtener un texto(en este caso string)
+            // equals tiene como funcion comparar si 2 objetos aountan al mismo objeto
+         operaciones(); // se llamara la funcion de operaciones para ejecutar otra operaciones
+         etiqueta2.setText("Binary"); // se imprimira un Binary al dar clik en el boton de binario
+        }
+    }//GEN-LAST:event_BinaActionPerformed
   
     void operaciones(){
         // se declara la clase operaciones
         double n1,n2; // declaracion de variables n1 y n2
+        String n3;
         if(!etiqueta3.getText().equals("")){
             // si etiqueta3 no tiene texto entonces se cumple la condicion
             // la parte de getText es para obtener un texto(en este caso string)
@@ -439,6 +459,7 @@ public class interfaz extends javax.swing.JFrame {
       }
      n1 = Double.valueOf(numero2); // n1 tendra los valores que se hayan puesto en la variable numero2
      n2 = Double.valueOf(numero1); // n2 tendra los valores que se hayan puesto en la variable numero1
+     n3= String.valueOf(numero1); 
      if(etiqueta2.getText().equals("-")){
          // si  etiqueta2 contiene un "-" entonces se cumple la condicion 
      numero2=String.valueOf(n1-n2); // si es que se cumple la condicional entonces las variables n1 y n2 se restaran
@@ -454,7 +475,6 @@ public class interfaz extends javax.swing.JFrame {
      numero2=String.valueOf(n1*n2); // si es que se cumple la condicional entonces las variables n1 y n2 se multiplicaran
      // y se mandara el resultado a l variable de numero2 
      }
-     
      if(etiqueta2.getText().equals("/")){
          // si  etiqueta2 contiene un "/" entonces se cumple la condicion 
      numero2=String.valueOf(n1/n2); // si es que se cumple la condicional entonces las variables n1 y n2 se dividiran
@@ -464,7 +484,13 @@ public class interfaz extends javax.swing.JFrame {
          // si  etiqueta2 contiene un "^" entonces se cumple la condicion 
      numero2=String.valueOf(Math.pow(n1,n2)); // si es que se cumple la condicional entonces n1 se incrementara a la potencia que contenga n2
      // y se mandara el resultado a l variable de numero2 
-     
+     }
+     if(etiqueta2.getText().equals("Bina")){
+         
+         String Num=null;
+         Num=etiqueta1.getText();
+         Conversion CN=new Conversion();
+         etiqueta3.getText(CN.intoHex(new Integer(Num)));
      }
      etiqueta3.setText(""); // en la etiqueta3 se imprime un ""
      numero1=""; //numero1 quedara declarado como ""
@@ -475,6 +501,7 @@ public class interfaz extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -508,6 +535,7 @@ public class interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bina;
     private javax.swing.JButton PI;
     private javax.swing.JButton borrar;
     private javax.swing.JButton div;
