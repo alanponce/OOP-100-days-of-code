@@ -36,6 +36,7 @@
 >>The sales employee is the person who interacts most with the system, since it is the one who has access to the information of the branches, the section of the seats from reservation or purchase. You can also generate a report of the sales of the day but not see it (modify it) to avoid the alteration of it.
 >>
 >>### Manager Emplooye:
+>>The use case manager, generates all the system that the manager will have within the system, this being the maximum authority in terms of movements and modifications in the same
 
 
 >## Classes
