@@ -10,30 +10,51 @@ package midocumento;
  * @author George Rodríguez
  */
 public class documentos {
-    private Long id;
+ // Es el identificador único del documento
+ private Long id;
+ // Es el identificador único del cliente como clase secundaria
+    private Long id_cliente;
+    // Encabezado del documento
     private String encabezado;
+    // tipo del documento
     private String tipo;
 
     public documentos(){}
-
+    // Asigna un valor a Id
     public void setId(Long id) {
         this.id = id;
     }
-
+    // Obtiene el valor actual de Id
     public Long getId() {
         return id;
     }
+
+    // Asigna un valor a Id cliente
+    public void setId_cliente(Long id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+    
+    // obtiene un valor a Id cliente
+    public Long getid_cliente() {
+        return id_cliente;
+    }
+    
+    // Asigna un valor a Encabezado
      public void setEncabezado(String encabezado) {
         this.encabezado = encabezado;
     }
 
+    // obtiene un valor a encabezado
     public String getEncabezado() {
         return encabezado;
     }
+    
+    // Asigna un valor a Tipo
     public void setTipo( String tipo) {
         this.tipo= tipo;
     }
 
+    // obtiene un valor a Tipo
     public String getTipo() {
         return tipo;
     }
