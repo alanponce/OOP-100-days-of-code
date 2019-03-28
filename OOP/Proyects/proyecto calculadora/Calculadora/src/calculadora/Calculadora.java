@@ -9,6 +9,7 @@ package calculadora; // declaramnos un conjutno de clases e interfaces
  *
  * @author alex
  */
+
 public class Calculadora {
 // se crea la clase con el nombre de calculadora
     /**
