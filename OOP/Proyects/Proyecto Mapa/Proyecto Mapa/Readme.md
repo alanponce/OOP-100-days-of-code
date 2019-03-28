@@ -14,14 +14,14 @@ Ser un proyecto que abarque otras areas para localizar a parte de paradas del tr
 
 # Alncance 
 
-*Implementar ubicaciones del transporte escolar en los varios puntos de la ciudad.
-*Implemenetar los horarios del transporte para los puntos de partida.
-*Ubicar en la aplicacion de google maps donde se encuentran estas estaciones de parada.
-*Implementar fotos de las estaciones de parada del transporte escolar.
+* Implementar ubicaciones del transporte escolar en los varios puntos de la ciudad.
+* Implemenetar los horarios del transporte para los puntos de partida.
+* Ubicar en la aplicacion de google maps donde se encuentran estas estaciones de parada.
+* Implementar fotos de las estaciones de parada del transporte escolar.
 
 Se ejecutara en los sistemas operativos siguientes:
- *Android
- *iOS
- *Windows
- *MacOS
+ * Android
+ * iOS
+ * Windows
+ * MacOS
  
