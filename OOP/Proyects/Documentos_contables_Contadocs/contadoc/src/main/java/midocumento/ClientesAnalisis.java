@@ -25,7 +25,7 @@ import java.sql.ResultSet;
  * @author George Rodriguez
  */
 public class ClientesAnalisis {
-    Connection conexion = null;
+    private Connection conexion = null;
     // La funcion conexionDB() ingresa a la base de datos
     public boolean conexionDB(String usuario, String password) {
         //Se le asignan los detalles de la base de datos, y se le especifica que use unicode para evitar conflictos de idioma

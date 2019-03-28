@@ -1,3 +1,63 @@
+# Table of contents
+- [Introduction](#Introduction)
+    - [Purpose](#Purpose)
+    - [Scope](#Scope)
+    - [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
+    - [References](#References)
+    - [Overview](#Overview)
+- [Overrall description](#Overrall-description)
+    - [Product perspective](#Product-perspective)
+        - [System interfaces](#System-interfaces)
+        - [User interfaces](#User-interfaces)
+        - [Hardware interfaces](#Hardware-interfaces)
+        - [Software interfaces](#Software-interfaces)
+        - [Communications interfaces](#Communications-interfaces)
+        - [Memory](#Memory)
+        - [Operations](#Operations)
+        - [Site adaptation requirements](#Site-adaptation-requirements)
+- [Product](#Product)
+    - [User characteristics](#User-characteristics)
+        - [Educational level, experience y technical expertise](#Educational-level-experience-y-technical-expertise)
+        - [Constrains](#Constrains)
+        - [Regulatory policies](#Regulatory-policies)
+        - [Hardware limitations](#Hardware-limitations)
+        - [Interfaces to other applications](#Interfaces-to-other-applications)
+        - [Parallel operations](#Parallel-operations)
+        - [Audit functions](#Audit-functions)
+        - [Control functions](#Control-functions)
+        - [Higher-order language requeriments](#Higher-order-language-requeriments)
+        - [Signal handshake protocols](#Signal-handshake-protocols)
+        - [Reliability requirements](#Reliability-requirements)
+        - [Criticality of the application](#Criticality-of-the-application)
+        - [Safety and security consideration](#Safety-and-security-consideration)
+    - [Assumptions-and-dependencies](#Assumptions and dependencies)
+    - [Apportioning-of-requirements](#Apportioning-of-requirements)
+    - [Specific](#Specific) 
+    - [External interfaces](#External-interfaces)
+    - [Functions](#Functions)
+    - [Performance requirements](#Performance-requirements)
+    - [Logical database requirements](#Logical-database-requirements)
+    - [Design constraints](#Design-constraints)
+        - [Standards compliance](#Standards-compliance)
+    - [Software system attributes](#Software-system-attributes)
+        - [Relibility](#Relibility)
+        - [Availability](#Availability)
+        - [Security](#Security)
+        - [Maintainability](#Maintainability)
+        - [Portability](#Portability)
+    - [Organizing the specific requirements](#Organizing-the-specific-requirements)
+        - [System mode](#System-mode)
+        - [User class](#User-class)
+        - [Objects](#Objects)
+        - [Feature](#Feature)
+        - [Stimulus](#Stimulus)
+        - [Response](#Response)
+        - [Functional hierarchy](#Functional-hierarchy)
+    - [Additional comments](#Additional-comments)
+- [Supporting information](#Supporting-information)
+    - [Index](#Index)
+    - [Appendixes](#Appendixes)
+
 # Introduction
 ## Purpose
 El objetivo de este documento es describir una solución basada en software para organizar la documentación de una empresa contable.
@@ -33,6 +93,7 @@ Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Entrev
 ## Product perspective
 La empresa cliente, cuenta con un sistema de archivos a mano que contiene toda la información administrativa, como en muchos negocios este sistema hace que se acumule una cantidad bastante voluminosa de papel y archivos, y aunque se cuenta con archiveros para estos sigue siendo una cantidad bastante importante, por lo que al tener esta cantidad de archivos en forma física y guardada en diferentes archiveros complica la búsqueda de información, además de la posibilidad de pérdidas y daños a los mismo archivos.
 ### System interfaces
+
 ### User interfaces
 Consulta de documentos, éste se lleva a cabo al ingresar con los nombres y apellidos de los clientes. Si el documento se encuentra en una versión digital se muestra la ubicación dentro del ámbito seleccionado. En el caso de que se encuentre en alguna locación física el programa lo indica. Finalmente, si el cliente no cuenta con documentos disponibles, se manda un mensaje exhibiendo dicha situación.
 ![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png)
@@ -77,7 +138,7 @@ Agregar nuevos elementos, la pestaña “Nuevos clientes” nos permitirá ingre
 
 ## User characteristics
 ### Educational level, experience y technical expertise
-De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las
+De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
 ## Constrains
 ### Regulatory policies
 ### Hardware limitations
@@ -103,12 +164,15 @@ De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nive
 ### Relibility
 ### Availability
 ### Security
+Por consideraciones del cliente, no será necesario auténticarse en la aplicación. Sin embargo, el acceso a la base de datos requerirá de usuario y contraseña. La base de datos estará en un servidor público, dado que el tráfico por día es mínimo las restricciones serán mínimas por parte del proveedor del sistema.
 ### Maintainability
 ### Portability
 ## Organizing the specific requirements
 ### System mode
 ### User class
+
 ### Objects
+
 ### Feature
 ### Stimulus
 ### Response
