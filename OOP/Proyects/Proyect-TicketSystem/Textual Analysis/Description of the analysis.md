@@ -44,11 +44,11 @@
 >>In this class, we found the different types of employees like Sales Employee Manager,Supervisor etc.
 >>
 >>### Trip:
->>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the >>number of passengers.
+>>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the number of passengers.
 >>
 >>### Sales:
 >>In this class we will wacth the attributes of the sales, like a price, date of the sale, if the client paying the total price of a ticket, or only gave a part of the final price.
 >>
 >>### Tickets: In this class, we will generate the id number, only exist a 1 number for a 1 ticket,we will set the number of pasenger fo the ticket, and we add the destiny
-
+>>### Customers:The client class will have the information of the client to keep the purchases of the same, name, seat number etc.
 
