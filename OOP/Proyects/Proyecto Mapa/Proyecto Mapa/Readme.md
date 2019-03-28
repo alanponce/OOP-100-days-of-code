@@ -1,5 +1,5 @@
-   #Proyecto Mapa
-   
+#Proyecto Mapa
+
 #Descripcion del proyecto
 IndioLocation surgio de la necesidad de que los alumnos de la Universidad Autonoma de Ciudad Juarez especialmente el Campus de Ciudad Univcersitaria donde los alumnos no saben donde esta exactamente el punto de partida en varias puntos de la ciudad ni su horario, asi que hemos decidido realizar este proyecto y ayudar a los alumnos a que sepan donde es el punto de partidad de cada IndioBus dependindo de su localidad y la hora en que parte este mismo.
 
