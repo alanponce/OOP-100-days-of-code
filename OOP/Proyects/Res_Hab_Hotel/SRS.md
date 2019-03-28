@@ -126,3 +126,16 @@ Administrador:
 
 Los requisitos de la forma de pago atraves de tranferencias bancareas seras desplasadas al la siguiente etapa de mejoramiento del sistema, si es que no se encuentra la forma ideal para este metodo de pago.
 
+> 3.- Specific Requirements
+
+3.1 External Requirements:
+* Tener instalado en las comnputadoras de trabajo de MySQL(ultima version disponible)
+* Desarrollar la conexion de a la base de datos
+* Entradas a tablas clientes:
+
+Nombre de la entrada | Tipo de dato | Descripcion
+------------ | ------------- | -------------
+ID_Cliente | int | identificador del cliente
+Nombre del Cliente | String | el nombre del cliente
+Apellido del Cliente | String | el apellido del cliente
+Telefono | LongInt | numero de telefono del cliente
