@@ -35,7 +35,7 @@ public class documentos {
     }
     
     // obtiene un valor a Id cliente
-    public Long getid_cliente() {
+    public Long getId_cliente() {
         return id_cliente;
     }
     
