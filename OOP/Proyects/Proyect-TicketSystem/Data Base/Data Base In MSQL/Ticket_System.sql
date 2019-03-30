@@ -35,11 +35,13 @@ create table Trip(
 TripID int not null,
 BusNumber_Plate varchar(7),
 TicketQTY tinyint,
-Departure_Day date,
-Time_Departure time,
+Departure_Day varchar(10),
+Time_Departure varchar(10),
 Destiny varchar(45),
 constraint Pk_TripID primary key (TripID),
-constraint Fk_BusNumber_Plate foreign key (BusNumber_Plate) references Bus(Number_Plate)
+constraint Fk_BusNumber_Plate foreign key (BusNumber_Plate) references Bus(Number_Plate),
+constraint Chk_Departure_Day check (Departure_day like '[0-3][0-9]/[0-1][0-9]/[0-9][0-9]'),
+constraint Chk_Time_Departure check (Time_departure like '[0-2][0-9]:[0-5][0-9]')
 );
 
 create table Seat(
@@ -54,7 +56,7 @@ create table Sales(
 SalesID int not null,
 Client_Name varchar(20),
 Client_Phone varchar(10),
-Date date,
+Date varchar(10),
 TicketsSold int,
 EmployeeID int,
 TripID int,
@@ -65,7 +67,8 @@ constraint Pk_SalesID primary key (SalesID),
 constraint Fk_EmployeeID foreign key (EmployeeID) references Employee(EmployeeID),
 constraint Fk_TripIDSales foreign key (TripID) references Trip(TripID),
 constraint U_Client_Phone unique (Client_Phone),
-constraint Chk_Client_Phone check (Client_Phone like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+constraint Chk_Client_Phone check (Client_Phone like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+constraint Chl_Date check (Date like '[0-3][0-9]/[0-1][0-9]/[0-9][0-9]')
 );
 
 Create table Ticket(
