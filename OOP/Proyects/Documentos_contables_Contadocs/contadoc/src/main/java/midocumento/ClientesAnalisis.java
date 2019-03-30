@@ -29,9 +29,14 @@ public class ClientesAnalisis {
     private Connection conexion = null;
     // La funcion conexionDB() ingresa a la base de datos
     public boolean conexionDB(String usuario, String password) {
+        /*
+         * You have successfully created a new MySQL database. Your details can be found
+         * below. Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l Server:
+         * remotemysql.com Port: 3306
+         */
         //Se le asignan los detalles de la base de datos, y se le especifica que use unicode para evitar conflictos de idioma
-        String stURL = "jdbc:mysql://localhost:3306/dbhibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        //String stURL = "jdbc:mysql:198.91.81.7/geoxneox_documentProject";
+       // String stURL = "jdbc:mysql://localhost:3306/dbhibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String stURL = "jdbc:mysql://remotemysql.com:3306/KDJroUoqfj";
         try {
             //Se llama al metodo que inicia la coexi[on]
             conexion = DriverManager.getConnection(stURL, usuario, password);
@@ -47,19 +52,31 @@ public class ClientesAnalisis {
     }
     
     //public String BuscarNombre(String Nombre,String Apellido) {
-    public void BuscarNombre(String Nombre,String Apellido) {
+        public void BuscarNombre(String Nombre,String Apellido) {
         Statement sentencia;
-        String crearTabla = "CREATE TABLE IF NOT EXISTS REG " +
+       // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
+            String crearTabla = "CREATE TABLE IF NOT EXISTS miregistro " +
                    "(id INTEGER not NULL, " +
-                   " first VARCHAR(255), " + 
-                   " last VARCHAR(255), " + 
-                   " age INTEGER, " + 
-                   " PRIMARY KEY ( id ))";
-      //  try (PreparedStatement stmt = conexion.prepareStatement(crearTabla)) {
-        try{ 
-            sentencia = conexion.createStatement();
+                   " nombre VARCHAR(255), " + 
+                   " apellidoP VARCHAR(255), " + 
+                   " apellidoM VARCHAR(255), " + 
+                   " telefono VARCHAR(100), " + 
+                   " correo VARCHAR(100), " + 
+                   " asesor VARCHAR(100), " + 
+                " PRIMARY KEY ( id ))";
+            // String dataTemporal="INSERT INTO KDJroUoqfj.miregistro VALUES "+
+            //     "(1, "Jim","Neutron","Pelaez", "20120112","neutron@correo.com","Andrea"),"+       
+            //     "(2, "Konan","Barbaro","Chilorio", "20155112","konan@correo.com","Petra"),"+       
+            //     "(3, "Fido","Logan","Rognan", "56665555","fido@correo.com","Petra"),"+       
+            //     "(4, "Rudo","Acan","Polux", "56565235","rudo@correo.com","Andrea"),"+       
+            //     "(5, "Dexter","Polo","Chuk", "20120112","dexter@correo.com","Penelope")";       
+                       try{ 
+                           sentencia = conexion.createStatement();
+                           System.out.println("Base creada");
         
         sentencia.executeUpdate(crearTabla);
+       // sentencia.executeUpdate(dataTemporal);
+
             //while (rs.next())
               //  System.out.println(rs.getString("nombre");
 

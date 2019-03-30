@@ -629,7 +629,7 @@ public class documentManager extends javax.swing.JFrame {
     jTAResultados.setText(jTAResultados.getText()+"Documento: "+Documento + "\n");
     jTAResultados.setText(jTAResultados.getText()+"Ubicacion: "+Ubicacion+ "\n");
     jTAResultados.setText(jTAResultados.getText()+"\n");
-    jTAResultados.setText(jTAResultados.getText()+"----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n");
+    jTAResultados.setText(jTAResultados.getText()+"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n");
     }
     private void jTFNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreCActionPerformed
         // TODO add your handling code here:
@@ -637,8 +637,13 @@ public class documentManager extends javax.swing.JFrame {
 
     private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarCActionPerformed
       //Si existe conexion se procede a  mostrar los resultados
-        //if (baseCliente.conexionDB("geoxneox_geo",""))
-      if (baseCliente.conexionDB("root",""))
+        // if (baseCliente.conexionDB("root",""))
+        /*
+         * You have successfully created a new MySQL database. Your details can be found
+         * below. Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l Server:
+         * remotemysql.com Port: 3306
+         */
+        if (baseCliente.conexionDB("KDJroUoqfj","bmlp5wFD3l"))
       {
             jLConectadoC.setText("Conectado");
             baseCliente.BuscarNombre("root", "root");
