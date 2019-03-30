@@ -52,33 +52,27 @@ public class ClientesAnalisis {
     }
     
     //public String BuscarNombre(String Nombre,String Apellido) {
-        public void BuscarNombre(String Nombre,String Apellido) {
-        Statement sentencia;
-       // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
-            String crearTabla = "CREATE TABLE IF NOT EXISTS miregistro " +
-                   "(id INTEGER not NULL, " +
-                   " nombre VARCHAR(255), " + 
-                   " apellidoP VARCHAR(255), " + 
-                   " apellidoM VARCHAR(255), " + 
-                   " telefono VARCHAR(100), " + 
-                   " correo VARCHAR(100), " + 
-                   " asesor VARCHAR(100), " + 
-                " PRIMARY KEY ( id ))";
-            // String dataTemporal="INSERT INTO KDJroUoqfj.miregistro VALUES "+
-            //     "(1, "Jim","Neutron","Pelaez", "20120112","neutron@correo.com","Andrea"),"+       
-            //     "(2, "Konan","Barbaro","Chilorio", "20155112","konan@correo.com","Petra"),"+       
-            //     "(3, "Fido","Logan","Rognan", "56665555","fido@correo.com","Petra"),"+       
-            //     "(4, "Rudo","Acan","Polux", "56565235","rudo@correo.com","Andrea"),"+       
-            //     "(5, "Dexter","Polo","Chuk", "20120112","dexter@correo.com","Penelope")";       
-                       try{ 
-                           sentencia = conexion.createStatement();
-                           System.out.println("Base creada");
-        
-        sentencia.executeUpdate(crearTabla);
-       // sentencia.executeUpdate(dataTemporal);
 
-            //while (rs.next())
-              //  System.out.println(rs.getString("nombre");
+    public void CrearTabla(String nombreDeTabla) {
+        // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
+        String crearTabla = "CREATE TABLE IF NOT EXISTS "+ nombre + "(id INTEGER not NULL, "
+                + " nombre VARCHAR(255), " + " apellidoP VARCHAR(255), " + " apellidoM VARCHAR(255), "
+                + " telefono VARCHAR(100), " + " correo VARCHAR(100), " + " asesor VARCHAR(100), "
+                + " PRIMARY KEY ( id ))";
+        // String dataTemporal="INSERT INTO KDJroUoqfj.miregistro VALUES "+
+        // "(1, 'Jim','Neutron','Pelaez', '20120112','neutron@correo.com','Andrea'),"+
+        // "(2, 'Konan','Barbaro','Chilorio', '20155112','konan@correo.com','Petra'),"+
+        // "(3, 'Fido','Logan','Rognan', '56665555','fido@correo.com','Petra'),"+
+        // "(4, 'Rudo','Acan','Polux', '56565235','rudo@correo.com','Andrea'),"+
+        // "(5, 'Dexter','Polo','Chuk', '20120112','dexter@correo.com','Penelope')";
+        try {
+            Statement sentencia = conexion.createStatement();
+            System.out.println("Base creada");
+            sentencia.executeUpdate(crearTabla);
+            // sentencia.executeUpdate(dataTemporal);
+
+            // while (rs.next())
+            // System.out.println(rs.getString("nombre");
 
         } catch (SQLException sqle) {
             // solo depuracion
@@ -91,6 +85,11 @@ public class ClientesAnalisis {
             se.printStackTrace();
         }
 
-        //return "Hola";
+        // return "Hola";
     }
+            
+        }
+
+        public void BuscarNombre(String Nombre,String Apellido) {
+ 
 }
