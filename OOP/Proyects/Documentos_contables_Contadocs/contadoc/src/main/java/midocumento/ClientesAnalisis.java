@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import java.sql.PreparedStatement;
 // permite recuperar los resultados de las transacciones realizaadas
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -45,17 +46,34 @@ public class ClientesAnalisis {
         return false;
     }
     
-    public String BuscarNombre(String Nombre,String Apellido) {
-        try (PreparedStatement stmt = conexion.prepareStatement("SELECT nombre FROM clientes")) {
-            ResultSet rs = stmt.executeQuery();
-
-            while (rs.next())
-                System.out.println(rs.getString("nombre");
+    //public String BuscarNombre(String Nombre,String Apellido) {
+    public void BuscarNombre(String Nombre,String Apellido) {
+        Statement sentencia;
+        String crearTabla = "CREATE TABLE IF NOT EXISTS REG " +
+                   "(id INTEGER not NULL, " +
+                   " first VARCHAR(255), " + 
+                   " last VARCHAR(255), " + 
+                   " age INTEGER, " + 
+                   " PRIMARY KEY ( id ))";
+      //  try (PreparedStatement stmt = conexion.prepareStatement(crearTabla)) {
+        try{ 
+            sentencia = conexion.createStatement();
+        
+        sentencia.executeUpdate(crearTabla);
+            //while (rs.next())
+              //  System.out.println(rs.getString("nombre");
 
         } catch (SQLException sqle) {
             // solo depuracion
-            System.out.println("Error en la ejecución:" + sqle.getErrorCode() + " " + sqle.getMessage());
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
-        return "Hola";
+        try {
+            if (conexion != null)
+                conexion.close();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        }
+
+        //return "Hola";
     }
 }

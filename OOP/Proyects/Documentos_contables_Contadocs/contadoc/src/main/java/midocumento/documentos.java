@@ -12,7 +12,7 @@ package midocumento;
 public class documentos {
  // Es el identificador único del documento
  private Long id;
- // Es el identificador único del cliente como clase secundaria
+ // Es el identificador único del cliente como clave secundaria
     private Long id_cliente;
     // Encabezado del documento
     private String encabezado;

@@ -640,11 +640,12 @@ public class documentManager extends javax.swing.JFrame {
         //if (baseCliente.conexionDB("geoxneox_geo",""))
       if (baseCliente.conexionDB("root",""))
       {
-      jLConectadoC.setText("Conectado");
-      mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
+            jLConectadoC.setText("Conectado");
+            baseCliente.BuscarNombre("root", "root");
       mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
-      mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
+      mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
+      mostrar("Juan Perez","Documento fisico" ,"Declaracion", "Archivero", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
       } else
         {
