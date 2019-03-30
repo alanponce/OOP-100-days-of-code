@@ -1,5 +1,5 @@
 package proyecto.supermercado;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 public abstract class Empleado{//La clase empleado se implementa para simular atributos y comportamientos de un empleado de supermercado.
   //Se declaran los atributos de la clase Empleado, que pueden ser heredadas por otras clases.
   String Nombre;
@@ -92,14 +92,38 @@ JOptionPane.showMessageDialog(null,"Van a ser "+Total+" pesos.");
   }
 }
 class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
-  //Se declaran los atributos de la clase Articulo
-  String Nombre;
-  int Precio;
-  float Cantidad;
-  float Total;
-  public Articulo(String Nombre, int Precio, int Cantidad){ //Se crea un constructor para los atributos de los objetos en la clase Artículo.
+  //Se declaran los atributos d     e la clase Articulo
+  private String Nombre;
+  private int Precio;
+  private float Cantidad;
+  public Articulo(String Nombre, int Precio, int Cantidad){
       this.Nombre = Nombre;
       this.Precio = Precio;
       this.Cantidad = Cantidad;
   }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(int Precio) {
+        this.Precio = Precio;
+    }
+
+    public float getCantidad() {
+        return Cantidad;
+    }
+
+    public void setCantidad(float Cantidad) {
+        this.Cantidad = Cantidad;
+    }
+
 }
