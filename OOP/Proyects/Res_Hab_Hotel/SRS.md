@@ -144,10 +144,14 @@ Nombre del Cliente | String | el nombre del cliente
 Apellido del Cliente | String | el apellido del cliente
 Telefono | LongInt | numero de telefono del cliente
 
-3.2 Functional requirements. 
+3.2 Functional requirements.
+
 Esta sección incluye los requerimientos que especifican todas las acciones fundamentales del sistema de software del proyecto de reservaciones de habitaciones del Hotel Foráneos CU. 
-3.2.1 User class 1 – Recepcionista 
-3.2.1.1 Functional requirement 1.1 
+
+3.2.1 User class 1 – Recepcionista
+
+3.2.1.1 Functional requirement 1.1
+
 ID: FR1 
 Feature: Login del recepcionista 
 DESC: Dado que el id y contraseña del recepcionista 
@@ -167,7 +171,7 @@ DESC: Dado que el recepcionista
 RAT:   En orden para capturar la peticion del cliente 
 DEP: FR1 
 * Hay una interface mas especifica para esta etapa? 
-~ Como puede verificar? 
+~ Como puede verificar?
  
 3.2.1.3 Functional requirement 1.3 
  
