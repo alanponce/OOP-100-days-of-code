@@ -646,7 +646,7 @@ public class documentManager extends javax.swing.JFrame {
         if (baseCliente.conexionDB("KDJroUoqfj","bmlp5wFD3l"))
       {
             jLConectadoC.setText("Conectado");
-            baseCliente.BuscarNombre("root", "root");
+            baseCliente.BuscarNombre("Jim", "root");
       mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
@@ -657,14 +657,6 @@ public class documentManager extends javax.swing.JFrame {
           //De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
       }
-/*         String Nombre=jTFNombreC.getText();
-        String Apellido = jTFApellidoC.getText();
-        for (int i = 0; i < maxElementos; i++) {
-            if (Nombre == LocalData[i]) {
-
-            }
-        } 
-    }*/
     }//GEN-LAST:event_jBBuscarCActionPerformed
 
 

@@ -27,6 +27,7 @@ import java.sql.Statement;
  */
 public class ClientesAnalisis {
     private Connection conexion = null;
+
     // La funcion conexionDB() ingresa a la base de datos
     public boolean conexionDB(String usuario, String password) {
         /*
@@ -35,10 +36,10 @@ public class ClientesAnalisis {
          * remotemysql.com Port: 3306
          */
         //Se le asignan los detalles de la base de datos, y se le especifica que use unicode para evitar conflictos de idioma
-       // String stURL = "jdbc:mysql://localhost:3306/dbhibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        // String stURL = "jdbc:mysql://localhost:3306/dbhibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String stURL = "jdbc:mysql://remotemysql.com:3306/KDJroUoqfj";
         try {
-            //Se llama al metodo que inicia la coexi[on]
+            //Se llama al metodo que inicia la coexión
             conexion = DriverManager.getConnection(stURL, usuario, password);
             //Se imprime un mensaje si la conexión de la base de datos fe exitosa
             System.out.println("Conexión exitosa");
@@ -50,12 +51,10 @@ public class ClientesAnalisis {
         }
         return false;
     }
-    
-    //public String BuscarNombre(String Nombre,String Apellido) {
 
     public void CrearTabla(String nombreDeTabla) {
         // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
-        String crearTabla = "CREATE TABLE IF NOT EXISTS "+ nombre + "(id INTEGER not NULL, "
+        String crearTabla = "CREATE TABLE IF NOT EXISTS " + nombreDeTabla + " (id INTEGER not NULL, "
                 + " nombre VARCHAR(255), " + " apellidoP VARCHAR(255), " + " apellidoM VARCHAR(255), "
                 + " telefono VARCHAR(100), " + " correo VARCHAR(100), " + " asesor VARCHAR(100), "
                 + " PRIMARY KEY ( id ))";
@@ -69,27 +68,42 @@ public class ClientesAnalisis {
             Statement sentencia = conexion.createStatement();
             System.out.println("Base creada");
             sentencia.executeUpdate(crearTabla);
-            // sentencia.executeUpdate(dataTemporal);
-
-            // while (rs.next())
-            // System.out.println(rs.getString("nombre");
-
         } catch (SQLException sqle) {
             // solo depuracion
             System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
+    }
+
+    public void BuscarNombre(String Nombre, String Apellido) {
+        CrearTabla("miregistro");
+        String busqueda = "SELECT apellidoP, apellidoM, telefono, correo, asesor FROM KDJroUoqfj.miregistro WHERE nombre = '"+Nombre+"'";
+                try {
+       PreparedStatement sentencia = conexion.prepareStatement(busqueda);
+        //sentencia.setString(1,Nombre);
+        ResultSet rs = sentencia.executeQuery(busqueda);
+        while (rs.next()) {
+            String apellidoP = rs.getString("apellidoP");
+            String apellidoM = rs.getString("apellidoM");
+            String telefono = rs.getString("telefono");
+            String correo = rs.getString("correo");
+            String asesor = rs.getString("asesor");
+            System.out.println(apellidoP);
+            System.out.println(apellidoM);
+            System.out.println(telefono);
+            System.out.println(correo);
+            System.out.println(asesor);
+            // String username=rs.getString("nombre");
+        }
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+ 
         try {
             if (conexion != null)
                 conexion.close();
         } catch (SQLException se) {
             se.printStackTrace();
         }
-
-        // return "Hola";
     }
-            
-        }
-
-        public void BuscarNombre(String Nombre,String Apellido) {
- 
 }
