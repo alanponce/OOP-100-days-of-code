@@ -169,9 +169,9 @@ DESC: Dado que el recepcionista
            Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico* 
            el deberia ser capaz de verificar~ y llenar los campos obligatorios de la interfaz de apartados 
 RAT:   En orden para capturar la peticion del cliente 
-DEP: FR1 
-* Hay una interface mas especifica para esta etapa? 
-~ Como puede verificar?
+DEP: FR1
+ *Hay una interface mas especifica para esta etapa? 
+~Como puede verificar?
  
 3.2.1.3 Functional requirement 1.3 
  
