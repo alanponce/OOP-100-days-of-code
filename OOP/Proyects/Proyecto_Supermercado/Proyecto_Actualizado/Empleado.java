@@ -2,19 +2,19 @@ package proyecto.supermercado;
 import javax.swing.JOptionPane;
 public abstract class Empleado{//La clase empleado se implementa para simular atributos y comportamientos de un empleado de supermercado.
   //Se declaran los atributos de la clase Empleado, que pueden ser heredadas por otras clases.
-  String Nombre;
-  String Puesto;
-  //Se crea el método abstracto saludo, que puede ser heredado por otras clases.
+  protected String Nombre;
+  protected String Puesto;
+  //Se crea el método abstracto Presentación, que puede ser heredado por otras clases.
   public abstract void Presentacion();
       
 }
 class Carnicero extends Empleado{//La clase carnicero es heredada de la clase empleado para simular a un carnicero de supermercado.
    //Se declaran los atributos propios de la clase carnicero.
-   static String Articulo;
-   static int Precio;
-   static float Cantidad;
-   static float Total;
-   static String Eleccion;
+   private static String Articulo;
+   private static int Precio;
+   private static float Cantidad;
+   private static float Total;
+   private static String Eleccion;
    @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Carnicero
    public void Presentacion(){
    JOptionPane.showMessageDialog(null,"Carniceria del Supermercado");
@@ -31,14 +31,55 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
       this.Nombre = Nombre;
       this.Puesto = Puesto;
   }
+
+    public static String getArticulo() {
+        return Articulo;
+    }
+
+    public static void setArticulo(String Articulo) {
+        Carnicero.Articulo = Articulo;
+    }
+
+    public static int getPrecio() {
+        return Precio;
+    }
+
+    public static void setPrecio(int Precio) {
+        Carnicero.Precio = Precio;
+    }
+
+    public static float getCantidad() {
+        return Cantidad;
+    }
+
+    public static void setCantidad(float Cantidad) {
+        Carnicero.Cantidad = Cantidad;
+    }
+
+    public static float getTotal() {
+        return Total;
+    }
+
+    public static void setTotal(float Total) {
+        Carnicero.Total = Total;
+    }
+
+    public static String getEleccion() {
+        return Eleccion;
+    }
+
+    public static void setEleccion(String Eleccion) {
+        Carnicero.Eleccion = Eleccion;
+    }
+    
 }
 class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase empleado para simular a la frutería de un supermercado.
   //Se declaran los atributos propios de la clase Fruteria 
-  static String Articulo;
-   static int Precio;
-   static float Cantidad;
-   static float Total;
-   static String Eleccion;
+   private static String Articulo;
+   private static int Precio;
+   private static float Cantidad;
+   private static float Total;
+   private static String Eleccion;
     @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Fruteria
     public void Presentacion(){
     JOptionPane.showMessageDialog(null,"Esta es la sección de frutas y verduras del supermercado");    
@@ -50,13 +91,54 @@ class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase emp
     public void Eleccion(){ //Se crea el método elección, que imprime en pantalla el artículo elegido junto con su cantidad.
         JOptionPane.showMessageDialog(null,"Has decidido elegir "+Cantidad+" Kg de "+Articulo);
     }
+
+    public static String getArticulo() {
+        return Articulo;
+    }
+
+    public static void setArticulo(String Articulo) {
+        Fruteria.Articulo = Articulo;
+    }
+
+    public static int getPrecio() {
+        return Precio;
+    }
+
+    public static void setPrecio(int Precio) {
+        Fruteria.Precio = Precio;
+    }
+
+    public static float getCantidad() {
+        return Cantidad;
+    }
+
+    public static void setCantidad(float Cantidad) {
+        Fruteria.Cantidad = Cantidad;
+    }
+
+    public static float getTotal() {
+        return Total;
+    }
+
+    public static void setTotal(float Total) {
+        Fruteria.Total = Total;
+    }
+
+    public static String getEleccion() {
+        return Eleccion;
+    }
+
+    public static void setEleccion(String Eleccion) {
+        Fruteria.Eleccion = Eleccion;
+    }
+    
 }
 class Pescadero extends Empleado{
-   static String Articulo;
-   static int Precio;
-   static float Cantidad;
-   static float Total;
-   static String Eleccion;
+   private static String Articulo;
+   private static int Precio;
+   private static float Cantidad;
+   private static float Total;
+   private static String Eleccion;
     @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Pescadero
     public void Presentacion(){
     JOptionPane.showMessageDialog(null,"Pescadería del supermercado");    
@@ -72,6 +154,47 @@ class Pescadero extends Empleado{
       this.Nombre = Nombre;
       this.Puesto = Puesto;
   }
+
+    public static String getArticulo() {
+        return Articulo;
+    }
+
+    public static void setArticulo(String Articulo) {
+        Pescadero.Articulo = Articulo;
+    }
+
+    public static int getPrecio() {
+        return Precio;
+    }
+
+    public static void setPrecio(int Precio) {
+        Pescadero.Precio = Precio;
+    }
+
+    public static float getCantidad() {
+        return Cantidad;
+    }
+
+    public static void setCantidad(float Cantidad) {
+        Pescadero.Cantidad = Cantidad;
+    }
+
+    public static float getTotal() {
+        return Total;
+    }
+
+    public static void setTotal(float Total) {
+        Pescadero.Total = Total;
+    }
+
+    public static String getEleccion() {
+        return Eleccion;
+    }
+
+    public static void setEleccion(String Eleccion) {
+        Pescadero.Eleccion = Eleccion;
+    }
+    
 }
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
  //Se declaran atributos propios de la clase cajero.
