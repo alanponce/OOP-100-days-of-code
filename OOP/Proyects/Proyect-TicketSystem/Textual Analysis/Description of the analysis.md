@@ -67,23 +67,14 @@
 >>
 >>### Client:
 >>The client class will have the information of the client to keep the purchases of the same, name, seat number etc.
->>
 >>#### Attributes
->>##### name: 
->>Contains the name of the client
->>##### lastName:
->>Contains the Last name of the client
->>##### age:
->>Contains the age of the client
->>##### phone:
->>Contains the phone of the client
->>##### cost:
->>Contains the cost of the client
+>>##### name: Contains the name of the client
+>>##### lastName: Contains the Last name of the client
+>>##### age: Contains the age of the client
+>>##### phone: Contains the phone of the client
+>>##### cost: Contains the cost of the client
 >>
 >>#### Methods:
->>##### searchTrip:
->>This method lets see the information of the trip of the ticket buyed
->>##### setTrip:
->>This method assigns the buyed trip to the client.
->>##### setTime:
->>This method register the date of attention of the client
+>>##### searchTrip: This method lets see the information of the trip of the ticket buyed
+>>##### setTrip: This method assigns the buyed trip to the client.
+>>##### setTime: This method register the date of attention of the client
