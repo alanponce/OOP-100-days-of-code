@@ -40,21 +40,14 @@
 
 
 >## Classes
->>### Employee: 
->>This is the base class of the employees in which we find information about them.
+>>### Employee: This is the base class of the employees in which we find information about them.
 >>#### Attributes
->>##### ID:
->>Contains the ID of the employees
->>##### salary:
->>Contains the salary of the emplooyes
->>##### birthDate:
->>Contains the birth date of the employees(age)
->>##### name:
->>Contains the name of the employees
->>##### lastName:
->>Contains the last name of the employees 
->>##### charge:
->>Contains the charge of the employee(finance,logistic etc)
+>>##### ID: Contains the ID of the employees
+>>##### salary: Contains the salary of the emplooyes
+>>##### birthDate: Contains the birth date of the employees(age)
+>>##### name: Contains the name of the employees
+>>##### lastName: Contains the last name of the employees 
+>>##### charge: Contains the charge of the employee(finance,logistic etc)
 >>
 >>### Trip:
 >>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the number of passengers.
