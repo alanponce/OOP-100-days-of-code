@@ -171,6 +171,25 @@ Bajas:
 
 ![BajasHotel](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Dise%C3%B1o%20Interface%20Grafica/Bajas.PNG)
 
+3.1.2 Hardware Requirements
+
+Esta aplicacion no requiere cosas adicionales a una computadora y una red, ya que la base de datos de esta misma esta conectada a todas las computadoras, la base de datos esta ubicada en cada una de ellas y es actulizada al momento.
+
+3.1.3
+
+Software interfaces
+
+Estas solo seran elaboradas con cada proceso tales como:
+* Entrar al system siendo un usuario o administrador.
+* Dar de alta reservaciones.
+* Hacer cambios en la reservaciones.
+* Eliminar Reservaciones.
+* Un menu donde escojamos el tipo de proceso o salir del systema
+
+3.1.4 Communications interfaces
+La comunicacion entre la interfaces se maneja atraves del CRUD en la base de datos, estas interfaces lo que hacen es revisar la informacion de la base de datos y hacer modificaciones, tal como dar altas, bajas y cambios.
+
+
 
 3.2 Functional requirements.
 
