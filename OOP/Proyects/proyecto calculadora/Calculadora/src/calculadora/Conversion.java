@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package calculadora;
-
+import java.lang.Integer;
 /**
  *
  * @author alex

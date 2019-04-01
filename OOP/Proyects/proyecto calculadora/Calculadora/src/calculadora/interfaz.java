@@ -62,6 +62,17 @@ public class interfaz extends javax.swing.JFrame {
         potencia = new javax.swing.JButton();
         PI = new javax.swing.JButton();
         Bina = new javax.swing.JButton();
+        Octal = new javax.swing.JButton();
+        Hex = new javax.swing.JButton();
+        txtnumero = new javax.swing.JTextField();
+        lblhex = new javax.swing.JLabel();
+        lblbin = new javax.swing.JLabel();
+        lbloctal = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -261,6 +272,46 @@ public class interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(Bina, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 40, 30));
 
+        Octal.setText("Oct");
+        Octal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OctalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Octal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 50, 30));
+
+        Hex.setText("Hex");
+        getContentPane().add(Hex, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 60, 30));
+
+        txtnumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnumeroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 120, 30));
+
+        lblhex.setText("n.n");
+        getContentPane().add(lblhex, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 50, 20));
+
+        lblbin.setText(" :v");
+        getContentPane().add(lblbin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 50, 20));
+
+        lbloctal.setText("XD");
+        getContentPane().add(lbloctal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 50, 20));
+
+        jLabel3.setText("Hexadecimal");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 70, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 50, 0));
+
+        jLabel5.setText("Binario");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 50, -1));
+
+        jLabel6.setText("Octal");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 50, -1));
+
+        jLabel7.setText("Conversion");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 120, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -437,6 +488,21 @@ public class interfaz extends javax.swing.JFrame {
          etiqueta2.setText("Binary"); // se imprimira un Binary al dar clik en el boton de binario
         }
     }//GEN-LAST:event_BinaActionPerformed
+
+    private void OctalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OctalActionPerformed
+       
+    }//GEN-LAST:event_OctalActionPerformed
+
+    private void txtnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumeroActionPerformed
+        String Num=null;
+         Num=txtnumero.getText();
+         Conversion CN=new Conversion();
+         lblhex.setText(CN.intoHex(new Integer(Num)));
+         lblbin.setText(CN.inToBin(new Integer(Num) ));
+         lbloctal.setText(CN.intoOct(new Integer(Num)));
+         
+         
+    }//GEN-LAST:event_txtnumeroActionPerformed
   
     void operaciones(){
         // se declara la clase operaciones
@@ -486,11 +552,11 @@ public class interfaz extends javax.swing.JFrame {
      // y se mandara el resultado a l variable de numero2 
      }
      if(etiqueta2.getText().equals("Bina")){
-         
          String Num=null;
          Num=etiqueta1.getText();
          Conversion CN=new Conversion();
-         etiqueta3.getText(CN.intoHex(new Integer(Num)));
+         
+         
      }
      etiqueta3.setText(""); // en la etiqueta3 se imprime un ""
      numero1=""; //numero1 quedara declarado como ""
@@ -536,6 +602,8 @@ public class interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bina;
+    private javax.swing.JButton Hex;
+    private javax.swing.JButton Octal;
     private javax.swing.JButton PI;
     private javax.swing.JButton borrar;
     private javax.swing.JButton div;
@@ -544,6 +612,14 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel etiqueta3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lblbin;
+    private javax.swing.JLabel lblhex;
+    private javax.swing.JLabel lbloctal;
     private javax.swing.JButton mul;
     private javax.swing.JButton num0;
     private javax.swing.JButton num1;
@@ -560,5 +636,6 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JButton res;
     private javax.swing.JButton resultado;
     private javax.swing.JButton sum;
+    private javax.swing.JTextField txtnumero;
     // End of variables declaration//GEN-END:variables
 }
