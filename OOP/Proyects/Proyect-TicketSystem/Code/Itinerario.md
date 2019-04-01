@@ -10,7 +10,7 @@
       <li>Consult Seats</li>
       <li>Make Sales Report</li>
    </ul>
-   <li>Usuario Finanzaz <i>Encarcagado: Ivan Valdes</i> </li>
+   <li>Usuario Finanzaz <i>Encarcagado: Ivan Valdez</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Day Sales</li>
@@ -22,7 +22,7 @@
      <li>Ticket Information</li>
      <li>Trip Information</li>
    </ul>
-   <li>System Manager <i>Encarcagados: Ulises Hernandez, Ivan Valdes, Roberto Mares</i> </li>
+   <li>System Manager <i>Encarcagados: Ulises Hernandez, Ivan Valdez, Roberto Mares</i> </li>
    <ul>
      <li>Main Menu</li>
      <li>Add User</li>
