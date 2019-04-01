@@ -34,7 +34,7 @@ a.2)Las habitaciones tienen diferentes caracteristicas tales como la capacidad d
 
 b)Al momento de hacer la reservacion el recepcionista en todo momento estara mostrando las cantidades y los costos al cliente para que este sepa los cargos de dinero que se le estan haciendo.
 
-c)La autenficacion del cliente se efectual al momento posterior al pago final.
+c)La autenficacion del cliente se realiza antes de hacer el pago, revisar si la reservacion que el hizo esta bien hecha y que obtenga lo que el reservo, no cambiar de habitaciones a menos que haya disponibles o no reservadas.
 
 d)Los administradores del hotel tienen acceso a cada parte del front end del systema, los recepcionistas tendran accesos restringidos tales como solo dar altas del systema.
 
