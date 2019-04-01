@@ -38,7 +38,7 @@ c)La autenficacion del cliente se realiza antes de hacer el pago, revisar si la 
 
 d)Los administradores del hotel tienen acceso a cada parte del front end del systema, los recepcionistas tendran accesos restringidos tales como solo dar altas del systema.
 
-1.3 Glosary (Definiciones difieren a las de la base de datos, Y falta diferenciar entre habitcion doble con 1 cama y con dos):
+1.3 Glosary (Definiciones difieren a las de la (base de datos) no es base de datos, Y falta diferenciar entre habitcion doble con 1 cama y con dos)://Corregir esta parte con la descripcion de las tablas de Excel
 
  Descripción de las habitaciones:
  * Individual: Ideal para quienes viajan solos. No tienes más espacio del que necesitas, y además el precio se adecúa a las necesidades de todos aquellos huéspedes que buscan tener un lugar tranquilo para descansar en sus viajes de placer o negocios.
