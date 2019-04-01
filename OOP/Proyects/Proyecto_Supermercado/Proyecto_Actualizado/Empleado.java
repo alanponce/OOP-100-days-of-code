@@ -22,7 +22,7 @@ class Carnicero extends Empleado{//La clase carnicero es heredada de la clase em
    }
    //Se crea el método Catalogo, que imprime una lista con los artículos disponibles en la carnicería del supermercado.
    void Catalogo(){
-    Eleccion = JOptionPane.showInputDialog(null,"El día de hoy contamos con: \n1. Chuleta de Cerdo \n2. Carne Molida \n3. Lengua \n4. Salchicha \n5. Chorizo \n6. Chicharrón de Cerdo \n7. Milanesa de Cerdo \n8. Costilla de Cerdo \n9. Sirloin de Ternera \n10. Pata de Res \n0. Ir a otra sección \nEscoge un número:");
+    Eleccion = JOptionPane.showInputDialog(null,"El día de hoy contamos con: \n1. Chuleta de Cerdo $92 \n2. Carne Molida $118 \n3. Lengua $260 \n4. Salchicha $98 \n5. Chorizo $60 \n6. Chicharrón de Cerdo $176 \n7. Milanesa de Cerdo $94\n8. Costilla de Cerdo $110\n9. Sirloin de Ternera $229\n10. Pata de Res $54\n0. Ir a otra sección \nEscoge un número:");
    }
    public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
@@ -86,7 +86,7 @@ class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase emp
     }
     //Se crea el método Estantes, que imprime una lista con los artículos disponibles en la frutería del supermercado.
     void Estantes(){ 
-        Eleccion = JOptionPane.showInputDialog(null,"En esta sección hay estantes con diferentes productos: \n1. Manzana \n2. Naranja \n3. Platano \n4. Mango \n5.Guayaba \n6. Zanahoria \n7. Cebolla \n8. Apio \n9. Brócoli \n10. Lechuga \n0. Ir a otra sección");
+        Eleccion = JOptionPane.showInputDialog(null,"En esta sección hay estantes con diferentes productos: \n1. Manzana $35 \n2. Naranja $13 \n3. Platano $16 \n4. Mango $40 \n5.Guayaba $39 \n6. Zanahoria $16 \n7. Cebolla $30 \n8. Apio $26 \n9. Brócoli $39 \n10. Lechuga $18\n0. Ir a otra sección");
     }
     public void Eleccion(){ //Se crea el método elección, que imprime en pantalla el artículo elegido junto con su cantidad.
         JOptionPane.showMessageDialog(null,"Has decidido elegir "+Cantidad+" Kg de "+Articulo);
@@ -145,7 +145,7 @@ class Pescadero extends Empleado{
     }
   //Se crea el método Catalogo, que imprime una lista con los artículos disponibles en la pescadería del supermercado.
     void Catalogo(){
-    Eleccion = JOptionPane.showInputDialog(null,"Hoy tenemos: \n1. Filete de Basa \n2. Camarón \n3. Filete de Salmón \n4. Filete de Pescado de Alaska \n5. Filete de Mojarra \n6. Barrita de Pescado \n7. Mojarra Entera \n8. Huachinango \n9. Pescado para Caldo \n10. Figuritas de Pescado Empanizado \n0. Ir a otra sección");
+    Eleccion = JOptionPane.showInputDialog(null,"Hoy tenemos: \n1. Filete de Basa $100 \n2. Camarón $275 \n3. Filete de Salmón $375 \n4. Filete de Pescado de Alaska $90 \n5. Filete de Mojarra $105 \n6. Barrita de Pescado $79 \n7. Mojarra Entera $64 \n8. Huachinango $269 \n9. Pescado para Caldo $85 \n10. Figuritas de Pescado Empanizado $79 \n0. Ir a otra sección");
     }
     public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aquí tiene su "+Articulo+", "+Cantidad+" Kg");
@@ -198,8 +198,8 @@ class Pescadero extends Empleado{
 }
 class Cajero extends Empleado{//La clase cajero es heredada de la clase empleado para simular a un cajero de supermercado.
  //Se declaran atributos propios de la clase cajero.
- static String Articulos = "";
- static float Total;
+ private static String Articulos = "";
+ private static float Total;
  @Override
    public void Presentacion(){
    JOptionPane.showMessageDialog(null,"Hola, soy "+Nombre+" y hoy voy a ser su "+Puesto);
@@ -213,6 +213,22 @@ JOptionPane.showMessageDialog(null,"Van a ser "+Total+" pesos.");
       this.Nombre = Nombre;
       this.Puesto = Puesto;
   }
+    public static String getArticulos() {
+        return Articulos;
+    }
+
+    public static void setArticulos(String Articulos) {
+        Cajero.Articulos = Articulos;
+    }
+
+    public static float getTotal() {
+        return Total;
+    }
+
+    public static void setTotal(float Total) {
+        Cajero.Total = Total;
+    }
+  
 }
 class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
   //Se declaran los atributos d     e la clase Articulo
