@@ -55,6 +55,7 @@ public class ClientesAnalisis {
 
     public void CrearTabla(String nombreDeTabla) {
         // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
+        //Genera la sentencia principal para buscar por nombre y apellidos
         String crearTabla = "CREATE TABLE IF NOT EXISTS " + nombreDeTabla + " (id INTEGER not NULL, "
                 + " nombre VARCHAR(255), " + " apellidoP VARCHAR(255), " + " apellidoM VARCHAR(255), "
                 + " telefono VARCHAR(100), " + " correo VARCHAR(100), " + " asesor VARCHAR(100), "
@@ -67,19 +68,27 @@ public class ClientesAnalisis {
         // "(5, 'Dexter','Polo','Chuk', '20120112','dexter@correo.com','Penelope')";
         // "(6, 'Jim','Corsario','Chong', '45120112','corsario@puk.com','Andrea'),"+
         try {
+            // Se genera la sentencia 
             Statement sentencia = conexion.createStatement();
-            System.out.println("Base creada");
+            //Depuracion
+            //System.out.println("Base creada");
+            // Se ejecuta la sentencia 
             sentencia.executeUpdate(crearTabla);
         } catch (SQLException sqle) {
-            // solo depuracion
+            // solo depuracion se genera el codigo de error
             System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
 
     public ResultSet BuscarNombre(String Nombre, String Apellido) {
+        //Si la tabla no existe se crea
         CrearTabla("miregistro");
-        ResultSet rs=null;
-        String busqueda = "SELECT apellidoP, apellidoM, telefono, correo, asesor FROM KDJroUoqfj.miregistro WHERE nombre = '"+Nombre+"'";
+        //Se crea la variable para resultados
+        ResultSet rs = null;
+        // Si no se ingresa  un nombre se muestra todo
+        if (Nombre != "")
+             Nombre=" WHERE nombre = '"+Nombre+"'";
+        String busqueda = "SELECT apellidoP, apellidoM, telefono, correo, asesor FROM KDJroUoqfj.miregistro"+Nombre;
                 try {
        PreparedStatement sentencia = conexion.prepareStatement(busqueda);
         //sentencia.setString(1,Nombre);

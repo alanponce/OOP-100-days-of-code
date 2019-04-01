@@ -9,7 +9,7 @@ package midocumento;
  *
  * @author George Rodriguez
  */
-public class clientes {
+public class Clientes {
     // Es el identificador único  del cliente
     private Long id;
     // Almacena el nombre del cliente
@@ -25,7 +25,7 @@ public class clientes {
     // Almacena el asesor designado al cliente
     private String asesor;
 
-    public clientes(){}
+    public Clientes(){}
         // Asigna un valor a Id
         public void setId(Long id) {
             this.id = id;
@@ -37,7 +37,7 @@ public class clientes {
         
         // Asigna un valor a Nombre
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = Character.toUpperCase(nombre.charAt(0)) + nombre.substring(1);
     }
         
     // Obtiene el valor actual de Nombre
@@ -47,7 +47,7 @@ public class clientes {
         
     // Asigna un valor a Apellido paterno
     public void setApellidoP(String apellidoP) {
-        this.apellidoP = apellidoP;
+        this.apellidoP = Character.toUpperCase(apellidoP.charAt(0)) + apellidoP.substring(1);
     }
 
     // Obtiene el valor actual de Apellido paterno
@@ -57,7 +57,7 @@ public class clientes {
     
     // Asigna un valor a Apellido materno
     public void setApellidoM(String apellidoM) {
-        this.apellidoM = apellidoM;
+        this.apellidoM = Character.toUpperCase(apellidoM.charAt(0)) + apellidoM.substring(1);
     }
     
     // Obtiene el valor actual de Apellido materno
@@ -67,7 +67,7 @@ public class clientes {
     
     // Asigna un valor a telefono
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        this.telefono = Character.toUpperCase(telefono.charAt(0)) + telefono.substring(1);
     }
 
     // Obtiene el valor actual de Telefono
@@ -77,7 +77,7 @@ public class clientes {
     
     // Asigna un valor a correo
     public void setCorreo(String correo) {
-        this.correo = correo;
+        this.correo = Character.toUpperCase(correo.charAt(0)) + correo.substring(1);
     }
     // Obtiene el valor actual de correo
     public String getCorreo() {
@@ -86,7 +86,7 @@ public class clientes {
     
     // Asigna un valor a asesor
     public void setAsesor(String asesor) {
-        this.asesor = asesor;
+        this.asesor = Character.toUpperCase(asesor.charAt(0)) + asesor.substring(1);
     }
     
     // Obtiene el valor actual de asesor

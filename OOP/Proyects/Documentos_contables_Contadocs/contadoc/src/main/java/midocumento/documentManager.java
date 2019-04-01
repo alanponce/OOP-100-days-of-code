@@ -6,6 +6,9 @@
 package midocumento;
 
 // permite recuperar los resultados de las transacciones realizadas
+// esta libreria permite el ingreso de teclas
+import java.awt.event.KeyEvent;
+// Esta libreria permite almacenar los resultados de la consulta
 import java.sql.ResultSet;
 // Permite controlar las excepciones de las solicitudes enviadas
 import java.sql.SQLException;
@@ -204,10 +207,16 @@ public class documentManager extends javax.swing.JFrame {
         jTAResultados.setRows(5);
         jScrollPane1.setViewportView(jTAResultados);
 
+        jBBuscarC.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jBBuscarC.setText("Buscar");
         jBBuscarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBBuscarCActionPerformed(evt);
+            }
+        });
+        jBBuscarC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jBBuscarCKeyPressed(evt);
             }
         });
 
@@ -234,9 +243,9 @@ public class documentManager extends javax.swing.JFrame {
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTFApellidoC, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTFNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(157, 157, 157)
-                .addComponent(jBBuscarC)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addGap(146, 146, 146)
+                .addComponent(jBBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -582,7 +591,7 @@ public class documentManager extends javax.swing.JFrame {
 
     //Se instancian los objetos globales
     //cliente es el objeto que captura todos sus atributos y los manda a la base de datos
-    clientes cliente=new clientes();   
+    Clientes cliente=new Clientes();   
     //ubicacion es el objeto que captura todos sus atributos y los manda a la base de datos
     ubicaciones ubicacion=new ubicaciones();
     //documento es el objeto que captura todos sus atributos y los manda a la base de datos
@@ -627,68 +636,73 @@ public class documentManager extends javax.swing.JFrame {
         jDGuardado.setVisible(false);
     }
 
-    public void mostrar(String Cliente,String Tipo,String Documento,String Ubicacion,String Referencia,String Asesor){
-    jTAResultados.setText(jTAResultados.getText()+"\nCliente: "+Cliente+"\n");
-    jTAResultados.setText(jTAResultados.getText()+"Tipo: "+Tipo + "                                              "+"Asesor: "+Asesor +"\n");
-    jTAResultados.setText(jTAResultados.getText()+"Documento: "+Documento+"\n");
+   // public void mostrar(String Cliente, String Tipo, String Documento, String Ubicacion, String Referencia,
+     //       String Asesor) {
+    public void mostrar(Clientes Cliente, String Tipo, String Documento, String Ubicacion, String Referencia) {
+        jTAResultados.setText(jTAResultados.getText() + "\nCliente: " + Cliente.getNombre()+" "+Cliente.getApellidoP()+" "+Cliente.getApellidoM() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Tipo: " + Tipo
+                + "                                              " + "Asesor: " + Cliente.getAsesor() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Documento: " + Documento + "\n");
         jTAResultados.setText(jTAResultados.getText() + "Ubicacion: " + Ubicacion + "\n");
-    jTAResultados.setText(jTAResultados.getText()+ "Referencia: " + Referencia + "\n");
-    jTAResultados.setText(jTAResultados.getText()+"\n");
-    jTAResultados.setText(jTAResultados.getText()+"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Referencia: " + Referencia + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "\n");
+        jTAResultados.setText(jTAResultados.getText()
+                + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+                + "\n");
     }
-    private void jTFNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFNombreCActionPerformed
 
-    private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarCActionPerformed
-      //Si existe conexion se procede a  mostrar los resultados
-        // if (baseCliente.conexionDB("root",""))
+    public void Buscar() {
         /*
-         * You have successfully created a new MySQL database. Your details can be found
-         * below. Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l Server:
-         * remotemysql.com Port: 3306
+         * Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l
+         * Server:remotemysql.com Port: 3306
          */
-        if (baseCliente.conexionDB("KDJroUoqfj","bmlp5wFD3l"))
-      {
+        // if (baseCliente.conexionDB("root",""))
+        // Comprueba la conexión
+        // Si existe conexion se procede a mostrar los resultados
+        if (baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l")) {
+            //La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
-            ResultSet rs= baseCliente.BuscarNombre(jTFNombreC.getText(), "root");
-try{
-            while (rs.next()) {
-                String apellidoP = rs.getString("apellidoP");
-                String apellidoM = rs.getString("apellidoM");
-                String telefono = rs.getString("telefono");
-                String correo = rs.getString("correo");
-                String asesor = rs.getString("asesor");
-                    mostrar(jTFNombreC.getText()+" "+apellidoP+" "+apellidoM,"","","","",asesor);
-                System.out.print(jTFNombreC.getText() + " ");
-                System.out.print(apellidoP + " ");
-                System.out.print(apellidoM + " ");
-                System.out.print(telefono + " ");
-                System.out.print(correo + " ");
-                System.out.println(asesor);
-                // String username=rs.getString("nombre");
+            cliente.setNombre(jTFNombreC.getText());
+            ResultSet rs = baseCliente.BuscarNombre(cliente.getNombre(), "root");
+            jTAResultados.setText("");
+            try {
+                while (rs.next()) {
+                    cliente.setApellidoP(rs.getString("apellidoP"));
+                    cliente.setApellidoM(rs.getString("apellidoM"));
+                    cliente.setAsesor(rs.getString("asesor"));
+                    String telefono = rs.getString("telefono");
+                    String correo = rs.getString("correo");
+                    mostrar(cliente, "", "", "", "");
+                    System.out.print(jTFNombreC.getText() + " ");
+                    System.out.print(telefono + " ");
+                    System.out.print(correo + " ");
+                    // String username=rs.getString("nombre");
+                }
+            } catch (SQLException sqle) {
+                // solo depuracion
+                System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
             }
-        } catch (SQLException sqle) {
-            // solo depuracion
-            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
-        }               
-     /*  mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
-      mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
-      mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
-      mostrar("Juan Perez","Documento fisico" ,"Declaracion", "Archivero", "Sin referencia");
-      mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
- */      } else
-        {
-          //De otro modo indica que no se conecto
+         } else {
+            // De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
-      }
-      baseCliente.cerrarConexion();
+        }
+        baseCliente.cerrarConexion();
+    }
+    
+    private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarCActionPerformed
+        //Se inicia la busqueda
+        // Se muestra un mensaje para demostrar que se intenta conectar
+        jLConectadoC.setText("Conectando...");
+        Buscar();
     }//GEN-LAST:event_jBBuscarCActionPerformed
-
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jBBuscarCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBBuscarCKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            // Se muestra un mensaje para demostrar que se intenta conectar
+            jLConectadoC.setText("Conectando...");
+            Buscar();
+        }   
+    }//GEN-LAST:event_jBBuscarCKeyPressed
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
         // TODO add your handling code here:
@@ -713,18 +727,6 @@ try{
          jDGuardado.setVisible(true);
     }//GEN-LAST:event_jBAgregarNCActionPerformed
 
-    private void jTFEncabezadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFEncabezadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFEncabezadoActionPerformed
-
-    private void jLayeredPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLayeredPane1FocusLost
- 
-        
-    }//GEN-LAST:event_jLayeredPane1FocusLost
-
-    private void jLayeredPane2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPane2MouseExited
-
-    }//GEN-LAST:event_jLayeredPane2MouseExited
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
     //oculta los campos cuando se presiona el boton guardar 
@@ -746,9 +748,6 @@ try{
      jDEliminar.setVisible(false);
     }//GEN-LAST:event_jBSiActionPerformed
 
-    private void jTFNombreNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreNCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFNombreNCActionPerformed
 
     /**
      * @param args the command line arguments
