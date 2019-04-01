@@ -184,6 +184,11 @@ public class documentManager extends javax.swing.JFrame {
         setTitle("Contadoc");
         setName("Contadoc"); // NOI18N
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
@@ -217,6 +222,9 @@ public class documentManager extends javax.swing.JFrame {
         jBBuscarC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jBBuscarCKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jBBuscarCKeyTyped(evt);
             }
         });
 
@@ -595,7 +603,7 @@ public class documentManager extends javax.swing.JFrame {
     //ubicacion es el objeto que captura todos sus atributos y los manda a la base de datos
     ubicaciones ubicacion=new ubicaciones();
     //documento es el objeto que captura todos sus atributos y los manda a la base de datos
-    documentos documento = new documentos();
+    Documentos documento = new Documentos();
     //documento es el objeto que captura todos sus atributos y los manda a la base de datos
     ClientesAnalisis baseCliente = new ClientesAnalisis();
     //Numero maximo de elementos que se pueden manejar
@@ -636,15 +644,27 @@ public class documentManager extends javax.swing.JFrame {
         jDGuardado.setVisible(false);
     }
 
-   // public void mostrar(String Cliente, String Tipo, String Documento, String Ubicacion, String Referencia,
-     //       String Asesor) {
-    public void mostrar(Clientes Cliente, String Tipo, String Documento, String Ubicacion, String Referencia) {
-        jTAResultados.setText(jTAResultados.getText() + "\nCliente: " + Cliente.getNombre()+" "+Cliente.getApellidoP()+" "+Cliente.getApellidoM() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Tipo: " + Tipo
-                + "                                              " + "Asesor: " + Cliente.getAsesor() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Documento: " + Documento + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Ubicacion: " + Ubicacion + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Referencia: " + Referencia + "\n");
+    private String Alinear(String cad1, String cad2) {
+        // Alinea las cadenas de caracteres, es solo orden
+        for (int i = cad1.length(); i < 80; i++) {
+            cad1 = cad1 + " ";
+        }
+        return cad1 + cad2;
+    }
+         
+    public void mostrar(Clientes Cliente, Documentos Documento) {
+        String MiCliente= "\nCliente: " + Cliente.getNombre() + " "
+                + Cliente.getApellidoP() + " " + Cliente.getApellidoM();
+        String MiTipo = "Tipo: " + Documento.getTipo();
+        
+
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente , "Telefono: " ) + Cliente.getTelefono()
+                        + "\n");       
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor: ") + Cliente.getAsesor() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Documento: " + Documento.getEncabezado()
+                + "                                                 " + "Correo: " + Cliente.getCorreo() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Ubicacion: " + Documento.getUbicacion() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Referencia: " + Documento.getReferencia() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "\n");
         jTAResultados.setText(jTAResultados.getText()
                 + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -670,12 +690,15 @@ public class documentManager extends javax.swing.JFrame {
                     cliente.setApellidoP(rs.getString("apellidoP"));
                     cliente.setApellidoM(rs.getString("apellidoM"));
                     cliente.setAsesor(rs.getString("asesor"));
-                    String telefono = rs.getString("telefono");
-                    String correo = rs.getString("correo");
-                    mostrar(cliente, "", "", "", "");
+                    cliente.setTelefono(rs.getString("telefono"));
+                    cliente.setCorreo(rs.getString("correo"));
+                    documento.setEncabezado(rs.getString("encabezado"));
+                    documento.setTipo(rs.getString("tipo"));
+                    documento.setUbicacion(rs.getString("ubicacion"));
+                    documento.setReferencia(rs.getString("referencia"));
+
+                    mostrar(cliente,documento);
                     System.out.print(jTFNombreC.getText() + " ");
-                    System.out.print(telefono + " ");
-                    System.out.print(correo + " ");
                     // String username=rs.getString("nombre");
                 }
             } catch (SQLException sqle) {
@@ -696,13 +719,14 @@ public class documentManager extends javax.swing.JFrame {
         Buscar();
     }//GEN-LAST:event_jBBuscarCActionPerformed
     
-    private void jBBuscarCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBBuscarCKeyPressed
+    private void jBBuscarCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBBuscarCKeyTyped
+        System.out.println(evt.getKeyCode());
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             // Se muestra un mensaje para demostrar que se intenta conectar
             jLConectadoC.setText("Conectando...");
             Buscar();
-        }   
-    }//GEN-LAST:event_jBBuscarCKeyPressed
+        }
+    }//GEN-LAST:event_jBBuscarCKeyTyped
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
         // TODO add your handling code here:
@@ -747,6 +771,11 @@ public class documentManager extends javax.swing.JFrame {
     private void jBSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSiActionPerformed
      jDEliminar.setVisible(false);
     }//GEN-LAST:event_jBSiActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+             baseCliente.cerrarConexion();
+    }//GEN-LAST:event_formWindowClosed
+
 
 
     /**

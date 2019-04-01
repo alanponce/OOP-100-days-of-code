@@ -67,7 +67,7 @@ public class Clientes {
     
     // Asigna un valor a telefono
     public void setTelefono(String telefono) {
-        this.telefono = Character.toUpperCase(telefono.charAt(0)) + telefono.substring(1);
+        this.telefono = telefono;
     }
 
     // Obtiene el valor actual de Telefono
@@ -77,7 +77,7 @@ public class Clientes {
     
     // Asigna un valor a correo
     public void setCorreo(String correo) {
-        this.correo = Character.toUpperCase(correo.charAt(0)) + correo.substring(1);
+        this.correo = correo;
     }
     // Obtiene el valor actual de correo
     public String getCorreo() {

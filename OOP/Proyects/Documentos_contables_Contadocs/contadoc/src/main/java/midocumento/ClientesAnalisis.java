@@ -53,27 +53,54 @@ public class ClientesAnalisis {
         return false;
     }
 
-    public void CrearTabla(String nombreDeTabla) {
+    //public void LlenarTabla(Clientes cliente,Documentos documento) {
+    public void LlenarTabla() {
+        String dataTemporalC="INSERT INTO KDJroUoqfj.miregistro (nombre,apellidoP,apellidoM,telefono,correo,asesor) VALUES "+
+        "('Jim','Neutron','Pelaez', '20120112','neutron@correo.com','Andrea'),"+
+        "('Konan','Barbaro','Chilorio', '20155112','konan@correo.com','Petra'),"+
+        "('Fido','Logan','Rognan', '56665555','fido@correo.com','Petra'),"+
+        "('Rudo','Acan','Polux', '56565235','rudo@correo.com','Andrea'),"+
+        "('Dexter','Polo','Chuk', '20120112','dexter@correo.com','Penelope'),"+
+        "('Jim','Corsario','Chong', '45120112','corsario@puk.com','Andrea')";
+        String dataTemporalD="INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES "+
+        "(5,'Declaracion anual','Documento digital', 'Dropbox','c:/midropbox/miarchivo.pdf'),"+
+        "(4,'Declaracion anual','Documento digital', 'Dropbox','c:/midropbox/otroArchivo.pdf'),"+
+        "(2,'Factura','Documento digital', 'Dropbox','c:/midropbox/mifactura1.pdf'),"+
+        "(1,'RFC','Documento digital', 'Dropbox','c:/midropbox/miRFC.pdf'),"+
+        "(3,'RFC','Documento digital', 'Dropbox','c:/midropbox/otroRFC.pdf'),"+
+        "(6,'Aclaración','Documento digital', 'Dropbox','c:/midropbox/aclaracion.pdf')";
+        try {
+            // Se genera la sentencia
+            Statement sentencia = conexion.createStatement();
+            // Se ejecuta la sentencia
+            sentencia.executeUpdate(dataTemporalC);
+            sentencia.executeUpdate(dataTemporalD);
+           // sentencia.executeUpdate(crearTablaDocumentos);
+        } catch (SQLException sqle) {
+            // solo depuracion se genera el codigo de error
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
+    
+    public void CrearTabla(String nombreDeTablaC, String nombreDeTablaD) {
         // String crearBaseDeDatos = "CREATE DATABASE IF NOT EXISTS documentProject ";
         //Genera la sentencia principal para buscar por nombre y apellidos
-        String crearTabla = "CREATE TABLE IF NOT EXISTS " + nombreDeTabla + " (id INTEGER not NULL, "
+        String crearTablaClientes = "CREATE TABLE IF NOT EXISTS " + nombreDeTablaC + " (id INTEGER not NULL AUTO_INCREMENT, "
                 + " nombre VARCHAR(255), " + " apellidoP VARCHAR(255), " + " apellidoM VARCHAR(255), "
                 + " telefono VARCHAR(100), " + " correo VARCHAR(100), " + " asesor VARCHAR(100), "
                 + " PRIMARY KEY ( id ))";
-        // String dataTemporal="INSERT INTO KDJroUoqfj.miregistro VALUES "+
-        // "(1, 'Jim','Neutron','Pelaez', '20120112','neutron@correo.com','Andrea'),"+
-        // "(2, 'Konan','Barbaro','Chilorio', '20155112','konan@correo.com','Petra'),"+
-        // "(3, 'Fido','Logan','Rognan', '56665555','fido@correo.com','Petra'),"+
-        // "(4, 'Rudo','Acan','Polux', '56565235','rudo@correo.com','Andrea'),"+
-        // "(5, 'Dexter','Polo','Chuk', '20120112','dexter@correo.com','Penelope')";
-        // "(6, 'Jim','Corsario','Chong', '45120112','corsario@puk.com','Andrea'),"+
+        String crearTablaDocumentos = "CREATE TABLE IF NOT EXISTS " + nombreDeTablaD + " (id INTEGER not NULL AUTO_INCREMENT, "+ " id_cliente INTEGER not NULL, "
+                + " encabezado VARCHAR(255), " + " tipo VARCHAR(255), "+ " ubicacion VARCHAR(255), " + " referencia VARCHAR(255), "  + " PRIMARY KEY ( id ), "+"FOREIGN KEY(id_cliente) REFERENCES "+nombreDeTablaC+"(id))";
+    
         try {
             // Se genera la sentencia 
             Statement sentencia = conexion.createStatement();
             //Depuracion
             //System.out.println("Base creada");
             // Se ejecuta la sentencia 
-            sentencia.executeUpdate(crearTabla);
+            sentencia.executeUpdate(crearTablaClientes);
+            sentencia.executeUpdate(crearTablaDocumentos);
+            LlenarTabla();
         } catch (SQLException sqle) {
             // solo depuracion se genera el codigo de error
             System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
@@ -82,13 +109,13 @@ public class ClientesAnalisis {
 
     public ResultSet BuscarNombre(String Nombre, String Apellido) {
         //Si la tabla no existe se crea
-        CrearTabla("miregistro");
+        CrearTabla("miregistro","docregistro");
         //Se crea la variable para resultados
         ResultSet rs = null;
         // Si no se ingresa  un nombre se muestra todo
-        if (Nombre != "")
-             Nombre=" WHERE nombre = '"+Nombre+"'";
-        String busqueda = "SELECT apellidoP, apellidoM, telefono, correo, asesor FROM KDJroUoqfj.miregistro"+Nombre;
+        //if (Nombre != "")
+         //    Nombre=" WHERE (id=id_cliente) AND (nombre='"+Nombre+")'";
+        String busqueda = "SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente) AND (reg.nombre='"+Nombre+"')";
                 try {
        PreparedStatement sentencia = conexion.prepareStatement(busqueda);
         //sentencia.setString(1,Nombre);
