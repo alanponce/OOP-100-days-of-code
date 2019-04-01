@@ -144,6 +144,20 @@ Nombre del Cliente | String | el nombre del cliente
 Apellido del Cliente | String | el apellido del cliente
 Telefono | LongInt | numero de telefono del cliente
 
+3.1.1 User Interfaces
+
+Login:
+
+![LogIn](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Dise%C3%B1o%20Interface%20Grafica/LogIn.PNG)
+
+Altas de registro del hotel:
+
+![AltasHotel](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Bocetos/AltasHotel.PNG) 
+
+Bajas:
+![BajasHotel](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Dise%C3%B1o%20Interface%20Grafica/Bajas.PNG)
+
+
 3.2 Functional requirements.
 
 Esta sección incluye los requerimientos que especifican todas las acciones fundamentales del sistema de software del proyecto de reservaciones de habitaciones del Hotel Foráneos CU. 
