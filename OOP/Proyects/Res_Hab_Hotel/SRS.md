@@ -3,6 +3,17 @@ Observciones:
 1.3
 
 # Software Requirement Specification (SRS) para Systema de Reservación de Hotel CU
+ 
+ *** 
+ 
+Index
+
+- [1.-Introduccion](#Introduccion)
+- [2.-Overall Description](#Overall-Description)
+- [3.-Specific Requirements](#Specific-Requirements)
+- [3.2 .-Functional requirements](#Functional-requirements)
+***
+
 > 1.-Introduccion
 
 1.1 Purpose:
