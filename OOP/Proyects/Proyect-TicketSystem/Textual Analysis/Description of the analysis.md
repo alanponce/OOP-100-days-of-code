@@ -41,7 +41,20 @@
 
 >## Classes
 >>### Employee: 
->>In this class, we found the different types of employees like Sales Employee Manager,Supervisor etc.
+>>This is the base class of the employees in which we find information about them.
+>>#### Attributes
+>>##### ID:
+>>Contains the ID of the employees
+>>##### salary:
+>>Contains the salary of the emplooyes
+>>##### birthDate:
+>>Contains the birth date of the employees(age)
+>>##### name:
+>>Contains the name of the employees
+>>##### lastName:
+>>Contains the last name of the employees 
+>>##### charge:
+>>Contains the charge of the employee(finance,logistic etc)
 >>
 >>### Trip:
 >>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the number of passengers.
@@ -51,6 +64,26 @@
 >>
 >>### Tickets: 
 >>In this class, we will generate the id number, only exist a 1 number for a 1 ticket,we will set the number of pasenger fo the ticket, and we add the destiny
->>### Customers:
+>>
+>>### Client:
 >>The client class will have the information of the client to keep the purchases of the same, name, seat number etc.
-
+>>
+>>#### Attributes
+>>##### name: 
+>>Contains the name of the client
+>>##### lastName:
+>>Contains the Last name of the client
+>>##### age:
+>>Contains the age of the client
+>>##### phone:
+>>Contains the phone of the client
+>>##### cost:
+>>Contains the cost of the client
+>>
+>>#### Methods:
+>>##### searchTrip:
+>>This method lets see the information of the trip of the ticket buyed
+>>##### setTrip:
+>>This method assigns the buyed trip to the client.
+>>##### setTime:
+>>This method register the date of attention of the client
