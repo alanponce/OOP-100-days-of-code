@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import java.sql.PreparedStatement;
 // permite recuperar los resultados de las transacciones realizaadas
 import java.sql.ResultSet;
+// Esta libreria gestiona las peticiones
 import java.sql.Statement;
 
 /**
@@ -64,6 +65,7 @@ public class ClientesAnalisis {
         // "(3, 'Fido','Logan','Rognan', '56665555','fido@correo.com','Petra'),"+
         // "(4, 'Rudo','Acan','Polux', '56565235','rudo@correo.com','Andrea'),"+
         // "(5, 'Dexter','Polo','Chuk', '20120112','dexter@correo.com','Penelope')";
+        // "(6, 'Jim','Corsario','Chong', '45120112','corsario@puk.com','Andrea'),"+
         try {
             Statement sentencia = conexion.createStatement();
             System.out.println("Base creada");
@@ -74,32 +76,23 @@ public class ClientesAnalisis {
         }
     }
 
-    public void BuscarNombre(String Nombre, String Apellido) {
+    public ResultSet BuscarNombre(String Nombre, String Apellido) {
         CrearTabla("miregistro");
+        ResultSet rs=null;
         String busqueda = "SELECT apellidoP, apellidoM, telefono, correo, asesor FROM KDJroUoqfj.miregistro WHERE nombre = '"+Nombre+"'";
                 try {
        PreparedStatement sentencia = conexion.prepareStatement(busqueda);
         //sentencia.setString(1,Nombre);
-        ResultSet rs = sentencia.executeQuery(busqueda);
-        while (rs.next()) {
-            String apellidoP = rs.getString("apellidoP");
-            String apellidoM = rs.getString("apellidoM");
-            String telefono = rs.getString("telefono");
-            String correo = rs.getString("correo");
-            String asesor = rs.getString("asesor");
-            System.out.println(apellidoP);
-            System.out.println(apellidoM);
-            System.out.println(telefono);
-            System.out.println(correo);
-            System.out.println(asesor);
-            // String username=rs.getString("nombre");
-        }
+        rs = sentencia.executeQuery(busqueda);
+
         } catch (SQLException sqle) {
             // solo depuracion
             System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
- 
-        try {
+                return rs;
+    }
+    public void cerrarConexion(){
+                try {
             if (conexion != null)
                 conexion.close();
         } catch (SQLException se) {

@@ -5,9 +5,13 @@
  */
 package midocumento;
 
+// permite recuperar los resultados de las transacciones realizadas
+import java.sql.ResultSet;
+// Permite controlar las excepciones de las solicitudes enviadas
+import java.sql.SQLException;
 /**
  *
- * @author WAX
+ * @author George Rodriguez
  */
 public class documentManager extends javax.swing.JFrame {
 
@@ -623,13 +627,14 @@ public class documentManager extends javax.swing.JFrame {
         jDGuardado.setVisible(false);
     }
 
-    public void mostrar(String Cliente,String Tipo,String Documento,String Ubicacion,String Referencia){
+    public void mostrar(String Cliente,String Tipo,String Documento,String Ubicacion,String Referencia,String Asesor){
     jTAResultados.setText(jTAResultados.getText()+"\nCliente: "+Cliente+"\n");
-    jTAResultados.setText(jTAResultados.getText()+"Tipo: "+Tipo + "                                       "+"Referencia: "+Referencia +"\n");
-    jTAResultados.setText(jTAResultados.getText()+"Documento: "+Documento + "\n");
-    jTAResultados.setText(jTAResultados.getText()+"Ubicacion: "+Ubicacion+ "\n");
+    jTAResultados.setText(jTAResultados.getText()+"Tipo: "+Tipo + "                                              "+"Asesor: "+Asesor +"\n");
+    jTAResultados.setText(jTAResultados.getText()+"Documento: "+Documento+"\n");
+        jTAResultados.setText(jTAResultados.getText() + "Ubicacion: " + Ubicacion + "\n");
+    jTAResultados.setText(jTAResultados.getText()+ "Referencia: " + Referencia + "\n");
     jTAResultados.setText(jTAResultados.getText()+"\n");
-    jTAResultados.setText(jTAResultados.getText()+"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n");
+    jTAResultados.setText(jTAResultados.getText()+"-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n");
     }
     private void jTFNombreCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreCActionPerformed
         // TODO add your handling code here:
@@ -646,17 +651,38 @@ public class documentManager extends javax.swing.JFrame {
         if (baseCliente.conexionDB("KDJroUoqfj","bmlp5wFD3l"))
       {
             jLConectadoC.setText("Conectado");
-            baseCliente.BuscarNombre("Jim", "root");
-      mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
+            ResultSet rs= baseCliente.BuscarNombre(jTFNombreC.getText(), "root");
+try{
+            while (rs.next()) {
+                String apellidoP = rs.getString("apellidoP");
+                String apellidoM = rs.getString("apellidoM");
+                String telefono = rs.getString("telefono");
+                String correo = rs.getString("correo");
+                String asesor = rs.getString("asesor");
+                    mostrar(jTFNombreC.getText()+" "+apellidoP+" "+apellidoM,"","","","",asesor);
+                System.out.print(jTFNombreC.getText() + " ");
+                System.out.print(apellidoP + " ");
+                System.out.print(apellidoM + " ");
+                System.out.print(telefono + " ");
+                System.out.print(correo + " ");
+                System.out.println(asesor);
+                // String username=rs.getString("nombre");
+            }
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }               
+     /*  mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"Factura", "DropBox", "Sin referencia");
       mostrar("Juan Perez","Documento fisico" ,"Declaracion", "Archivero", "Sin referencia");
       mostrar("Juan Perez","Documento Digital" ,"RFC", "DropBox", "Sin referencia");
-      } else
+ */      } else
         {
           //De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
       }
+      baseCliente.cerrarConexion();
     }//GEN-LAST:event_jBBuscarCActionPerformed
 
 
