@@ -14,7 +14,7 @@ Index
 - [3.2 .-Functional requirements](#Functional-requirements)
 ***
 
-> 1.-Introduccion
+## Introduccion ##
 
 1.1 Purpose:
 
@@ -69,7 +69,7 @@ En este systema se tendra restricciones entre el recepcionista y el administrado
 
 El cliente tendra a su dispocision diferentes habitaciones en cual podra hacer registro de la que se encuentren disponibles y la que guste reservar.
 
->2.- Overall Description
+## Overall-Description ##
 
 El systema funcionara usando el CRUD (create, read, update and delete), de una base de datos apartir de un sistema usando diferentes interfaces con cada uno de estos propositos:
 
@@ -141,7 +141,7 @@ Administrador:
 
 Los requisitos de la forma de pago atraves de tranferencias bancareas seras desplasadas al la siguiente etapa de mejoramiento del sistema, si es que no se encuentra la forma ideal para este metodo de pago.
 
-> 3.- Specific Requirements
+## Specific Requirements ##
 
 3.1 External Requirements:
 * Tener instalado en las comnputadoras de trabajo de MySQL(ultima version disponible)
@@ -202,7 +202,7 @@ La comunicacion entre la interfaces se maneja atraves del CRUD en la base de dat
 
 
 
-3.2 Functional requirements.
+## Functional requirements ##
 
 Esta sección incluye los requerimientos que especifican todas las acciones fundamentales del sistema de software del proyecto de reservaciones de habitaciones del Hotel Foráneos CU. 
 
