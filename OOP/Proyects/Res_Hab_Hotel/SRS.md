@@ -144,6 +144,19 @@ Nombre del Cliente | String | el nombre del cliente
 Apellido del Cliente | String | el apellido del cliente
 Telefono | LongInt | numero de telefono del cliente
 
+* Entrada en la tabla de Registro
+
+Nombre de la entrada | Tipo de dato | Descripcion
+------------ | ------------- | -------------
+ID_Registro | int | identificador del registro
+ID_Habitacion | id | identificador del tipo de habitacion
+Tipos de Habitacion | String | Seleccionar el tipo de habitacion desean registrar
+No. de Habitacion | int | numero de la puerta de la habitacion
+Cantidad de habitaciones | int | cantidad de habitaciones a reservar
+Fecha_Entrada | date/int | la fecha en la cual el cliente inicia su entancia en e hotel
+Fecha_Salida | date/int | la fecha en la cual el cliente termina su entancia en e hotel
+ID_Cliente | int | identificador de cliente
+
 3.1.1 User Interfaces
 
 Login:
@@ -155,6 +168,7 @@ Altas de registro del hotel:
 ![AltasHotel](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Bocetos/AltasHotel.PNG) 
 
 Bajas:
+
 ![BajasHotel](https://github.com/alanponce/OOP-100-days-of-code/blob/master/OOP/Proyects/Res_Hab_Hotel/Dise%C3%B1o%20Interface%20Grafica/Bajas.PNG)
 
 
