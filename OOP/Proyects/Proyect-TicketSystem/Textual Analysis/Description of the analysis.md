@@ -40,7 +40,8 @@
 
 
 >## Classes
->>### Employee: This is the base class of the employees in which we find information about them.
+>>### Employee: 
+>>This is the base class of the employees in which we find information about them.
 >>#### Attributes
 >>##### ID: Contains the ID of the employees
 >>##### salary: Contains the salary of the emplooyes
