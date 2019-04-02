@@ -23,7 +23,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Chuleta.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto chuleta.
             Carnicero.setPrecio(Chuleta.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto chuleta.
             Carnicero.setCantidad(Chuleta.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto chuleta.
-            Carnicero.setTotal(Carnicero.getTotal()+Chuleta.getPrecio()*Chuleta.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto chuleta.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Chuleta.getPrecio()*Chuleta.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto chuleta.
             //Verificar si la asignacion de valores a estos atributos de la clase carnicero se puede realizar de una manera que use menos codigo.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Chuleta.getNombre()+", $"+Chuleta.getPrecio()+", lleva "+Chuleta.getCantidad()+" Kg");
@@ -34,7 +34,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Molida.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto molida.
             Carnicero.setPrecio(Molida.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto molida.
             Carnicero.setCantidad(Molida.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto molida.
-            Carnicero.setTotal(Carnicero.getTotal()+Molida.getPrecio()*Molida.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto molida.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Molida.getPrecio()*Molida.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto molida.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Molida.getNombre()+", $"+Molida.getPrecio()+", lleva "+Molida.getCantidad()+" Kg");
             break;
@@ -44,7 +44,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Lengua.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Lengua.
             Carnicero.setPrecio(Lengua.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Lengua.
             Carnicero.setCantidad(Lengua.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Lengua.
-            Carnicero.setTotal(Carnicero.getTotal()+Lengua.getPrecio()*Lengua.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Lengua.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Lengua.getPrecio()*Lengua.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Lengua.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Lengua.getNombre()+", $"+Lengua.getPrecio()+", lleva "+Lengua.getCantidad()+" Kg");
             break;
@@ -54,7 +54,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Salchicha.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Salchicha.
             Carnicero.setPrecio(Salchicha.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Salchicha.
             Carnicero.setCantidad(Salchicha.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Salchicha.
-            Carnicero.setTotal(Carnicero.getTotal()+Salchicha.getPrecio()*Salchicha.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Salchicha.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Salchicha.getPrecio()*Salchicha.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Salchicha.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Salchicha.getNombre()+", $"+Salchicha.getPrecio()+", lleva "+Salchicha.getCantidad()+" Kg");
             break;
@@ -64,7 +64,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Chorizo.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Chorizo.
             Carnicero.setPrecio(Chorizo.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Chorizo.
             Carnicero.setCantidad(Chorizo.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Chorizo.
-            Carnicero.setTotal(Carnicero.getTotal()+Chorizo.getPrecio()*Chorizo.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Chorizo.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Chorizo.getPrecio()*Chorizo.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Chorizo.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Chorizo.getNombre()+", $"+Chorizo.getPrecio()+", lleva "+Chorizo.getCantidad()+" Kg");
             break;
@@ -74,7 +74,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Chicharron.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Chicharron.
             Carnicero.setPrecio(Chicharron.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Chicharron.
             Carnicero.setCantidad(Chicharron.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Chicharron.
-            Carnicero.setTotal(Carnicero.getTotal()+Chicharron.getPrecio()*Chicharron.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Chicharron.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Chicharron.getPrecio()*Chicharron.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Chicharron.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Chicharron.getNombre()+", $"+Chicharron.getPrecio()+", lleva "+Chicharron.getCantidad()+" Kg");
             break;
@@ -84,7 +84,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Milanesa.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Milanesa.
             Carnicero.setPrecio(Milanesa.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Milanesa.
             Carnicero.setCantidad(Milanesa.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Milanesa.
-            Carnicero.setTotal(Carnicero.getTotal()+Milanesa.getPrecio()*Milanesa.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Milanesa.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Milanesa.getPrecio()*Milanesa.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Milanesa.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Milanesa.getNombre()+", $"+Milanesa.getPrecio()+", lleva "+Milanesa.getCantidad()+" Kg");
             break;
@@ -94,7 +94,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Costilla.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Costilla.
             Carnicero.setPrecio(Costilla.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Costilla.
             Carnicero.setCantidad(Costilla.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Costilla.
-            Carnicero.setTotal(Carnicero.getTotal()+Costilla.getPrecio()*Costilla.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Costilla.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Costilla.getPrecio()*Costilla.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Costilla.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Costilla.getNombre()+", $"+Costilla.getPrecio()+", lleva "+Costilla.getCantidad()+" Kg");
             break;
@@ -104,7 +104,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Sirloin.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Sirloin.
             Carnicero.setPrecio(Sirloin.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Sirloin.
             Carnicero.setCantidad(Sirloin.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Sirloin.
-            Carnicero.setTotal(Carnicero.getTotal()+Sirloin.getPrecio()*Sirloin.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Sirloin.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Sirloin.getPrecio()*Sirloin.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Sirloin.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Sirloin.getNombre()+", $"+Sirloin.getPrecio()+", lleva "+Sirloin.getCantidad()+" Kg");
             break;
@@ -114,7 +114,7 @@ carnicero.Catalogo();//Se muestra el catalogo de productos que tiene la carnicer
             Carnicero.setArticulo(Pata.getNombre());//Se asigna el atributo de artículo en la clase carnicero con el nombre que posee el objeto Pata.
             Carnicero.setPrecio(Pata.getPrecio());//Se asigna el atributo de precio en la clase carnicero con el precio que posee el objeto Pata.
             Carnicero.setCantidad(Pata.getCantidad());//Se asigna el atributo de cantidad en la clase carnicero con la cantidad que posee el objeto Pata.
-            Carnicero.setTotal(Carnicero.getTotal()+Pata.getPrecio()*Pata.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Pata.
+            Carnicero.setPrecioTotal(Carnicero.getPrecioTotal()+Pata.getPrecio()*Pata.getCantidad());//Se asigna el atributo de precio total en la clase carnicero con el precio total que posee el objeto Pata.
             carnicero.Proceso();//Realiza el método Proceso de la clase Carnicero
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Pata.getNombre()+", $"+Pata.getPrecio()+", lleva "+Pata.getCantidad()+" Kg");
             break;
@@ -142,8 +142,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Manzana.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Manzana.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Manzana.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Manzana.getPrecio()*Manzana.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Manzana.getPrecio()*Manzana.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Manzana.getNombre()+", $"+Manzana.getPrecio()+", lleva "+Manzana.getCantidad()+" Kg");
             break;
          case 2:
@@ -152,8 +152,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Naranja.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Naranja.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Naranja.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Naranja.getPrecio()*Naranja.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Naranja.getPrecio()*Naranja.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Naranja.getNombre()+", $"+Naranja.getPrecio()+", lleva "+Naranja.getCantidad()+" Kg");
             break;
          case 3:
@@ -162,8 +162,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Platano.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Platano.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Platano.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Platano.getPrecio()*Platano.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Platano.getPrecio()*Platano.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Platano.getNombre()+", $"+Platano.getPrecio()+", lleva "+Platano.getCantidad()+" Kg");
             break;
          case 4:
@@ -172,8 +172,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Mango.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Mango.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Mango.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Mango.getPrecio()*Mango.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Mango.getPrecio()*Mango.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Mango.getNombre()+", $"+Mango.getPrecio()+", lleva "+Mango.getCantidad()+" Kg");
             break;
          case 5:
@@ -182,8 +182,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Guayaba.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Guayaba.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Guayaba.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Guayaba.getPrecio()*Guayaba.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Guayaba.getPrecio()*Guayaba.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Guayaba.getNombre()+", $"+Guayaba.getPrecio()+", lleva "+Guayaba.getCantidad()+" Kg");
             break;
          case 6:
@@ -192,8 +192,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Zanahoria.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Zanahoria.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Zanahoria.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Zanahoria.getPrecio()*Zanahoria.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Zanahoria.getPrecio()*Zanahoria.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Zanahoria.getNombre()+", $"+Zanahoria.getPrecio()+", lleva "+Zanahoria.getCantidad()+" Kg");
             break;
          case 7:
@@ -202,8 +202,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Cebolla.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Cebolla.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Cebolla.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Cebolla.getPrecio()*Cebolla.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Cebolla.getPrecio()*Cebolla.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Cebolla.getNombre()+", $"+Cebolla.getPrecio()+", lleva "+Cebolla.getCantidad()+" Kg");
             break;
          case 8:
@@ -212,8 +212,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Apio.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Apio.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Apio.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Apio.getPrecio()*Apio.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Apio.getPrecio()*Apio.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Apio.getNombre()+", $"+Apio.getPrecio()+", lleva "+Apio.getCantidad()+" Kg");
             break;
          case 9:
@@ -222,8 +222,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Brocoli.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Brocoli.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Brocoli.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Brocoli.getPrecio()*Brocoli.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Brocoli.getPrecio()*Brocoli.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Brocoli.getNombre()+", $"+Brocoli.getPrecio()+", lleva "+Brocoli.getCantidad()+" Kg");
             break;
          case 10:
@@ -232,8 +232,8 @@ fruteria.Estantes();//Se muestra la estanteria de productos que tiene la secció
             Fruteria.setArticulo(Lechuga.getNombre());//Se asigna el atributo de artículo en la clase fruteria con el nombre que posee el objeto.
             Fruteria.setPrecio(Lechuga.getPrecio());//Se asigna el atributo de precio en la clase fruteria con el precio que posee el objeto.
             Fruteria.setCantidad(Lechuga.getCantidad());//Se asigna el atributo de cantidad en la clase fruteria con la cantidad que posee el objeto.
-            Fruteria.setTotal(Fruteria.getTotal()+Lechuga.getPrecio()*Lechuga.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
-            fruteria.Eleccion();//Realiza el método Proceso de la clase Fruteria.
+            Fruteria.setPrecioTotal(Fruteria.getPrecioTotal()+Lechuga.getPrecio()*Lechuga.getCantidad());//Se asigna el atributo de precio total en la clase fruteria con el precio total que posee el objeto.
+            fruteria.Decision();//Realiza el método Proceso de la clase Fruteria.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Lechuga.getNombre()+", $"+Lechuga.getPrecio()+", lleva "+Lechuga.getCantidad()+" Kg");
             break;
             
@@ -261,7 +261,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(FileteB.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteB.
             Pescadero.setPrecio(FileteB.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteB.
             Pescadero.setCantidad(FileteB.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteB.
-            Pescadero.setTotal(Pescadero.getTotal()+FileteB.getPrecio()*FileteB.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteB.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+FileteB.getPrecio()*FileteB.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteB.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+FileteB.getNombre()+", $"+FileteB.getPrecio()+", lleva "+FileteB.getCantidad()+" Kg");
             break;
@@ -271,7 +271,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Camaron.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Camaron.
             Pescadero.setPrecio(Camaron.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Camaron.
             Pescadero.setCantidad(Camaron.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Camaron.
-            Pescadero.setTotal(Pescadero.getTotal()+Camaron.getPrecio()*Camaron.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Camaron.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Camaron.getPrecio()*Camaron.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Camaron.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Camaron.getNombre()+", $"+Camaron.getPrecio()+", lleva "+Camaron.getCantidad()+" Kg");
             break;
@@ -281,7 +281,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(FileteS.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteS.
             Pescadero.setPrecio(FileteS.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteS.
             Pescadero.setCantidad(FileteS.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteS.
-            Pescadero.setTotal(Pescadero.getTotal()+FileteS.getPrecio()*FileteS.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteS.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+FileteS.getPrecio()*FileteS.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteS.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+FileteS.getNombre()+", $"+FileteS.getPrecio()+", lleva "+FileteS.getCantidad()+" Kg");
             break;
@@ -291,7 +291,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(FiletePA.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FiletePA.
             Pescadero.setPrecio(FiletePA.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FiletePA.
             Pescadero.setCantidad(FiletePA.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FiletePA.
-            Pescadero.setTotal(Pescadero.getTotal()+FiletePA.getPrecio()*FiletePA.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FiletePA.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+FiletePA.getPrecio()*FiletePA.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FiletePA.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+FiletePA.getNombre()+", $"+FiletePA.getPrecio()+", lleva "+FiletePA.getCantidad()+" Kg");
             break;
@@ -301,7 +301,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(FileteM.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto FileteM.
             Pescadero.setPrecio(FileteM.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto FileteM.
             Pescadero.setCantidad(FileteM.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto FileteM.
-            Pescadero.setTotal(Pescadero.getTotal()+FileteM.getPrecio()*FileteM.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteM.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+FileteM.getPrecio()*FileteM.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto FileteM.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+FileteM.getNombre()+", $"+FileteM.getPrecio()+", lleva "+FileteM.getCantidad()+" Kg");
             break;
@@ -311,7 +311,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Barrita.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Barrita.
             Pescadero.setPrecio(Barrita.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Barrita.
             Pescadero.setCantidad(Barrita.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Barrita.
-            Pescadero.setTotal(Pescadero.getTotal()+Barrita.getPrecio()*Barrita.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Barrita.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Barrita.getPrecio()*Barrita.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Barrita.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Barrita.getNombre()+", $"+Barrita.getPrecio()+", lleva "+Barrita.getCantidad()+" Kg");
             break;
@@ -321,7 +321,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Mojarra.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Mojarra.
             Pescadero.setPrecio(Mojarra.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Mojarra.
             Pescadero.setCantidad(Mojarra.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Mojarra.
-            Pescadero.setTotal(Pescadero.getTotal()+Mojarra.getPrecio()*Mojarra.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Mojarra.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Mojarra.getPrecio()*Mojarra.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Mojarra.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Mojarra.getNombre()+", $"+Mojarra.getPrecio()+", lleva "+Mojarra.getCantidad()+" Kg");
             break;
@@ -331,7 +331,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Huachinango.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Huachinango.
             Pescadero.setPrecio(Huachinango.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Huachinango.
             Pescadero.setCantidad(Huachinango.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Huachinango.
-            Pescadero.setTotal(Pescadero.getTotal()+Huachinango.getPrecio()*Huachinango.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Huachinango.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Huachinango.getPrecio()*Huachinango.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Huachinango.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Huachinango.getNombre()+", $"+Huachinango.getPrecio()+", lleva "+Huachinango.getCantidad()+" Kg");
             break;
@@ -341,7 +341,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Pescaldo.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Pescaldo.
             Pescadero.setPrecio(Pescaldo.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Pescaldo.
             Pescadero.setCantidad(Pescaldo.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Pescaldo.
-            Pescadero.setTotal(Pescadero.getTotal()+Pescaldo.getPrecio()*Pescaldo.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Pescaldo.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Pescaldo.getPrecio()*Pescaldo.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Pescaldo.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Pescaldo.getNombre()+", $"+Pescaldo.getPrecio()+", lleva "+Pescaldo.getCantidad()+" Kg");
             break;
@@ -351,7 +351,7 @@ pescadero.Catalogo();//Se muestra el catalogo de productos que tiene la pescader
             Pescadero.setArticulo(Figuritas.getNombre());//Se asigna el atributo de artículo en la clase pescadero con el nombre que posee el objeto Figuritas.
             Pescadero.setPrecio(Figuritas.getPrecio());//Se asigna el atributo de precio en la clase pescadero con el precio que posee el objeto Figuritas.
             Pescadero.setCantidad(Figuritas.getCantidad());//Se asigna el atributo de cantidad en la clase pescadero con la cantidad que posee el objeto Figuritas.
-            Pescadero.setTotal(Pescadero.getTotal()+Figuritas.getPrecio()*Figuritas.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Figuritas.
+            Pescadero.setPrecioTotal(Pescadero.getPrecioTotal()+Figuritas.getPrecio()*Figuritas.getCantidad());//Se asigna el atributo de precio total en la clase pescadero con el precio total que posee el objeto Figuritas.
             pescadero.Proceso();//Realiza el método Proceso de la clase pescadero.
             Cajero.setArticulos(Cajero.getArticulos()+"\n"+Figuritas.getNombre()+", $"+Figuritas.getPrecio()+", lleva "+Figuritas.getCantidad()+" Kg");
             break;
@@ -374,7 +374,7 @@ while(d!=0);
  }
 }
 while(D!=0); 
-Cajero.setTotal(Carnicero.getTotal()+Fruteria.getTotal()+Pescadero.getTotal());//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
+Cajero.setPrecioTotal(Carnicero.getPrecioTotal()+Fruteria.getPrecioTotal()+Pescadero.getPrecioTotal());//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
 Cajero cajero = new Cajero("Jorge","Cajero");
 JOptionPane.showMessageDialog(null,"Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
 cajero.Presentacion();//Realiza el método Saludo de la clase Cajero.
@@ -383,6 +383,5 @@ Cajero.Caja();//Realiza el método Caja de la clase Cajero.
 atributos y métodos de la clase cajero, se logra realizar el proceso como se esperaba; de todos modos, aún pienso que ésta práctica no
 es óptima, por lo que me dedicaré a investigar alguna manera de hacer esto de forma más efectiva y práctica.*/
 
-/*Avance: Se encapsularon los atributos de la clase Cajero y se agregaron los setters y getters
-para cada uno de estos atributos.*/
+/*Avance: Se ha creado un archivo .java para cada clase.*/
     }}
