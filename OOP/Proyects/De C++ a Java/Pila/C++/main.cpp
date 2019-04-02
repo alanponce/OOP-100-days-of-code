@@ -7,8 +7,8 @@ int main(int argc, char** argv) { ////funcion global main de tipo entero que tie
 	
 	Stack p;//declaramos un objeto p de la clase stack
 	
-	p.isEmpty();//el objeto p esta vacio
-	p.isFull();//
+	p.isEmpty();//la pila esta vacia
+	p.isFull();//la pila esta llena
 	//con el objeto p se llama a la funcion push
 	p.Push(1);
 	p.Push(2);
