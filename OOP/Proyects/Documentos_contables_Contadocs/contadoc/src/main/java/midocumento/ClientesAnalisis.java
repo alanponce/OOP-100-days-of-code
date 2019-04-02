@@ -53,7 +53,34 @@ public class ClientesAnalisis {
         return false;
     }
 
-    //public void LlenarTabla(Clientes cliente,Documentos documento) {
+    public boolean estaConectado() {
+        boolean temporal=true;
+        try{
+        temporal=!conexion.isClosed();
+        } catch (SQLException sqle) {
+            // solo depuracion se genera el codigo de error
+            System.out.println("Problemas con conexion.isClosed:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+        return temporal;
+    }
+
+    public void LlenarTabla(Clientes cliente,Documentos documento) {
+        String dataTemporalC = "INSERT INTO KDJroUoqfj.miregistro (nombre,apellidoP,apellidoM,telefono,correo,asesor) VALUES ('"
+                +cliente.getNombre()+"','"+cliente.getApellidoP()+"','"+cliente.getApellidoM()+"','"+cliente.getTelefono()+"','"+cliente.getCorreo()+"','"+cliente.getAsesor()+"')";
+        String dataTemporalD = "INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES "
+                + "('"+cliente.getId_cliente()+"','"+cliente.getTelefono()+"','"+cliente.getTelefono()+"','"+cliente.getTelefono()+"','"+cliente.getTelefono()+"')";
+        try {
+            // Se genera la sentencia
+            Statement sentencia = conexion.createStatement();
+            // Se ejecuta la sentencia
+            sentencia.executeUpdate(dataTemporalC);
+            sentencia.executeUpdate(dataTemporalD);
+            // sentencia.executeUpdate(crearTablaDocumentos);
+        } catch (SQLException sqle) {
+            // solo depuracion se genera el codigo de error
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
     public void LlenarTabla() {
         String dataTemporalC="INSERT INTO KDJroUoqfj.miregistro (nombre,apellidoP,apellidoM,telefono,correo,asesor) VALUES "+
         "('Jim','Neutron','Pelaez', '20120112','neutron@correo.com','Andrea'),"+

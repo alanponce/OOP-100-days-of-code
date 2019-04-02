@@ -642,29 +642,34 @@ public class documentManager extends javax.swing.JFrame {
         //En la pestaña movimientos es necesario que no estén visibles
         ocultarCampos();
         jDGuardado.setVisible(false);
+        if (!baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l")) {
+            System.out.println("No se pudo conectar");
+        } else {
+            jLConectadoC.setText("Conectado");
+        }
     }
 
     private String Alinear(String cad1, String cad2) {
         // Alinea las cadenas de caracteres, es solo orden
-        for (int i = cad1.length(); i < 80; i++) {
+        for (int i = cad1.length(); i < 100; i++) {
             cad1 = cad1 + " ";
         }
         return cad1 + cad2;
     }
          
     public void mostrar(Clientes Cliente, Documentos Documento) {
-        String MiCliente= "\nCliente: " + Cliente.getNombre() + " "
+        String MiCliente= "\nCliente:" + Cliente.getNombre() + " "
                 + Cliente.getApellidoP() + " " + Cliente.getApellidoM();
         String MiTipo = "Tipo: " + Documento.getTipo();
+        String MiDocumento = "Documento: " + Documento.getEncabezado();
         
 
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente , "Telefono: " ) + Cliente.getTelefono()
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente ,"Telefono:") + Cliente.getTelefono()
                         + "\n");       
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor: ") + Cliente.getAsesor() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Documento: " + Documento.getEncabezado()
-                + "                                                 " + "Correo: " + Cliente.getCorreo() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Ubicacion: " + Documento.getUbicacion() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Referencia: " + Documento.getReferencia() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiDocumento, "Correo:") + Cliente.getCorreo() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Ubicacion:" + Documento.getUbicacion() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Referencia:" + Documento.getReferencia() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "\n");
         jTAResultados.setText(jTAResultados.getText()
                 + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
@@ -679,7 +684,7 @@ public class documentManager extends javax.swing.JFrame {
         // if (baseCliente.conexionDB("root",""))
         // Comprueba la conexión
         // Si existe conexion se procede a mostrar los resultados
-        if (baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l")) {
+        if (baseCliente.estaConectado()) {
             //La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
             cliente.setNombre(jTFNombreC.getText());
