@@ -59,7 +59,7 @@
 >>##### getDay: This function recovers the day in which the purchase of the ticket was made to make use of it in the reports
 >>##### buyTicket: This function is the one that makes a purchase and connects with the client class
 >>
->>### Ticket: 
+>### Ticket: 
 >>In this class, we will generate the id number, only exist a 1 number for a 1 ticket,we will set the number of pasenger fo the ticket, and we add the destiny
 >>#### Attributes
 >>##### ticketID: this attribute contains the unique id of each ticket
