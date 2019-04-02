@@ -49,14 +49,19 @@
 >>##### lastName: Contains the last name of the employees 
 >>##### charge: Contains the charge of the employee(finance,logistic etc)
 >>
->>### Trip:
->>In this class we will find the information regarding the trip, such as the time, the bus number, the destination and the number of passengers.
->>
 >>### Sales:
 >>In this class we will wacth the attributes of the sales, like a price, date of the sale, if the client paying the total price of a ticket, or only gave a part of the final price.
 >>
->>### Tickets: 
+>>#### Methods:
+>>##### getPrice: This function returns the price of a ticket, investigating the same with the ticket id.
+>>##### getTicketInfo: The function returns an object of the ticket class, to be able to access all the information contained in the respective trip.
+>>##### getDay: This function recovers the day in which the purchase of the ticket was made to make use of it in the reports
+>>##### buyTicket: This function is the one that makes a purchase and connects with the client class
+>>
+>>### Ticket: 
 >>In this class, we will generate the id number, only exist a 1 number for a 1 ticket,we will set the number of pasenger fo the ticket, and we add the destiny
+>>#### Attributes
+>>##### ticketID: this attribute contains the unique id of each ticket
 >>
 >>### Client:
 >>The client class will have the information of the client to keep the purchases of the same, name, seat number etc.
