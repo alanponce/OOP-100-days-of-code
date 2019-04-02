@@ -501,6 +501,9 @@ public class interfaz extends javax.swing.JFrame {
          lblbin.setText(CN.inToBin(new Integer(Num) ));
          lbloctal.setText(CN.intoOct(new Integer(Num)));
          
+         Hijo_Converison jorge =new Hijo_Converison();
+          
+         
          
     }//GEN-LAST:event_txtnumeroActionPerformed
   
