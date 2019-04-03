@@ -258,11 +258,28 @@ DEP: FR2
 3.2.1.4 Functional requirement 1.4 
  
 ID: FR4 
-Feature: Registro de la reservacion 
-DESC: Dado que la reservacion esta validada en la base de datos 
-            se deberian poder capturar los datos del cliente 
-            Para poder registrar la reservacion 
-            La cual pasa a la base de datos 
-            datos del cliente en particular que tambien se guardaran en la base de datos de clientes 
-RAT:   Para registrar la reservación 
+Feature: Registro de la reservacion de la(s) habitación(es)  
+DESC: Dado que la reservacion fue validada, tiene dos consecuencias posibles: 
+ 
+                 Escenario: No se registra una reservacion 
+                 Cuando en la verificacion de la base de datos 
+                 No hubo habitacion(es) con caracterizacion parecida a la peticion de reservacion 
+                 O lo que se encontro no fue satisfactorio para el cliente 
+                 Por lo que este cancela su peticion de reservacion 
+                 Entonces se debería ser capaz de no registrar la reservacion 
+ 
+                 Escenario: Se registra una reservación 
+                 Cuando en la validacion de la base de datos se encontraron una(s) habitación(es) 
+                 Que es (o son) cercana(s) o exactas a la peticion de reservacion,  
+                 y esta(n) disponible(s) desde la fecha de llegada hasta la fecha de salida del cliente,  
+                 Por lo que al momento en que se le informa al cliente, este acepta hacer reservacion 
+                 se deberia poder empezar a registrar en la base de datos de reservaciones  
+                 Con los todos los datos de esta peticion de reservacion 
+                 Y  despues, cuando el recepcionista captura estos datos de cliente: 
+                 el nombre, apellido, telefono 
+                 Entonces se debería de terminar registrar la peticion en esta base de datos 
+                 Y a la vez, registrar los datos del cliente en la base de datos de clientes 
+                 Ya concluyendo esto quita disponibilidad de la(s) habitacion(es) reservadas 
+ 
+RAT:   En orden para registrar la reservación 
 DEP: FR3 
