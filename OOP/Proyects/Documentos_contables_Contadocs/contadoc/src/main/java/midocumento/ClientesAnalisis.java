@@ -200,16 +200,51 @@ public class ClientesAnalisis {
         // Si no se ingresa  un nombre se muestra todo
         //if (Nombre != "")
         //    Nombre=" WHERE (id=id_cliente) AND (nombre='"+Nombre+")'";
-        if (cliente.getNombre() == "") {
-            busqueda = "SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente)";
-/*             String busqueda = "SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente) AND (reg.nombre='"
-                    + cliente.getNombre() + "') AND (apellidoP='" + cliente.getApellidoP() + "') AND (apellidoM='"
-                    + cliente.getApellidoM() + "')"; */
+        System.out.println("query:" + cliente.getNombre());
+        System.out.println(busqueda);
+
+        if (cliente.getNombre().equals("*")) {
+            if (cliente.getApellidoP().equals("")) {
+                busqueda = "";
+            }  else{
+                if (cliente.getApellidoM().equals("")) {
+                busqueda = " AND (apellidoP='"+ cliente.getApellidoP() + "')"; 
+                } 
+                else
+                {busqueda = " AND (apellidoP='" + cliente.getApellidoP() + "') AND (apellidoM='"+ cliente.getApellidoM() + "')"; 
+                }    
+            } 
+        } 
+        else 
+        {
+            if (cliente.getApellidoP().equals("*")) {
+                busqueda = " AND (reg.nombre='"+ cliente.getNombre() + "')";
+            } else {
+                System.out.println("Llega qui...........");
+                
+                if (cliente.getApellidoM().equals("*")) {
+                busqueda = " AND (reg.nombre='"+ cliente.getNombre() + "') AND (apellidoP='" + cliente.getApellidoP() + "')"; 
+                } 
+                else
+                {
+                busqueda = " AND (reg.nombre='"+ cliente.getNombre() + "') AND (apellidoP='" + cliente.getApellidoP() + "') AND (apellidoM='"+ cliente.getApellidoM() + "')"; 
+                }    
+            } 
         }
-/*         if (cliente.getApellidoP() == "") {
-            cliente.setNombre("*");
-        }
-        if (cliente.getApellidoM() == "") {
+        
+        /*             String busqueda = "SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente) AND (reg.nombre='"
+                            + cliente.getNombre() + "') AND (apellidoP='" + cliente.getApellidoP() + "') AND (apellidoM='"
+                            + cliente.getApellidoM() + "')";
+                     if (cliente.getApellidoP().equals("")) {
+             busqueda = "SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente) AND (reg.nombre='"
+                                + cliente.getNombre() + "') AND (apellidoP='" + cliente.getApellidoP() + "') AND (apellidoM='"
+                                + cliente.getApellidoM() + "')"; 
+                     }   
+ */
+                     String base="SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente)";
+        busqueda = base + busqueda;
+        System.out.println(busqueda);
+      /*  if (cliente.getApellidoM() == "") {
             cliente.setNombre("*");
         } */
          
@@ -217,6 +252,7 @@ public class ClientesAnalisis {
                 + 
         cliente.getNombre()+"') AND (apellidoP='"+cliente.getApellidoP()+"') AND (apellidoM='"+cliente.getApellidoM()+"')"; */
                 try {
+                    System.out.println("entra al try "+busqueda);
        PreparedStatement sentencia = conexion.prepareStatement(busqueda);
         //sentencia.setString(1,Nombre);
         rs = sentencia.executeQuery(busqueda);

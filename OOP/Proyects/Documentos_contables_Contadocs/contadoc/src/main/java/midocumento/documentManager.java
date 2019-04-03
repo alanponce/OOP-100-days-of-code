@@ -653,6 +653,7 @@ public class documentManager extends javax.swing.JFrame {
 
     private String Alinear(String cad1, String cad2) {
         // Alinea las cadenas de caracteres, es solo orden
+        System.out.println("656 alinear " + cad1.length());
         for (int i = cad1.length(); i < 90; i++) {
             cad1 = cad1 + " ";
         }
@@ -690,25 +691,35 @@ public class documentManager extends javax.swing.JFrame {
             //La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
             String y=jTFNombreC.getText();
-            System.out.println("693 Longitud de nombre "+y.length());
+            if (y.length() > 0) {
+                cliente.setNombre(y);
+            } else
+                cliente.setNombre("*");
+                
+                String x = jTFApellidoC.getText();
+                if (x.length() == 0) {
+                    cliente.setApellidoP("*");
+                    cliente.setApellidoM("*");
+            } else {
+                char[] ch = x.toCharArray();
+                for (int i = 0; i < x.length(); i++) {
+                    if (Character.isSpaceChar(ch[i])) {
+                        cliente.setApellidoP(x.substring(0, i));
 
-            cliente.setNombre(jTFNombreC.getText());
-            System.out.println("696 Longitud de nombre " + y.length());
-            String x=jTFApellidoC.getText();
-            char[] ch = x.toCharArray();
-            System.out.println(x.length());
-            for (int i = 0; i < x.length(); i++) {
-                if (Character.isSpaceChar(ch[i])) {
-                    cliente.setApellidoP(x.substring(0, i));
-                    cliente.setApellidoM(x.substring(i, x.length()));  
+                        cliente.setApellidoM(x.substring(i+1, x.length()));  
+                    }
                 }
             }
-
+            
+            System.out.println("Llega qui");
             //cliente.setNombre();
             ResultSet rs = baseCliente.BuscarNombre(cliente);
+            System.out.println("Llega qui tambien");
+
             jTAResultados.setText("");
             try {
                 while (rs.next()) {
+                    cliente.setNombre(rs.getString("nombre"));
                     cliente.setApellidoP(rs.getString("apellidoP"));
                     cliente.setApellidoM(rs.getString("apellidoM"));
                     cliente.setAsesor(rs.getString("asesor"));

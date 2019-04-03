@@ -37,9 +37,7 @@ public class Clientes {
         
         // Asigna un valor a Nombre
     public void setNombre(String nombre) {
-        System.out.println("40 Longitud de nombre " + nombre.length());
-        if (nombre.length() == 0){
-        System.out.println("42 Longitud de nombre " + nombre.length());
+        if (nombre.length() != 0){
             this.nombre = Character.toUpperCase(nombre.charAt(0)) + nombre.substring(1);}
         else
             this.nombre = "";
@@ -52,7 +50,7 @@ public class Clientes {
         
     // Asigna un valor a Apellido paterno
     public void setApellidoP(String apellidoP) {
-        if (apellidoP.length() == 0)
+        if (apellidoP.length() != 0)
             this.apellidoP = Character.toUpperCase(apellidoP.charAt(0)) + apellidoP.substring(1);
         else
             this.apellidoP = "";
@@ -65,7 +63,7 @@ public class Clientes {
     
     // Asigna un valor a Apellido materno
     public void setApellidoM(String apellidoM) {
-        if (apellidoP.length() == 0)
+        if (apellidoP.length() != 0)
             this.apellidoM = Character.toUpperCase(apellidoM.charAt(0)) + apellidoM.substring(1);
         else
             this.apellidoM = "";
@@ -97,7 +95,7 @@ public class Clientes {
     
     // Asigna un valor a asesor
     public void setAsesor(String asesor) {
-        if (asesor.length() == 0)
+        if (asesor.length() != 0)
         this.asesor = Character.toUpperCase(asesor.charAt(0)) + asesor.substring(1);
                 else
             this.asesor = "";
