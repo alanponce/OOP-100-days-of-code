@@ -12,7 +12,7 @@ Proporcionar ayuda a los usuarios en ubicar los puntos de partida y horario del 
 
 Ser un proyecto que abarque otras areas para localizar a parte de paradas del transporte escolar localizar salones en las universidades poniendo un ejemplo.
 
-# Alncance 
+# Alcance 
 
 * Implementar ubicaciones del transporte escolar en los varios puntos de la ciudad.
 * Implemenetar los horarios del transporte para los puntos de partida.
@@ -21,7 +21,6 @@ Ser un proyecto que abarque otras areas para localizar a parte de paradas del tr
 
 Se ejecutara en los sistemas operativos siguientes:
  * Android
- * iOS
  * Windows
- * MacOS
+ 
  
