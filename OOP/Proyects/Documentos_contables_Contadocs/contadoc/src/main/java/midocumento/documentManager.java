@@ -36,7 +36,7 @@ public class documentManager extends javax.swing.JFrame {
 
         jDGuardado = new javax.swing.JDialog();
         jLabel6 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        jBOk = new javax.swing.JButton();
         jDEliminar = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         jBNo = new javax.swing.JButton();
@@ -95,10 +95,10 @@ public class documentManager extends javax.swing.JFrame {
 
         jLabel6.setText("Se han guardado los cambios");
 
-        jButton5.setText("OK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jBOk.setText("OK");
+        jBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jBOkActionPerformed(evt);
             }
         });
 
@@ -110,7 +110,7 @@ public class documentManager extends javax.swing.JFrame {
                 .addGroup(jDGuardadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDGuardadoLayout.createSequentialGroup()
                         .addGap(121, 121, 121)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jBOk, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDGuardadoLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(jLabel6)))
@@ -122,7 +122,7 @@ public class documentManager extends javax.swing.JFrame {
                 .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(26, 26, 26)
-                .addComponent(jButton5)
+                .addComponent(jBOk)
                 .addGap(21, 21, 21))
         );
 
@@ -253,7 +253,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jTFNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(146, 146, 146)
                 .addComponent(jBBuscarC, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -408,7 +408,7 @@ public class documentManager extends javax.swing.JFrame {
                                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jBAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jBQuitar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLTipo)
                                             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -547,7 +547,7 @@ public class documentManager extends javax.swing.JFrame {
                             .addComponent(jTFApellidoMNC, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFApellidoPNC, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFNombreNC, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
         jLayeredPane3Layout.setVerticalGroup(
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,7 +578,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(30, 30, 30)
                 .addComponent(jBAgregarNC)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Nuevos clientes", new javax.swing.ImageIcon(getClass().getResource("/images/clientes.jpg")), jLayeredPane3); // NOI18N
@@ -638,20 +638,22 @@ public class documentManager extends javax.swing.JFrame {
             jTFUbicacion.setVisible(true);       
 
     }
-    public void configuracionInicial(){
+    private void configuracionInicial(){
         //En la pestaña movimientos es necesario que no estén visibles
         ocultarCampos();
+        jLConectadoC.setText("Desconectado");
         jDGuardado.setVisible(false);
         if (!baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l")) {
             System.out.println("No se pudo conectar");
         } else {
             jLConectadoC.setText("Conectado");
         }
+        LlenarCamposDepu();
     }
 
     private String Alinear(String cad1, String cad2) {
         // Alinea las cadenas de caracteres, es solo orden
-        for (int i = cad1.length(); i < 100; i++) {
+        for (int i = cad1.length(); i < 90; i++) {
             cad1 = cad1 + " ";
         }
         return cad1 + cad2;
@@ -687,8 +689,23 @@ public class documentManager extends javax.swing.JFrame {
         if (baseCliente.estaConectado()) {
             //La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
+            String y=jTFNombreC.getText();
+            System.out.println("693 Longitud de nombre "+y.length());
+
             cliente.setNombre(jTFNombreC.getText());
-            ResultSet rs = baseCliente.BuscarNombre(cliente.getNombre(), "root");
+            System.out.println("696 Longitud de nombre " + y.length());
+            String x=jTFApellidoC.getText();
+            char[] ch = x.toCharArray();
+            System.out.println(x.length());
+            for (int i = 0; i < x.length(); i++) {
+                if (Character.isSpaceChar(ch[i])) {
+                    cliente.setApellidoP(x.substring(0, i));
+                    cliente.setApellidoM(x.substring(i, x.length()));  
+                }
+            }
+
+            //cliente.setNombre();
+            ResultSet rs = baseCliente.BuscarNombre(cliente);
             jTAResultados.setText("");
             try {
                 while (rs.next()) {
@@ -714,7 +731,7 @@ public class documentManager extends javax.swing.JFrame {
             // De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
         }
-        baseCliente.cerrarConexion();
+       // baseCliente.cerrarConexion();
     }
     
     private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarCActionPerformed
@@ -753,17 +770,46 @@ public class documentManager extends javax.swing.JFrame {
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jBAgregarNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarNCActionPerformed
-         jDGuardado.setVisible(true);
+        //Se instancias clientes y documentos, deben ser diferentes a las globales
+        Clientes capUsuario=new Clientes();
+        //Documentos capDocumento = new Documentos();
+        // Se exibe un cuadro de dialogo para confirmar que se guardo
+        jDGuardado.setVisible(true);
+        capUsuario.setNombre(jTFNombreNC.getText());
+        capUsuario.setApellidoP(jTFApellidoPNC.getText());
+        capUsuario.setApellidoM(jTFApellidoMNC.getText());
+        capUsuario.setTelefono(jTFTelefonoNC.getText());
+        capUsuario.setCorreo(jTFCorreoNC.getText());
+        capUsuario.setAsesor(jTFAsesorANC.getText());
+        baseCliente.LlenarTabla(capUsuario);
+        System.out.print("Agregar"+capUsuario.getNombre());
     }//GEN-LAST:event_jBAgregarNCActionPerformed
+    private void LimpiarCampos(){
+        jTFNombreNC.setText("");
+        jTFApellidoPNC.setText("");
+        jTFApellidoMNC.setText("");
+        jTFTelefonoNC.setText("");
+        jTFCorreoNC.setText("");
+        jTFAsesorANC.setText("");
+    }
+    private void LlenarCamposDepu(){
+        jTFNombreNC.setText("Juana");
+        jTFApellidoPNC.setText("Montes");
+        jTFApellidoMNC.setText("Perez");
+        jTFTelefonoNC.setText("65633233325");
+        jTFCorreoNC.setText("juana@mail.com");
+        jTFAsesorANC.setText("José");
+        jTFNombreC.setText("javier");
+    }
 
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
     //oculta los campos cuando se presiona el boton guardar 
     //en la ceja movimientos
-    ocultarCampos();
     //Oculta el cuadro de dialogo
+    ocultarCampos();
+        LimpiarCampos();
     jDGuardado.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jBOkActionPerformed
 
     private void jBQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBQuitarActionPerformed
     jDEliminar.setVisible(true);
@@ -824,10 +870,10 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JButton jBBuscarC;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBNo;
+    private javax.swing.JButton jBOk;
     private javax.swing.JButton jBQuitar;
     private javax.swing.JButton jBSi;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
     private javax.swing.JDialog jDEliminar;
     private javax.swing.JDialog jDGuardado;
     private javax.swing.JLabel jLConectadoC;
