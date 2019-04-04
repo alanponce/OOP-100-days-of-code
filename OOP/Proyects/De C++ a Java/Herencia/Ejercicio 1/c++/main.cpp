@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> //incluimos nuesra biblioteca iostream
 #include "Profesor.h"//incluimos la clase Profesor
 #include "Persona.h"//incluimos la clase Persona
 
