@@ -1,1 +1,69 @@
-# Introduction## PurposeAunque este proyecto tiene un enfoque académico, el tema elegido ayudará a comprender el sistema CRUD (Crear, Leer, Actualizar y Eliminar) y sus requisitos de una manera más sencilla. En este documento se detallará el rol de los usuarios y sus interacciones, los requisitos del problema y su descripción. También se propondrá una interfaz de usuario y se planearán sus limitaciones.## Scope"Electronics Store Management System" será una aplicación diseñada para ser desarrollada en Java con una conexión de base de datos, donde puede crear, leer, actualizar y eliminar productos de una tienda. Tendrá como datos el nombre del producto, una identificación y su precio. Donde el usuario podrá consultar dicha información.Hay diferentes usuarios con diferentes autorizaciones en el sistema, a los que no todos los usuarios pueden acceder a los datos de la misma manera.Aunque el proyecto puede gestionarse y diseñarse para su comercialización, estará más centrado en un propósito académico.## Definitions, acronyms, and abbreviations## References# Overall Description## Product PerspectiveEl sistema consiste en una aplicación de consulta y modificación de datos, por lo que se divide en dos partes.La aplicación necesita una comunicación constante con la base de datos para recuperar la información en tiempo real y, por lo tanto, mostrar el estado actual de cada producto y poder modificar este estado.## Product functionsLa función principal del sistema es proporcionar información al usuario y la administración completa del sistema al administrador. Haciendo así una aplicación para la gestión de una tienda de electrónica.Hay cuatro tipos de usuarios, el usuario final, el administrador y el propietario de la tienda de electrónica. Cada uno de ellos tiene diferentes casos de uso y, por lo tanto, cada uno tiene características diferentes en los requisitos.## User characteristics| Usuario | Descripción || ------------- |: -------------: || Usuario final | Solo se puede utilizar la aplicación para encontrar stocks del producto. Esto significa que el usuario solo puede interactuar y buscar en la interfaz de búsqueda. Es importante que el producto que se busca coincida con los datos. || Propietario | no tiene que navegar en la aplicación, su función será modificar y actualizar los productos, pero no tendrá acceso al cambio de ID a menos que sea un producto nuevo. || Administrador | Tendrá acceso a los datos, pudiendo modificarlos y confirmar que la información es válida. || Empleadores | Pueden hacer eliminar el producto y actualizar los datos |## ConstraintsLas diferentes interfaces que se necesitan pueden convertirse en una restricción debido a la dificultad de adaptación. Ya que abre una diferencia de navegación según el tipo de usuario.El hardware puede ser un impedimento debido al alto costo que puede generar para una tienda de electrónica.Si desea que el usuario final busque el producto, necesita una interfaz más funcional que sea cara a cara / física.## Assumptions and dependencies| AS (Suposiciones) DE (Dependencias) | Descripción || ------------- |: -------------: || AS-1: | Sólo un usuario final a la vez || AS-2: | La interfaz final será una aplicación de tableta.| DE-1: | Conexión a internet || DE-2: | Electricidad para dispositivo final |## Apportioning of requirements# Specific requirements## External interface RequirementsAquí verá todos los detalles sobre las entradas y salidas que se han planificado para el sistema. También se proporcionará una descripción del hardware, el software y su comunicación entre interfaces y también se proporcionará un prototipo básico de la interfaz de usuario.## User Interface## Hardware Interface## Communications interfaces# Functional requirements
+# Introduction
+## Purpose
+Aunque este proyecto tiene un enfoque académico, el tema elegido ayudará a comprender el sistema CRUD (Crear, Leer, Actualizar y Eliminar) y sus requisitos de una manera más sencilla. En este documento se detallará el rol de los usuarios y sus interacciones, los requisitos del problema y su descripción. También se propondrá una interfaz de usuario y se planearán sus limitaciones.
+
+## Scope
+"Electronics Store Management System" será una aplicación diseñada para ser desarrollada en Java con una conexión de base de datos, donde puede crear, leer, actualizar y eliminar productos de una tienda. Tendrá como datos el nombre del producto, una identificación y su precio. Donde el usuario podrá consultar dicha información.
+
+Hay diferentes usuarios con diferentes autorizaciones en el sistema, a los que no todos los usuarios pueden acceder a los datos de la misma manera.
+
+Aunque el proyecto puede gestionarse y diseñarse para su comercialización, estará más centrado en un propósito académico.
+
+## Definitions, acronyms, and abbreviations
+
+## References
+
+# Overall Description
+## Product Perspective
+El sistema consiste en una aplicación de consulta y modificación de datos, por lo que se divide en dos partes.
+La aplicación necesita una comunicación constante con la base de datos para recuperar la información en tiempo real y, por lo tanto, mostrar el estado actual de cada producto y poder modificar este estado.
+
+## Product functions
+La función principal del sistema es proporcionar información al usuario y la administración completa del sistema al administrador. Haciendo así una aplicación para la gestión de una tienda de electrónica.
+
+Hay cuatro tipos de usuarios, el usuario final, el administrador y el propietario de la tienda de electrónica. Cada uno de ellos tiene diferentes casos de uso y, por lo tanto, cada uno tiene características diferentes en los requisitos.
+
+## User characteristics
+
+| Usuario | Descripción |
+| ------------- |: -------------: |
+| Usuario final | Solo se puede utilizar la aplicación para encontrar stocks del producto. Esto significa que el usuario solo puede interactuar y buscar en la interfaz de búsqueda. Es importante que el producto que se busca coincida con los datos. |
+| Propietario | no tiene que navegar en la aplicación, su función será modificar y actualizar los productos, pero no tendrá acceso al cambio de ID a menos que sea un producto nuevo. |
+| Administrador | Tendrá acceso a los datos, pudiendo modificarlos y confirmar que la información es válida. |
+| Empleadores | Pueden hacer eliminar el producto y actualizar los datos |
+
+--Deberia de haber un cambio con los usuarios. Poco util que administrador y propietario tengan la misma funcion
+Los productos deben de tener la caracteristicas del precio, deben tener un Id unico, y la cantidad de items que se encuentran en el stock. 
+Las categorias de los productos seran: Audio, Electrodomesticos, Computadoras, Camaras, Telefonos, y Televisiones
+Los metodos que realiza, o puede realizar es: Ser Comprado, revisar su descripcion.
+ 
+
+
+
+## Constraints
+Las diferentes interfaces que se necesitan pueden convertirse en una restricción debido a la dificultad de adaptación. Ya que abre una diferencia de navegación según el tipo de usuario.
+
+El hardware puede ser un impedimento debido al alto costo que puede generar para una tienda de electrónica.
+
+Si desea que el usuario final busque el producto, necesita una interfaz más funcional que sea cara a cara / física.
+
+## Assumptions and dependencies
+| AS (Suposiciones) DE (Dependencias) | Descripción |
+| ------------- |: -------------: |
+| AS-1: | Sólo un usuario final a la vez |
+| AS-2: | La interfaz final será una aplicación de tableta.
+| DE-1: | Conexión a internet |
+| DE-2: | Electricidad para dispositivo final |
+
+## Apportioning of requirements
+
+# Specific requirements
+
+## External interface Requirements
+Aquí verá todos los detalles sobre las entradas y salidas que se han planificado para el sistema. También se proporcionará una descripción del hardware, el software y su comunicación entre interfaces y también se proporcionará un prototipo básico de la interfaz de usuario.
+
+## User Interface
+## Hardware Interface
+## Communications interfaces
+
+# Functional requirements
