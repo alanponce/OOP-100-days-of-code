@@ -36,8 +36,7 @@ public class TestStaticVariable1{
      Student s2 = new Student("al169871","Pedro Torres");  
  
        //we can change the college of all objects by the single line of code  
-       
-       Student.college="IIT/CU";  
+       //Student.college="IIT/CU";  
 
         s1.display();  
         s2.display();  
