@@ -200,14 +200,14 @@ public class ClientesAnalisis {
         // Si no se ingresa  un nombre se muestra todo
         //if (Nombre != "")
         //    Nombre=" WHERE (id=id_cliente) AND (nombre='"+Nombre+")'";
-        System.out.println("query:" + cliente.getNombre());
+        System.out.println("Datos:" + cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
         System.out.println(busqueda);
 
         if (cliente.getNombre().equals("*")) {
-            if (cliente.getApellidoP().equals("")) {
+            if (cliente.getApellidoP().equals("*")) {
                 busqueda = "";
             }  else{
-                if (cliente.getApellidoM().equals("")) {
+                if (cliente.getApellidoM().equals("*")) {
                 busqueda = " AND (apellidoP='"+ cliente.getApellidoP() + "')"; 
                 } 
                 else
@@ -241,7 +241,7 @@ public class ClientesAnalisis {
                                 + cliente.getApellidoM() + "')"; 
                      }   
  */
-                     String base="SELECT DISTINCT apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente)";
+                     String base="SELECT DISTINCT nombre, apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente)";
         busqueda = base + busqueda;
         System.out.println(busqueda);
       /*  if (cliente.getApellidoM() == "") {
@@ -252,7 +252,6 @@ public class ClientesAnalisis {
                 + 
         cliente.getNombre()+"') AND (apellidoP='"+cliente.getApellidoP()+"') AND (apellidoM='"+cliente.getApellidoM()+"')"; */
                 try {
-                    System.out.println("entra al try "+busqueda);
        PreparedStatement sentencia = conexion.prepareStatement(busqueda);
         //sentencia.setString(1,Nombre);
         rs = sentencia.executeQuery(busqueda);

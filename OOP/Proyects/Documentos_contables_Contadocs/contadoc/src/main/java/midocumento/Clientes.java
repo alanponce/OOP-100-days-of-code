@@ -40,7 +40,7 @@ public class Clientes {
         if (nombre.length() != 0){
             this.nombre = Character.toUpperCase(nombre.charAt(0)) + nombre.substring(1);}
         else
-            this.nombre = "";
+            this.nombre = "*";
     }
         
     // Obtiene el valor actual de Nombre
@@ -53,7 +53,7 @@ public class Clientes {
         if (apellidoP.length() != 0)
             this.apellidoP = Character.toUpperCase(apellidoP.charAt(0)) + apellidoP.substring(1);
         else
-            this.apellidoP = "";
+            this.apellidoP = "*";
     }
 
     // Obtiene el valor actual de Apellido paterno
@@ -66,7 +66,7 @@ public class Clientes {
         if (apellidoP.length() != 0)
             this.apellidoM = Character.toUpperCase(apellidoM.charAt(0)) + apellidoM.substring(1);
         else
-            this.apellidoM = "";
+            this.apellidoM = "*";
     }
     
     // Obtiene el valor actual de Apellido materno
@@ -104,6 +104,15 @@ public class Clientes {
     // Obtiene el valor actual de asesor
     public String getAsesor() {
         return asesor;
+    }
+
+    public void borrarDatos() {
+         nombre="";
+         apellidoP="";
+         apellidoM="";
+         telefono="";
+         correo="";
+         asesor="";  
     }
 
 }
