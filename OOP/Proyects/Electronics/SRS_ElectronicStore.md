@@ -10,7 +10,7 @@ Hay diferentes usuarios con diferentes autorizaciones en el sistema, a los que n
 Aunque el proyecto puede gestionarse y diseñarse para su comercialización, estará más centrado en un propósito académico.
 
 ## Definitions, acronyms, and abbreviations
-
+Admin: Administrator
 ## References
 
 # Overall Description
@@ -37,7 +37,12 @@ Los productos deben de tener la caracteristicas del precio, deben tener un Id un
 Las categorias de los productos seran: Audio, Electrodomesticos, Computadoras, Camaras, Telefonos, y Televisiones
 Los metodos que realiza, o puede realizar es: Ser Comprado, revisar su descripcion.
  
-
+//Deberiamos de realizar un cambio a los usuarios.
+Ideas: 
+Usuario final: ✓ Podria tener un metodo nuevo, en el que este pueda comprar un producto
+Empleados: Podrian cobrar el producto, y eso realiza en segundo plano la actualizacion de los datos
+Administrador: Modificar y actualizar los productos y puede cambiar el ID de un producto
+Propietario: Hacer re-stock de un product, Y poder agregar o eliminar un producto en venta.
 
 
 ## Constraints
