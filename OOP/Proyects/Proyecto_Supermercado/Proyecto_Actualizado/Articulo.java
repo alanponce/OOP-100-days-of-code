@@ -1,6 +1,6 @@
 package proyecto.supermercado;
 
-class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
+public class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
   //Se declaran los atributos d     e la clase Articulo
   private String Nombre;
   private int Precio;
