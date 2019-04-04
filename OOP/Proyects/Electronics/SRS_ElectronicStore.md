@@ -26,7 +26,7 @@ Hay cuatro tipos de usuarios, el usuario final, el administrador y el propietari
 ## User characteristics
 
 | Usuario | Descripción |
-| ------------- |: -------------: |
+| ------------- |:-------------:| 
 | Usuario final | Solo se puede utilizar la aplicación para encontrar stocks del producto. Esto significa que el usuario solo puede interactuar y buscar en la interfaz de búsqueda. Es importante que el producto que se busca coincida con los datos. |
 | Propietario | no tiene que navegar en la aplicación, su función será modificar y actualizar los productos, pero no tendrá acceso al cambio de ID a menos que sea un producto nuevo. |
 | Administrador | Tendrá acceso a los datos, pudiendo modificarlos y confirmar que la información es válida. |
@@ -54,7 +54,7 @@ Si desea que el usuario final busque el producto, necesita una interfaz más fun
 
 ## Assumptions and dependencies
 | AS (Suposiciones) DE (Dependencias) | Descripción |
-| ------------- |: -------------: |
+| ------------- |:-------------:| 
 | AS-1: | Sólo un usuario final a la vez |
 | AS-2: | La interfaz final será una aplicación de tableta.
 | DE-1: | Conexión a internet |
