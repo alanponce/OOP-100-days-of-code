@@ -7,7 +7,7 @@ Profesor::Persona(char name, char LastName, int age) //declaramos que la funcion
 }
 
 
-public void setIdProfesor(char IdProfesor){ //utilizamos el modificador de acceso publico para que cualquier clase o metodo puedan tener acceso a cambiar los datos del id del profesor
+public void setIdProfesor(char IdProfesor){ //utilizamos el modificador de acceso publico para que cualquier clase o metodo puedan tener acceso a cambiar los datos del id del profesor y se almacenen en idprofesor
 	this->IdProfesor = IdProfesor;//utilizamos el puntero this para recuperar el idprofesor del objeto oculto por la variable idprofesor
 }
 
@@ -15,6 +15,6 @@ public char getIdProfesor(){//utilizamos el modificador de acceso publico y util
 	return IdProfesor;//nos muestra el id del profesor
 }
 
-public void Show(){//declaramos el acceso publico para que cualquiera pueda ver la informacion almacenada
+public void Show(){//declaramos el acceso publico al metodo show para que cualquiera pueda ver la informacion almacenada
 	printf("Teacher: ",getName(), " ", getLastName(), " with Id: ", getIdProfesor()); //imprime el nombre,apellido y el id del profesor
 }
