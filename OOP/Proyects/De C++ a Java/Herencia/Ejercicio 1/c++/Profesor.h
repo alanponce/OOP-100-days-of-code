@@ -5,7 +5,7 @@
 class Profesor : public Persona //definimos nuestra clase profesor usando el modificador de acceso publico
 {
 	private: //utilizamos el modificador de acceso privado
-		char IdProfesor;
+		char IdProfesor;//declaramos un dato de tipo char para que almacene el idprofesor
 	public: //utilizamos el modificador de acceso publico
 		Profesor(char, char, int);
 		void setIdProfesor(char IdProfesor);
