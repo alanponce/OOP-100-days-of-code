@@ -1,13 +1,13 @@
 package proyecto.supermercado;
 import javax.swing.JOptionPane;
 
-class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase empleado para simular a la frutería de un supermercado.
+public class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase empleado para simular a la frutería de un supermercado.
   //Se declaran los atributos propios de la clase Fruteria 
-   private static String Articulo;
-   private static int Precio;
-   private static float Cantidad;
-   private static float PrecioTotal;
-   private static String Eleccion;
+   private String Articulo;
+   private int Precio;
+   private float Cantidad;
+   private float PrecioTotal;
+   private String Eleccion;
     @Override //Se sobreescribe el método abstracto Presentación de la clase padre empleado con el contenido del método en la clase Fruteria
     public void Presentacion(){
     JOptionPane.showMessageDialog(null,"Esta es la sección de frutas y verduras del supermercado");    
@@ -20,44 +20,44 @@ class Fruteria extends Empleado{ //La clase Fruteria es heredada de la clase emp
         JOptionPane.showMessageDialog(null,"Has decidido elegir "+Cantidad+" Kg de "+Articulo);
     }
 
-    public static String getArticulo() {
+    public String getArticulo() {
         return Articulo;
     }
 
-    public static void setArticulo(String Articulo) {
-        Fruteria.Articulo = Articulo;
+    public void setArticulo(String Articulo) {
+        this.Articulo = Articulo;
     }
 
-    public static int getPrecio() {
+    public int getPrecio() {
         return Precio;
     }
 
-    public static void setPrecio(int Precio) {
-        Fruteria.Precio = Precio;
+    public void setPrecio(int Precio) {
+        this.Precio = Precio;
     }
 
-    public static float getCantidad() {
+    public float getCantidad() {
         return Cantidad;
     }
 
-    public static void setCantidad(float Cantidad) {
-        Fruteria.Cantidad = Cantidad;
+    public void setCantidad(float Cantidad) {
+        this.Cantidad = Cantidad;
     }
 
-    public static float getPrecioTotal() {
+    public float getPrecioTotal() {
         return PrecioTotal;
     }
 
-    public static void setPrecioTotal(float PrecioTotal) {
-        Fruteria.PrecioTotal = PrecioTotal;
+    public void setPrecioTotal(float PrecioTotal) {
+        this.PrecioTotal = PrecioTotal;
     }
 
-    public static String getEleccion() {
+    public String getEleccion() {
         return Eleccion;
     }
 
-    public static void setEleccion(String Eleccion) {
-        Fruteria.Eleccion = Eleccion;
+    public void setEleccion(String Eleccion) {
+        this.Eleccion = Eleccion;
     }
     
 }
