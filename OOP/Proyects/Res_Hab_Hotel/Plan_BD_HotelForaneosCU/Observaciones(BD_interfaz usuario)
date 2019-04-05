@@ -6,8 +6,10 @@
         
     * Y la otra cuando se registran los datos del cliente, y se pasa su ID_cliente a la tabla mencionada.
    si, no, como, porque?
-
+          R: ver 3
+   
 3. Se debe validar al cliente en la base de datos cliente, para que no se repita su entrada.
+    R: Se validara en la interface de alta
 
 4. Como se forma el ID_Cliente?
 
