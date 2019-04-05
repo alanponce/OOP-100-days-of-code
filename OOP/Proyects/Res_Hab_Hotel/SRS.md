@@ -1,6 +1,9 @@
 Observciones:
+3.1.1 Altas de registro del hotel (el renglon 10 "Capacidad de Personas" la columna de "Datos", debe sumar la cantidad de personas por todas las habitaciones) 
+
 1.2 a) c)
 1.3
+
 
 # Software Requirement Specification (SRS) para Systema de Reservación de Hotel CU
  
