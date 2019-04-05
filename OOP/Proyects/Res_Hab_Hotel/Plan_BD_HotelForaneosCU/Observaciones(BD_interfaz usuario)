@@ -1,7 +1,9 @@
 1. Se usara tabla de habitaciones a la mano, como hoja fisica o parte de la interfaz?
+    R: Aparte al sistema
 
 2. La tabla de registros de reservaciones se usara dos veces:
     * Porque una vez para registrar la reservacion en si.
+        
     * Y la otra cuando se registran los datos del cliente, y se pasa su ID_cliente a la tabla mencionada.
    si, no, como, porque?
 
