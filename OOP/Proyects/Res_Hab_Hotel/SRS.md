@@ -239,7 +239,7 @@ ID: FR3
 Feature: Validación de reservación con la base de datos 
 DESC: Dado que el recepcionista  
             esta en ejercicio de su funcion laboral de hacer una reservacion 
-            Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico* 
+            Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico 
             Si llena los campos de reservacion con estos datos de la peticion del cliente 
             Nombre del cliente, tipo de habitacion, numero de habitaciones 
             dia y hora de entrada, asi como dia y hora de salida 
