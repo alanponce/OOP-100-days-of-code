@@ -98,7 +98,9 @@
           <outputDirectory>${project.basedir}</outputDirectory>
             <archive>
               <manifest>
+              <addClassPath>true</addClassPath>
                 <mainClass>midocumento.App</mainClass>
+
               </manifest>
             </archive>
           </configuration>

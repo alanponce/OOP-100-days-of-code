@@ -9,33 +9,12 @@ package midocumento;
  *
  * @author George Rodriguez
  */
-public class ubicaciones {
-    // id es el identificador único del documento
-    private Long id;
-    // Es el identificador único del documento como clave secundaria
-    private Long id_documento;
+public class Ubicaciones {
     // Guarda la ubicación del documento
     private String ubicacion;
     // La variable referencia identifica el lugar en donde se encuentra el documento
     private String referencia;
 
-    public ubicaciones(){}
-        // Modifica el valor de Id
-    public void setId(Long id) {
-        this.id = id;
-    }
-        // Obtiene el valor de Id
-    public Long getId() {
-        return id;
-    }
-    //Se asigna el valor de la clave secundaria
-    public void setId_documento(Long id_documento) {
-        this.id_documento = id_documento;
-    }
-    // Se obtiene el valor de la clave secundaria
-    public Long getId_documento() {
-        return id_documento;
-    }
     // Se asigna el valor de la ubicación
     
     public void setUbicacion( String ubicacion) {

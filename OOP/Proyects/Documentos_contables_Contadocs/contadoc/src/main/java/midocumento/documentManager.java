@@ -5,6 +5,8 @@
  */
 package midocumento;
 
+//todos los controles a las variables instanciadas en la librería
+import java.sql.Connection;
 // permite recuperar los resultados de las transacciones realizadas
 // esta libreria permite el ingreso de teclas
 import java.awt.event.KeyEvent;
@@ -12,6 +14,9 @@ import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 // Permite controlar las excepciones de las solicitudes enviadas
 import java.sql.SQLException;
+import javax.swing.DefaultListModel;
+import java.util.ArrayList;
+
 /**
  *
  * @author George Rodriguez
@@ -21,16 +26,17 @@ public class documentManager extends javax.swing.JFrame {
     /**
      * Creates new form documentManager
      */
-    public documentManager() {       
+    public documentManager() {
         initComponents();
         configuracionInicial();
     }
 
     /**
-    *Todos los metodos presntados son generados por Form Editor.
-    * No es posible comentarlos
+     * Todos los metodos presntados son generados por Form Editor. No es posible
+     * comentarlos
      */
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -53,12 +59,10 @@ public class documentManager extends javax.swing.JFrame {
         jLConectadoC = new javax.swing.JLabel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTFNombreM = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
+        jTFApellidoM = new javax.swing.JTextField();
+        jBBuscarM = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
@@ -73,6 +77,9 @@ public class documentManager extends javax.swing.JFrame {
         jLReferencia = new javax.swing.JLabel();
         jTFReferencia = new javax.swing.JTextField();
         jBGuardar = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        modelo = new DefaultListModel();
+        jLNombreD = new javax.swing.JList<>();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jTFNombreNC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -277,7 +284,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jBBuscarC)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLConectadoC)
                 .addContainerGap())
@@ -285,30 +292,15 @@ public class documentManager extends javax.swing.JFrame {
 
         jTabbedPane1.addTab(" Consultas  ", new javax.swing.ImageIcon(getClass().getResource("/images/consultas.jpg")), jLayeredPane1); // NOI18N
 
-        jLayeredPane2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLayeredPane2MouseExited(evt);
-            }
-        });
-
         jLabel3.setText("Nombre:");
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Apellido:");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jBBuscarM.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jBBuscarM.setText("Buscar");
+        jBBuscarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBBuscarMActionPerformed(evt);
             }
         });
 
@@ -354,12 +346,14 @@ public class documentManager extends javax.swing.JFrame {
             }
         });
 
+        jLNombreD.setModel(modelo);
+        jScrollPane4.setViewportView(jLNombreD);
+
         jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFNombreM, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jTFApellidoM, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jBBuscarM, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBQuitar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -373,6 +367,7 @@ public class documentManager extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jLReferencia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jTFReferencia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jScrollPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -381,51 +376,52 @@ public class documentManager extends javax.swing.JFrame {
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(29, 29, 29)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(157, 157, 157)
-                        .addComponent(jButton2))
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel5)
-                                .addGap(100, 100, 100))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jBAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jBQuitar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLTipo)
-                                            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTFEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jTFTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jLEncabezado)))
+                                    .addComponent(jTFReferencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLReferencia)
+                                        .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLUbicacion))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jBGuardar)
+                                        .addGap(61, 61, 61))))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jBBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
                                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTFReferencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLReferencia)
-                                                .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLUbicacion))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                                                .addComponent(jBGuardar)
-                                                .addGap(61, 61, 61)))))))))
+                                            .addComponent(jBQuitar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLTipo)
+                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTFEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTFTipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLEncabezado)))))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addGap(275, 275, 275)
+                                .addComponent(jLabel5))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(29, 29, 29)
+                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTFApellidoM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jLayeredPane2Layout.setVerticalGroup(
@@ -436,50 +432,45 @@ public class documentManager extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTFApellidoM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jButton2)))
+                        .addComponent(jBBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(16, 16, 16)
                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11))
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(jBAgregar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jBQuitar))
-                                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                        .addComponent(jLEncabezado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTFEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLTipo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTFTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(11, 11, 11)
-                                        .addComponent(jLUbicacion)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLEncabezado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTFEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLTipo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addComponent(jTFTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)
-                                .addComponent(jLReferencia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTFReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(jBGuardar)))
-                        .addContainerGap())))
+                                .addComponent(jLUbicacion))
+                            .addComponent(jBQuitar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(jLReferencia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jBGuardar))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(" Movimientos  ", new javax.swing.ImageIcon(getClass().getResource("/images/movimientos.jpg")), jLayeredPane2); // NOI18N
@@ -578,7 +569,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(30, 30, 30)
                 .addComponent(jBAgregarNC)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Nuevos clientes", new javax.swing.ImageIcon(getClass().getResource("/images/clientes.jpg")), jLayeredPane3); // NOI18N
@@ -597,53 +588,68 @@ public class documentManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Se instancian los objetos globales
-    //cliente es el objeto que captura todos sus atributos y los manda a la base de datos
-    Clientes cliente=new Clientes();   
-    //ubicacion es el objeto que captura todos sus atributos y los manda a la base de datos
-    ubicaciones ubicacion=new ubicaciones();
-    //documento es el objeto que captura todos sus atributos y los manda a la base de datos
-    Documentos documento = new Documentos();
-    //documento es el objeto que captura todos sus atributos y los manda a la base de datos
-    ClientesAnalisis baseCliente = new ClientesAnalisis();
-    //Numero maximo de elementos que se pueden manejar
-    int maxElementos=100;
-    //Almacenamiento temporal de datos generados
-    String[] LocalData = new String[maxElementos];
-    
-    public void ocultarCampos(){
-        //En la pestaña movimientos es necesario que no estén visibles los campos
-            jLEncabezado.setVisible(false);
-            jLReferencia.setVisible(false);
-            jLTipo.setVisible(false);
-            jLUbicacion.setVisible(false);       
-            jBGuardar.setVisible(false);
-            jTFEncabezado.setVisible(false);
-            jTFReferencia.setVisible(false);
-            jTFTipo.setVisible(false);
-            jTFUbicacion.setVisible(false);       
+    private void jBBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarMActionPerformed
+        // TODO add your handling code here:
+        modelo.clear();
+        presentarResultadosD(Buscar(jTFNombreM.getText(), jTFApellidoM.getText()));
+    }//GEN-LAST:event_jBBuscarMActionPerformed
 
-    } 
-     
-    public void visualizarCampos(){
-        //En la pestaña movimientos es necesario que no estén visibles los campos
-            jLEncabezado.setVisible(true);
-            jLReferencia.setVisible(true);
-            jLTipo.setVisible(true);
-            jLUbicacion.setVisible(true);       
-            jBGuardar.setVisible(true);
-            jTFEncabezado.setVisible(true);
-            jTFReferencia.setVisible(true);
-            jTFTipo.setVisible(true);
-            jTFUbicacion.setVisible(true);       
+
+    // Se instancian los objetos globales
+    // cliente es el objeto que captura todos sus atributos y los manda a la base de
+    // datos
+    Clientes cliente = new Clientes();
+    // ubicacion es el objeto que captura todos sus atributos y los manda a la base
+    // de datos
+    Ubicaciones ubicacion = new Ubicaciones();
+    // documento es el objeto que captura todos sus atributos y los manda a la base
+    // de datos
+    Documentos documento = new Documentos();
+    // documento es el objeto que captura todos sus atributos y los manda a la base
+    // de datos
+    ClientesAnalisis baseCliente = new ClientesAnalisis();
+    // Numero maximo de elementos que se pueden manejar
+    int maxElementos = 10000;
+    // Almacenamiento temporal de datos generados
+    String[] LocalData = new String[maxElementos];
+    private Connection conexion = null;
+    //private javax.swing.JList<String> jLNombreD;
+
+    public void ocultarCampos() {
+        // En la pestaña movimientos es necesario que no estén visibles los campos
+        jLEncabezado.setVisible(false);
+        jLReferencia.setVisible(false);
+        jLTipo.setVisible(false);
+        jLUbicacion.setVisible(false);
+        jBGuardar.setVisible(false);
+        jTFEncabezado.setVisible(false);
+        jTFReferencia.setVisible(false);
+        jTFTipo.setVisible(false);
+        jTFUbicacion.setVisible(false);
 
     }
-    private void configuracionInicial(){
-        //En la pestaña movimientos es necesario que no estén visibles
+
+    public void visualizarCampos() {
+        // En la pestaña movimientos es necesario que no estén visibles los campos
+        jLEncabezado.setVisible(true);
+        jLReferencia.setVisible(true);
+        jLTipo.setVisible(true);
+        jLUbicacion.setVisible(true);
+        jBGuardar.setVisible(true);
+        jTFEncabezado.setVisible(true);
+        jTFReferencia.setVisible(true);
+        jTFTipo.setVisible(true);
+        jTFUbicacion.setVisible(true);
+
+    }
+
+    private void configuracionInicial() {
+        // En la pestaña movimientos es necesario que no estén visibles
         ocultarCampos();
         jLConectadoC.setText("Desconectado");
         jDGuardado.setVisible(false);
-        if (!baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l")) {
+        conexion = baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l");
+        if (!baseCliente.estaConectado()) {
             System.out.println("No se pudo conectar");
         } else {
             jLConectadoC.setText("Conectado");
@@ -658,16 +664,15 @@ public class documentManager extends javax.swing.JFrame {
         }
         return cad1 + cad2;
     }
-         
+
     public void mostrar(Clientes Cliente, Documentos Documento) {
-        String MiCliente= "\nCliente:" + Cliente.getNombre() + " "
-                + Cliente.getApellidoP() + " " + Cliente.getApellidoM();
+        String MiCliente = "Cliente:" + Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
+                + Cliente.getApellidoM();
         String MiTipo = "Tipo: " + Documento.getTipo();
         String MiDocumento = "Documento: " + Documento.getEncabezado();
-        
 
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente ,"Telefono:") + Cliente.getTelefono()
-                        + "\n");       
+        jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiDocumento, "Correo:") + Cliente.getCorreo() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "Ubicacion:" + Documento.getUbicacion() + "\n");
@@ -676,128 +681,175 @@ public class documentManager extends javax.swing.JFrame {
         jTAResultados.setText(jTAResultados.getText()
                 + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
                 + "\n");
+            }
+
+    String ClienteAnterior = "";
+    static ArrayList<Clientes> uncliente = new ArrayList();
+    public void mostrarD(Clientes Cliente, Documentos Documento) {
+        //String cliente = String.valueOf(Cliente.getId());
+        String MiCliente = Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
+                + Cliente.getApellidoM();
+        String MiTipo = "Tipo: " + Documento.getTipo();
+        String MiDocumento = "Documento: " + Documento.getEncabezado();
+        if (MiCliente.equals(ClienteAnterior)) {
+            ClienteAnterior = MiCliente;
+        }else{
+            ClienteAnterior = MiCliente;
+            modelo.addElement(MiCliente);
+        }
+/*         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiDocumento, "Correo:") + Cliente.getCorreo() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Ubicacion:" + Documento.getUbicacion() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "Referencia:" + Documento.getReferencia() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + "\n");
+        jTAResultados.setText(jTAResultados.getText()
+                + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+                + "\n"); */
     }
 
-    public void Buscar() {
-        /*
-         * Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l
-         * Server:remotemysql.com Port: 3306
-         */
+    public ResultSet Buscar(String x, String y) {
+        // Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l
+        // Server:remotemysql.com Port: 3306
         // if (baseCliente.conexionDB("root",""))
         // Comprueba la conexión
         // Si existe conexion se procede a mostrar los resultados
+        ResultSet rs =null;
         if (baseCliente.estaConectado()) {
-            //La barra de estatus la cambia a conectado si se logra la conexion
+            // La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
             cliente.borrarDatos();
-            String y = jTFNombreC.getText();
-            
-            if (y.length() > 0) {
-                cliente.setNombre(y);
+            if (x.length() > 0) {
+                cliente.setNombre(x);
             } else
-                cliente.setNombre("*");
+            cliente.setNombre("*");
             /* Proceso */
-                
-                String x = jTFApellidoC.getText();
-                System.out.println("xxxx= "+x);                        
-            if (x.length() == 0) {
-                    cliente.setApellidoP("*");
-                    cliente.setApellidoM("*");
-                    System.out.println("Apellido vacios ");                        
+            System.out.println("Docu MD: " +"cliente.getNombre()="+ cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
+            if (y.length() == 0) {
+                // Implica que el campo apellidos está vacío
+                cliente.setApellidoP("*");
+                cliente.setApellidoM("*");
             } else {
-                System.out.println("substring ");                        
-                
-                char[] ch = x.toCharArray();
-                for (int i = 0; i < x.length(); i++) {
-                    System.out.println("substring "+i+"  Character.isSpaceChar(ch[i])= "+ Character.isSpaceChar(ch[i]));                        
+                char[] ch = y.toCharArray();
+                for (int i = 0; i < y.length(); i++) {
+                    System.out.println(
+                            "substring " + i + "  Character.isSpaceChar(ch[i])= " + Character.isSpaceChar(ch[i]));
                     if (Character.isSpaceChar(ch[i])) {
-                        System.out.println("substring "+i);                        
-                        cliente.setApellidoP(x.substring(0, i));
-                        System.out.println("x.substring(0, i) "+ x.substring(0, i));                        
-                        cliente.setApellidoM(x.substring(i+1, x.length()));  
-                        System.out.println("x.substring(i+1, x.length()) "+ x.substring(i + 1, x.length()));                        
-                    } else
-                    {
-                        cliente.setApellidoP(x);
+                        System.out.println("substring " + i);
+                        cliente.setApellidoP(y.substring(0, i));
+                        System.out.println("y.substring(0, i) " + y.substring(0, i));
+                        cliente.setApellidoM(y.substring(i + 1, y.length()));
+                       // System.out.println("x.substring(i+1, x.length()) " + y.substring(i + 1, y.length()));
+                    } else {
+                        cliente.setApellidoP(y);
                         cliente.setApellidoM("*");
                     }
-                        
+
                 }
             }
-            
-            System.out.println("Llega qui");
-            //cliente.setNombre();
+            //System.out.println("Docu MAn Datos: " + cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
+            // cliente.setNombre();
             System.out.println("Datos:" + cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
-            ResultSet rs = baseCliente.BuscarNombre(cliente);
-
-            jTAResultados.setText("");
-            try {
-                while (rs.next()) {
-                    cliente.setNombre(rs.getString("nombre"));
-                    cliente.setApellidoP(rs.getString("apellidoP"));
-                    cliente.setApellidoM(rs.getString("apellidoM"));
-                    cliente.setAsesor(rs.getString("asesor"));
-                    cliente.setTelefono(rs.getString("telefono"));
-                    cliente.setCorreo(rs.getString("correo"));
-                    documento.setEncabezado(rs.getString("encabezado"));
-                    documento.setTipo(rs.getString("tipo"));
-                    documento.setUbicacion(rs.getString("ubicacion"));
-                    documento.setReferencia(rs.getString("referencia"));
-
-                    mostrar(cliente,documento);
-                    System.out.print(jTFNombreC.getText() + " ");
-                    // String username=rs.getString("nombre");
-                }
-            } catch (SQLException sqle) {
-                // solo depuracion
-                System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
-            }
-         } else {
+            rs = baseCliente.BuscarNombre(cliente);
+        }  else    {
             // De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
         }
-       // baseCliente.cerrarConexion();
+        return rs;
     }
-    
-    private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarCActionPerformed
-        //Se inicia la busqueda
+
+    private void presentarResultadosB(ResultSet rs) {
+        jTAResultados.setText("");
+        try {
+            while (rs.next()) {
+              //  cliente.setId(rs.getString("id"));
+                cliente.setId(Long.valueOf(rs.getString("id")));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellidoP(rs.getString("apellidoP"));
+                cliente.setApellidoM(rs.getString("apellidoM"));
+                cliente.setAsesor(rs.getString("asesor"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setCorreo(rs.getString("correo"));
+                documento.setEncabezado(rs.getString("encabezado"));
+                documento.setTipo(rs.getString("tipo"));
+                documento.setUbicacion(rs.getString("ubicacion"));
+                documento.setReferencia(rs.getString("referencia"));
+                mostrar(cliente, documento);
+                System.out.print(jTFNombreC.getText() + " ");
+                // String username=rs.getString("nombre");
+            }
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
+
+    private void presentarResultadosD(ResultSet rs) {
+        jTAResultados.setText("");
+        try {
+            while (rs.next()) {
+                cliente.setId(Long.valueOf(rs.getString("id")));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellidoP(rs.getString("apellidoP"));
+                cliente.setApellidoM(rs.getString("apellidoM"));
+                cliente.setAsesor(rs.getString("asesor"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setCorreo(rs.getString("correo"));
+                documento.setEncabezado(rs.getString("encabezado"));
+                documento.setTipo(rs.getString("tipo"));
+                documento.setUbicacion(rs.getString("ubicacion"));
+                documento.setReferencia(rs.getString("referencia"));
+                mostrarD(cliente, documento);
+               // System.out.print(jTFNombreC.getText() + " ");
+                // String username=rs.getString("nombre");
+            }
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
+
+    private void jBBuscarCActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBBuscarCActionPerformed
+        // Se inicia la busqueda
         // Se muestra un mensaje para demostrar que se intenta conectar
         jLConectadoC.setText("Conectando...");
-        Buscar();
-    }//GEN-LAST:event_jBBuscarCActionPerformed
-    
-    private void jBBuscarCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBBuscarCKeyTyped
+        presentarResultadosB(Buscar(jTFNombreC.getText(), jTFApellidoC.getText()));
+    }// GEN-LAST:event_jBBuscarCActionPerformed
+
+    private void jBBuscarCKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jBBuscarCKeyTyped
         System.out.println(evt.getKeyCode());
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             // Se muestra un mensaje para demostrar que se intenta conectar
             jLConectadoC.setText("Conectando...");
-            Buscar();
+            Buscar(jTFNombreC.getText(), jTFApellidoC.getText());
         }
-    }//GEN-LAST:event_jBBuscarCKeyTyped
+    }// GEN-LAST:event_jBBuscarCKeyTyped
 
-    private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
+    private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBAgregarActionPerformed
         // TODO add your handling code here:
-        //Cuando presionas agregar todos los elementos del registro
+        // Cuando presionas agregar todos los elementos del registro
         visualizarCampos();
-    }//GEN-LAST:event_jBAgregarActionPerformed
+    }// GEN-LAST:event_jBAgregarActionPerformed
 
-    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-    //Guarda el campo encabezado en su variable correspondiente asociada a la clase
-    documento.setEncabezado(jTFEncabezado.getText());
-    //Guarda el campo Tipo en su variable correspondiente asociada a la clase
-    documento.setTipo(jTFTipo.getText());
-    //Guarda el campo Ubicacion en su variable correspondiente asociada a la clase
-    ubicacion.setUbicacion(jTFUbicacion.getText());
-    //Guarda el campo Referencia en su variable correspondiente asociada a la clase
-    ubicacion.setReferencia(jTFReferencia.getText());   
-    //Se muestra el cuadro de dialogo
-    jDGuardado.setVisible(true);
-    }//GEN-LAST:event_jBGuardarActionPerformed
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBGuardarActionPerformed
+        // Guarda el campo encabezado en su variable correspondiente asociada a la clase
+        documento.setEncabezado(jTFEncabezado.getText());
+        // Guarda el campo Tipo en su variable correspondiente asociada a la clase
+        documento.setTipo(jTFTipo.getText());
+        // Guarda el campo Ubicacion en su variable correspondiente asociada a la clase
+        ubicacion.setUbicacion(jTFUbicacion.getText());
+        // Guarda el campo Referencia en su variable correspondiente asociada a la clase
+        ubicacion.setReferencia(jTFReferencia.getText());
+        // Se muestra el cuadro de dialogo
+        jDGuardado.setVisible(true);
+    }// GEN-LAST:event_jBGuardarActionPerformed
 
-    private void jBAgregarNCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarNCActionPerformed
-        //Se instancias clientes y documentos, deben ser diferentes a las globales
-        Clientes capUsuario=new Clientes();
-        //Documentos capDocumento = new Documentos();
+    private void jBAgregarNCActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBAgregarNCActionPerformed
+        // Se instancias clientes y documentos, deben ser diferentes a las globales
+        Clientes capUsuario = new Clientes();
+        Tabla tabla = new Tabla();
+        // Documentos capDocumento = new Documentos();
         // Se exibe un cuadro de dialogo para confirmar que se guardo
         jDGuardado.setVisible(true);
         capUsuario.setNombre(jTFNombreNC.getText());
@@ -806,10 +858,11 @@ public class documentManager extends javax.swing.JFrame {
         capUsuario.setTelefono(jTFTelefonoNC.getText());
         capUsuario.setCorreo(jTFCorreoNC.getText());
         capUsuario.setAsesor(jTFAsesorANC.getText());
-        baseCliente.LlenarTabla(capUsuario);
-        System.out.print("Agregar"+capUsuario.getNombre());
-    }//GEN-LAST:event_jBAgregarNCActionPerformed
-    private void LimpiarCampos(){
+        tabla.LlenarTabla(capUsuario, conexion);
+        System.out.print("Agregar" + capUsuario.getNombre());
+    }// GEN-LAST:event_jBAgregarNCActionPerformed
+
+    private void LimpiarCampos() {
         jTFNombreNC.setText("");
         jTFApellidoPNC.setText("");
         jTFApellidoMNC.setText("");
@@ -817,7 +870,8 @@ public class documentManager extends javax.swing.JFrame {
         jTFCorreoNC.setText("");
         jTFAsesorANC.setText("");
     }
-    private void LlenarCamposDepu(){
+
+    private void LlenarCamposDepu() {
         jTFNombreNC.setText("Juana");
         jTFApellidoPNC.setText("Montes");
         jTFApellidoMNC.setText("Perez");
@@ -827,41 +881,42 @@ public class documentManager extends javax.swing.JFrame {
         jTFNombreC.setText("javier");
     }
 
-    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
-    //oculta los campos cuando se presiona el boton guardar 
-    //en la ceja movimientos
-    //Oculta el cuadro de dialogo
-    ocultarCampos();
+    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBOkActionPerformed
+        // oculta los campos cuando se presiona el boton guardar
+        // en la ceja movimientos
+        // Oculta el cuadro de dialogo
+        ocultarCampos();
         LimpiarCampos();
-    jDGuardado.setVisible(false);
-    }//GEN-LAST:event_jBOkActionPerformed
+        jDGuardado.setVisible(false);
+    }// GEN-LAST:event_jBOkActionPerformed
 
-    private void jBQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBQuitarActionPerformed
-    jDEliminar.setVisible(true);
-    }//GEN-LAST:event_jBQuitarActionPerformed
+    private void jBQuitarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBQuitarActionPerformed
+        jDEliminar.setVisible(true);
+    }// GEN-LAST:event_jBQuitarActionPerformed
 
-    private void jBNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNoActionPerformed
-     jDEliminar.setVisible(false);
-    }//GEN-LAST:event_jBNoActionPerformed
+    private void jBNoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBNoActionPerformed
+        jDEliminar.setVisible(false);
+    }// GEN-LAST:event_jBNoActionPerformed
 
-    private void jBSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSiActionPerformed
-     jDEliminar.setVisible(false);
-    }//GEN-LAST:event_jBSiActionPerformed
+    private void jBSiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBSiActionPerformed
+        jDEliminar.setVisible(false);
+    }// GEN-LAST:event_jBSiActionPerformed
 
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-             baseCliente.cerrarConexion();
-    }//GEN-LAST:event_formWindowClosed
-
-
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {// GEN-FIRST:event_formWindowClosed
+        baseCliente.cerrarConexion();
+    }// GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -871,15 +926,19 @@ public class documentManager extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(documentManager.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -893,16 +952,18 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JButton jBAgregar;
     private javax.swing.JButton jBAgregarNC;
     private javax.swing.JButton jBBuscarC;
+    private javax.swing.JButton jBBuscarM;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBNo;
     private javax.swing.JButton jBOk;
     private javax.swing.JButton jBQuitar;
     private javax.swing.JButton jBSi;
-    private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDEliminar;
     private javax.swing.JDialog jDGuardado;
     private javax.swing.JLabel jLConectadoC;
     private javax.swing.JLabel jLEncabezado;
+    private javax.swing.JList<String> jLNombreD;
+    private DefaultListModel modelo;
     private javax.swing.JLabel jLReferencia;
     private javax.swing.JLabel jLTipo;
     private javax.swing.JLabel jLUbicacion;
@@ -923,25 +984,24 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTAResultados;
     private javax.swing.JTextField jTFApellidoC;
+    private javax.swing.JTextField jTFApellidoM;
     private javax.swing.JTextField jTFApellidoMNC;
     private javax.swing.JTextField jTFApellidoPNC;
     private javax.swing.JTextField jTFAsesorANC;
     private javax.swing.JTextField jTFCorreoNC;
     private javax.swing.JTextField jTFEncabezado;
     private javax.swing.JTextField jTFNombreC;
+    private javax.swing.JTextField jTFNombreM;
     private javax.swing.JTextField jTFNombreNC;
     private javax.swing.JTextField jTFReferencia;
     private javax.swing.JTextField jTFTelefonoNC;
     private javax.swing.JTextField jTFTipo;
     private javax.swing.JTextField jTFUbicacion;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
