@@ -1,6 +1,6 @@
 package proyecto.supermercado;
 
-public class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
+public final class Articulo{//La clase Articulo es creada para simular los atributos de un producto en el supermercado.
   //Se declaran los atributos d     e la clase Articulo
   private String Nombre;
   private int Precio;
@@ -15,16 +15,8 @@ public class Articulo{//La clase Articulo es creada para simular los atributos d
         return Nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
     public int getPrecio() {
         return Precio;
-    }
-
-    public void setPrecio(int Precio) {
-        this.Precio = Precio;
     }
 
     public float getCantidad() {

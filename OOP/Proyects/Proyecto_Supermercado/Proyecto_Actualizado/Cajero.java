@@ -5,6 +5,8 @@ public class Cajero extends Empleado{//La clase cajero es heredada de la clase e
  //Se declaran atributos propios de la clase cajero.
  private String Articulos = "";
  private float PrecioTotal;
+ private float PrecioFinal;
+ private static final float IVA = .16f; 
  @Override
    public void Presentacion(){
    JOptionPane.showMessageDialog(null,"Hola, soy "+Nombre+" y hoy voy a ser su "+Puesto);
@@ -12,7 +14,9 @@ public class Cajero extends Empleado{//La clase cajero es heredada de la clase e
  void Caja(){ /*Se crea el método caja, el cual es propio de la clase Cajero e imprime una lista de los artículos comprados
  junto con el precio total que se debe pagar.*/
 JOptionPane.showMessageDialog(null,Articulos);
-JOptionPane.showMessageDialog(null,"Van a ser "+PrecioTotal+" pesos.");
+JOptionPane.showMessageDialog(null,"Precio total: "+PrecioTotal);
+JOptionPane.showMessageDialog(null,"IVA: 16%");
+JOptionPane.showMessageDialog(null,"Van a ser "+PrecioFinal+" pesos.");
 }
   public Cajero(String Nombre, String Puesto, String Articulos, float PrecioTotal){
       this.Nombre = Nombre;
@@ -20,6 +24,9 @@ JOptionPane.showMessageDialog(null,"Van a ser "+PrecioTotal+" pesos.");
       this.Articulos = Articulos;
       this.PrecioTotal = PrecioTotal;
   }
+    public double getIVA(){
+        return IVA;
+    }
     public String getArticulos() {
         return Articulos;
     }
@@ -34,6 +41,14 @@ JOptionPane.showMessageDialog(null,"Van a ser "+PrecioTotal+" pesos.");
 
     public void setPrecioTotal(float Total) {
         this.PrecioTotal = Total;
+    }
+
+    public float getPrecioFinal() {
+        return PrecioFinal;
+    }
+
+    public void setPrecioFinal(float PrecioFinal) {
+        this.PrecioFinal = PrecioFinal;
     }
   
 }
