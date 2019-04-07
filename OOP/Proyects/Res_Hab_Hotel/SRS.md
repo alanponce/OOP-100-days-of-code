@@ -217,26 +217,45 @@ Esta sección incluye los requerimientos que especifican todas las acciones fund
 
 3.2.1 User class 1 – Recepcionista
 
-3.2.1.1 Functional requirement 1.1
-
+3.2.1.1 Functional requirement 1.1 
 ID: FR1 
 Feature: Login del recepcionista 
 DESC: Dado que el id y contraseña del recepcionista 
             fueron registrados por los programadores en el sistema 
             el recepcionista deberia ser capaz de usar ambos datos para acceder al sistema 
+            Que lo ubica primero en la interface de menu de inicio 
 RAT:   En orden para que el recepcionista entre al sistema 
-DEP: None 
+DEP:   None 
  
 3.2.1.2 Functional requirement 1.2 
  
 ID: FR2 
-Feature: Seleccinar tarea 
-DESC: Dado que el recepcionista  
-            esta en ejercicio de su funcion laboral de hacer una reservacion 
-            Y esta dentro del sistema, en el menu pricipal 
-            el recepcionista deberia ser capaz deseleccionar la opcion da altas al sistema 
-RAT:   En orden para que el recepcionista entre al sistema 
-DEP:   FR1 
+Feature: Seleccionar tarea 
+DESC: Dado que el recepcionista accedio al sistema  
+            En orden de ejercer su funcion laboral 
+            Deberia seleccionar la opcion adecuada 
+            Entre altas, bajas y cambios, de reservaciones, o tambien, salir del sistema 
+            En el menu de inicio 
+ 
+            Escenario: no se puede acceder a opciones 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            intenta seleccionar las opciones 
+            De bajas o cambios, de reservacion 
+            Entonces no se activaran 
+            y no accederá a su funcionamiento 
+ 
+            Escenario: se accede a la opcion de registro de altas de reservaciones 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            selecciona la opcion de registro de altas de resevaciones 
+            Entonces deberia acceder a su funcionamiento 
+             
+            Escenario: se accede a la opcion de salir del sistema 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            Si el recepcionista selecciona la opcion de salir del sistema 
+            Entonces deberia salir del sistema 
+             
+RAT:   En orden para que el recepcionista seleccione la opcion para ejercer su funcion laboral 
+DEP:   FR1
  
 3.2.1.3 Functional requirement 1.3 
  
