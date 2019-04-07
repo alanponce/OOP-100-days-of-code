@@ -364,7 +364,7 @@ DESC: Dado que el admnistrador
             dia y hora de entrada, asi como dia y hora de salida 
             Si hay una(s) habitación(es) disponible(s) cercana(s) a la peticion 
             se debería poder  validar la reservacion en la base de datos, 
-          RAT:   En orden para validar la reservación con la base de datos 
+          RAT: En orden para validar la reservación con la base de datos de reservaciones
 DEP: FR6 
  
 3.2.2.4 Functional requirement 2.4 
@@ -411,7 +411,7 @@ DESC: Dado que el admnistrador
             Que es (o son) cercana(s) o exactas al cambio de reservacion,  
             y esta(n) disponible(s) desde la nueva fecha de llegada hasta la fecha de salida del cliente,
             se debería poder validar la reservacion en la base de datos, 
-          RAT:   En orden para validar la reservación con la base de datos 
+          RAT:   En orden para validar el cambio con la base de datos de reservaciones 
 DEP: FR4, FR8  
  
  
@@ -439,7 +439,7 @@ DESC: Para hacer cambios en una reservacion
                  en la base de datos de reservaciones 
                  Quitando disponibilidad de la(s) habitacion(es) reservadas  
  
-RAT:   En orden para registrar el cambio de una reservación 
+RAT:   En orden para registrar el cambio en la base de datos de reservación 
 DEP: FR9
 
 3.2.2.7 Functional requirement 2.7 
@@ -447,18 +447,16 @@ DEP: FR9
 ID: FR11 
 Feature: Validación de bajas en la base de datos 
 DESC: Dado que el admnistrador 
-            esta en la interface de para hacer cambios en especifico 
+            esta en la interface de para hacer bajas en especifico 
             Si llena los campos de cambios con estos datos: 
-            ID_Registro, ID_Cliente, tipo de Habitacion, Cantidad Habitaciones 
-            Fecha Entrada, Fecha Salida
-            si esta(S) las habitacione(s)
-            Que es (o son) cercana(s) o exactas al cambio de reservacion,  
-            y esta(n) disponible(s) desde la nueva fecha de llegada hasta la fecha de salida del cliente,
-            se debería poder validar la reservacion en la base de datos, 
-          RAT:   En orden para validar la reservación con la base de datos 
-DEP: FR4, FR8  
+            ID del Registro, ID del Cliente, Nombre, Apellido,  
+            tipo de Habitacion, Cantidad de Habitaciones, Id de Habitaciones
+            si estos datos coinciden con lo de una reservacion,
+            se debería poder validar la baja en la base de datos, 
+          RAT:   En orden para validar la baja con la base de datos 
+DEP: FR4, FR8, FR9  
  
-3.2.2.6 Functional requirement 2.6 
+3.2.2.6 Functional requirement 2.6
  
 ID: FR10 
 Feature: Registro de cambios de una reservacion de la(s) habitación(es)  
@@ -484,3 +482,4 @@ DESC: Para hacer cambios en una reservacion
  
 RAT:   En orden para registrar el cambio de una reservación 
 DEP: FR7
+
