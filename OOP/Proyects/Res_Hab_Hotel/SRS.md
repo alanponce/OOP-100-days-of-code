@@ -1,6 +1,11 @@
-Observciones:
+Observciones.-
+
+Nueva: 3.1.1 Altas de registro del hotel (el renglon 10 "Capacidad de Personas" la columna de "Datos", debe sumar la cantidad de personas por todas las habitaciones) 
+
+Pasadas:
 1.2 a) c)
 1.3
+
 
 # Software Requirement Specification (SRS) para Systema de Reservación de Hotel CU
  
@@ -225,61 +230,53 @@ DEP: None
 3.2.1.2 Functional requirement 1.2 
  
 ID: FR2 
-Feature: Captura de la peticion de reservacion 
+Feature: Seleccinar tarea 
 DESC: Dado que el recepcionista  
-           esta en ejercicio de su funcion laboral de hacer una reservacion 
-           Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico* 
-           el deberia ser capaz de verificar~ y llenar los campos obligatorios de la interfaz de apartados 
-RAT:   En orden para capturar la peticion del cliente 
-DEP: FR1
-*Hay una interface mas especifica para esta etapa? 
-~Como puede verificar?
+            esta en ejercicio de su funcion laboral de hacer una reservacion 
+            Y esta dentro del sistema, en el menu pricipal 
+            el recepcionista deberia ser capaz deseleccionar la opcion da altas al sistema 
+RAT:   En orden para que el recepcionista entre al sistema 
+DEP:   FR1 
  
 3.2.1.3 Functional requirement 1.3 
  
 ID: FR3 
 Feature: Validación de reservación con la base de datos 
-DESC: Dado que a sido capturada la informacion de la peticion de reservacion 
-            se debería poder  verificar comparándola con la(s) habitación(es) en la base de datos 
- 
-                      Escenario: Se valida una reservacion 
-                      Cuando en la verificacion de la base de datos 
-                      Se encuentra(n) habitacionI(es) con caracterizacion parecida a la peticion de la reservacion 
-                      Se deberia ser capaz de validar la reservacion 
- 
-                      Escenario: No valida una reservacion 
-                      Cuando en la verificacion de la base de datos 
-                      No se encuentra(n) habitacionI(es) con caracterizacion parecida a la peticion de la reservacion 
-                      No se deberia de validar la reservacion 
- 
-RAT:   En orden para validar la reservación con la base de datos  
+DESC: Dado que el recepcionista  
+            esta en ejercicio de su funcion laboral de hacer una reservacion 
+            Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico 
+            Si llena los campos de reservacion con estos datos de la peticion del cliente 
+            Nombre del cliente, tipo de habitacion, numero de habitaciones 
+            dia y hora de entrada, asi como dia y hora de salida 
+            Si hay una(s) habitación(es) disponible(s) cercana(s) a la peticion 
+            se debería poder  validar la reservacion en la base de datos, 
+          RAT:   En orden para validar la reservación con la base de datos 
 DEP: FR2 
  
 3.2.1.4 Functional requirement 1.4 
  
 ID: FR4 
-Feature: Registro de la reservacion de la(s) habitación(es)  
+Feature: Registro de alta de la reservacion de la(s) habitación(es)  
 DESC: Dado que la reservacion fue validada, tiene dos consecuencias posibles: 
  
-                 Escenario: No se registra una reservacion 
-                 Cuando en la verificacion de la base de datos 
+                 Escenario: No se registra de alta una reservacion 
+                 Cuando en la validacion de la base de datos 
                  No hubo habitacion(es) con caracterizacion parecida a la peticion de reservacion 
                  O lo que se encontro no fue satisfactorio para el cliente 
                  Por lo que este cancela su peticion de reservacion 
-                 Entonces se debería ser capaz de no registrar la reservacion 
+                 Entonces se debería ser capaz de no registrar de alta la reservacion 
  
-                 Escenario: Se registra una reservación 
+                 Escenario: Se registra de alta una reservación 
                  Cuando en la validacion de la base de datos se encontraron una(s) habitación(es) 
                  Que es (o son) cercana(s) o exactas a la peticion de reservacion,  
                  y esta(n) disponible(s) desde la fecha de llegada hasta la fecha de salida del cliente,  
                  Por lo que al momento en que se le informa al cliente, este acepta hacer reservacion 
-                 se deberia poder empezar a registrar en la base de datos de reservaciones  
-                 Con los todos los datos de esta peticion de reservacion 
-                 Y  despues, cuando el recepcionista captura estos datos de cliente: 
+                 Entonces el recepcionista tambien capturara estos datos de cliente: 
                  el nombre, apellido, telefono 
-                 Entonces se debería de terminar registrar la peticion en esta base de datos 
+                 Entonces se debería de registrar la alta de la reservacion 
+                 en la base de datos de reservaciones 
+                 Quitando disponibilidad de la(s) habitacion(es) reservadas 
                  Y a la vez, registrar los datos del cliente en la base de datos de clientes 
-                 Ya concluyendo esto quita disponibilidad de la(s) habitacion(es) reservadas 
  
-RAT:   En orden para registrar la reservación 
-DEP: FR3 
+RAT:   En orden para registrar la alta de una reservación 
+DEP: FR3

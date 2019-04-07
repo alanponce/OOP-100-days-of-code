@@ -1,13 +1,18 @@
 1. Se usara tabla de habitaciones a la mano, como hoja fisica o parte de la interfaz?
+    R: Aparte al sistema
 
 2. La tabla de registros de reservaciones se usara dos veces:
     * Porque una vez para registrar la reservacion en si.
+        
     * Y la otra cuando se registran los datos del cliente, y se pasa su ID_cliente a la tabla mencionada.
    si, no, como, porque?
-
+          R: ver 3
+   
 3. Se debe validar al cliente en la base de datos cliente, para que no se repita su entrada.
+    R: Se validara en la interface de alta
 
 4. Como se forma el ID_Cliente?
+    R: ver 3,
 
 5. En la reservacion se debe comparar la disponiblidad de la habitacion, no solo de la fecha de entrada del cliente, sino tambien
    todos los dias que comprenderan su estancia hasta su salida, porque los dias durante dicho periodo puede que haya se haya 

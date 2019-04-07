@@ -376,6 +376,7 @@ while(d!=0);
 }
 while(D!=0); 
 cajero.setPrecioTotal(carnicero.getPrecioTotal()+fruteria.getPrecioTotal()+pescadero.getPrecioTotal());//Se asigna el atributo de precio total en la clase cajero con la suma entre los precios totales que posee cada clase.
+cajero.setPrecioFinal((float) (cajero.getPrecioTotal()+cajero.getPrecioTotal()*cajero.getIVA()));
 JOptionPane.showMessageDialog(null,"Cajas del Supermercado");//Se imprime un mensaje que indica que ahora se encuentra en las cajas.
 cajero.Presentacion();//Realiza el método Saludo de la clase Cajero.
 cajero.Caja();//Realiza el método Caja de la clase Cajero.
@@ -383,6 +384,7 @@ cajero.Caja();//Realiza el método Caja de la clase Cajero.
 atributos y métodos de la clase cajero, se logra realizar el proceso como se esperaba; de todos modos, aún pienso que ésta práctica no
 es óptima, por lo que me dedicaré a investigar alguna manera de hacer esto de forma más efectiva y práctica.*/
 
-/*Avance: Se ha tratado de crear un método para realizar el proceso de asignación de valores en cada opción,
-pero aun no consigo resultados satisfactorios..*/
+/*Avance: La clase Artículo se ha declarado como estática, se eliminaron setters innecesarios.
+Se agregó la variable estática IVA a la clase supermercadó y se agregó el atributo de precio final
+con sus getters y setters.*/
     }}
