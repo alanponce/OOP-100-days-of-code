@@ -440,12 +440,12 @@ DESC: Para hacer cambios en una reservacion
                  Quitando disponibilidad de la(s) habitacion(es) reservadas  
  
 RAT:   En orden para registrar el cambio de una reservación 
-DEP: FR7
+DEP: FR9
 
-3.2.2.5 Functional requirement 2.5 
+3.2.2.7 Functional requirement 2.7 
 
-ID: FR9 
-Feature: Validación de cambios en la base de datos 
+ID: FR11 
+Feature: Validación de bajas en la base de datos 
 DESC: Dado que el admnistrador 
             esta en la interface de para hacer cambios en especifico 
             Si llena los campos de cambios con estos datos: 
@@ -457,7 +457,6 @@ DESC: Dado que el admnistrador
             se debería poder validar la reservacion en la base de datos, 
           RAT:   En orden para validar la reservación con la base de datos 
 DEP: FR4, FR8  
- 
  
 3.2.2.6 Functional requirement 2.6 
  
