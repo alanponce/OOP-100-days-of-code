@@ -121,6 +121,7 @@ Concept         | Definition
 ## References
 Oracle, corp., web page. Consulted 5/04/2019. 
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Interviewer)
 ## Overview
 # Overrall description
@@ -166,9 +167,9 @@ Customer               | They are people in need of fiscal and administration ac
 ### Educational level, experience y technical expertise
 De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
 ## Constrains
-The system is limited to run in equipment support and had installed JDK 8.0 
-El sistema está limitado a ejecutarse en equipos de escritorio que soporten y tengan instalado java JDK 8.0 o superior.
-El equipo mediante el cual se accederá deberá contar con conexión a internet.
+The system is limited to run in equipment support and had installed JDK 8.0 or later. The software is built in Java, so it's necessary all library and java core to work.
+The computer through will access must be has internet connection. The software is distributed system and need an external database for work, then it's necessary connect to internet.
+
 ### Regulatory policies
 ### Hardware limitations
 500MB en RAM
