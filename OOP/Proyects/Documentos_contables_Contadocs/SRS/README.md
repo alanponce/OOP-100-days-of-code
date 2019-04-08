@@ -185,6 +185,8 @@ El equipo mediante el cual se accederá deberá contar con conexión a internet.
 Software Engieener        | Customer   
 --------------------------|-----------
 Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
+There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
+
 ## Functions
 ## Performance requirements
 ## Logical database requirements
