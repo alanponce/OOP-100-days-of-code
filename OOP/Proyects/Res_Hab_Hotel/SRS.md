@@ -215,27 +215,51 @@ La comunicacion entre la interfaces se maneja atraves del CRUD en la base de dat
 
 Esta sección incluye los requerimientos que especifican todas las acciones fundamentales del sistema de software del proyecto de reservaciones de habitaciones del Hotel Foráneos CU. 
 
-3.2.1 User class 1 – Recepcionista
+3.2 Functional requirements. 
 
-3.2.1.1 Functional requirement 1.1
+Esta sección incluye los requerimientos que especifican todas las acciones fundamentales del sistema de software del proyecto de reservaciones de habitaciones del Hotel Foráneos CU. 
+
+3.2.1 User class 1 – Recepcionista 
+
+3.2.1.1 Functional requirement 1.1 
 
 ID: FR1 
 Feature: Login del recepcionista 
 DESC: Dado que el id y contraseña del recepcionista 
             fueron registrados por los programadores en el sistema 
             el recepcionista deberia ser capaz de usar ambos datos para acceder al sistema 
+            Que lo ubica primero en la interface de menu de inicio 
 RAT:   En orden para que el recepcionista entre al sistema 
-DEP: None 
+DEP:   None 
  
 3.2.1.2 Functional requirement 1.2 
  
 ID: FR2 
-Feature: Seleccinar tarea 
-DESC: Dado que el recepcionista  
-            esta en ejercicio de su funcion laboral de hacer una reservacion 
-            Y esta dentro del sistema, en el menu pricipal 
-            el recepcionista deberia ser capaz deseleccionar la opcion da altas al sistema 
-RAT:   En orden para que el recepcionista entre al sistema 
+Feature: Seleccionar tarea 
+DESC: Dado que el recepcionista accedio al sistema  
+            En orden de ejercer su funcion laboral 
+            Deberia seleccionar la opcion adecuada 
+            Entre altas, bajas y cambios, de reservaciones, o tambien, salir del sistema 
+            En el menu de inicio 
+ 
+            Escenario: no se puede acceder a opciones 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            intenta seleccionar las opciones 
+            De bajas o cambios, de reservacion 
+            Entonces no se activaran 
+            y no accederá a su funcionamiento 
+ 
+            Escenario: se accede a la opcion de registro de altas de reservaciones 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            selecciona la opcion de registro de altas de resevaciones 
+            Entonces deberia acceder a su funcionamiento 
+             
+            Escenario: se accede a la opcion de salir del sistema 
+            Si el recepcionista esta en ejercicio de su funcion laboral de hacer reservaciones 
+            Si el recepcionista selecciona la opcion de salir del sistema 
+            Entonces deberia salir del sistema 
+             
+RAT:   En orden para que el recepcionista seleccione la opcion para ejercer su funcion laboral 
 DEP:   FR1 
  
 3.2.1.3 Functional requirement 1.3 
@@ -243,8 +267,7 @@ DEP:   FR1
 ID: FR3 
 Feature: Validación de reservación con la base de datos 
 DESC: Dado que el recepcionista  
-            esta en ejercicio de su funcion laboral de hacer una reservacion 
-            Y esta dentro del sistema, en la interface de para hacer reservaciones en especifico 
+            esta en la interface de para hacer reservaciones en especifico 
             Si llena los campos de reservacion con estos datos de la peticion del cliente 
             Nombre del cliente, tipo de habitacion, numero de habitaciones 
             dia y hora de entrada, asi como dia y hora de salida 
@@ -273,10 +296,178 @@ DESC: Dado que la reservacion fue validada, tiene dos consecuencias posibles:
                  Por lo que al momento en que se le informa al cliente, este acepta hacer reservacion 
                  Entonces el recepcionista tambien capturara estos datos de cliente: 
                  el nombre, apellido, telefono 
-                 Entonces se debería de registrar la alta de la reservacion 
+                 Asi como seleccionar la forma de pago 
+                 Ya sea, tarjeta de credito o debito 
+                 Incluso efectivo en dado caso de estar presente el cliente (se le calculara su cambio) 
+                 Entonces se debería de registrar el alta de la reservacion 
                  en la base de datos de reservaciones 
                  Quitando disponibilidad de la(s) habitacion(es) reservadas 
                  Y a la vez, registrar los datos del cliente en la base de datos de clientes 
  
-RAT:   En orden para registrar la alta de una reservación 
-DEP: FR3
+RAT:   En orden para registrar el alta de una reservación 
+DEP: FR3 
+ 
+3.2.2 User Class 2 – Administrador 
+   
+3.2.2.1 Functional requirement 2.1 
+ 
+ID: FR5 
+Feature: Login del administrador 
+DESC: Dado que el id y contraseña del administrador 
+            fueron registrados por los programadores en el sistema 
+            el administrador deberia ser capaz de usar ambos datos para acceder al sistema 
+            Que lo ubica primero en la interface de menu de inicio 
+RAT:   En orden para que el recepcionista entre al sistema 
+DEP:   None 
+ 
+3.2.2.2 Functional requirement 2.2 
+ 
+ID: FR6 
+Feature: Seleccionar tarea 
+DESC: Dado que el administrador accedio al sistema  
+            En orden de ejercer su funcion laboral 
+            Deberia seleccionar la opcion adecuada 
+            Entre altas, bajas y cambios, de reservaciones, o tambien, salir del sistema 
+            En el menu de inicio 
+ 
+            Escenario: se accede a la opcion de registro de altas de reservaciones 
+            Cuando el administrador esta en ejercicio de su funcion laboral de hacer reservaciones 
+            selecciona la opcion de registro de altas de resevaciones 
+            Entonces deberia acceder a su funcionamiento 
+             
+            Escenario: se accede a la opcion de registro de bajas de reservaciones 
+            Cuando ya se hizo una alta de resevacion
+            y el cliente quiere hacer la baja
+            el administrador debe seleccionar la opcion de registro de bajas de resevaciones 
+            Entonces deberia acceder a su funcionamiento 
+ 
+            Escenario: se accede a la opcion de registro de cambios de reservaciones 
+            Cuando el administrador esta en ejercicio de su funcion laboral de hacer reservaciones 
+            selecciona la opcion de registro de cambios de resevaciones 
+            Entonces deberia acceder a su funcionamiento 
+ 
+            Escenario: se accede a la opcion de salir del sistema 
+            Cuando el admnistrador esta en ejercicio de su funcion laboral de hacer reservaciones 
+            selecciona la opcion de salir del sistema 
+            Entonces deberia salir del sistema 
+             
+RAT:   En orden para que el recepcionista seleccione la opcion para ejercer su funcion laboral 
+DEP:   FR5 
+ 
+3.2.2.3 Functional requirement 2.3 
+ 
+ID: FR7 
+Feature: Validación de reservación con la base de datos 
+DESC: Dado que el admnistrador 
+            esta en la interface de para hacer reservaciones en especifico 
+            Si llena los campos de reservacion con estos datos de la peticion del cliente 
+            Nombre del cliente, tipo de habitacion, numero de habitaciones 
+            dia y hora de entrada, asi como dia y hora de salida 
+            Si hay una(s) habitación(es) disponible(s) cercana(s) a la peticion 
+            se debería poder  validar la reservacion en la base de datos, 
+          RAT: En orden para validar la reservación con la base de datos de reservaciones
+DEP: FR6 
+ 
+3.2.2.4 Functional requirement 2.4 
+ 
+ID: FR8 
+Feature: Registro de alta de la reservacion de la(s) habitación(es)  
+DESC: Dado que la reservacion fue validada, tiene dos consecuencias posibles: 
+ 
+                 Escenario: No se registra de alta una reservacion 
+                 Cuando en la validacion de la base de datos 
+                 No hubo habitacion(es) con caracterizacion parecida a la peticion de reservacion 
+                 O lo que se encontro no fue satisfactorio para el cliente 
+                 Por lo que este cancela su peticion de reservacion 
+                 Entonces se debería ser capaz de no registrar de alta la reservacion 
+ 
+                 Escenario: Se registra de alta una reservación 
+                 Cuando en la validacion de la base de datos se encontraron una(s) habitación(es) 
+                 Que es (o son) cercana(s) o exactas a la peticion de reservacion,  
+                 y esta(n) disponible(s) desde la fecha de llegada hasta la fecha de salida del cliente,  
+                 Por lo que al momento en que se le informa al cliente, este acepta hacer reservacion 
+                 Entonces el recepcionista tambien capturara estos datos de cliente: 
+                 el nombre, apellido, telefono 
+                 Asi como seleccionar la forma de pago 
+                 Ya sea, tarjeta de credito o debito 
+                 Incluso efectivo en dado caso de estar presente el cliente (se le calculara su cambio) 
+                 Entonces se debería de registrar el alta de la reservacion 
+                 en la base de datos de reservaciones 
+                 Quitando disponibilidad de la(s) habitacion(es) reservadas 
+                 Y a la vez, registrar los datos del cliente en la base de datos de clientes 
+ 
+RAT:   En orden para registrar el alta de una reservación 
+DEP: FR7 
+ 
+3.2.2.5 Functional requirement 2.5 
+
+ID: FR9 
+Feature: Validación de cambios en la base de datos 
+DESC: Dado que el admnistrador 
+            esta en la interface de para hacer cambios en especifico 
+            Si llena los campos de cambios con estos datos: 
+            ID_Registro, ID_Cliente, tipo de Habitacion, Cantidad Habitaciones 
+            Fecha Entrada, Fecha Salida
+            si esta(S) las habitacione(s)
+            Que es (o son) cercana(s) o exactas al cambio de reservacion,  
+            y esta(n) disponible(s) desde la nueva fecha de llegada hasta la fecha de salida del cliente,
+            se debería poder validar la reservacion en la base de datos, 
+          RAT:   En orden para validar el cambio con la base de datos de reservaciones 
+DEP: FR4, FR8  
+ 
+ 
+3.2.2.6 Functional requirement 2.6 
+ 
+ID: FR10 
+Feature: Registro de cambios de una reservacion de la(s) habitación(es)  
+DESC: Para hacer cambios en una reservacion 
+     la reservacion debe haber sido registrada de alta, 
+     y validado su cambio 
+     tiene dos consecuencias posibles: 
+ 
+                 Escenario: No se registra de cambio de una reservacion 
+                 Cuando en la validacion de cambio la base de datos 
+                 No hubo habitacion(es) con caracterizacion parecida a la peticion de reservacion 
+                 O lo que se encontro no fue satisfactorio para el cliente
+                 o no se encontraron desocupadas en la nuevas fechas de peticion
+                 Por lo que este cancela su peticion de cambios 
+                 Entonces se debería ser capaz de no registrar el cambio de la reservacion 
+ 
+                 Escenario: Se registra un el cambio de una reservación 
+                 Cuando en la validacion de la base de datos se encontraron una(s) habitación(es) 
+                 Que es (o son) cercana(s) o exactas a la peticion de reservacion,  
+                 y esta(n) disponible(s) desde la fecha de llegada hasta la fecha de salida del cliente,  
+                 Por lo que al momento en que se le informa al cliente, este acepta hacer el cambio  
+                 Entonces se debería poder registrar el cambio de la reservacion 
+                 en la base de datos de reservaciones 
+                 Quitando disponibilidad de la(s) habitacion(es) reservadas  
+ 
+RAT:   En orden para registrar el cambio en la base de datos de reservación 
+DEP: FR9
+
+3.2.2.7 Functional requirement 2.7 
+
+ID: FR11 
+Feature: Validación de bajas en la base de datos 
+DESC: Dado que el admnistrador 
+            esta en la interface de para hacer bajas en especifico
+            Si llena los campos de cambios con estos datos: 
+            ID del Registro, ID del Cliente, Nombre, Apellido,  
+            tipo de Habitacion, Cantidad de Habitaciones, Id de Habitaciones
+            si estos datos coinciden con lo de una reservacion,
+            se debería poder validar la baja en la base de datos, 
+          RAT:   En orden para validar la baja con la base de datos 
+DEP: FR4, FR8, FR10 
+ 
+3.2.2.8 Functional requirement 2.8
+ 
+ID: FR12
+Feature: Registro de baja de una reservacion de la(s) habitación(es)  
+DESC: Para hacer baja de una reservacion 
+      la reservacion debe haber sido registrada de alta,
+      y validado su baja, 
+      Entonces el administrador ya deberia poder registrar la baja de la(s) reservacion(es)
+RAT:   En orden para registrar la baja de una reservación 
+DEP: FR4, FR8, FR10, FR11
+
+3.3 Performance Requirements
