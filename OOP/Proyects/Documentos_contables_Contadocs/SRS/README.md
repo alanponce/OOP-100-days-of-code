@@ -131,6 +131,11 @@ The business has with a system files with administrative information, this infor
 ### System interfaces
 
 ### User interfaces
+The first perspective about software is getting in an interview with the costumer, here show some characteristics of software:
+Software Engieener        | Customer   
+--------------------------|-----------
+The system need a language aditional to Spanish?|No, all users understand spanish.
+
  Document Search, when the user insert name and last name of customer, the system lookin for all data related with the people related. If a document found have a digital version, then it show a hiperlink with its reference in selected enviroment. In case, the sofware find a phisical location, the answer will indicate the exact position. Finally, if the user don't find a available ducuments, the system indicate this situation.
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png" alt="consultas" width="400" />   <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png" alt="consultas con una respuesta" width="400" />
@@ -158,13 +163,14 @@ SQL
 
 ## User characteristics
 
-Only internal and externals employees can access to data:
+The user involved all collaborators but, only internal and externals employees can access to data, the next table describe the roles of interaction actors:
 
 Actor         | Role   
 --------------|-----------
 Internal Employee      | people can access to all parts of fiscal accounting others internal business process 
 External Employee      | collaborator who help with some customers and special works
 Customer               | They are people in need of fiscal and administration accounting
+SAT| Goverment organization manager of paperwork related to collect taxes.
 ### Educational level, experience y technical expertise
 
 De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
