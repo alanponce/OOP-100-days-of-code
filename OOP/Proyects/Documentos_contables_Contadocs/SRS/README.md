@@ -95,7 +95,7 @@ The document address broadly the next topics:
 It will be analyzed the requirement of business collaborators, so it will describe an action plan to construction of software. It will develop the software to reduce efforts to find documents in their offices, then it offers a solution according to available infrastructure. Finally, it will do proof and fix errors.
 
 ## Scope
-La finalidad de este producto es contribuir en el proceso que conlleva la extracción de la información y que además pueda ser utilizada con un considerable grado de sencillez por todos los posibles usuarios. En concreto este proyecto afecta directamente a todas las personas involucradas que requieran la información de los clientes de la empresa.
+The product purpose is contributed in process of information extract and use for all users. This project include all people who need information about costumers and their paperwork’s.
 
 Otro aspecto para lograr es la amplia compresión en el uso del software por parte del personal involucrado en cada proceso, esto permitirá que el aprovechamiento de la herramienta proporcionada y con ello alcanzar las metas propuestas. De esta manera aumentar la productividad y mejorar el desempeño en la colaboración dentro de la organización.
 
@@ -116,6 +116,7 @@ Concept         | Definition
 **Customer**             | They are people in need of fiscal and administration accounting
 **Sistema de administración tributaría (SAT)**| Goverment organization manager of paperwork related to collect taxes.
 **JDK**|Java development kit, is a development enviroment for building applications, applets, and components using the java programming language.
+**OS**|Abbreviature  of operating system
 
 
 ## References
@@ -165,6 +166,7 @@ Internal Employee      | people can access to all parts of fiscal accounting oth
 External Employee      | collaborator who help with some customers and special works
 Customer               | They are people in need of fiscal and administration accounting
 ### Educational level, experience y technical expertise
+
 De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
 ## Constrains
 The system is limited to run in equipment support and had installed JDK 8.0 or later. The software is built in Java, so it's necessary all library and java core to work.
@@ -191,6 +193,8 @@ Software Engieener        | Customer
 --------------------------|-----------
 Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
 There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
+There is a middle place, where document save?|Dropbox
+When a work wasn't finished, where is keep the documents?| On desk in their folders.
 
 ## Functions
 ## Performance requirements
