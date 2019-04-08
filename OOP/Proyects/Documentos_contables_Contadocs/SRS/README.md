@@ -27,9 +27,9 @@ Abril 2019
 
 # Table of contents
 1. [Introduction](#Introduction)
-    - [Purpose](#Purpose)
-    - [Scope](#Scope)
-    - [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
+    1.1 [Purpose](#Purpose)
+    1.2 [Scope](#Scope)
+    1.3 [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
     - [References](#References)
     - [Overview](#Overview)
 2. [Overrall description](#Overrall-description)
