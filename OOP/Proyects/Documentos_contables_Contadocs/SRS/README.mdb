@@ -46,13 +46,30 @@ Abril 2019
     - [User characteristics](#User-characteristics)
         - [Educational level, experience y technical expertise](#Educational-level-experience-y-technical-expertise)
         - [Constrains](#Constrains)
-
+        - [Regulatory policies](#Regulatory-policies)
+        - [Hardware limitations](#Hardware-limitations)
+        - [Interfaces to other applications](#Interfaces-to-other-applications)
+        - [Parallel operations](#Parallel-operations)
+        - [Audit functions](#Audit-functions)
+        - [Control functions](#Control-functions)
+        - [Higher-order language requeriments](#Higher-order-language-requeriments)
+        - [Signal handshake protocols](#Signal-handshake-protocols)
+        - [Reliability requirements](#Reliability-requirements)
+        - [Criticality of the application](#Criticality-of-the-application)
+        - [Safety and security consideration](#Safety-and-security-consideration)
+    - [Assumptions and dependencies](#Assumptions-and-dependencies)
+    - [Apportioning of requirements](#Apportioning-of-requirements)
     - [External interfaces](#External-interfaces)
     - [Functions](#Functions)
-   
+    - [Performance requirements]
+
 3. [Specific requirements](#Specific-requirements) 
     - [Logical database requirements](#Logical-database-requirements)
-
+    - [Design constraints](#Design-constraints)
+        - [Standards compliance](#Standards-compliance)
+    - [Software system attributes](#Software-system-attributes)
+        - [Relibility](#Relibility)
+        - [Availability](#Availability)
         - [Security](#Security)
         - [Maintainability](#Maintainability)
         - [Portability](#Portability)
@@ -164,6 +181,20 @@ De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nive
 The system is limited to run in equipment support and had installed JDK 8.0 or later. The software is built in Java, so it's necessary all library and java core to work.
 The computer through will access must be has internet connection. The software is distributed system and need an external database for work, then it's necessary connect to internet.
 
+### Regulatory policies
+### Hardware limitations
+500MB en RAM
+### Interfaces to other applications
+### Parallel operations
+### Audit functions
+### Control functions
+### Higher-order language requeriments
+### Signal handshake protocols
+### Reliability requirements
+### Criticality of the application
+### Safety and security consideration
+## Assumptions and dependencies
+## Apportioning of requirements
 # Specific requirements
 ## External interfaces
 
@@ -175,7 +206,13 @@ There is a middle place, where document save?|Dropbox
 When a work wasn't finished, where is keep the documents?| On the desk in their folders.
 
 ## Functions
-
+## Performance requirements
+## Logical database requirements
+## Design constraints
+### Standards compliance
+## Software system attributes
+### Relibility
+### Availability
 ### Security
 Por consideraciones del cliente, no será necesario auténticarse en la aplicación. Sin embargo, el acceso a la base de datos requerirá de usuario y contraseña. La base de datos estará en un servidor público, dado que el tráfico por día es mínimo las restricciones serán mínimas por parte del proveedor del sistema.
 ### Maintainability
