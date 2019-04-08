@@ -107,13 +107,14 @@ Debe poder desplegarse en distintos sistemas operativos sin necesidad de una ada
 
 
 ## Definitions, acronyms, and abbreviations
-**Customer**, es la persona que requiere los servicios de contaduría.
 
-**Colaboradores** internos, son las personas vinculadas directamente a la firma de contaduría.
+Concept         | Definition   
+--------------|-----------
+**Internal Employee**      | People can access to all parts of fiscal accounting others internal business process 
+**External Employee**      | Collaborator who help with some customers and special works
+**Customer**             | They are people in need of fiscal and administration accounting
+**Sistema de administración tributaría (SAT)**| Goverment organization manager of paperwork related to collect taxes.
 
-**Colaboradores externos**, colaboran de manera complementaria con la firma de contaduría con fines legales.
-
-**Sistema de administración tributaría (SAT)**, organización gubernamental encargada de tramites relacionados a la recolección de impuestos.
 
 ## References
 Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Entrevistador)
