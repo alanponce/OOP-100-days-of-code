@@ -132,9 +132,12 @@ The business has with a system files with administrative information, this infor
 
 ### User interfaces
 The first perspective about software is getting in an interview with the costumer, here show some characteristics of software:
-Software Engieener        | Customer   
---------------------------|-----------
-The system need a language aditional to Spanish?|No, all users understand spanish.
+
+Software Engineer        | Customer   
+-------------------------|-----------
+The system need a language additional to Spanish?|No, all users understand Spanish.
+What OS have the equipment of users?|Windows in different versions and mac OS.
+Do you use a tactile screen?| It isn't necessary, only one computer has a tactile screen. 
 
  Document Search, when the user insert name and last name of customer, the system lookin for all data related with the people related. If a document found have a digital version, then it show a hiperlink with its reference in selected enviroment. In case, the sofware find a phisical location, the answer will indicate the exact position. Finally, if the user don't find a available ducuments, the system indicate this situation.
 
