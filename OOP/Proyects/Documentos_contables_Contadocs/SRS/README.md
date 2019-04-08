@@ -27,9 +27,9 @@ Abril 2019
 
 # Table of contents
 1. [Introduction](#Introduction)
-    1.1 [Purpose](#Purpose)
-    1.2 [Scope](#Scope)
-    1.3 [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
+    - [Purpose](#Purpose)
+    - [Scope](#Scope)
+    - [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
     - [References](#References)
     - [Overview](#Overview)
 2. [Overrall description](#Overrall-description)
@@ -59,10 +59,13 @@ Abril 2019
         - [Safety and security consideration](#Safety-and-security-consideration)
     - [Assumptions and dependencies](#Assumptions-and-dependencies)
     - [Apportioning of requirements](#Apportioning-of-requirements)
-    - [Specific](#Specific) 
+3. [Specific requirements](#Specific-requirements) 
     - [External interfaces](#External-interfaces)
     - [Functions](#Functions)
-    - [Performance requirements](#Performance-requirements)
+    - [Performance requirements]
+
+    -[Specific requirements](Specific requirements)
+    (#Performance-requirements)
     - [Logical database requirements](#Logical-database-requirements)
     - [Design constraints](#Design-constraints)
         - [Standards compliance](#Standards-compliance)
@@ -125,7 +128,7 @@ La empresa cliente, cuenta con un sistema de archivos a mano que contiene toda l
 ### System interfaces
 
 ### User interfaces
-Consulta de documentos, éste se lleva a cabo al ingresar con los nombres y apellidos de los clientes. Si el documento se encuentra en una versión digital se muestra la ubicación dentro del ámbito seleccionado. En el caso de que se encuentre en alguna locación física el programa lo indica. Finalmente, si el cliente no cuenta con documentos disponibles, se manda un mensaje exhibiendo dicha situación.
+ Document Search, when the user insert name and last name of customer, the system lookin for all data related with the people related. If a document found have a digital version, then it show a hiperlink with its reference in selected enviroment. In case, the sofware find a phisical location, the answer will indicate the exact position. Finally, if the user don't find a available ducuments, the system indicate this situation.
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png" alt="consultas" width="400" />   <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png" alt="consultas con una respuesta" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas3Resultados.png" alt="consultas con tres resultados" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ConsultasSinRespuesta.png" alt="consultas con tres resultados" width="400" />
@@ -178,7 +181,7 @@ El equipo mediante el cual se accederá deberá contar con conexión a internet.
 ### Safety and security consideration
 ## Assumptions and dependencies
 ## Apportioning of requirements
-# Specific 
+# Specific requirements
 ## External interfaces
 ## Functions
 ## Performance requirements
@@ -194,7 +197,7 @@ Por consideraciones del cliente, no será necesario auténticarse en la aplicaci
 ### Portability
 ## Organizing the specific requirements
 ### System mode
-### User class
+### Diagram class
 ![Diagrama de clase](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/DiagramaDeClase.png)
 ### Objects
 
