@@ -1,3 +1,24 @@
+<p align="center">
+Universidad Autonoma de Ciudad Juarez</br>
+División Multidisciplinaria de Ciudad Universitaria</br>
+Departamento de Ingeniería Electricidad y Computación</br>
+</p>
+<br>
+<p align="center">
+<img width="270" height="270" 
+  src="http://www.uacj.mx/comunicacion/PublishingImages/Escudo%20UACJ%202015/Escudo%20uacj%202015-color-sin%20fondo.png">
+</p>
+<br>
+<p align="right">
+Development of software requirements</br>
+</br>
+Accounting documents administration</br>
+</br>
+George Iván Rodríguez Gómez 160000</br>
+</br>
+Bachelor's in Software Engineer
+</p>
+
 # Table of contents
 - [Introduction](#Introduction)
     - [Purpose](#Purpose)
@@ -30,8 +51,8 @@
         - [Reliability requirements](#Reliability-requirements)
         - [Criticality of the application](#Criticality-of-the-application)
         - [Safety and security consideration](#Safety-and-security-consideration)
-    - [Assumptions-and-dependencies](#Assumptions and dependencies)
-    - [Apportioning-of-requirements](#Apportioning-of-requirements)
+    - [Assumptions and dependencies](#Assumptions-and-dependencies)
+    - [Apportioning of requirements](#Apportioning-of-requirements)
     - [Specific](#Specific) 
     - [External interfaces](#External-interfaces)
     - [Functions](#Functions)
@@ -60,10 +81,12 @@
 
 # Introduction
 ## Purpose
-El objetivo de este documento es describir una solución basada en software para organizar la documentación de una empresa contable.
-La solucion proporcionará mayor facilidad y agilidad al momento de filtrar y organizar grandes cantidades de información de los administradores. Con este proyecto será posible reducir el tiempo de búsqueda, mantener accesible información para los administradores de la empresa y recuperar los datos en documentos para su uso posterior. Crear una base de datos para localizar documentos de manera más efectiva y para que esté al alcance de más personas.
 
-El documento ampliamente aborda los siguientes topicos: se análizarán detalladamente los requerimientos de los colaboradores de la empresa. Se describirá un plan de acción para la elaboración del programa. Se desarrollará el programa que reduzca las acciones realizadas por los administradores en la oficina, generando una interfaz acorde a los dispositivos comúnmente utilizados en la empresa considerando su infraestructura. Se establecerá una base de datos para que el programa filtre los datos que sean solicitados. Hacer pruebas al software y corregir errores.
+The document objective is describing a software solution to organize business accounting. This solution will give ease and ease up to organize and find a lot of quantities of information. The project will allow to reduce time search, keep accessible the administrator business information and recover data in documents for later use. Create a database for localize documents effective and available to any person in business.
+
+The document address broadly the next topics:
+It will be analyzed the requirement of business collaborators, so it will describe an action plan to construction of software. It will develop the software to reduce efforts to find documents in their offices, then it offers a solution according to available infrastructure. Finally, it will do proof and fix errors.
+
 ## Scope
 La finalidad de este producto es contribuir en el proceso que conlleva la extracción de la información y que además pueda ser utilizada con un considerable grado de sencillez por todos los posibles usuarios. En concreto este proyecto afecta directamente a todas las personas involucradas que requieran la información de los clientes de la empresa.
 
@@ -96,52 +119,46 @@ La empresa cliente, cuenta con un sistema de archivos a mano que contiene toda l
 
 ### User interfaces
 Consulta de documentos, éste se lleva a cabo al ingresar con los nombres y apellidos de los clientes. Si el documento se encuentra en una versión digital se muestra la ubicación dentro del ámbito seleccionado. En el caso de que se encuentre en alguna locación física el programa lo indica. Finalmente, si el cliente no cuenta con documentos disponibles, se manda un mensaje exhibiendo dicha situación.
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png)
 
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas3Resultados.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ConsultasSinRespuesta.png)
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png" alt="consultas" width="400" />   <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png" alt="consultas con una respuesta" width="400" />
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas3Resultados.png" alt="consultas con tres resultados" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ConsultasSinRespuesta.png" alt="consultas con tres resultados" width="400" />
 
 Movimientos, un solo cliente puede tener varios documentos, por lo que se puede anexar una cantidad indefinida de locaciones en documentos. Cada documento contará con un encabezado, el formato del documento, el nombre de la ubicación y la referencia de ésta. Si alguna referencia es obsoleta, se puede eliminar.
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2Resultados.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2ResultadosSinEleccion.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos3Resultados.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4Borrar.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4BorrarMensaje.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4BorrarMensaje.png)
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2Resultados.png" width="400" />
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2ResultadosSinEleccion.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos3Resultados.png" width="400" />
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4Borrar.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4BorrarMensaje.png" width="400" />
 
 Agregar nuevos elementos, la pestaña “Nuevos clientes” nos permitirá ingresar los datos de nuevos clientes a la base de datos, los clientes anteriores no se removerán de la base de datos dado que en cualquier momento pueden volver a ser activos.
 
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/MovimientosResultadoAgregar.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientes.png)
-
-![Consultas](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientesSuccess.png)
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/MovimientosResultadoAgregar.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientes.png" width="400" />
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientesSuccess.png" width="400" />
 
 ### Hardware interfaces
 ### Software interfaces
 ### Communications interfaces
+SQL
 ### Memory
+500MB en RAM
 ### Operations
 ### Site adaptation requirements
 ## Product 
 
 ## User characteristics
+
+Only internal and externals employees can access to data:
+| Actor         | Role   |
+
+| Internal Employee      | people can access to all parts of fiscal accounting others internal business process |
+| External Employee      | collaborator who help with some customers and special works|
+| Customer               | They are people in need of fiscal and administration accounting|  
 ### Educational level, experience y technical expertise
 De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
 ## Constrains
+El sistema está limitado a ejecutarse en equipos de escritorio que soporten y tengan instalado java JDK 8.0 o superior.
+El equipo mediante el cual se accederá deberá contar con conexión a internet.
 ### Regulatory policies
 ### Hardware limitations
+500MB en RAM
 ### Interfaces to other applications
 ### Parallel operations
 ### Audit functions
@@ -170,7 +187,7 @@ Por consideraciones del cliente, no será necesario auténticarse en la aplicaci
 ## Organizing the specific requirements
 ### System mode
 ### User class
-
+![Diagrama de clase](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/DiagramaDeClase.png)
 ### Objects
 
 ### Feature
