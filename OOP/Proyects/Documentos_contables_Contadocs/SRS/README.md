@@ -152,6 +152,7 @@ SQL
 ## User characteristics
 
 Only internal and externals employees can access to data:
+
 Actor         | Role   
 --------------|-----------
 Internal Employee      | people can access to all parts of fiscal accounting others internal business process 
