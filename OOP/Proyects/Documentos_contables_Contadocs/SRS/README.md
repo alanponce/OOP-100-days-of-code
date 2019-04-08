@@ -59,13 +59,11 @@ Abril 2019
         - [Safety and security consideration](#Safety-and-security-consideration)
     - [Assumptions and dependencies](#Assumptions-and-dependencies)
     - [Apportioning of requirements](#Apportioning-of-requirements)
-3. [Specific requirements](#Specific-requirements) 
     - [External interfaces](#External-interfaces)
     - [Functions](#Functions)
     - [Performance requirements]
 
-    -[Specific requirements](Specific requirements)
-    (#Performance-requirements)
+3. [Specific requirements](#Specific-requirements) 
     - [Logical database requirements](#Logical-database-requirements)
     - [Design constraints](#Design-constraints)
         - [Standards compliance](#Standards-compliance)
@@ -114,17 +112,17 @@ Debe poder desplegarse en distintos sistemas operativos sin necesidad de una ada
 Concept         | Definition   
 --------------|-----------
 **Internal Employee**      | People can access to all parts of fiscal accounting others internal business process 
-**External Employee**      | Collaborator who help with some customers and special works
+**External Employee**      | Collaborator who helps with some customers and special works
 **Customer**             | They are people in need of fiscal and administration accounting
 **Sistema de administración tributaría (SAT)**| Goverment organization manager of paperwork related to collect taxes.
 
 
 ## References
-Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Entrevistador)
+Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Interviewer)
 ## Overview
 # Overrall description
 ## Product perspective
-La empresa cliente, cuenta con un sistema de archivos a mano que contiene toda la información administrativa, como en muchos negocios este sistema hace que se acumule una cantidad bastante voluminosa de papel y archivos, y aunque se cuenta con archiveros para estos sigue siendo una cantidad bastante importante, por lo que al tener esta cantidad de archivos en forma física y guardada en diferentes archiveros complica la búsqueda de información, además de la posibilidad de pérdidas y daños a los mismo archivos.
+The business has with a system files with administrative information, this information during time in paper in folders, but this number of documents isn’t handled adequately in along time this can become a big problem. It will be hard to find a necessary hard copy of any document in different places of business infrastructure, and possibilities of losing and damage it.
 ### System interfaces
 
 ### User interfaces
@@ -183,6 +181,10 @@ El equipo mediante el cual se accederá deberá contar con conexión a internet.
 ## Apportioning of requirements
 # Specific requirements
 ## External interfaces
+
+Software Engieener        | Customer   
+--------------------------|-----------
+Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
 ## Functions
 ## Performance requirements
 ## Logical database requirements
@@ -198,9 +200,8 @@ Por consideraciones del cliente, no será necesario auténticarse en la aplicaci
 ## Organizing the specific requirements
 ### System mode
 ### Diagram class
-![Diagrama de clase](https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/DiagramaDeClase.png)
-### Objects
 
+### Objects
 ### Feature
 ### Stimulus
 ### Response
