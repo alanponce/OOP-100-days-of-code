@@ -26,13 +26,13 @@ Abril 2019
 </p>
 
 # Table of contents
-- [Introduction](#Introduction)
+1. [Introduction](#Introduction)
     - [Purpose](#Purpose)
     - [Scope](#Scope)
     - [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
     - [References](#References)
     - [Overview](#Overview)
-- [Overrall description](#Overrall-description)
+2. [Overrall description](#Overrall-description)
     - [Product perspective](#Product-perspective)
         - [System interfaces](#System-interfaces)
         - [User interfaces](#User-interfaces)
@@ -42,7 +42,7 @@ Abril 2019
         - [Memory](#Memory)
         - [Operations](#Operations)
         - [Site adaptation requirements](#Site-adaptation-requirements)
-- [Product](#Product)
+    - [Product](#Product)
     - [User characteristics](#User-characteristics)
         - [Educational level, experience y technical expertise](#Educational-level-experience-y-technical-expertise)
         - [Constrains](#Constrains)
