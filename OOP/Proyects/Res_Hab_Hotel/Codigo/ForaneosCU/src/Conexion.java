@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author compu
+ * @author kaleb150204
  */
 public class Conexion {
     
