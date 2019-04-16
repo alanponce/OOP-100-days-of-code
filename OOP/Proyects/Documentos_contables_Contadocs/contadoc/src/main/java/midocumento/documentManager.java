@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -63,8 +64,6 @@ public class documentManager extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTFApellidoM = new javax.swing.JTextField();
         jBBuscarM = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jBQuitar = new javax.swing.JButton();
         jBAgregar = new javax.swing.JButton();
@@ -80,6 +79,9 @@ public class documentManager extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         modelo = new DefaultListModel();
         jLNombreD = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        modeloDoc = new DefaultListModel();
+        jLDocsD = new javax.swing.JList<>();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jTFNombreNC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -304,10 +306,6 @@ public class documentManager extends javax.swing.JFrame {
             }
         });
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
-
         jLabel5.setText("Documentos:");
 
         jBQuitar.setText("Quitar");
@@ -347,14 +345,21 @@ public class documentManager extends javax.swing.JFrame {
         });
 
         jLNombreD.setModel(modelo);
+        jLNombreD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLNombreDMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(jLNombreD);
+
+        jLDocsD.setModel(modeloDoc);
+        jScrollPane2.setViewportView(jLDocsD);
 
         jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jTFNombreM, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jTFApellidoM, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBBuscarM, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBQuitar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBAgregar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -368,6 +373,7 @@ public class documentManager extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jTFReferencia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jBGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jScrollPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -378,7 +384,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -392,7 +398,7 @@ public class documentManager extends javax.swing.JFrame {
                                         .addComponent(jBGuardar)
                                         .addGap(61, 61, 61))))
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
+                                .addGap(5, 5, 5)
                                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jBBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -410,9 +416,6 @@ public class documentManager extends javax.swing.JFrame {
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(275, 275, 275)
-                                .addComponent(jLabel5))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -420,7 +423,10 @@ public class documentManager extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTFApellidoM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTFNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jTFNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                                .addGap(275, 275, 275)
+                                .addComponent(jLabel5)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -466,10 +472,10 @@ public class documentManager extends javax.swing.JFrame {
                         .addComponent(jLReferencia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addGap(33, 33, 33)
                         .addComponent(jBGuardar))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
+                    .addComponent(jScrollPane2))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -594,7 +600,8 @@ public class documentManager extends javax.swing.JFrame {
         presentarResultadosD(Buscar(jTFNombreM.getText(), jTFApellidoM.getText()));
     }//GEN-LAST:event_jBBuscarMActionPerformed
 
-
+    
+    
     // Se instancian los objetos globales
     // cliente es el objeto que captura todos sus atributos y los manda a la base de
     // datos
@@ -614,7 +621,8 @@ public class documentManager extends javax.swing.JFrame {
     String[] LocalData = new String[maxElementos];
     private Connection conexion = null;
     //private javax.swing.JList<String> jLNombreD;
-
+    
+    
     public void ocultarCampos() {
         // En la pestaña movimientos es necesario que no estén visibles los campos
         jLEncabezado.setVisible(false);
@@ -628,7 +636,7 @@ public class documentManager extends javax.swing.JFrame {
         jTFUbicacion.setVisible(false);
 
     }
-
+    
     public void visualizarCampos() {
         // En la pestaña movimientos es necesario que no estén visibles los campos
         jLEncabezado.setVisible(true);
@@ -640,9 +648,9 @@ public class documentManager extends javax.swing.JFrame {
         jTFReferencia.setVisible(true);
         jTFTipo.setVisible(true);
         jTFUbicacion.setVisible(true);
-
+                
     }
-
+    
     private void configuracionInicial() {
         // En la pestaña movimientos es necesario que no estén visibles
         ocultarCampos();
@@ -656,7 +664,7 @@ public class documentManager extends javax.swing.JFrame {
         }
         LlenarCamposDepu();
     }
-
+    
     private String Alinear(String cad1, String cad2) {
         // Alinea las cadenas de caracteres, es solo orden
         for (int i = cad1.length(); i < 110; i++) {
@@ -664,13 +672,14 @@ public class documentManager extends javax.swing.JFrame {
         }
         return cad1 + cad2;
     }
-
+    
+    
     public void mostrar(Clientes Cliente, Documentos Documento) {
         String MiCliente = "Cliente:" + Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
-                + Cliente.getApellidoM();
+        + Cliente.getApellidoM();
         String MiTipo = "Tipo: " + Documento.getTipo();
         String MiDocumento = "Documento: " + Documento.getEncabezado();
-
+        
         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
@@ -679,23 +688,65 @@ public class documentManager extends javax.swing.JFrame {
         jTAResultados.setText(jTAResultados.getText() + "Referencia:" + Documento.getReferencia() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "\n");
         jTAResultados.setText(jTAResultados.getText()
-                + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-                + "\n");
+        + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+        + "\n");
+    }
+    
+    String ClienteAnterior = "";
+    static ArrayList<Documentos> undocumento = new ArrayList<Documentos>();
+    static ArrayList<Clientes> uncliente = new ArrayList<Clientes>();
+    
+    private void jLNombreDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNombreDMouseClicked
+        Documentos undoc;
+        Clientes uncli;
+        //Long id,ultimoId;
+        Long n =Integer.toUnsignedLong(jLNombreD.getSelectedIndex()) ;
+        Long nn,nnn;
+        if(!modelo.isEmpty()){
+            modeloDoc.clear();
+            for (int i = 0; i < uncliente.size();i++)
+            {
+                //undoc = undocumento.get(i);
+                if (i == n)
+                {
+                    uncli = uncliente.get(i);
+                    nn = uncli.getId();
+                    System.out.println("\n Opción elegido:"+i+"\n");
+                    System.out.println("\n Id:"+nn+"\n");
+                    for (int j = 0; j < undocumento.size(); j++) {
+                        undoc=undocumento.get(j);
+                        nnn= undoc.getId_cliente();
+                        System.out.println( "Doc:"+j+"\n");
+                        System.out.println( "Id Doc:"+nnn+"\n");
+                        System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
+                        if (nn.equals(nnn)) {
+                            modeloDoc.addElement(undoc.getEncabezado());
+                        }
+                        
+                    }
+
+                }
+                //undoc.getId();
+
             }
 
-    String ClienteAnterior = "";
-    static ArrayList<Clientes> uncliente = new ArrayList();
+            jLDocsD.add(this);
+        }
+    }//GEN-LAST:event_jLNombreDMouseClicked
     public void mostrarD(Clientes Cliente, Documentos Documento) {
         //String cliente = String.valueOf(Cliente.getId());
         String MiCliente = Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
                 + Cliente.getApellidoM();
         String MiTipo = "Tipo: " + Documento.getTipo();
         String MiDocumento = "Documento: " + Documento.getEncabezado();
+        undocumento.add(Documento);
         if (MiCliente.equals(ClienteAnterior)) {
             ClienteAnterior = MiCliente;
         }else{
             ClienteAnterior = MiCliente;
+            uncliente.add(Cliente);
             modelo.addElement(MiCliente);
+            System.out.println(MiCliente);
         }
 /*         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
@@ -796,6 +847,7 @@ public class documentManager extends javax.swing.JFrame {
                 cliente.setAsesor(rs.getString("asesor"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setCorreo(rs.getString("correo"));
+                documento.setId_cliente(Long.valueOf(rs.getString("id")));
                 documento.setEncabezado(rs.getString("encabezado"));
                 documento.setTipo(rs.getString("tipo"));
                 documento.setUbicacion(rs.getString("ubicacion"));
@@ -961,6 +1013,8 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JDialog jDEliminar;
     private javax.swing.JDialog jDGuardado;
     private javax.swing.JLabel jLConectadoC;
+    private javax.swing.JList<String> jLDocsD;
+    private DefaultListModel modeloDoc;
     private javax.swing.JLabel jLEncabezado;
     private javax.swing.JList<String> jLNombreD;
     private DefaultListModel modelo;
@@ -984,7 +1038,7 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTAResultados;
     private javax.swing.JTextField jTFApellidoC;
@@ -1002,6 +1056,5 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JTextField jTFTipo;
     private javax.swing.JTextField jTFUbicacion;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea3;
     // End of variables declaration//GEN-END:variables
 }

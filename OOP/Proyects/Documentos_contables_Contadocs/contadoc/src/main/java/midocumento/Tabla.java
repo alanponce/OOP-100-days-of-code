@@ -21,8 +21,7 @@ public class Tabla{
         String[] docs = new String[6];
         String cadena = "INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES ";
         Random rnd = new Random();
-        docs[0] = "(" + (rnd.nextInt(reg) + 1)
-                + ",'Declaracion anual','Documento digital', 'Dropbox','c:/midropbox/miarchivo" + (rnd.nextInt(reg) + 1)
+        docs[0] = "(" + (rnd.nextInt(reg) + 1)+ ",'Declaracion anual "+ (rnd.nextInt(reg) + 1) +"','Documento digital', 'Dropbox','c:/midropbox/miarchivo" + (rnd.nextInt(reg) + 1)
                 + ".pdf')";
         docs[1] = "(" + (rnd.nextInt(reg) + 1)
                 + ",'Declaracion anual','Documento digital', 'Dropbox','c:/midropbox/otroArchivo"
