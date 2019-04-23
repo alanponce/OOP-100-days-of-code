@@ -58,6 +58,7 @@ There are some user in the multifunctional system ABC like:
 # SPECIFIC REQUIREMENTS 
 
 ## external interface requirements 
+-The system must interact from 3 user profiles library, computational cellar, workshop as well as an administrator profile which have privillegios with their respective domain areas. finally interact with the database
 ## user interface 
 ## hardware interface 
 ## comunications interfaces 
