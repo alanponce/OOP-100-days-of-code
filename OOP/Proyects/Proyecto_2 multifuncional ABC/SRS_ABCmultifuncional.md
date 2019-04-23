@@ -3,19 +3,19 @@
 ## Purpose
 The purpose of this document is to describe the software requirements of specification for the management of every article involved in the high school CBTis 270  but in three specific aspects like system ABC for be implemented in the library, system ABC for be implemented in the workshops also system ABC for be implemented in the cellar computational. Also, in this document every requirement will be detailed and explained.
 
-## scope
-“multifunctional system  ABC” will be a product of software wil be a product of sotware to management of resources of the high school cbtis 270 , like books in the library ,or tools in the workshops of maintaniance or electricity  as well as   accesesories in the cellar computational  implemented with  the abc of programming
+## Scope
+“Multifunctional system  ABC” will be a product of software wil be a product of sotware to management of resources of the high school cbtis 270 , like books in the library ,or tools in the workshops of maintaniance or electricity  as well as   accesesories in the cellar computational  implemented with  the abc of programming
 
 ## Definitions, acronyms, and abbreviations 
 ABC: ups, downs and chages 
 multifunctional: have several functions for diferents uses in distints aspects
 
-## references 
+## References 
 http://cbtis270.edu.mx/organigrama.aspx
 -overview
 # OVERRALL DESCRIPTION 
-## product perspective 
-the multifunctional system ABC consist in general, about the use and management of resources of school as well as the implementation of the same because in this way the system will be a base of the good resource management through of ups, downs and changes.
+## Product perspective 
+The multifunctional system ABC consist in general, about the use and management of resources of school as well as the implementation of the same because in this way the system will be a base of the good resource management through of ups, downs and changes.
 ## product functions 
 The main function of this system is to provide control in every aspect about the resources of CBTis 270. Provide information at administrator of library, technical support, and workshop. 
 
@@ -30,7 +30,7 @@ The main function of this system is to provide control in every aspect about the
 
 
 
-## user characteristics
+## User characteristics
 There are some user in the multifunctional system ABC like:
 
 | User | Description |
@@ -40,12 +40,12 @@ There are some user in the multifunctional system ABC like:
 
 
  
-## constraints 
--different profiles are required since users can only enter their domain area
--an access is required as administrator of the system so as to have total control
--the system can be distributed and may cause connection errors to the database
+## Constraints 
+-Different profiles are required since users can only enter their domain area
+-An access is required as administrator of the system so as to have total control
+-The system can be distributed and may cause connection errors to the database
 
-## assumptions and dependencies 
+## Assumptions and dependencies 
 
 | Assumptions and dependencies | Description | 
 | ---------------------------- | ----------- |
