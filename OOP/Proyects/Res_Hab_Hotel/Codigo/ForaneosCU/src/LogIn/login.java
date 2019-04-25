@@ -5,23 +5,26 @@
  */
 package LogIn;//indica que este codigo pertenece al paquete de login
 
-import Menu.Menu;
+import Menu.Menu1;
+import Menu.MenuA;
 import java.awt.*;
 import javax.swing.*;
 
 public class login extends javax.swing.JFrame {
 
     private Component confirmation;
-    private String usuario,contraseña;    
+    private String admin,acontraseña,usuario,contraseña;    
     
     public login() {
         initComponents();
     setLocationRelativeTo(null);
    
     }
-    public void datos(String us, String con){
-    usuario=   "kaleb";
-    contraseña = "kaleb123";
+    public void datos(String us, String con, String ad, String acon){
+    usuario=   "roberto";
+    contraseña = "roberto123";
+    admin ="kaleb";
+    acontraseña= "kaleb123";
     }
 
     /**
@@ -136,12 +139,20 @@ System.exit(0);
 contraseña.setEchoChar('*');
     }           
     private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
-        datos (usuario,contraseña);
-         if(usuario.equals(txtusuario.getText()) && contraseña.equals(txtcontraseña.getText())){
-         Menu ir = new Menu();
-         JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correctos\n a continuacion el menu...");
+        datos (usuario,contraseña,admin,acontraseña);
+         if(usuario.equals(txtusuario.getText()) && contraseña.equals(txtcontraseña.getText())||admin.equals(txtusuario.getText()) && acontraseña.equals(txtcontraseña.getText())){
+        if (usuario.equals(txtusuario.getText())){
+             Menu1 ir = new Menu1();
+         JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correctos\nBienvenido Recepcionista\n a continuacion el menu...");
          ir.setVisible(true);
          this.dispose();
+        }
+        else if(admin.equals(txtusuario.getText())){
+MenuA ir = new MenuA();
+         JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correctos\n Bienvenido Administrador\n a continuacion el menu...");
+ir.setVisible(true);
+this.dispose();
+        }
     }//GEN-LAST:event_BIniciarActionPerformed
 /*
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
@@ -174,6 +185,10 @@ contraseña.setEchoChar('*');
         txtcontraseña.setFocusable(true);
     }
     }
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
