@@ -6,18 +6,18 @@
 package LogIn;//indica que este codigo pertenece al paquete de login
 
 import Menu.Menu1;
-import Menu.MenuA;
 import java.awt.*;
 import javax.swing.*;
 
 public class login extends javax.swing.JFrame {
 
     private Component confirmation;
-    private String admin,acontraseña,usuario,contraseña;    
+    private String admin,acontraseña,usuario,contraseña; 
+    public static int nivel;
     
     public login() {
         initComponents();
-    setLocationRelativeTo(null);
+    this.setLocationRelativeTo(null);
    
     }
     public void datos(String us, String con, String ad, String acon){
@@ -25,6 +25,7 @@ public class login extends javax.swing.JFrame {
     contraseña = "roberto123";
     admin ="kaleb";
     acontraseña= "kaleb123";
+  
     }
 
     /**
@@ -39,11 +40,11 @@ public class login extends javax.swing.JFrame {
         BIniciar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtcontraseña = new javax.swing.JTextField();
         txtusuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         bCancelar = new javax.swing.JButton();
+        txtcontraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,12 +58,6 @@ public class login extends javax.swing.JFrame {
         jLabel1.setText("Usuario:");
 
         jLabel2.setText("Contraseña:");
-
-        txtcontraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcontraseñaActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("Foraneos CU");
 
@@ -88,8 +83,8 @@ public class login extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(txtusuario)))
+                            .addComponent(txtusuario, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                            .addComponent(txtcontraseña)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(jLabel3))
@@ -142,15 +137,18 @@ contraseña.setEchoChar('*');
         datos (usuario,contraseña,admin,acontraseña);
          if(usuario.equals(txtusuario.getText()) && contraseña.equals(txtcontraseña.getText())||admin.equals(txtusuario.getText()) && acontraseña.equals(txtcontraseña.getText())){
         if (usuario.equals(txtusuario.getText())){
+            
              Menu1 ir = new Menu1();
          JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correctos\nBienvenido Recepcionista\n a continuacion el menu...");
          ir.setVisible(true);
          this.dispose();
         }
+        
         else if(admin.equals(txtusuario.getText())){
-MenuA ir = new MenuA();
+ 
+Menu1 Menu = new Menu1();
          JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correctos\n Bienvenido Administrador\n a continuacion el menu...");
-ir.setVisible(true);
+Menu.setVisible(true);
 this.dispose();
         }
     }//GEN-LAST:event_BIniciarActionPerformed
@@ -158,10 +156,6 @@ this.dispose();
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCancelarActionPerformed
-
-    private void txtcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcontraseñaActionPerformed
 */else if(txtusuario.getText().equals("") && txtcontraseña.getText().equals("")){
         JOptionPane.showMessageDialog(this,"Usuario y/o Contraseña estan vacios\nIngrese los por favor.");
         txtusuario.setFocusable(true);
@@ -231,7 +225,7 @@ this.dispose();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txtcontraseña;
+    private javax.swing.JPasswordField txtcontraseña;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

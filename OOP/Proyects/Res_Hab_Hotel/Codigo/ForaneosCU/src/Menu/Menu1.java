@@ -5,6 +5,13 @@
  */
 package Menu;
 
+import CRUD.Create;
+import CRUD.Delete;
+import CRUD.Read;
+import CRUD.Update;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author compu
@@ -15,11 +22,15 @@ public class Menu1 extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu1() {
-        initComponents();
-           
+        initComponents();    
     setLocationRelativeTo(null);
+  /*  int lvl;
+    lvl = login.nivel;
+    aqui se quedo en declarar el rango del ususario para el polimorfismo de los objetos*/
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,31 +40,119 @@ public class Menu1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
+        BAltas = new javax.swing.JRadioButton();
+        BBajas = new javax.swing.JRadioButton();
+        BCambios = new javax.swing.JRadioButton();
+        BLecturas = new javax.swing.JRadioButton();
+        BIr = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Aqui se mostrara el menu de opciones:...");
+        jLabel1.setText("Selecciona un Proceso");
+
+        buttonGroup1.add(BAltas);
+        BAltas.setText("Altas");
+
+        buttonGroup1.add(BBajas);
+        BBajas.setText("Bajas");
+
+        buttonGroup1.add(BCambios);
+        BCambios.setText("Cambios");
+
+        buttonGroup1.add(BLecturas);
+        BLecturas.setText("Lecturas");
+
+        BIr.setText("Ir");
+        BIr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BIrActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BLecturas)
+                            .addComponent(BBajas)
+                            .addComponent(BAltas))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BCambios)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addComponent(BIr)
+                        .addGap(100, 100, 100))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BAltas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BBajas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BCambios)
+                    .addComponent(BIr))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BLecturas)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIrActionPerformed
+        if (BAltas.isSelected()){
+          
+               JOptionPane.showMessageDialog(this,"Seleccionaste Altas");
+            Create ir = new Create();
+            ir.setVisible(true);
+            this.dispose(); 
+           
+        }
+        
+        if (BBajas.isSelected()){
+       
+             JOptionPane.showMessageDialog(this,"Seleccionaste Bajas");
+            Delete ir = new Delete();
+            ir.setVisible(true);
+            this.dispose();
+            
+            
+                              JOptionPane.showMessageDialog(this, "No tienes acceso");
+
+              
+        }
+        
+        if (BCambios.isSelected()){
+            JOptionPane.showMessageDialog(this,"Seleccionaste Cambios");
+            Update ir = new Update();
+            ir.setVisible(true);
+            this.dispose();
+        }
+        
+        if (BLecturas.isSelected()){
+         
+            JOptionPane.showMessageDialog(this,"Seleccionaste Lecturas");
+            Read ir = new Read();
+            ir.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BIrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,12 +185,17 @@ public class Menu1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BAltas;
+    private javax.swing.JRadioButton BBajas;
+    private javax.swing.JRadioButton BCambios;
+    private javax.swing.JButton BIr;
+    private javax.swing.JRadioButton BLecturas;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
