@@ -583,6 +583,9 @@
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLDocsDMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="modeloDoc = new DefaultListModel();"/>
                     <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private DefaultListModel modeloDoc;"/>

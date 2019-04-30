@@ -353,6 +353,11 @@ public class documentManager extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jLNombreD);
 
         jLDocsD.setModel(modeloDoc);
+        jLDocsD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLDocsDMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jLDocsD);
 
         jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -701,7 +706,7 @@ public class documentManager extends javax.swing.JFrame {
         Clientes uncli;
         //Long id,ultimoId;
         Long n =Integer.toUnsignedLong(jLNombreD.getSelectedIndex()) ;
-        Long nn,nnn;
+        Long idCliente,idClienteDocumento,ultimoDocumento=0L;
         if(!modelo.isEmpty()){
             modeloDoc.clear();
             for (int i = 0; i < uncliente.size();i++)
@@ -710,17 +715,21 @@ public class documentManager extends javax.swing.JFrame {
                 if (i == n)
                 {
                     uncli = uncliente.get(i);
-                    nn = uncli.getId();
+                    idCliente = uncli.getId();
                     System.out.println("\n Opción elegido:"+i+"\n");
-                    System.out.println("\n Id:"+nn+"\n");
+                    System.out.println("\n Id:"+idCliente+"\n");
                     for (int j = 0; j < undocumento.size(); j++) {
                         undoc=undocumento.get(j);
-                        nnn= undoc.getId_cliente();
-                        System.out.println( "Doc:"+j+"\n");
-                        System.out.println( "Id Doc:"+nnn+"\n");
-                        System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
-                        if (nn.equals(nnn)) {
-                            modeloDoc.addElement(undoc.getEncabezado());
+                        idClienteDocumento= undoc.getId_cliente();
+                        if (idCliente.equals(idClienteDocumento)) {
+                            if (ultimoDocumento != 0L && ultimoDocumento.equals(idCliente)) {
+                                System.out.println( "Doc:"+j+"\n");
+                                System.out.println( "Id Doc:"+idClienteDocumento+"\n");
+                                System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
+                                modeloDoc.addElement(undoc.getEncabezado());
+                                ultimoDocumento = idCliente;
+                                
+                            }
                         }
                         
                     }
@@ -733,18 +742,41 @@ public class documentManager extends javax.swing.JFrame {
             jLDocsD.add(this);
         }
     }//GEN-LAST:event_jLNombreDMouseClicked
+
+    private void llenarCamposRegistro(Clientes Cliente, Documentos Documento) {
+        jLEncabezado.setText("");
+        jLEncabezado.setVisible(true);
+        jLReferencia.setVisible(true);
+        jLTipo.setVisible(true);
+        jLUbicacion.setVisible(true);
+        jBGuardar.setVisible(true);
+        jTFEncabezado.setVisible(true);
+        jTFReferencia.setVisible(true);
+        jTFTipo.setVisible(true);
+        jTFUbicacion.setVisible(true);
+    }
+    
+    private void jLDocsDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLDocsDMouseClicked
+        if (!modeloDoc.isEmpty()) {
+            visualizarCampos();
+           // llenarCamposRegistro();
+
+        }
+
+   }//GEN-LAST:event_jLDocsDMouseClicked
+
     public void mostrarD(Clientes Cliente, Documentos Documento) {
         //String cliente = String.valueOf(Cliente.getId());
         String MiCliente = Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
                 + Cliente.getApellidoM();
         String MiTipo = "Tipo: " + Documento.getTipo();
         String MiDocumento = "Documento: " + Documento.getEncabezado();
-        undocumento.add(Documento);
         if (MiCliente.equals(ClienteAnterior)) {
             ClienteAnterior = MiCliente;
         }else{
             ClienteAnterior = MiCliente;
             uncliente.add(Cliente);
+            undocumento.add(Documento);
             modelo.addElement(MiCliente);
             System.out.println(MiCliente);
         }
