@@ -385,6 +385,7 @@ atributos y métodos de la clase cajero, se logra realizar el proceso como se es
 es óptima, por lo que me dedicaré a investigar alguna manera de hacer esto de forma más efectiva y práctica.*/
 
 /*Avance: La clase Artículo se ha declarado como estática, se eliminaron setters innecesarios.
-Se agregó la variable estática IVA a la clase supermercadó y se agregó el atributo de precio final
-con sus getters y setters.*/
+Se agregó la variable estática IVA a la clase supermercadó, se agregó el atributo de precio final
+con sus getters y setters y los atributos de nombre y puesto para las clases carnicero, pescadero
+y cajero ahora son variables finales, por lo que una vez inicializadas ya no pueden modificarse.*/
     }}
