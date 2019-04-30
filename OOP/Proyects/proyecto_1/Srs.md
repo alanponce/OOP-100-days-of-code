@@ -26,6 +26,7 @@
 
 *1.INTRODUCCION*
 ----------------
+
 	**1.1 Proposito**
 	-----------------
 El presente documento describe el proyecto de programacion II, una calculadora, con el fin de la realizacion de 100 horas de programacion. Vemos la realizacion de la presente actividad para formar un habito de programación, esto con el fin de ir avanzando en la escritura del código y para tener mas experiencia en términos de codificación.
