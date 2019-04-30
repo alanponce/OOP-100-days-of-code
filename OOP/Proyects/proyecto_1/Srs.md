@@ -30,20 +30,25 @@
 	**1.1 Proposito**
 	-----------------
 El presente documento describe el proyecto de programacion II, una calculadora, con el fin de la realizacion de 100 horas de programacion. Vemos la realizacion de la presente actividad para formar un habito de programación, esto con el fin de ir avanzando en la escritura del código y para tener mas experiencia en términos de codificación.
+
 	**1.2 Alcance**
 	---------------
 El software será simplemente una calculadora, algo que es bastante visto y conocido, pero desde el punto de vista del usuario, en esta ocasión se ve todo el proceso que tendrá el formar una calculadora desde cero incluyendo la agregación de botones junto con la interfaz y todo el funcionamiento en si.
+
 	**1.3 Resumen**
 	---------------
 *1.3.1 Perspectiva del producto*
 ================================
 El software tendrá todas las funciones principales de una calculadora básica, realizando tareas matemáticas sencillas que se podrían hacer a mano, pero con esta automatización y con este gran recorte de tiempo de duración de obtención del resultado.
+
 		*1.3.2 Funciones del producto*
 		------------------------------
 Este software contará con todas las opciones permitidas en cualquier calculadora básica, cuenta con los botones básicos para la manipulación de números, así como la agregación, resta y multiplicación de los mismos, tendrá en base a todos los limites requeridos, las opciones necesarias para la correcta activación.
+
 		*1.3.3 Caracteristicas de los usuarios**
 		----------------------------------------
 Para este software existirá solo un tipo de usuario el cual manipulara el software según las necesidades que tenga, sobre todo cuando se habla de la realización de cuentas y balance de operaciones en las actividades con las que se encuentre trabajando, y para el fin que le quiera dar.
+
 		**1.3.4 Limitaciones**
 		----------------------
 Las limitaciones de nuestra calculadora son básicas, se sabe que a día de hoy existen versiones con un gran índice de actividades por resolver, calculadoras que van desde resolver una ecuación, hasta la resolución y graficacion de una matriz de las dimensiones que se te ocurran, pero en este caso es una simple calculadora antigua, con las funciones imprescindibles.
