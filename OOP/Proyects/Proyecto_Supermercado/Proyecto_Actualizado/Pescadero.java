@@ -17,7 +17,7 @@ public class Pescadero extends Empleado{
     public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aquí tiene su "+Articulo+", "+Cantidad+" Kg");
     }
-    public Pescadero(String Nombre, String Puesto){
+    public Pescadero(final String Nombre, final String Puesto){
       this.Nombre = Nombre;
       this.Puesto = Puesto;
   }

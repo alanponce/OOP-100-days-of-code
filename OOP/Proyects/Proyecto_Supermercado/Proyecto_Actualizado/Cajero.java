@@ -18,7 +18,7 @@ JOptionPane.showMessageDialog(null,"Precio total: "+PrecioTotal);
 JOptionPane.showMessageDialog(null,"IVA: 16%");
 JOptionPane.showMessageDialog(null,"Van a ser "+PrecioFinal+" pesos.");
 }
-  public Cajero(String Nombre, String Puesto, String Articulos, float PrecioTotal){
+  public Cajero(final String Nombre, final String Puesto, String Articulos, float PrecioTotal){
       this.Nombre = Nombre;
       this.Puesto = Puesto;
       this.Articulos = Articulos;

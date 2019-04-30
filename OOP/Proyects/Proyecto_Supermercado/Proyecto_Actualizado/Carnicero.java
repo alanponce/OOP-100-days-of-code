@@ -20,7 +20,7 @@ public class Carnicero extends Empleado{//La clase carnicero es heredada de la c
    public void Proceso(){ //Se crea el método proceso, que imprime en pantalla el artículo elegido junto con su cantidad.
     JOptionPane.showMessageDialog(null,"Aqui tiene su "+Articulo+", "+Cantidad+" Kg");
   }
-    public Carnicero(String Nombre, String Puesto){
+    public Carnicero(final String Nombre, final String Puesto){
       this.Nombre = Nombre;
       this.Puesto = Puesto;
   }
