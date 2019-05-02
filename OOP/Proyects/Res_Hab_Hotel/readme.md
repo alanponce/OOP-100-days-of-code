@@ -1,3 +1,5 @@
+* Nota: Todos los integrantes ya estan en proyectos individuales, a partir de la resolucion de la clase del dia mayo-2-2019.
+
 # Integrantes
 >1.- 163984_Eduardo_Hernández
 
