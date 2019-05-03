@@ -1,6 +1,5 @@
 # INTEGRANTES DE EQUIPO.
-| Alumnos | Matricula|
+| Alumno | Matricula|
 | ----------------------------- | ------ |
 | Victor Manuel Quiñones Pineda | 159872 |
-| Joaquin Kaleb Chavira Gonzalez | 150204 |
-| Gerardo Alejandro Piña Puentes | 160021 |
+
