@@ -1,0 +1,15 @@
+Calculadora de figuras trigonometricas
+
+La funcion tal y como suena esta enfocado en hacer un calculadora en el cual 
+puedas agregar los valores de una figura trigonometrica a elegir y te de el resultado ,
+utlilizando los conceptos clave de la materia, talez como herencia, polymorfismo
+encapsulamiento, abstraccion.
+tambien aplicando los conceptos a aplicar:
+Clase
+Objetos
+Atributos
+Metodos
+Mensajes
+sobrecarga
+sobreescritura
+metodo final etc
