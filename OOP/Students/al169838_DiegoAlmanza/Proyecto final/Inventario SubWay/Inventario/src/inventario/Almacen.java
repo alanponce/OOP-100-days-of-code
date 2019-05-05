@@ -3,7 +3,6 @@ package inventario;
 
 
 public class Almacen {
-
     protected int tomate;
     protected int cebolla;
     protected int lechuga;
@@ -11,30 +10,80 @@ public class Almacen {
     protected int jalapeño;
     protected int pepino ;
     
-    Vegetales veg = new Vegetales();
+    public void Metertomate(int x){
+        tomate += x; 
+    }
+
+    public void Meterpepino(int x){
+        pepino += x;
+    }
     
-    public void Metervegetal(int v, int c){
-       if(v == 1){
-           veg.Metertomate(c);
-       }
-       if(v == 2){
-           veg.Meterpepino(c);
-       }
-       if(v == 3){
-           veg.Metermorron(c);
-       }
-       if(v == 4){
-           veg.Meterlechuga(c);
-       }
-       if(v == 5){
-           veg.Meterjalapeño(c);
-       }
-       if(v == 6){
-           veg.Metercebolla(c);
-       }
-       
+    public void Metermorron(int x){
+        morron += x;
+    }
     
+    public void Meterlechuga(int x){
+        lechuga += x;
+    }
+    
+    public void Meterjalapeño(int x){
+        lechuga += x;
+    }
+    
+    public void Metercebolla(int x){
+        lechuga += x;
     }
     
     
+    protected int ajo ;
+    protected int parmesano;
+    protected int integral;
+    protected int blanco;
+    protected int avena;
+    
+   public void Meterajo(int x){
+       ajo += x;
+   } 
+   
+   public void Meterparmesano(int x){
+       parmesano += x;
+   }
+   
+   public void Meterintegral(int x){
+       integral += x;
+   }
+   
+   public void Meterblanco(int x){
+       blanco += x;
+   } 
+   
+   public void Meteravena(int x){
+       avena += x;
+   }
+    
+    protected int mayonesa;
+    protected int mostaza;
+    protected int dulce;
+    protected int chipotle;
+    protected int ranch; 
+    
+    public void Metermayonesa(int x){
+        mayonesa += x;
+    }
+    
+    public void Metermostaza(int x){
+        mostaza += x;
+    }
+    
+    public void Meterdulce(int x){
+        dulce += x;
+    }
+    
+    public void Meterchipotle(int x){
+        chipotle += x;
+    }
+    
+    public void Meterranch(int x){
+        ranch += x;
+    }
 }
