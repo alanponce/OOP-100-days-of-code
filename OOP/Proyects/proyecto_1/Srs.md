@@ -69,7 +69,7 @@ https://docs.oracle.com/javase/7/docs/api/
 
 *2.1Requerimientos de usabilidad*
 ---------------------------------
-El sistema de la calculadora debera presentar un sistema ya bastante conocido por todas las personas con un minimo conocimiento en matematicas o bien en la vida cotidiana en donde se hace uso de esto con otras razones en las que se evalua el metodo con el que estamos manejando y contribuyendo las cuestiones basicas de la calculadora
+El sistema de la calculadora debera presentar un sistema  bastante conocido por todas las personas con un minimo conocimiento en matematicas o bien en la vida cotidiana en donde se hace uso de esto con otras razones en las que se evalua el metodo con el que estamos manejando y contribuyendo las cuestiones basicas de la calculadora
 
 *2.2Requerimientos de funcionamiento*
 -------------------------------------
