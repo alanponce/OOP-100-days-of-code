@@ -8,3 +8,5 @@ Cada jugador tendrá métodos para situaciones como defender, pasar el balon, ti
 Se puede implementar un método para un cambio de jugador.
 
 Se tendrán definidas 11 posiciones, en las cuales puedes mover jugadores de la banca al campo y viceversa
+
+Se podría implementar el Enum para las posiciones o para algún estado del jugador, como definir si está cansado o no.
