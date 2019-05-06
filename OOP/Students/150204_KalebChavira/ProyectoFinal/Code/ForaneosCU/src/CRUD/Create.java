@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CRUD;
+package CRUD;//indicamos de a que paquete pertenece este codigo
 
-import LogIn.login;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import LogIn.login;//importmaos la clase login para poder hacer el metodo cerrar sesion
+import java.sql.Connection;//importamos esta clase para poder hacer la conexion a la bd
+import java.sql.DriverManager;//importamos esta clase para poder cargar el driver de donde esta ubicada la bd
+import java.sql.SQLException;//importamos esta clase para ver poder revisar los errores en las conexiones en la bd
+import java.sql.Statement;//importamos esta clase para cargar las sentencias de sql
+import java.util.logging.Level;//importamos esta clase para que nos diga los tipos de errores que se encuentra en el codigo
+import java.util.logging.Logger;//importamos esta clase para hacer la indicacion del error en el codigo
+import javax.swing.JOptionPane;//para mostrar paneles de mensajes
 /**
  *
  * @author compu
@@ -20,40 +20,41 @@ import javax.swing.JOptionPane;
 public class Create extends javax.swing.JFrame {
 
     
-Connection conexion;
-Statement sentencia;
+Connection conexion;// creamos una variable llamada conexion para hacer la conexion
+Statement sentencia;// creamos una variables para hacer las sentencias sql
     
     public Create() {
-        initComponents(); 
-        conectatarBaseDatos();
-       this.setExtendedState(MAXIMIZED_BOTH);
+        initComponents(); // iniciamos componentes de la forma
+        conectatarBaseDatos();// invocamos el constructor que hara la conexion a la base de datos
+        setLocationRelativeTo(null);//codigo para centrar la forma de manera nulo o en el centro de la pantalla
+       //this.setExtendedState(MAXIMIZED_BOTH);//este codigo es para extender la forma en su maximo tamaño
        
     }
 
-    public void conectatarBaseDatos() {
+    public void conectatarBaseDatos() {// constructor que conecta la base de datos con el codigo
         try {
-            //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); //Linea que carga el driver
-           JOptionPane.showMessageDialog(null, "Cargo el driver");
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Error al cargar Dirver");
+           JOptionPane.showMessageDialog(null, "Cargo el driver");//mensaje
+        } catch (ClassNotFoundException e) {//en caso de que no funcione el driver
+            JOptionPane.showMessageDialog(null, "Error al cargar Dirver");//mensaje
         }
         try {
-  conexion = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\compu\\OneDrive\\Documentos\\BD\\hotel.accdb");
-  JOptionPane.showMessageDialog(null,"Encontro la direccion");
+  conexion = DriverManager.getConnection("jdbc:ucanaccess://C:\\Users\\compu\\OneDrive\\Documentos\\BD\\hotel.accdb");//busca la ubicacion de la BD y se enlaza
+  JOptionPane.showMessageDialog(null,"Encontro la direccion");//mensaje
 
   //"jdbc:ucanaccess://C:\\Proyecto.accdb"
 //En esta parte tenemos que cambiar la ruta en la que se encuentra nuestra base de datos 
 //Ejemplo "jdbc:ucanaccess://C:\\Proyecto.accdb" hace referencia que esta en el disco local C
 //JOptionPane.showMessageDialog(null, "Encontro la direccion");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error en la dirección de la base de datos");
+        } catch (SQLException e) {// en caso de que no carge la sentencia hace una Exception la cual no encuentra la direccion
+            JOptionPane.showMessageDialog(null, "Error en la dirección de la base de datos");//menasje
         }
         try {
-            sentencia = conexion.createStatement();
-           JOptionPane.showMessageDialog(null, "Cargo la sentencia");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al crear la conexión con la base de datos");
+            sentencia = conexion.createStatement();// crea una sentencia para poder mandar el codigo de sql
+           JOptionPane.showMessageDialog(null, "Cargo la sentencia");//mensaje
+        } catch (SQLException e) {//en caso de que no carge la sentencia busca otra exception para identificar el error
+            JOptionPane.showMessageDialog(null, "Error al crear la conexión con la base de datos");// mensaje
         }
     }
     
@@ -99,7 +100,7 @@ Statement sentencia;
         CantidadHabitaciones = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cerrarsesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -179,14 +180,20 @@ Statement sentencia;
             }
         });
 
+        CantidadHabitaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CantidadHabitacionesKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Ejemplo: 05/02/2019");
 
         jLabel10.setText("Ejemplo: 05/02/2019");
 
-        jButton1.setText("Cerrar Sesion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cerrarsesion.setText("Cerrar Sesion");
+        cerrarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cerrarsesionActionPerformed(evt);
             }
         });
 
@@ -285,7 +292,7 @@ Statement sentencia;
                                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))))))))))
                 .addGap(13, 13, 13)
-                .addComponent(jButton1)
+                .addComponent(cerrarsesion)
                 .addGap(150, 150, 150))
         );
         layout.setVerticalGroup(
@@ -361,7 +368,7 @@ Statement sentencia;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Validar)
                     .addComponent(BRegistrar)
-                    .addComponent(jButton1))
+                    .addComponent(cerrarsesion))
                 .addGap(30, 30, 30))
         );
 
@@ -372,59 +379,59 @@ Statement sentencia;
     }// </editor-fold>//GEN-END:initComponents
 
     private void ValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidarActionPerformed
-       
+       //boton de validar la informacion del tipo de habitacion y poder leer la informacion de esta misma
 
         
-        if (BIndividual.isSelected()){
-        MsjTipoHab.setText("Individual");
-        CPersonas.setText("1 persona");
-        CostoHab.setText("$500.00"); 
+        if (BIndividual.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Individual");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("1 persona");//mostrara la cantidad de personas
+        CostoHab.setText("$500.00"); //mostrara la cantidad de dinero del costo de la habiatacion
         }
-        else if (BDoble.isSelected()){
-        MsjTipoHab.setText("Doble");
-        CPersonas.setText("2 personas");
-        CostoHab.setText("$1000.00");
+        else if (BDoble.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Doble");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("2 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$1000.00");//mostrara la cantidad de dinero del costo de la habiatacion
         }
-        else if (BDobleI.isSelected()){
-        MsjTipoHab.setText("Doble Individual");
-        CPersonas.setText("2 personas");
-        CostoHab.setText("$1200.00");
+        else if (BDobleI.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Doble Individual");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("2 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$1200.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BSupletoria.isSelected()){
-        MsjTipoHab.setText("Supletoria");
-        CPersonas.setText("2 personas");
-        CostoHab.setText("$800.00");
+        else if (BSupletoria.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Supletoria");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("2 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$800.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BTriple.isSelected()){
-        MsjTipoHab.setText("Triple");
-        CPersonas.setText("3 personas");
-        CostoHab.setText("$1800.00");
+        else if (BTriple.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Triple");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("3 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$1800.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BSuit.isSelected()){
-        MsjTipoHab.setText("Suit");
-        CPersonas.setText("4 personas");
-        CostoHab.setText("$3000.00");
+        else if (BSuit.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Suit");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("4 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$3000.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BSuitJ.isSelected()){
-        MsjTipoHab.setText("Suit Junior");
-        CPersonas.setText("5 personas");
-        CostoHab.setText("$2200.00");
+        else if (BSuitJ.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Suit Junior");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("5 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$2200.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BSuitN.isSelected()){
-        MsjTipoHab.setText("Suit Nupcial");
-        CPersonas.setText("2 personas");
-        CostoHab.setText("$2500.00");
+        else if (BSuitN.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Suit Nupcial");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("2 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$2500.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
-        else if (BSuitP.isSelected()){
-        MsjTipoHab.setText("Suit Precidencial");
-        CPersonas.setText("10 personas");
-        CostoHab.setText("$5000.00");
+        else if (BSuitP.isSelected()){//en caso de selecion de este boton
+        MsjTipoHab.setText("Suit Precidencial");//mostrara un mensaje del tipo de habitacion que se reservara
+        CPersonas.setText("10 personas");//mostrara la cantidad de personas
+        CostoHab.setText("$5000.00");//mostrara la cantidad de dinero del costo de la habiatacion
         
         }
     
@@ -432,15 +439,15 @@ Statement sentencia;
     }//GEN-LAST:event_ValidarActionPerformed
 
     private void BRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BRegistrarActionPerformed
-     
-String nombre = this.txtNombreC.getText(); 
-String tipohabitacion = this.MsjTipoHab.getText();
-    String NHabitacion = this.CantidadHabitaciones.getText();
-    String diaentrada = this.DiaEntrada.getText();
- String diasalida = this.DiaSalida.getText();
-String costo = this.CostoHab.getText();
+     //boton para registrar los datos a ingresar ser guardados en la bd
+String nombre = this.txtNombreC.getText(); // caputuaramos el nombre de la persona
+String tipohabitacion = this.MsjTipoHab.getText();// caputamos el tipo de habitacion el cual se asigno en el botones
+    String NHabitacion = this.CantidadHabitaciones.getText();//caputramos la cantidad de habitaciones
+    String diaentrada = this.DiaEntrada.getText();//caputaramos el dia de la entrada
+ String diasalida = this.DiaSalida.getText();//caputaramos el dia de la salida
+String costo = this.CostoHab.getText();//caputramos el costo
     
-    
+    //estos formatos de abajo son los solicitados por el sql de access
 nombre    = "'" + nombre + "'";
 tipohabitacion = "'" + tipohabitacion + "'";
  NHabitacion  = "'" + NHabitacion + "'";
@@ -448,14 +455,14 @@ tipohabitacion = "'" + tipohabitacion + "'";
  diasalida = "'" + diasalida + "'";
  costo = "'" + costo + "'";
  
- 
+ //string de como se guardan los datos ingresados en codigo sql
  String sql = "INSERT INTO Altas(Nombre,TipoHabitacion,NHabitacion,DiaEntrada,DiaSalida,Costo) VALUES" + "(" + nombre + "," + tipohabitacion + "," + NHabitacion + "," + diaentrada + "," + diasalida + "," + costo + ")";
     try {
-        sentencia.executeUpdate(sql);
-        JOptionPane.showMessageDialog(this, "Los datos han sido guardados");
-        } catch (SQLException ex) {
-        Logger.getLogger(Create.class.getName()).log(Level.SEVERE, null, ex);
-         JOptionPane.showMessageDialog(null, "Error, sus datos no fueron ingresados\n" + ex);
+        sentencia.executeUpdate(sql);//sentencia hace que el codigo sql se actualice en la base de datos y hace que los datos se guarden
+        JOptionPane.showMessageDialog(this, "Los datos han sido guardados");//mensaje
+        } catch (SQLException ex) {//hace una excepcion en caso de que no se ejecute el codigo sql
+        Logger.getLogger(Create.class.getName()).log(Level.SEVERE, null, ex);//arroja el error que tuvo el codigo de sql
+         JOptionPane.showMessageDialog(null, "Error, sus datos no fueron ingresados\n" + ex);//mensaje de error
 
         }  
      
@@ -463,25 +470,36 @@ tipohabitacion = "'" + tipohabitacion + "'";
     }//GEN-LAST:event_BRegistrarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
+        // metodo que al cerrar la ventana o la forma se cancele la conexion para que la memoria no se sature de conexiones
            try {
-            sentencia.close();
-                JOptionPane.showMessageDialog(null, "La conexion esta cerrada");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al cerrar la base de datos" + e);
+            sentencia.close();//cierra la sentencia de sql
+                JOptionPane.showMessageDialog(null, "La conexion esta cerrada");//mensaje de cerrado
+        } catch (SQLException e) {//en caso de que no se cierre
+            JOptionPane.showMessageDialog(null, "Error al cerrar la base de datos" + e);//mensaje y el porque no se cancela la conexion
         }
     }//GEN-LAST:event_formWindowClosing
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    login ir = new login();
-       ir.setVisible(true);
-            this.dispose(); 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void cerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarsesionActionPerformed
+   //metodo para salir de la ventana e ir a login
+        login ir = new login();//creamos un objeto ir que pertenece a la clase login 
+       ir.setVisible(true);//hacemos visible la forma login ya que invocamos un objeto ir con el metodo de abrir la ventana
+            this.dispose(); //cerrar esta ventana
+    }//GEN-LAST:event_cerrarsesionActionPerformed
+
+    private void CantidadHabitacionesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CantidadHabitacionesKeyTyped
+        char validar = evt.getKeyChar();// creamos una forma de validar de que lo ingresado solo sea de cierta forma
+        
+        if (Character.isLetter(validar)){//si el caracter validar sea una letra
+            getToolkit().beep(); //metodo el cual no permite ingresar letras
+            evt.consume();//termina el evento de no permitir escribir letras
+            JOptionPane.showMessageDialog(null, "Solo ingresar numeros");//mensjae de prohibicion
+        }
+    }//GEN-LAST:event_CantidadHabitacionesKeyTyped
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) {//menu de inicializacion
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -511,7 +529,7 @@ tipohabitacion = "'" + tipohabitacion + "'";
                 new Create().setVisible(true);
             }
         });
-    }
+    }//menu que hace correr la forma
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton BDoble;
@@ -534,7 +552,7 @@ tipohabitacion = "'" + tipohabitacion + "'";
     private javax.swing.ButtonGroup TipoHab;
     private javax.swing.JButton Validar;
     private javax.swing.JLabel cantidadHab;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cerrarsesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

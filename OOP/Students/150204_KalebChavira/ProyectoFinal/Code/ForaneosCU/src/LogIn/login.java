@@ -5,24 +5,24 @@
  */
 package LogIn;//indica que este codigo pertenece al paquete de login
 
-import Menu.Menu1;
+import Menu.Menu1;////importamos las clase para poder crear un objeto con metodo para ir hacia esa forma
 import java.awt.*;
 import javax.swing.*;
 
 public class login extends javax.swing.JFrame {
 
-    private Component confirmation;
-    private String admin,acontraseña,usuario,contraseña; 
-    public static int nivel;
+   // private Component confirmation;//componente para confirmar el inicio de sesion 
+    private static String admin,acontraseña,usuario,contraseña; //variables para los usuarios y contraseñas, privasos para que nadie tenga acceso a modificar y staticos para no ser modoficados
+    
     
     public login() {
-        initComponents();
-    this.setLocationRelativeTo(null);
+        initComponents();//iniciar los componentes o los 
+    this.setLocationRelativeTo(null);//centrar la forma a la hora de correrla
    
     }
-    public void datos(String us, String con, String ad, String acon){
-    usuario=   "kaleb";
-    contraseña = "kaleb123";
+    public void datos(String us, String con, String ad, String acon){// constructor de datos de usuario y admin
+    usuario=   "kaleb";//valor del usuario
+    contraseña = "kaleb123";//valor de la contraseña
   
     }
 
@@ -123,18 +123,12 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
       private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {  
-  int ax = JOptionPane.showConfirmDialog(
-        null, 
-        "Esta Seguro Que Desea Salir?"
-    ); 
-
-    if ( ax == JOptionPane.YES_NO_OPTION ) {
+  int ax = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Salir?");
+    if  ( ax == JOptionPane.YES_NO_OPTION ) {
         JOptionPane.showMessageDialog(null,"Hasta Pronto,Que Tengas Un Buen Dia.");
         System.exit(0);
     }
-    
-
-    if ( ax == JOptionPane.NO_OPTION ) {
+   if ( ax == JOptionPane.NO_OPTION ) {
         JOptionPane.showMessageDialog(null, "Has seleccionado NO.");
     }
     }  
@@ -157,6 +151,7 @@ contraseña.setEchoChar('*');
         
     }//GEN-LAST:event_BIniciarActionPerformed
 /*
+         //boton de cancelar mal ubicado en el codigo
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCancelarActionPerformed

@@ -5,28 +5,27 @@
  */
 package Menu;
 
-import CRUD.Create;
-import CRUD.Delete;
-import CRUD.Read;
-import CRUD.Update;
-import javax.swing.JOptionPane;
+import CRUD.Create;//importamos las clase para poder crear un objeto con metodo para ir hacia esa forma
+import CRUD.Delete;//importamos las clase para poder crear un objeto con metodo para ir hacia esa forma
+import CRUD.Read;//importamos las clase para poder crear un objeto con metodo para ir hacia esa forma
+import CRUD.Update;//importamos las clase para poder crear un objeto con metodo para ir hacia esa forma
+import LogIn.login;
+import javax.swing.JOptionPane;//importamos esta clase para mostrar paneles de mensajes
 
 
 /**
  *
  * @author compu
  */
-public class Menu1 extends javax.swing.JFrame {
+public class Menu1 extends javax.swing.JFrame {//menu
 
     /**
      * Creates new form Menu
      */
     public Menu1() {
-        initComponents();    
-    setLocationRelativeTo(null);
-  /*  int lvl;
-    lvl = login.nivel;
-    aqui se quedo en declarar el rango del ususario para el polimorfismo de los objetos*/
+        initComponents();    //iniciar los componentes o 
+    setLocationRelativeTo(null);// iniciar la forma en el centro o de forma nula
+
     }
 
     
@@ -47,6 +46,7 @@ public class Menu1 extends javax.swing.JFrame {
         BCambios = new javax.swing.JRadioButton();
         BLecturas = new javax.swing.JRadioButton();
         BIr = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,27 +71,38 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Cerrar Sesion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BLecturas)
                             .addComponent(BBajas)
-                            .addComponent(BAltas))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BAltas)
+                            .addComponent(BLecturas)
+                            .addComponent(BCambios)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BCambios)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                        .addComponent(BIr)
-                        .addGap(100, 100, 100))))
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton1)))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(BIr)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,56 +114,59 @@ public class Menu1 extends javax.swing.JFrame {
                 .addComponent(BAltas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BBajas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BCambios)
-                    .addComponent(BIr))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BCambios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BLecturas)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(BIr)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIrActionPerformed
-        if (BAltas.isSelected()){
-          
+        if (BAltas.isSelected()){//en caso de que seleccionemos este boton
                JOptionPane.showMessageDialog(this,"Seleccionaste Altas");
-            Create ir = new Create();
-            ir.setVisible(true);
-            this.dispose(); 
-           
+            Create ir = new Create();//crea un nuevo objeto de la clase create
+            ir.setVisible(true);//usamos ese objeto con metodo de ir a la clase a la cual pertenece
+            this.dispose();   //metodo para cerrar esta pantalla
         }
-        
-        if (BBajas.isSelected()){
-       
+        if (BBajas.isSelected()){//en caso de que seleccionemos este boton
              JOptionPane.showMessageDialog(this,"Seleccionaste Bajas");
-            Delete ir = new Delete();
-            ir.setVisible(true);
-            this.dispose();
-            
-            
-                              JOptionPane.showMessageDialog(this, "No tienes acceso");
-
-              
+            Delete ir = new Delete();//crea un nuevo objeto de la clase delete
+            ir.setVisible(true);//usamos ese objeto con metodo de ir a la clase a la cual pertenece
+            this.dispose();      //metodo para cerrar esta pantalla
         }
-        
-        if (BCambios.isSelected()){
+        if (BCambios.isSelected()){//en caso de que seleccionemos este boton
             JOptionPane.showMessageDialog(this,"Seleccionaste Cambios");
-            Update ir = new Update();
-            ir.setVisible(true);
-            this.dispose();
+            Update ir = new Update();//crea un nuevo objeto de la clase update
+            ir.setVisible(true);//usamos ese objeto con metodo de ir a la clase a la cual pertenece
+            this.dispose();//metodo para cerrar esta pantalla
         }
-        
-        if (BLecturas.isSelected()){
-         
+        if (BLecturas.isSelected()){//en caso de que seleccionemos este boton
             JOptionPane.showMessageDialog(this,"Seleccionaste Lecturas");
-            Read ir = new Read();
-            ir.setVisible(true);
-            this.dispose();
+            Read ir = new Read();//crea un nuevo objeto de la clase read
+            ir.setVisible(true);//usamos ese objeto con metodo de ir a la clase a la cual pertenece
+            this.dispose();//metodo para cerrar esta pantalla
         }
     }//GEN-LAST:event_BIrActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //metodo para salir de la ventana e ir a login
+         int elecion = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Cerrar Sesion?");//mostrar un panel con mesaje y con botones de deciocion
+    if  ( elecion == JOptionPane.YES_NO_OPTION ) {//en casp de que selecione si
+       login ir = new login();//creamos un objeto ir que pertenece a la clase login 
+       ir.setVisible(true);//hacemos visible la forma login ya que invocamos un objeto ir con el metodo de abrir la ventana
+            this.dispose(); //cerrar esta ventana
+    }
+   if ( elecion == JOptionPane.NO_OPTION ) {//en caso de que seleccione que no
+        JOptionPane.showMessageDialog(null, "Has seleccionado NO.");//mesaje
+    }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +210,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton BIr;
     private javax.swing.JRadioButton BLecturas;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
