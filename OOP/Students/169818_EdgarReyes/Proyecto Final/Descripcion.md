@@ -1,5 +1,3 @@
-﻿# Posibles Proyectos
-* Enciclopedia de animales.
-* Sistema de paga de una tienda de entretenimiento.
-* Sistema de nomina para empresa.
-*  
+﻿# Proyecto final
+Gestor de información relacionada a películas, programas de televisión y videojuegos.
+
