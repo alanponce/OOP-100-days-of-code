@@ -1,5 +1,6 @@
 package proyectofinal;
 public class Entretenimiento {
+    //Atributos de la superclase Entretenimiento
     private String nombre;
     private int anioLanzamiento;
     private String clasificacion;
@@ -7,7 +8,8 @@ public class Entretenimiento {
     private String resena;
     private String[] actoresReparto;
     private int calificacion;
-
+    
+    //Métodos de la superclase Entretenimiento
     public String getNombre() {
         return nombre;
     }
