@@ -6,7 +6,6 @@
 
 -Inventario actual, incluyendo las cantidades de los distintos productos ordenados por categoría.
 
--Actualizar la base de datos dinámicamente cuando un producto se ha acabado o es eliminado del sistema.
 
 
 2-Realizar un sistema de ventas
