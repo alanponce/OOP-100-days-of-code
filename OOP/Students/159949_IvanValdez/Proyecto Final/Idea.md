@@ -1,5 +1,5 @@
-# Cafeteria
-Mi idea es desarrollar un menu de cafeteria en el que se van a tener 3 clases generales, una va a ser para las comidas,
+# Restaurant
+Mi idea es desarrollar un menu de restaurant en el que se van a tener 3 clases generales, una va a ser para las comidas,
 otra para las bebidas y otra para los postres.
 
 En cada clase van a encontrarse algunas comidas y tambien se van a tener la opcion de agregar nuevas comidas o de borrar
