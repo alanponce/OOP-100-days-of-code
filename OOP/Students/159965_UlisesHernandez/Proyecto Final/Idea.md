@@ -1,2 +1,2 @@
-# Agenda De Informacion
-> La idea principal gira entorno a la creacion de una agenda donde se pueda almacenar informacion de personas dividido por hombres y mujeres, a su vez estos se dividen por niñas y niños de acuerdo a la edad. Lo que se debera guardar sera el nmobre completo, edad, telefono,direccion,estatura,peso.
+# Equipo de Futbol
+> El proyecto se basa en un equipo de futbol en el cual existen jugadores de futbol, entrenadores, utileros, cuerpo medico y cuerpo tecnico. Este es el equipo de futbol. A su vez se incluira una estructura de estadio, el cual debe de contener a los trabajadores del mismo, como guardias, vendedores de taquilla, vendedores de comida y staff.
