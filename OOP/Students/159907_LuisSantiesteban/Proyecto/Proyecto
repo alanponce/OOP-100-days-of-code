@@ -1,0 +1,21 @@
+## 21 black jack ##
+
+2 jugadores
+•	Máquina 
+•	Tu 
+1 Baraja 
+•	#=#
+•	A=11-1
+•	K=10
+•	Q=10
+•	J=10
+
+BARAJA                           REGLAS                                   JUEGO                                DIFICULTAD
+
+Clase final – Reglas
+Herencia - Clase Carta
+Encapsulamiento – Cartas
+Sobre escritura- Dificultad de juego 
+Sobrecarga
+Interfaces
+Clases abstractas
