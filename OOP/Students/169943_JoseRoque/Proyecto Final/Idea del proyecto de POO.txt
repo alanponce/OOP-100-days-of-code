@@ -1,0 +1,5 @@
+EL proyecto esta basado en una compañia de peliculas, en el cual, se tomen registros
+de entradas y salidas de las peliculas que los clientes piden
+
+aplicando todos los temas vistos de la materia, talez como:polimorfismo,encapsulacion
+Herencia, clases abstracas, metodo final, metodos estaticos, constructores etc
