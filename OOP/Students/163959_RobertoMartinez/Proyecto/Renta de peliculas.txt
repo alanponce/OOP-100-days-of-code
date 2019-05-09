@@ -1,3 +1,13 @@
 Idea de rentas, apartados
-adultos, niños, etc
-Uso de indentificaciones, tutor y/o persona responsiba
+adultos, niÃ±os, etc
+Uso de indentificaciones, tutor y/o persona responsiva
+
+//Cliente>nombre>informe
+
+//Renta>Tiempo de alquiler
+
+//Formato>fisico>digital
+
+public class Formato {
+}
+
