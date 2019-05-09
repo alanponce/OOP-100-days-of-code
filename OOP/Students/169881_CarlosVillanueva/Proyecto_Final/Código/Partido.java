@@ -1,5 +1,5 @@
 package equipo.de.baloncesto;
-public class Partido {
+public class Partido {/*Los atributos son estáticos para que estén disponibles aunque no estén instanciados.*/
     static int Tiempo = 0;//Indica el tiempo transcurrido en minutos.
     static int Cuarto = 1;//Indica el cuarto en el que se encuentra el partido.
     static int Distancia = 0;/*Indica la distancia en la que se encuentra el balón, si la distancia es negativa se encuentra dentro de
