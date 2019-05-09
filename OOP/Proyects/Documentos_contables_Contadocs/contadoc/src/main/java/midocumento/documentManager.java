@@ -15,7 +15,9 @@ import java.sql.ResultSet;
 // Permite controlar las excepciones de las solicitudes enviadas
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
+// Permite utilizar un arreglo de objetos para el almacenamiento temporal de las operaciones
 import java.util.ArrayList;
+// La definición de un iterador nativo permite trabajar con elementos de array list 
 import java.util.Iterator;
 
 /**
@@ -286,7 +288,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jBBuscarC)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLConectadoC)
                 .addContainerGap())
@@ -481,7 +483,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addComponent(jBGuardar))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(" Movimientos  ", new javax.swing.ImageIcon(getClass().getResource("/images/movimientos.jpg")), jLayeredPane2); // NOI18N
@@ -580,7 +582,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(30, 30, 30)
                 .addComponent(jBAgregarNC)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Nuevos clientes", new javax.swing.ImageIcon(getClass().getResource("/images/clientes.jpg")), jLayeredPane3); // NOI18N
@@ -593,7 +595,7 @@ public class documentManager extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
         );
 
         pack();
@@ -696,55 +698,94 @@ public class documentManager extends javax.swing.JFrame {
         + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
         + "\n");
     }
-    
+    //Identifica si ya existe el nombre en la lista
     String ClienteAnterior = "";
-    static ArrayList<Documentos> undocumento = new ArrayList<Documentos>();
-    static ArrayList<Clientes> uncliente = new ArrayList<Clientes>();
+    //Se almacenan temporalmente los registros referentes a los documentos
+   // private ArrayList<Documentos[]> undocumento = new ArrayList<Documentos[]>();
+//Se almacenan temporalmente los registros referentes a los clientes
+   // private ArrayList<Clientes[]> uncliente = new ArrayList<Clientes[]>();
     
     private void jLNombreDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNombreDMouseClicked
         Documentos undoc;
         Clientes uncli;
         //Long id,ultimoId;
         Long n =Integer.toUnsignedLong(jLNombreD.getSelectedIndex()) ;
-        Long idCliente,idClienteDocumento,ultimoDocumento=0L;
-        if(!modelo.isEmpty()){
-            modeloDoc.clear();
-            for (int i = 0; i < uncliente.size();i++)
-            {
-                //undoc = undocumento.get(i);
-                if (i == n)
-                {
-                    uncli = uncliente.get(i);
-                    idCliente = uncli.getId();
-                    System.out.println("\n Opción elegido:"+i+"\n");
-                    System.out.println("\n Id:"+idCliente+"\n");
-                    for (int j = 0; j < undocumento.size(); j++) {
-                        undoc=undocumento.get(j);
-                        idClienteDocumento= undoc.getId_cliente();
-                        if (idCliente.equals(idClienteDocumento)) {
-                            if (ultimoDocumento != 0L && ultimoDocumento.equals(idCliente)) {
-                                System.out.println( "Doc:"+j+"\n");
-                                System.out.println( "Id Doc:"+idClienteDocumento+"\n");
-                                System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
-                                modeloDoc.addElement(undoc.getEncabezado());
-                                ultimoDocumento = idCliente;
-                                
-                            }
-                        }
-                        
-                    }
+       // Long idCliente, idClienteDocumento, ultimoDocumento = 0L;
+        String nombreClienteS;
+        if (!modelo.isEmpty()) {
+            System.out.println(jLNombreD.getName());
 
+/*             char[] ch = y.toCharArray();
+            for (int i = 0; i < y.length(); i++) {
+                System.out
+                        .println("substring " + i + "  Character.isSpaceChar(ch[i])= " + Character.isSpaceChar(ch[i]));
+                if (Character.isSpaceChar(ch[i])) {
+                    System.out.println("substring " + i);
+                    cliente.setApellidoP(y.substring(0, i));
+                    System.out.println("y.substring(0, i) " + y.substring(0, i));
+                    cliente.setApellidoM(y.substring(i + 1, y.length()));
+                    // System.out.println("x.substring(i+1, x.length()) " + y.substring(i + 1,
+                    // y.length()));
+                } else {
+                    cliente.setApellidoP(y);
+                    cliente.setApellidoM("*");
                 }
-                //undoc.getId();
 
-            }
+            } */
+            // modeloDoc.clear();
+            // //uncliente.clear();
+            // //undocumento.clear();
+            // for (int i = 0; i < uncliente.size();i++)
+            // {
+            //     //undoc = undocumento.get(i);
 
-            jLDocsD.add(this);
+            //     //System.out.println("\n coontador:"+i+"\n");
+            //     if (i == n.intValue())
+            //     {
+            //         for (int k = 0; k < uncliente.size(); k++) {
+                        
+            //             uncli = uncliente.get(k);
+            //             idCliente = uncli.getId();
+            //             nombreClienteS = uncli.getNombre();
+            //             System.out.println("k="+k+" Id:"+idCliente+"\n");
+            //             System.out.println(" nombre:"+nombreClienteS+"\n");
+            //         }
+            //         uncli = uncliente.get(i);
+            //         idCliente = uncli.getId();
+            //         //System.out.println("\n Id:"+idCliente+"\n");
+            //         nombreClienteS = uncli.getNombre();
+            //         System.out.println("\n 723 Opción elegido:"+i+" "+n+"\n");
+            //         System.out.println("\n Id:"+idCliente+"\n");
+            //         System.out.println("\n nombre:"+nombreClienteS+"\n");
+            //         for (int j = 0; j < undocumento.size(); j++) {
+            //             undoc=undocumento.get(j);
+            //             idClienteDocumento= undoc.getId_cliente();
+            //             if (idCliente.equals(idClienteDocumento)) {
+            //                 if (ultimoDocumento != 0L && ultimoDocumento.equals(idCliente)) {
+            //                     System.out.println( "Doc:"+j+"\n");
+            //                     System.out.println( "Id Doc:"+idClienteDocumento+"\n");
+            //                     System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
+            //                     modeloDoc.addElement(undoc.getEncabezado());
+            //                     llenarCamposRegistro(uncli,undoc);
+            //                     ultimoDocumento = idCliente;
+                                
+            //                 }
+            //             }
+                        
+            //         }
+
+            //     }
+            //     //undoc.getId();
+
+            // }
+
+            //            jLDocsD.add(this);
         }
     }//GEN-LAST:event_jLNombreDMouseClicked
 
     private void llenarCamposRegistro(Clientes Cliente, Documentos Documento) {
-        jLEncabezado.setText("");
+        // Esta función llena los campos de la forma con los datos de cliente y documentos
+        jLEncabezado.setText(Documento.getEncabezado());
         jLEncabezado.setVisible(true);
         jLReferencia.setVisible(true);
         jLTipo.setVisible(true);
@@ -757,6 +798,7 @@ public class documentManager extends javax.swing.JFrame {
     }
     
     private void jLDocsDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLDocsDMouseClicked
+        // visualiza los campos correspondientes a la estructura del modelo
         if (!modeloDoc.isEmpty()) {
             visualizarCampos();
            // llenarCamposRegistro();
@@ -766,20 +808,26 @@ public class documentManager extends javax.swing.JFrame {
    }//GEN-LAST:event_jLDocsDMouseClicked
 
     public void mostrarD(Clientes Cliente, Documentos Documento) {
-        //String cliente = String.valueOf(Cliente.getId());
-        String MiCliente = Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
+        //MostraD ingresa al modelo el contenido de los objetos Cliente y  documento
+        // MiCliente concentra el nombre, el apellido paterno y el materno
+        String MiCliente = Long.toString(Cliente.getId()) + " "+Cliente.getNombre() + " " + Cliente.getApellidoP() + " "
                 + Cliente.getApellidoM();
-        String MiTipo = "Tipo: " + Documento.getTipo();
-        String MiDocumento = "Documento: " + Documento.getEncabezado();
         if (MiCliente.equals(ClienteAnterior)) {
             ClienteAnterior = MiCliente;
-        }else{
+        } else {
             ClienteAnterior = MiCliente;
-            uncliente.add(Cliente);
-            undocumento.add(Documento);
+            // //Se agrega un cliente al arreglo
+            // uncliente.add(Cliente);
+            // //Se agrega un docuento al arreglo
+            // undocumento.add(Documento);git ppull
+            //Se incluye el nombre en la lista de clientes
             modelo.addElement(MiCliente);
-            System.out.println(MiCliente);
+            //imprime en consola los nombres depuración
+            System.out.println("Nombre:" + MiCliente);
+            System.out.println("Nombre Objeto:" + Cliente.getNombre());
         }
+
+        
 /*         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
@@ -808,7 +856,7 @@ public class documentManager extends javax.swing.JFrame {
             } else
             cliente.setNombre("*");
             /* Proceso */
-            System.out.println("Docu MD: " +"cliente.getNombre()="+ cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
+            System.out.println("Docu MD: "+"cliente.getNombre()"+ cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
             if (y.length() == 0) {
                 // Implica que el campo apellidos está vacío
                 cliente.setApellidoP("*");
@@ -843,6 +891,7 @@ public class documentManager extends javax.swing.JFrame {
     }
 
     private void presentarResultadosB(ResultSet rs) {
+        // Presenta los resultados dentro del cuadro
         jTAResultados.setText("");
         try {
             while (rs.next()) {
@@ -884,9 +933,8 @@ public class documentManager extends javax.swing.JFrame {
                 documento.setTipo(rs.getString("tipo"));
                 documento.setUbicacion(rs.getString("ubicacion"));
                 documento.setReferencia(rs.getString("referencia"));
+                // Reiniciar los valores aqui
                 mostrarD(cliente, documento);
-               // System.out.print(jTFNombreC.getText() + " ");
-                // String username=rs.getString("nombre");
             }
         } catch (SQLException sqle) {
             // solo depuracion

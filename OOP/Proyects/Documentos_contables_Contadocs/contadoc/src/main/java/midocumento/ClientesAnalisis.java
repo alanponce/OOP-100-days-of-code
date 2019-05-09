@@ -104,8 +104,9 @@ public class ClientesAnalisis {
         }
         //Cadena base a realizar
         String base = "SELECT DISTINCT reg.id, nombre, apellidoP, apellidoM, telefono, correo, asesor, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc ON (reg.id=doc.id_cliente)";
+        String Sfinal="ORDER BY reg.id ASC";
         //Se conjunta la base con la estructura elegida
-        busqueda = base + busqueda;
+        busqueda = base + busqueda+Sfinal;
         System.out.println(busqueda);
         try {
             PreparedStatement sentencia = conexion.prepareStatement(busqueda);
