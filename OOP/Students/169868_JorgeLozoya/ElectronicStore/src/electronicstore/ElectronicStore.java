@@ -22,6 +22,7 @@ public class ElectronicStore {
         Products laptop = new Products(21000,"Laptop", 4, 72000); // Laptop ID 20000
         Products tv = new Products(32400,"Smart TV", 6, 69000); // TV ID 30000
         Products phone = new Products(46520, "Phone", 21, 45000);// Phone Id 40000
+        Products wowTV = new TV(32400, "WOW TV", 15, 85000, 32);
         
         try{
             String[] whoAreYou = {"Administrador","Dueño","Trabajador","Cliente"}; //Estas son las opciones que se desplegarán
@@ -31,9 +32,9 @@ public class ElectronicStore {
             if (seleccion == 0){//Seleccion 0 ser Administrador
                String[] whatDoYouWantToDo = {"Cambiar ID", "Cambiar nombre a un producto"}; //Estas son las opciones que se desplegarán
                 int admiSelec = JOptionPane.showOptionDialog(null, "Elegir una opcion", "Welcome Administrador", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, whatDoYouWantToDo, whatDoYouWantToDo[0]);
-                Admin administrador = new Admin();
+             
                     if (admiSelec == 0){
-                       String[] choseAProduct = {usb.displayProduct(),laptop.displayProduct(),tv.displayProduct(), phone.displayProduct()}; 
+                       String[] choseAProduct = {usb.showAll(),laptop.showAll(),tv.showAll(), phone.showAll(), wowTV.showAll()}; 
                         int changeIDoption = JOptionPane.showOptionDialog(null, "Elegir una opcion", "Administrador ChangeID", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, choseAProduct, choseAProduct[0]);
                
                     }
