@@ -2,8 +2,15 @@
 package inventario;
 
 
-public class Liquidos extends Almacen {
+class Liquidos extends Almacen {
 
+     
+    protected int mayonesa;
+    protected int mostaza;
+    protected int dulce;
+    protected int chipotle;
+    protected int ranch;
+    
     public Liquidos(){
         this.chipotle = 0;
         this.dulce = 0;
@@ -12,7 +19,7 @@ public class Liquidos extends Almacen {
         this.ranch = 0;
     }
     
-    public void Meterliquido(int l, int c){
+     public void Meterliquido(int l, int c){
         if(l == 1){
             Meterchipotle(c);
         }
@@ -30,4 +37,28 @@ public class Liquidos extends Almacen {
         }
     }
     
+    
+    public void Metermayonesa(int x){
+        mayonesa += x;
+    }
+    
+    public void Metermostaza(int x){
+        mostaza += x;
+    }
+    
+    public void Meterdulce(int x){
+        dulce += x;
+    }
+    
+    public void Meterchipotle(int x){
+        chipotle += x;
+    }
+    
+    public void Meterranch(int x){
+        ranch += x;
+    }
+    
+
+    
+   
 }

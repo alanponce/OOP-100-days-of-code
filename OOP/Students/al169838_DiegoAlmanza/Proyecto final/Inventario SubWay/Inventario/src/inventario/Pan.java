@@ -1,9 +1,15 @@
 
 package inventario;
 
-public class Pan extends Almacen{
+class Pan extends Almacen{
 
-       public Pan(){
+    private int ajo ;
+    private int parmesano;
+    private int integral;
+    private int blanco;
+    private int avena;
+   
+    public Pan(){
            this.ajo = 0;
            this.avena = 0;
            this.blanco = 0;
@@ -24,4 +30,25 @@ public class Pan extends Almacen{
                Meterintegral(c);
            }
        }
+       
+   public void Meterajo(int x){
+       ajo += x;
+   } 
+   
+   public void Meterparmesano(int x){
+       parmesano += x;
+   }
+   
+   public void Meterintegral(int x){
+       integral += x;
+   }
+   
+   public void Meterblanco(int x){
+       blanco += x;
+   } 
+   
+   public void Meteravena(int x){
+       avena += x;
+   }
+      
 }
