@@ -9,11 +9,6 @@ package Habitaciones;
  *
  * @author compu
  */
-public interface Habitaciones {
-    public void limpieza();
-    public void rentar();
-    
-    
-
-
+public interface Suit extends Habitaciones {
+    public void frigobar();
 }
