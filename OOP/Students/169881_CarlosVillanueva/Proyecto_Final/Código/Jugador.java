@@ -1,20 +1,18 @@
 
 package equipo.de.baloncesto;
-public abstract class Jugador {//Se crea la clase abstracta Jugador.
-    //Se crean los atributos privados de Nombre, Posición, Estatura, NivelDefensa, NivelPase y NivelTiro.
+public abstract class Jugador {
     private String Nombre;
     private String Posicion;
     private int Estatura;
     private int NivelDefensa;
     private int NivelPase;
     private int NivelTiro;
-    //Se crean los métodos abstractos Pasar, Tirar, Defender, Avanzar y Retroceder. Estos métodos serán sobreescritos en las subclases.
     public abstract void Pasar();
     public abstract void Tirar();
     public abstract void Defender();
     public abstract void Avanzar();
     public abstract void Retroceder();
-    //Se crean los métodos getters y setters para poder obtener y modificar el valor de estos atributos en otras clases.
+
     public String getNombre() {
         return Nombre;
     }
@@ -62,7 +60,6 @@ public abstract class Jugador {//Se crea la clase abstracta Jugador.
     public final void setNivelTiro(int NivelTiro) {
         this.NivelTiro = NivelTiro;
     }
-    //Se crea el método getStats, que retorna los valores de los atributos de esta clase.
     public String getStats(){
         return "Nombre: " + Nombre + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm"+ "\nDefensa: " + NivelDefensa + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro;
     }

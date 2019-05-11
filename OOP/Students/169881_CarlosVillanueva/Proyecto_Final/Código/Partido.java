@@ -1,9 +1,51 @@
 package equipo.de.baloncesto;
-public class Partido {/*Los atributos son estáticos para que estén disponibles aunque no estén instanciados.*/
-    static int Tiempo = 0;//Indica el tiempo transcurrido en minutos.
-    static int Cuarto = 1;//Indica el cuarto en el que se encuentra el partido.
-    static int Distancia = 0;/*Indica la distancia en la que se encuentra el balón, si la distancia es negativa se encuentra dentro de
-    la mitad enemiga, si es negativa se encuentra en tu mitad.*/
-    static int Puntuacion1 = 0;/*Indica la puntuación actual de tu equipo*/
-    static int Puntuacion2 = 0;/*Indica la puntuación actual del equipo contrario*/
+public class Partido {
+    private static int Tiempo = 0;
+    private static int Cuarto = 1;
+    private static int Distancia = 0;
+    private static int Puntuacion1 = 0;
+    private static int Puntuacion2 = 0;
+
+    public static int getTiempo() {
+        return Tiempo;
+    }
+
+    public static void setTiempo(int Tiempo) {
+        Partido.Tiempo = Tiempo;
+    }
+
+    public static int getCuarto() {
+        return Cuarto;
+    }
+
+    public static void setCuarto(int Cuarto) {
+        Partido.Cuarto = Cuarto;
+    }
+
+    public static int getDistancia() {
+        return Distancia;
+    }
+
+    public static void setDistancia(int Distancia) {
+        Partido.Distancia = Distancia;
+    }
+
+    public static int getPuntuacion1() {
+        return Puntuacion1;
+    }
+
+    public static void setPuntuacion1(int Puntuacion1) {
+        Partido.Puntuacion1 = Puntuacion1;
+    }
+
+    public static int getPuntuacion2() {
+        return Puntuacion2;
+    }
+
+    public static void setPuntuacion2(int Puntuacion2) {
+        Partido.Puntuacion2 = Puntuacion2;
+    }
+    public static String getInfo(){
+        return "Tiempo: " + Tiempo + " minuto(s)." + "\nCuarto: " + Cuarto + "." + "\nEl balón se encuentra a " + Distancia + " metros del punto medio." + "\nLa puntuación del equipo 1 es: " + Puntuacion1 + "." + "\nLa puntuación del equipo 2 es: " + Puntuacion2 + "."; 
+    }
 }
