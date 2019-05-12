@@ -1,116 +1,74 @@
 
 package inventario;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-
-public class Almacen {
-
-    private int tomate;
-    private int cebolla;
-    private int lechuga;
-    private int morron;
-    private int jalapeño;
-    private int pepino ;
-    
-    public void Metertomate(int x){
-        tomate += x; 
-    }
-
-    public void Meterpepino(int x){
-        pepino += x;
-    }
-    
-    public void Metermorron(int x){
-        morron += x;
-    }
-    
-    public void Meterlechuga(int x){
-        lechuga += x;
-    }
-    
-    public void Meterjalapeño(int x){
-        jalapeño += x;
-    }
-    
-    public void Metercebolla(int x){
-        cebolla += x;
-    }
-    
-        public void Sacartomate(int x){
-        tomate -= x;
-    }
-    
-    public void Sacarpepino(int x){
-        pepino -= x;
-    }
-    
-    public void Sacarmorron(int x){
-        morron -= x;
-    }
-    
-    public void Sacarlechuga(int x){
-        lechuga -= x;
-    }
-    
-    public void Sacarjalapeño(int x){
-        jalapeño -= x;
-    }
-    
-    public void Sacarcebolla(int x){
-        cebolla -= x;
-    }
-    
-    
-    private int ajo ;
-    private int parmesano;
-    private int integral;
-    private int blanco;
-    private int avena;
-    
-   public void Meterajo(int x){
-       ajo += x;
-   } 
-   
-   public void Meterparmesano(int x){
-       parmesano += x;
-   }
-   
-   public void Meterintegral(int x){
-       integral += x;
-   }
-   
-   public void Meterblanco(int x){
-       blanco += x;
-   } 
-   
-   public void Meteravena(int x){
-       avena += x;
-   }
-   
-    private int mayonesa;
-    private int mostaza;
-    private int dulce;
-    private int chipotle;
-    private int ranch;
-    
+public class Almacen implements Menu{
+    Scanner sc = new Scanner(System.in); 
         
-    public void Metermayonesa(int x){
-        mayonesa += x;
-    }
+    @Override
+        public void Meter(){
+            System.out.print("\n Ingrese el ID del producto: ");
+            int ID = sc.nextInt();
+            System.out.print("\n Ingrese la cantidad que se ingresara al almacen: ");
+            int Cant = sc.nextInt();
+                
+                Vegetales v = new Vegetales();
+                
+                    if(ID<=6){
+                        v.Metervegetal(ID, Cant);
+                        
+                    } 
+                
+                Pan p = new Pan();
+                    if(ID>=7 && ID<=11){
+                        p.Meterpan(ID, Cant);
+                    }
+                
+                Liquidos l = new Liquidos();
+                    if(ID>=12 && ID<=16){
+                        l.Meterliquido(ID, Cant);
+                }  
+            
+        }
     
-    public void Metermostaza(int x){
-        mostaza += x;
-    }
-    
-    public void Meterdulce(int x){
-        dulce += x;
-    }
-    
-    public void Meterchipotle(int x){
-        chipotle += x;
-    }
-    
-    public void Meterranch(int x){
-        ranch += x;
-    }
-   
+    @Override
+        public void Sacar(){
+               JOptionPane.showInputDialog(null,"\n Ingrese el ID del producto: ");
+               int ID = sc.nextInt();
+               JOptionPane.showInputDialog(null,"\n Ingrese la cantidad que se ingresara al almacen: ");
+               int Cant = sc.nextInt();
+                
+                Vegetales v = new Vegetales();
+                
+                    if(ID<=6){
+                        v.Sacarvegetal(ID, Cant);
+                        } 
+                
+                Pan p = new Pan();
+                    if(ID>=7 && ID<=11){
+                        p.Sacarpan(ID, Cant);
+                    }
+                
+                Liquidos l = new Liquidos();
+                    if(ID>=12 && ID<=16){
+                        l.Sacarliquido(ID, Cant);
+                  }
+            
+            }
+        
+    @Override
+        public void Mostrar(){
+            Vegetales v = new Vegetales();
+            System.out.print("\nVegetales\n");
+            v.printV();
+            Pan p = new Pan();
+            System.out.print("\nPan:\n");
+            p.printP();
+            Liquidos l = new Liquidos();
+            System.out.print("\nLiquidos:\n");
+            l.printL();
+            
+            
+        }
 }

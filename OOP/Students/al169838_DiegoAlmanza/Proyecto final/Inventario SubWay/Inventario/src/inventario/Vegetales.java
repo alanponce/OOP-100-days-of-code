@@ -2,9 +2,22 @@
 package inventario;
 
 
-class Vegetales extends Almacen{ 
+public class Vegetales{ 
+    
+    private int tomate;
+    private int cebolla;
+    private int lechuga;
+    private int morron;
+    private int jalapeño;
+    private int pepino ;
+    
     public Vegetales(){
- 
+        tomate = 0;
+        cebolla = 0;
+        lechuga = 0;
+        morron = 0;
+        jalapeño = 0;
+        pepino = 0;
     }
    
     public void Metervegetal(int v, int c){
@@ -49,5 +62,63 @@ class Vegetales extends Almacen{
         }
     
     }
+    
+    public void printV(){
+          System.out.print("Tomate: "+tomate+" kg\n");
+          System.out.print("Pepino: "+pepino+" kg\n");
+          System.out.print("Chile Morron: "+morron+" kg\n");
+          System.out.print("Lechuga: "+lechuga+" kg\n");
+          System.out.print("Jalapeño: "+jalapeño+" kg\n");
+          System.out.print("Cebolla morada: "+cebolla+" kg\n");
+    }
+    
+    private void Metertomate(int x){
+        tomate += x; 
+    }
+
+    private void Meterpepino(int x){
+        pepino += x;
+    }
+    
+    private void Metermorron(int x){
+        morron += x;
+    }
+    
+    private void Meterlechuga(int x){
+        lechuga += x;
+    }
+    
+    private void Meterjalapeño(int x){
+        jalapeño += x;
+    }
+    
+    private void Metercebolla(int x){
+        cebolla += x;
+    }
+    
+    private void Sacartomate(int x){
+        tomate -= x;
+    }
+    
+    private void Sacarpepino(int x){
+        pepino -= x;
+    }
+    
+    private void Sacarmorron(int x){
+        morron -= x;
+    }
+    
+    private void Sacarlechuga(int x){
+        lechuga -= x;
+    }
+    
+    private void Sacarjalapeño(int x){
+        jalapeño -= x;
+    }
+    
+    private void Sacarcebolla(int x){
+        cebolla -= x;
+    }
+    
     
 }
