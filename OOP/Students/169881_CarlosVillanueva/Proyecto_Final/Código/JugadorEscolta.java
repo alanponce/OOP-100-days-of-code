@@ -1,10 +1,9 @@
 package equipo.de.baloncesto;
-
-public class JugadorBase extends Jugador{
-
-   public JugadorBase(String Nombre, int Estatura, int NivelDefensa, int NivelPase, int NivelTiro){
+public class JugadorEscolta extends Jugador{
+    
+   public JugadorEscolta(String Nombre, int Estatura, int NivelDefensa, int NivelPase, int NivelTiro){
    this.setNombre(Nombre);
-   this.setPosicion("Base");
+   this.setPosicion("Escolta");
    this.setEstatura(Estatura);
    this.setNivelDefensa(NivelDefensa);
    this.setNivelPase(NivelPase);
@@ -14,10 +13,10 @@ public class JugadorBase extends Jugador{
 
     @Override
     public void Retroceder(){
-        Partido.setDistancia(Partido.getDistancia()-3);    }
+        Partido.setDistancia(Partido.getDistancia()-2);    }
     @Override
     public void Avanzar(){
-        Partido.setDistancia(Partido.getDistancia()+3);
+        Partido.setDistancia(Partido.getDistancia()+2);
     }
     @Override
     public void Tirar(){

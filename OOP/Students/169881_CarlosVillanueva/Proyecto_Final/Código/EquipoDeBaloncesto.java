@@ -6,7 +6,12 @@ public class EquipoDeBaloncesto {
     System.out.println(Partido.getTiempo());
     JugadorBase Base = new JugadorBase("Jorge",178,100,70,70);
     Base.Tirar();
+    Base.Tirar();
+    Base.Tirar();
+
     System.out.println(Base.getStats());
+    Base.Pasar();
+    Base.Pasar();
     Base.Pasar();
     System.out.println(Partido.getInfo());
     }
