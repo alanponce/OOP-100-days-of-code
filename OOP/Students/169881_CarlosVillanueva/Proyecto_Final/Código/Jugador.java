@@ -1,18 +1,23 @@
 
 package equipo.de.baloncesto;
+
+import javax.swing.JOptionPane;
+
 public abstract class Jugador {
     private String Nombre;
     private String Posicion;
     private int Estatura;
-    private int NivelDefensa;
     private int NivelPase;
     private int NivelTiro;
+    private static int Objetivo;
+    private static int Decision;
+    private int Jugada;
     public abstract void Pasar();
     public abstract void Tirar();
-    public abstract void Defender();
     public abstract void Avanzar();
     public abstract void Retroceder();
-
+    public abstract void Jugar();
+    
     public String getNombre() {
         return Nombre;
     }
@@ -37,14 +42,6 @@ public abstract class Jugador {
         this.Estatura = Estatura;
     }
 
-    public int getNivelDefensa() {
-        return NivelDefensa;
-    }
-
-    public final void setNivelDefensa(int NivelDefensa) {
-        this.NivelDefensa = NivelDefensa;
-    }
-
     public int getNivelPase() {
         return NivelPase;
     }
@@ -60,7 +57,31 @@ public abstract class Jugador {
     public final void setNivelTiro(int NivelTiro) {
         this.NivelTiro = NivelTiro;
     }
-    public String getStats(){
-        return "Nombre: " + Nombre + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm"+ "\nDefensa: " + NivelDefensa + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro;
+
+    public static int getObjetivo() {
+        return Objetivo;
+    }
+
+    public void setObjetivo(int Objetivo) {
+        Jugador.Objetivo = Objetivo;
+    }
+
+    public int getJugada() {
+        return Jugada;
+    }
+
+    public void setJugada(int Jugada) {
+        this.Jugada = Jugada;
+    }
+
+    public static int getDecision() {
+        return Decision;
+    }
+
+    public static void setDecision(int Decision) {
+        Jugador.Decision = Decision;
+    }
+    public void Stats(){
+        JOptionPane.showMessageDialog(null,"Nombre: " + Nombre + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm" + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro);
     }
 }
