@@ -1,5 +1,5 @@
 ﻿
-public abstract class Empleado {
+public abstract class Empleado { //creamos una clase abstracta co modificador de acceso publico llamada empleado
     
     private String primerNombre;
     private String apellidoPaterno;
