@@ -4,8 +4,10 @@ public class JugadorEscolta extends Jugador{/*Se crea la clase JugadorEscolta, l
     métodos de la clase padre Jugador*/
     
    public JugadorEscolta(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+   /*Se crea un constructor para inicializar las instancias de la clase.*/
    this.setNombre(Nombre);
-   this.setPosicion("Escolta");
+   this.setPosicion("Escolta");/*Como cualquier jugador instanciado en esta clase es de la posición
+   Escolta, se indica desde el constructor.*/
    this.setVisitante(Visitante);
    this.setEstatura(Estatura);
    this.setNivelPase(NivelPase);

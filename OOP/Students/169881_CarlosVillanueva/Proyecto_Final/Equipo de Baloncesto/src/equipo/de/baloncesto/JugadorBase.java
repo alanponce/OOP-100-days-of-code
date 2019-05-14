@@ -1,10 +1,10 @@
 package equipo.de.baloncesto;
 
-public class JugadorBase extends Jugador{/*Se crea la clase JudadorBase, la cual hereda atributos y
+public class JugadorBase extends Jugador{/*Se crea la clase JugadorBase, la cual hereda atributos y
     métodos de la clase padre Jugador*/
 
    public JugadorBase(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
-   /*Se crea un constructor para inicializar las instancias de la clase de una manera segura.*/
+   /*Se crea un constructor para inicializar las instancias de la clase.*/
    this.setNombre(Nombre);
    this.setPosicion("Base");/*Como cualquier jugador instanciado en esta clase es de la posición Base, se
    indica desde el constructor.*/

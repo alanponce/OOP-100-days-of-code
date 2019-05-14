@@ -4,8 +4,10 @@ public class JugadorAlero extends Jugador{/*Se crea la clase JugadorAlero, la cu
     métodos de la clase padre Jugador*/
     
    public JugadorAlero(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+   /*Se crea un constructor para inicializar las instancias de la clase.*/
    this.setNombre(Nombre);
-   this.setPosicion("Alero");
+   this.setPosicion("Alero");/*Como cualquier jugador instanciado en esta clase es de la posición 
+   Alero, se indica desde el constructor.*/
    this.setVisitante(Visitante);
    this.setEstatura(Estatura);
    this.setNivelPase(NivelPase);

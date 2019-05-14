@@ -4,8 +4,10 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
     métodos de la clase padre Jugador*/
     
    public JugadorAlaPivot(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+   /*Se crea un constructor para inicializar las instancias de la clase.*/
    this.setNombre(Nombre);
-   this.setPosicion("Ala Pivot");
+   this.setPosicion("Ala Pivot");/*Como cualquier jugador instanciado en esta clase es de la posición 
+   Ala Pivot, se indica desde el constructor.*/
    this.setVisitante(Visitante);
    this.setEstatura(Estatura);
    this.setNivelPase(NivelPase);

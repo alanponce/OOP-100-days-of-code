@@ -4,8 +4,10 @@ public class JugadorPivot extends Jugador {/*Se crea la clase JugadorPivot, la c
     métodos de la clase padre Jugador*/
     
    public JugadorPivot(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+   /*Se crea un constructor para inicializar las instancias de la clase.*/
    this.setNombre(Nombre);
-   this.setPosicion("Pivot");
+   this.setPosicion("Pivot");/*Como cualquier jugador instanciado en esta clase es de la posición 
+   Pivot, se indica desde el constructor.*/
    this.setVisitante(Visitante);
    this.setEstatura(Estatura);
    this.setNivelPase(NivelPase);
