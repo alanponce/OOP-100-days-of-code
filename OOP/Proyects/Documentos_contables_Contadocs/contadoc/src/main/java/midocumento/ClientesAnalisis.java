@@ -27,13 +27,9 @@ public class ClientesAnalisis {
     private Connection conexion = null;
     private Tabla tabla=new Tabla();
 
-    // La funcion conexionDB() ingresa a la base de datos
+   /*  // La funcion conexionDB() ingresa a la base de datos
     public Connection conexionDB(String usuario, String password) {
-        /*
-         * You have successfully created a new MySQL database. Your details can be found
-         * below. Username: KDJroUoqfj Database: KDJroUoqfj Password: bmlp5wFD3l Server:
-         * remotemysql.com Port: 3306
-         */
+  ,l
         //Se le asignan los detalles de la base de datos, y se le especifica que use unicode para evitar conflictos de idioma
         // String stURL = "jdbc:mysql://localhost:3306/dbhibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String stURL = "jdbc:mysql://remotemysql.com:3306/KDJroUoqfj?autoReconnect=true&useSSL=false";
@@ -50,7 +46,7 @@ public class ClientesAnalisis {
             Logger.getLogger(ClientesAnalisis.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-    }
+    } 
 
     public boolean estaConectado() {
         boolean temporal=true;
@@ -61,12 +57,12 @@ public class ClientesAnalisis {
             System.out.println("Problemas con conexion.isClosed:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
         return temporal;
-    }
+    }*/
     
 
-    public ResultSet BuscarNombre(Clientes cliente) {
+    public ResultSet BuscarNombre(Clientes cliente, Conexion conexion) {
         //Si la tabla no existe se crea
-        tabla.CrearTabla("miregistro", "docregistro",conexion);
+        //tabla.CrearTabla("miregistro", "docregistro",conexion);
         //Se crea la variable para resultados
         ResultSet rs = null;
         String busqueda = "";
@@ -109,8 +105,7 @@ public class ClientesAnalisis {
         busqueda = base + busqueda+Sfinal;
         System.out.println(busqueda);
         try {
-            PreparedStatement sentencia = conexion.prepareStatement(busqueda);
-            //sentencia.setString(1,Nombre);
+            PreparedStatement sentencia = conexion.conexionDB().prepareStatement(busqueda);
             rs = sentencia.executeQuery(busqueda);
 
         } catch (SQLException sqle) {
@@ -119,13 +114,58 @@ public class ClientesAnalisis {
         }
         return rs;
     }
-    
-    public void cerrarConexion(){
-                try {
-            if (conexion != null)
-                conexion.close();
-        } catch (SQLException se) {
-            se.printStackTrace();
+    public ResultSet BuscarDocumento(Clientes cliente, Conexion conexion) {
+        //Si la tabla no existe se crea
+        //tabla.CrearTabla("miregistro", "docregistro",conexion);
+        //Se crea la variable para resultados
+        ResultSet rs = null;
+        String busqueda;
+        // Si no se ingresa  un nombre se muestra todo
+
+         //Cadena base a realizar
+         String base = "SELECT doc.id, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.miregistro reg INNER JOIN KDJroUoqfj.docregistro doc WHERE (reg.id=doc.id_cliente)";
+        busqueda = " AND (reg.id=" +Long.toString(cliente.getId())+")";
+        String Sfinal=" ORDER BY doc.id ASC";
+        //Se conjunta la base con la estructura elegida
+        busqueda = base + busqueda+Sfinal;
+        try {
+            System.out.println(busqueda);
+            PreparedStatement sentencia;
+            sentencia = conexion.conexionDB().prepareStatement(busqueda);
+            rs = sentencia.executeQuery(busqueda);
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
+        return rs;
     }
+    
+    public ResultSet BuscarDocumentoD(Documentos documento, Conexion conexion) {
+        // Si la tabla no existe se crea
+         //tabla.CrearTabla("miregistro", "docregistro",conexion);
+        // Se crea la variable para resultados
+        ResultSet rs = null;
+        String busqueda = "";
+        // Si no se ingresa un nombre se muestra todo
+        // Solo depuracion:Conocer los datos que se muestran
+        // Solo depuracion: conocer el query
+        // Cadena base a realizar
+        String base = "SELECT id, encabezado, tipo, ubicacion, referencia FROM KDJroUoqfj.docregistro ";
+        busqueda = "WHERE id=" + Long.toString(documento.getId());
+        //String Sfinal = " ORDER BY id ASC";
+        // Se conjunta la base con la estructura elegida
+        busqueda = base + busqueda;
+        System.out.println(busqueda);
+        try {
+            PreparedStatement sentencia = conexion.conexionDB().prepareStatement(busqueda);
+            // sentencia.setString(1,Nombre);
+            rs = sentencia.executeQuery();
+        } catch (SQLException sqle) {
+            // solo depuracion
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+        //     conexion.cerrarConexion();
+        return rs;
+    }
+
 }

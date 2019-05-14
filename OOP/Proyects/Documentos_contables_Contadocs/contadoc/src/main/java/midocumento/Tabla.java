@@ -99,18 +99,68 @@ public class Tabla{
             System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
         }
     }
-    public void LlenarTabla(Clientes cliente, Documentos documento,Connection conexion) {
+
+    public void LlenarTabla(Clientes cliente, Documentos documento, Connection conexion) {
         //Definimos las sentencias a procesar
         String dataTemporalC = "INSERT INTO KDJroUoqfj.miregistro (nombre,apellidoP,apellidoM,telefono,correo,asesor) VALUES ('"
-                +cliente.getNombre()+"','"+cliente.getApellidoP()+"','"+cliente.getApellidoM()+"','"+cliente.getTelefono()+"','"+cliente.getCorreo()+"','"+cliente.getAsesor()+"')";
+                + cliente.getNombre() + "','" + cliente.getApellidoP() + "','" + cliente.getApellidoM() + "','"
+                + cliente.getTelefono() + "','" + cliente.getCorreo() + "','" + cliente.getAsesor() + "')";
         String dataTemporalD = "INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES "
-                + "('"+documento.getId_cliente()+"','"+documento.getEncabezado()+"','"+documento.getTipo()+"','"+documento.getUbicacion()+"','"+documento.getReferencia()+"')";
+                + "('" + documento.getId_cliente() + "','" + documento.getEncabezado() + "','" + documento.getTipo()
+                + "','" + documento.getUbicacion() + "','" + documento.getReferencia() + "')";
+
+        String ActualizarData = "UPDATE KDJroUoqfj.docregistro SET " + "encabezado=" + documento.getEncabezado()
+                + "', tipo='" + documento.getTipo() + "', ubicacion='" + documento.getUbicacion() + "', referencia='"
+                + documento.getReferencia() + "') WHERE id_cliente=" + String.valueOf(documento.getId_cliente());
+        String AgregarData = "INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES "
+                + "('" + documento.getId_cliente() + "','" + documento.getEncabezado() + "','" + documento.getTipo()
+                + "','" + documento.getUbicacion() + "','" + documento.getReferencia() + "') WHERE id_cliente="
+                + String.valueOf(documento.getId_cliente());
+        String BorrarData = " ";
         try {
             // Se genera la sentencia
             Statement sentencia = conexion.createStatement();
             // Se ejecutan la sentencias para procesarse por sql
             sentencia.executeUpdate(dataTemporalC);
             sentencia.executeUpdate(dataTemporalD);
+            // sentencia.executeUpdate(crearTablaDocumentos);
+        } catch (SQLException sqle) {
+            // solo depuracion se genera el codigo de error
+            System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+        }
+    }
+    
+    public void LlenarTabla(Documentos documento,Connection conexion) {
+        //Definimos las sentencias a procesar
+        String AgregarData= "INSERT INTO KDJroUoqfj.docregistro (id_cliente,encabezado,tipo,ubicacion,referencia) VALUES "
+                + "('" + documento.getId_cliente() + "','" + documento.getEncabezado() + "','" + documento.getTipo()
+                + "','" + documento.getUbicacion() + "','" + documento.getReferencia() + "') WHERE id_cliente="
+                + String.valueOf(documento.getId_cliente());
+        String ActualizarData= "UPDATE KDJroUoqfj.docregistro SET "
+                + "encabezado='" + documento.getEncabezado() + "', tipo='" + documento.getTipo()
+                + "', ubicacion='" + documento.getUbicacion() + "', referencia='" + documento.getReferencia() + "' WHERE id_cliente="
+                + String.valueOf(documento.getId_cliente())+" AND id="
+                + String.valueOf(documento.getId());
+        String BorrarData = "DELETE * FROM KDJroUoqfj.docregistro WHERE id_cliente="
+                + String.valueOf(documento.getId_cliente())+" AND id="
+                + String.valueOf(documento.getId());
+                String Data="";
+        switch (documento.getOperacion()) {
+            case 1: Data=AgregarData;
+            break;
+            case 2: Data=ActualizarData;
+            break;
+            case 3: Data=BorrarData;
+            break;      
+            default: Data = ActualizarData;
+            break;
+        }
+            System.out.println(Data);
+        try {
+            // Se genera la sentencia
+            Statement sentencia = conexion.createStatement();
+            // Se ejecutan la sentencias para procesarse por sql
+            sentencia.executeUpdate(Data);
             // sentencia.executeUpdate(crearTablaDocumentos);
         } catch (SQLException sqle) {
             // solo depuracion se genera el codigo de error

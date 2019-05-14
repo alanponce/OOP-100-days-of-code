@@ -28,13 +28,16 @@ Abril 2019
 # Table of contents
 1. [Introduction](#Introduction)
     - [Purpose](#Purpose)
+    - [Business Managment Process](#Business-Managment-Process)
+    - [Use case](#Use-case)
     - [Scope](#Scope)
+    - [Business Managment Process](#Business-Managment-Process)
     - [Definitions acronyms and abbreviations](#definitions-acronyms-and-abbreviations)
     - [References](#References)
     - [Overview](#Overview)
 2. [Overrall description](#Overrall-description)
     - [Product perspective](#Product-perspective)
-        - [System interfaces](#System-interfaces)
+        - [Class diagram](#Class-diagram)
         - [User interfaces](#User-interfaces)
         - [Hardware interfaces](#Hardware-interfaces)
         - [Software interfaces](#Software-interfaces)
@@ -43,7 +46,6 @@ Abril 2019
         - [Operations](#Operations)
         - [Site adaptation requirements](#Site-adaptation-requirements)
     - [Product](#Product)
-    - [User characteristics](#User-characteristics)
         - [Educational level, experience y technical expertise](#Educational-level-experience-y-technical-expertise)
         - [Constrains](#Constrains)
 
@@ -54,20 +56,7 @@ Abril 2019
     - [Logical database requirements](#Logical-database-requirements)
 
         - [Security](#Security)
-        - [Maintainability](#Maintainability)
-        - [Portability](#Portability)
-    - [Organizing the specific requirements](#Organizing-the-specific-requirements)
-        - [System mode](#System-mode)
-        - [User class](#User-class)
-        - [Objects](#Objects)
-        - [Feature](#Feature)
-        - [Stimulus](#Stimulus)
-        - [Response](#Response)
-        - [Functional hierarchy](#Functional-hierarchy)
-    - [Additional comments](#Additional-comments)
-- [Supporting information](#Supporting-information)
-    - [Index](#Index)
-    - [Appendixes](#Appendixes)
+
 
 # Introduction
 ## Purpose
@@ -76,18 +65,49 @@ The document objective is describing a software solution to organize business ac
 
 The document address broadly the next topics:
 It will be analyzed the requirement of business collaborators, so it will describe an action plan to construction of software. It will develop the software to reduce efforts to find documents in their offices, then it offers a solution according to available infrastructure. Finally, it will do proof and fix errors.
+## Business Managment Process
+ The business managment process documentation specify key points about how to work an company, so it describes the workflow in accounting business and focus in the importance of software development for improve performance. The process extend around four key steps: case documentation, information review, tax procedures, and manage documentation.
 
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ActoresDocumentacionE.png" width="900" />  
+In general, a customer goes to office, and an employee interviews him. Here, a situation is determined throw of documentation, so offer to customer a right service to their  necessities. When a new customer request a service, it's necessary document its case. In each case is necessary evaluate the intalled capacity to process the request, then the manager company decide who process it. 
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/documentation.png" width="390" />  <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/completeDocumentation.png" width="415" />  
+
+An especific case must be evaluated for take the better option to solve, so it's necessary have all documentation about client. A review of the client's history will help to determine its situation, any other aditional information give clearness on case. However, it's essential that exist a complete mandatory information, so the business will complete satisfactory. It's essential have a computer equipment available and functional, because all tansaction are realized by internet. If there are some problems, then a technical support can help to solve the problem.
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/history.png" width="390" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/fix.png" width="390" />  
+An employee start the tax procedures, when all documentation is complete. That, it avoid problems with SAT, so their system review and recept the documentation.All pays derived of transaction have to do by a customer, and SAT system will reflect that pays. SAT system solve the issuace of tax receipts, and they send probatory documentation to petitioner.The new documents are record in business system, then it's generated an invoice on service realized  Finally, the customer receipt the documentation probatory transaction and cover services.
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/procedures.png" width="380" />  <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/invoice.png" width="445" />  
+
+
+
+
+
+## User case
+
+The user involved all collaborators but, only internal and externals employees can access to data, the next table describe the roles of interaction actors:
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/userCase.png" width="900" />  
+
+Actor         | Role   
+--------------|-----------
+Internal Employee      | people can access to all parts of fiscal accounting others internal business process 
+External Employee      | collaborator who help with some customers and special works
+Customer               | They are people in need of fiscal and administration accounting
+Technical support            | People who give support to company
+SAT| Goverment organization manager of paperwork related to collect taxes.
 ## Scope
 The product purpose is contributed in process of information extract and use for all users. This project include all people who need information about costumers and their paperwork’s.
 
-Otro aspecto para lograr es la amplia compresión en el uso del software por parte del personal involucrado en cada proceso, esto permitirá que el aprovechamiento de la herramienta proporcionada y con ello alcanzar las metas propuestas. De esta manera aumentar la productividad y mejorar el desempeño en la colaboración dentro de la organización.
+Other aspect to reach is a broad understanding about customer and users' necessities for increase the productivity of organization and improved the performance of collaboration among users of data customer.
 
-Debe poder desplegarse en distintos sistemas operativos sin necesidad de una adaptación previa, en concreto debe ser capaz de ejecutarse al menos en los siguientes sistemas operativos:
-
+The software have to run in different SO without a new recompilation previusly, so the system must run in:
 - Windows 7
 - Windows 8
 - Windows 10
 - Mac OS
+
 
 
 ## Definitions, acronyms, and abbreviations
@@ -97,21 +117,29 @@ Concept         | Definition
 **Internal Employee**      | People can access to all parts of fiscal accounting others internal business process 
 **External Employee**      | Collaborator who helps with some customers and special works
 **Customer**             | They are people in need of fiscal and administration accounting
+**Technical support**             | People who give support to company
 **Sistema de administración tributaría (SAT)**| Goverment organization manager of paperwork related to collect taxes.
 **JDK**|Java development kit, is a development enviroment for building applications, applets, and components using the java programming language.
 **OS**|Abbreviature  of operating system
+**MB**|Abbreviature  of megabyte, 1 megabyte is equivalent to 1024 byte.
+**RAM**|Abbreviature  of random access memory, it allow keep temporal information about transactions when a program is run.
+**SQL**|Abbreviature  of Structured Query Language, it's allow handle all functions of a database.
+**CRUD**|Abbreviature  of create, read, update and delete.
 
 
 ## References
 Oracle, corp., web page. Consulted 5/04/2019. 
 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-Reséndiz, G. (22 de 01 de 2019). Información sobre empresa. (P. Jurado, Interviewer)
+Reséndiz, G. (22 de 01 de 2019). Information about business. (P. Jurado, Interviewer)
 ## Overview
 # Overrall description
 ## Product perspective
 The business has with a system files with administrative information, this information during time in paper in folders, but this number of documents isn’t handled adequately in along time this can become a big problem. It will be hard to find a necessary hard copy of any document in different places of business infrastructure, and possibilities of losing and damage it.
-### System interfaces
+### Class diagram
+The software is supported on three key classes, and other derived class gives support to this classes. DocumentManager class execute al graphics elements in software and control the flow data of user interface. Tabla class does all activities related with a tables in database by example: create and update field's table. ClienteAnalisis, create all querys to database and manipulate the system (CRUD), so their principal function it's create new elements, read data, update information and delete records.
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/DiagramaDeClase.png" width="900" />  
 
 ### User interfaces
 The first perspective about software is getting in an interview with the costumer, here show some characteristics of software:
@@ -127,39 +155,32 @@ Do you use a tactile screen?| It isn't necessary, only one computer has a tactil
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png" alt="consultas" width="400" />   <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png" alt="consultas con una respuesta" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas3Resultados.png" alt="consultas con tres resultados" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ConsultasSinRespuesta.png" alt="consultas con tres resultados" width="400" />
 
-Movimientos, un solo cliente puede tener varios documentos, por lo que se puede anexar una cantidad indefinida de locaciones en documentos. Cada documento contará con un encabezado, el formato del documento, el nombre de la ubicación y la referencia de ésta. Si alguna referencia es obsoleta, se puede eliminar.
+Transactions, a customer can have several documents, so it's possible attach a undefined quantity of places in documents. Each document will dispose with a head, document format, ubication name and its reference. If some reference, it’s possible upgrade.
+
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2Resultados.png" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos2ResultadosSinEleccion.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos3Resultados.png" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4Borrar.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Movimientos4BorrarMensaje.png" width="400" />
 
-Agregar nuevos elementos, la pestaña “Nuevos clientes” nos permitirá ingresar los datos de nuevos clientes a la base de datos, los clientes anteriores no se removerán de la base de datos dado que en cualquier momento pueden volver a ser activos.
+Add new elements, a panel with new customers allow in data of new elements in database, last customers don’t remove of database at any moment could be active.
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/MovimientosResultadoAgregar.png" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientes.png" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/NuevosClientesSuccess.png" width="400" />
 
 ### Hardware interfaces
+For handle the system will be use a pointing device such as mouse or equivalent in portatil pcs, also it's necesary a keyboard for type search and update information.
 ### Software interfaces
+The software include a connection with other software elements allows interaction with SQL databases, also it's necesary others library to implement correctly all functions od software. The class conexion have all elements to connect to database and manage the most common mistakes. Other class are organized like database, so it's possible handled in system with the same characteristics.
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/diagramaBD.png" width="900" align="center" />
+
 ### Communications interfaces
-SQL
+For share information is necesary use a SQL database for save the information, so it's possible keep upgrate the information about users and customer of business.
 ### Memory
-500MB en RAM
-### Operations
-### Site adaptation requirements
+The operations of software use a small amount of memory, all data is send to online database, so only is necesary 500MB in RAM
 ## Product 
-
-## User characteristics
-
-The user involved all collaborators but, only internal and externals employees can access to data, the next table describe the roles of interaction actors:
-
-Actor         | Role   
---------------|-----------
-Internal Employee      | people can access to all parts of fiscal accounting others internal business process 
-External Employee      | collaborator who help with some customers and special works
-Customer               | They are people in need of fiscal and administration accounting
-SAT| Goverment organization manager of paperwork related to collect taxes.
 ### Educational level, experience y technical expertise
 
-De acuerdo con la entrevista realizada a Reséndiz(2019) no es relevante el nivel de estudios, ya que quienes realizan las actividades contables implicitamente tienen la capacidad de manejar las partes básicas de los sistemas operativos. En caso de requerir soporte técnico cuentan con personal que puedan resolver problemas relacionados con los ordenadores. La capacitación inicial para aprender a mandejar el programa será dado por el representante de la empresa.
+According data collect, study level isn’t relevant, because the collaborators in the business have skills necessary to handle basics characteristics of OS. Technical information support is provided by external personal dedicated to give maintenance devices in business. The initial training in software operation give a representative enterprise.  
 ## Constrains
 The system is limited to run in equipment support and had installed JDK 8.0 or later. The software is built in Java, so it's necessary all library and java core to work.
 The computer through will access must be has internet connection. The software is distributed system and need an external database for work, then it's necessary connect to internet.
@@ -175,22 +196,7 @@ There is a middle place, where document save?|Dropbox
 When a work wasn't finished, where is keep the documents?| On the desk in their folders.
 
 ## Functions
+The software allows read information about localization of documents in database, so it will be necesary that an user type a basic data about customer. Other function is upgrate the data stored, so its possible add or delete information. Finally, it use a system for add new customer to database.
 
 ### Security
-Por consideraciones del cliente, no será necesario auténticarse en la aplicación. Sin embargo, el acceso a la base de datos requerirá de usuario y contraseña. La base de datos estará en un servidor público, dado que el tráfico por día es mínimo las restricciones serán mínimas por parte del proveedor del sistema.
-### Maintainability
-### Portability
-## Organizing the specific requirements
-### System mode
-### Diagram class
-
-### Objects
-### Feature
-### Stimulus
-### Response
-### Functional hierarchy
-## Additional comments
-# Supporting information
-## Table of contents 
-## Index
-## Appendixes
+Some considerations of customer software, it isn't necessary authenticate in application. However, the access to database need a user and password. So, a pool data will be in a public server, then the information traffic per day is minimum. In other situation will be use a provider of service with more benefits in relations with transactions of the database.

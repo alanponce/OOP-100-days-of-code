@@ -84,6 +84,8 @@ public class documentManager extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         modeloDoc = new DefaultListModel();
         jLDocsD = new javax.swing.JList<>();
+        jLConectadoM = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jTFNombreNC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -203,19 +205,7 @@ public class documentManager extends javax.swing.JFrame {
 
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
-        jLayeredPane1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jLayeredPane1FocusLost(evt);
-            }
-        });
-
         jLabel1.setText("Nombre:");
-
-        jTFNombreC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFNombreCActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Apellido:");
 
@@ -228,14 +218,6 @@ public class documentManager extends javax.swing.JFrame {
         jBBuscarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBBuscarCActionPerformed(evt);
-            }
-        });
-        jBBuscarC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jBBuscarCKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jBBuscarCKeyTyped(evt);
             }
         });
 
@@ -288,7 +270,7 @@ public class documentManager extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jBBuscarC)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLConectadoC)
                 .addContainerGap())
@@ -327,12 +309,6 @@ public class documentManager extends javax.swing.JFrame {
         jLEncabezado.setText("Encabezado:");
         jLEncabezado.setName(""); // NOI18N
 
-        jTFEncabezado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFEncabezadoActionPerformed(evt);
-            }
-        });
-
         jLTipo.setText("Tipo:");
 
         jLUbicacion.setText("Ubicación:");
@@ -362,6 +338,10 @@ public class documentManager extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jLDocsD);
 
+        jLConectadoM.setText("Desconectado");
+
+        jLabel8.setText("Clientes:");
+
         jLayeredPane2.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jTFNombreM, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -381,6 +361,8 @@ public class documentManager extends javax.swing.JFrame {
         jLayeredPane2.setLayer(jBGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jScrollPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLConectadoM, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -432,10 +414,16 @@ public class documentManager extends javax.swing.JFrame {
                                     .addComponent(jTFApellidoM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTFNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGap(275, 275, 275)
+                                .addContainerGap()
+                                .addComponent(jLabel8)
+                                .addGap(202, 202, 202)
                                 .addComponent(jLabel5)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLConectadoM)
+                .addGap(33, 33, 33))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -454,9 +442,14 @@ public class documentManager extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jBBuscarM, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(16, 16, 16)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane2Layout.createSequentialGroup()
                         .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane2Layout.createSequentialGroup()
@@ -480,19 +473,18 @@ public class documentManager extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(jBGuardar))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(jBGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                        .addComponent(jLConectadoM))
+                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab(" Movimientos  ", new javax.swing.ImageIcon(getClass().getResource("/images/movimientos.jpg")), jLayeredPane2); // NOI18N
-
-        jTFNombreNC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFNombreNCActionPerformed(evt);
-            }
-        });
 
         jLabel10.setText("Nombre:");
 
@@ -582,7 +574,7 @@ public class documentManager extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(30, 30, 30)
                 .addComponent(jBAgregarNC)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("  Nuevos clientes", new javax.swing.ImageIcon(getClass().getResource("/images/clientes.jpg")), jLayeredPane3); // NOI18N
@@ -595,7 +587,7 @@ public class documentManager extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -603,7 +595,9 @@ public class documentManager extends javax.swing.JFrame {
 
     private void jBBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarMActionPerformed
         // TODO add your handling code here:
+        // Se borran los datos de  jlist de clientes y documentos
         modelo.clear();
+        modeloDoc.clear();
         presentarResultadosD(Buscar(jTFNombreM.getText(), jTFApellidoM.getText()));
     }//GEN-LAST:event_jBBuscarMActionPerformed
 
@@ -619,6 +613,8 @@ public class documentManager extends javax.swing.JFrame {
     // documento es el objeto que captura todos sus atributos y los manda a la base
     // de datos
     Documentos documento = new Documentos();
+    Documentos documentoAux = new Documentos();
+
     // documento es el objeto que captura todos sus atributos y los manda a la base
     // de datos
     ClientesAnalisis baseCliente = new ClientesAnalisis();
@@ -626,7 +622,7 @@ public class documentManager extends javax.swing.JFrame {
     int maxElementos = 10000;
     // Almacenamiento temporal de datos generados
     String[] LocalData = new String[maxElementos];
-    private Connection conexion = null;
+    private Connection miConexion = null;
     //private javax.swing.JList<String> jLNombreD;
     
     
@@ -655,21 +651,32 @@ public class documentManager extends javax.swing.JFrame {
         jTFReferencia.setVisible(true);
         jTFTipo.setVisible(true);
         jTFUbicacion.setVisible(true);
-                
+
     }
     
+    Conexion conexion = new Conexion();
     private void configuracionInicial() {
         // En la pestaña movimientos es necesario que no estén visibles
         ocultarCampos();
         jLConectadoC.setText("Desconectado");
         jDGuardado.setVisible(false);
-        conexion = baseCliente.conexionDB("KDJroUoqfj", "bmlp5wFD3l");
-        if (!baseCliente.estaConectado()) {
+        conexion.setUsuario("KDJroUoqfj");
+        conexion.setPassword("bmlp5wFD3l");
+        conexion.setTipo("mysql");
+        conexion.setURL("remotemysql.com");
+        conexion.setPuerto(3306);
+        conexion.setDbase("KDJroUoqfj");
+        conexion.setOpciones("autoReconnect=true&useSSL=false");
+        miConexion = conexion.conexionDB();
+        if (!conexion.estaConectado()) {
             System.out.println("No se pudo conectar");
         } else {
             jLConectadoC.setText("Conectado");
         }
-        LlenarCamposDepu();
+        //LlenarCamposDepu();
+        jBAgregar.setEnabled(false);
+        jBQuitar.setEnabled(false);
+
     }
     
     private String Alinear(String cad1, String cad2) {
@@ -689,7 +696,7 @@ public class documentManager extends javax.swing.JFrame {
         
         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
+        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Regimen:") + Cliente.getAsesor() + "\n");
         jTAResultados.setText(jTAResultados.getText() + Alinear(MiDocumento, "Correo:") + Cliente.getCorreo() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "Ubicacion:" + Documento.getUbicacion() + "\n");
         jTAResultados.setText(jTAResultados.getText() + "Referencia:" + Documento.getReferencia() + "\n");
@@ -706,101 +713,118 @@ public class documentManager extends javax.swing.JFrame {
    // private ArrayList<Clientes[]> uncliente = new ArrayList<Clientes[]>();
     
     private void jLNombreDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNombreDMouseClicked
-        Documentos undoc;
-        Clientes uncli;
-        //Long id,ultimoId;
-        Long n =Integer.toUnsignedLong(jLNombreD.getSelectedIndex()) ;
-       // Long idCliente, idClienteDocumento, ultimoDocumento = 0L;
-        String nombreClienteS;
-        if (!modelo.isEmpty()) {
-            System.out.println(jLNombreD.getName());
-
-/*             char[] ch = y.toCharArray();
-            for (int i = 0; i < y.length(); i++) {
-                System.out
-                        .println("substring " + i + "  Character.isSpaceChar(ch[i])= " + Character.isSpaceChar(ch[i]));
-                if (Character.isSpaceChar(ch[i])) {
-                    System.out.println("substring " + i);
-                    cliente.setApellidoP(y.substring(0, i));
-                    System.out.println("y.substring(0, i) " + y.substring(0, i));
-                    cliente.setApellidoM(y.substring(i + 1, y.length()));
-                    // System.out.println("x.substring(i+1, x.length()) " + y.substring(i + 1,
-                    // y.length()));
-                } else {
-                    cliente.setApellidoP(y);
-                    cliente.setApellidoM("*");
-                }
-
-            } */
-            // modeloDoc.clear();
-            // //uncliente.clear();
-            // //undocumento.clear();
-            // for (int i = 0; i < uncliente.size();i++)
-            // {
-            //     //undoc = undocumento.get(i);
-
-            //     //System.out.println("\n coontador:"+i+"\n");
-            //     if (i == n.intValue())
-            //     {
-            //         for (int k = 0; k < uncliente.size(); k++) {
-                        
-            //             uncli = uncliente.get(k);
-            //             idCliente = uncli.getId();
-            //             nombreClienteS = uncli.getNombre();
-            //             System.out.println("k="+k+" Id:"+idCliente+"\n");
-            //             System.out.println(" nombre:"+nombreClienteS+"\n");
-            //         }
-            //         uncli = uncliente.get(i);
-            //         idCliente = uncli.getId();
-            //         //System.out.println("\n Id:"+idCliente+"\n");
-            //         nombreClienteS = uncli.getNombre();
-            //         System.out.println("\n 723 Opción elegido:"+i+" "+n+"\n");
-            //         System.out.println("\n Id:"+idCliente+"\n");
-            //         System.out.println("\n nombre:"+nombreClienteS+"\n");
-            //         for (int j = 0; j < undocumento.size(); j++) {
-            //             undoc=undocumento.get(j);
-            //             idClienteDocumento= undoc.getId_cliente();
-            //             if (idCliente.equals(idClienteDocumento)) {
-            //                 if (ultimoDocumento != 0L && ultimoDocumento.equals(idCliente)) {
-            //                     System.out.println( "Doc:"+j+"\n");
-            //                     System.out.println( "Id Doc:"+idClienteDocumento+"\n");
-            //                     System.out.println( "Encabezado: "+ undoc.getEncabezado()+"\n");
-            //                     modeloDoc.addElement(undoc.getEncabezado());
-            //                     llenarCamposRegistro(uncli,undoc);
-            //                     ultimoDocumento = idCliente;
-                                
-            //                 }
-            //             }
-                        
-            //         }
-
-            //     }
-            //     //undoc.getId();
-
-            // }
-
-            //            jLDocsD.add(this);
-        }
+        //Este procedimiento permite elegir una opcion del jlist y mostrar la documentacion asociada
+        mostrarDocumentos();
     }//GEN-LAST:event_jLNombreDMouseClicked
 
-    private void llenarCamposRegistro(Clientes Cliente, Documentos Documento) {
+    private void mostrarDocumentos(){
+        //Se obtiene el elemento elegido
+        Long n = Integer.toUnsignedLong(jLNombreD.getSelectedIndex());
+        //La variable captura la opcion elegida 
+        String nombreClienteS,txtModeloDoc;
+        //Se almacenan los resultados de la consulta en rs
+        ResultSet rs = null;
+        // Cliente instanciado
+        Clientes cliente = new Clientes();
+        ClientesAnalisis baseCliente = new ClientesAnalisis();
+        //Si el modelo contiene elemento procede
+        if (!modelo.isEmpty()) {
+            modeloDoc.clear();
+            nombreClienteS = jLNombreD.getSelectedValue();
+            System.out.println(jLNombreD.getSelectedValue());
+              char[] ch = nombreClienteS.toCharArray(); 
+            for (int i = 0; i < nombreClienteS.length(); i++) {
+                //Si el caracter es un espacio entonces              
+                if (Character.isSpaceChar(ch[i])) {
+                    //Separa los primeros digitos y los convierte a long
+                    cliente.setId(Long.parseLong(nombreClienteS.substring(0, i)));
+                    //Llena el registro para hacer el CRUD
+                    documentoAux.setId_cliente(cliente.getId());
+                    //Depuracion
+                    System.out.println("Id= "+cliente.getId());
+                    //Se realiza la consulta
+                    if (conexion.estaConectado()) {
+                        jLConectadoM.setText("Conectado");
+                        rs = baseCliente.BuscarDocumento(cliente,conexion);
+                        try {
+                            while (rs.next()) {
+                                txtModeloDoc = rs.getString("doc.id") + " " + rs.getString("encabezado");
+                                modeloDoc.addElement(txtModeloDoc);
+                            }
+                        } catch (SQLException sqle) {
+                            // solo depuracion
+                            System.out
+                                    .println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+                        }
+                    } else {
+                        // De otro modo indica que no se conecto
+                        jLConectadoM.setText("Desconectado");
+                    }
+                    //Finaliza el bucle
+                    break;
+               } 
+            }
+           
+        }
+    }
+    private void llenarCamposRegistro(Documentos documento) {
         // Esta función llena los campos de la forma con los datos de cliente y documentos
-        jLEncabezado.setText(Documento.getEncabezado());
-        jLEncabezado.setVisible(true);
-        jLReferencia.setVisible(true);
-        jLTipo.setVisible(true);
-        jLUbicacion.setVisible(true);
-        jBGuardar.setVisible(true);
-        jTFEncabezado.setVisible(true);
-        jTFReferencia.setVisible(true);
-        jTFTipo.setVisible(true);
-        jTFUbicacion.setVisible(true);
+        jTFEncabezado.setText(documento.getEncabezado());
+        jTFReferencia.setText(documento.getReferencia());
+        jTFTipo.setText(documento.getTipo());
+        jTFUbicacion.setText(documento.getUbicacion());
     }
     
     private void jLDocsDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLDocsDMouseClicked
         // visualiza los campos correspondientes a la estructura del modelo
+        // Este procedimiento permite elegir una opcion del jlist y mostrar la
+        // documentacion asociada
+        // Se obtiene el elemento elegido
+        Long n = Integer.toUnsignedLong(jLDocsD.getSelectedIndex());
+        // La variable captura la opcion elegida
+        String nombreDocumentoS;
+        // Se almacenan los resultados de la consulta en rs
+        ResultSet rs = null;
+        // Doocumento instanciado
+        Documentos documento = new Documentos();
+        ClientesAnalisis baseCliente = new ClientesAnalisis();
+        // Si el modelo contiene elemento procede
         if (!modeloDoc.isEmpty()) {
             visualizarCampos();
+            nombreDocumentoS = jLDocsD.getSelectedValue();
+            System.out.println(jLDocsD.getSelectedValue());
+            char[] ch = nombreDocumentoS.toCharArray();
+            for (int i = 0; i < nombreDocumentoS.length(); i++) {
+                // Si el caracter es un espacio entonces
+                if (Character.isSpaceChar(ch[i])) {
+                    // Separa los primeros digitos y los convierte a long
+                    documento.setId(Long.parseLong(nombreDocumentoS.substring(0, i)));
+                    // Depuracion
+                    System.out.println("Id= " + documento.getId());
+                    // Se realiza la consulta
+                    rs = baseCliente.BuscarDocumentoD(documento,conexion);
+                    try {
+                        while (rs.next()) {
+                            documento.setId(Long.valueOf(rs.getString("id")));
+                            documento.setEncabezado(rs.getString("encabezado"));
+                            documento.setTipo(rs.getString("tipo"));
+                            documento.setUbicacion(rs.getString("ubicacion"));
+                            documento.setReferencia(rs.getString("referencia"));
+                        }
+                    } catch (SQLException sqle) {
+                        // solo depuracion
+                        System.out.println("Instrucción incorrecta:" + sqle.getErrorCode() + " " + sqle.getMessage());
+                    }
+                    jBAgregar.setEnabled(true);
+                    jBQuitar.setEnabled(true);
+                    documentoAux.setOperacion(2);
+                    documentoAux.setId(documento.getId());
+                    
+                    llenarCamposRegistro(documento);
+                    // Finaliza el bucle
+                    break;
+                }
+            }
            // llenarCamposRegistro();
 
         }
@@ -827,17 +851,6 @@ public class documentManager extends javax.swing.JFrame {
             System.out.println("Nombre Objeto:" + Cliente.getNombre());
         }
 
-        
-/*         jTAResultados.setText(jTAResultados.getText() + "Número de cliente: "+String.valueOf(Cliente.getId())+ "\n");
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiCliente, "Telefono:") + Cliente.getTelefono() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiTipo, "Asesor:") + Cliente.getAsesor() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + Alinear(MiDocumento, "Correo:") + Cliente.getCorreo() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Ubicacion:" + Documento.getUbicacion() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "Referencia:" + Documento.getReferencia() + "\n");
-        jTAResultados.setText(jTAResultados.getText() + "\n");
-        jTAResultados.setText(jTAResultados.getText()
-                + "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-                + "\n"); */
     }
 
     public ResultSet Buscar(String x, String y) {
@@ -847,7 +860,7 @@ public class documentManager extends javax.swing.JFrame {
         // Comprueba la conexión
         // Si existe conexion se procede a mostrar los resultados
         ResultSet rs =null;
-        if (baseCliente.estaConectado()) {
+        if (conexion.estaConectado()) {
             // La barra de estatus la cambia a conectado si se logra la conexion
             jLConectadoC.setText("Conectado");
             cliente.borrarDatos();
@@ -879,10 +892,10 @@ public class documentManager extends javax.swing.JFrame {
 
                 }
             }
-            //System.out.println("Docu MAn Datos: " + cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
-            // cliente.setNombre();
+            //Depuracion
             System.out.println("Datos:" + cliente.getNombre() + cliente.getApellidoP() + cliente.getApellidoM());
-            rs = baseCliente.BuscarNombre(cliente);
+            //Realiza la busqueda del nombre de los clientes
+            rs = baseCliente.BuscarNombre(cliente,conexion);
         }  else    {
             // De otro modo indica que no se conecto
             jLConectadoC.setText("Desconectado");
@@ -962,19 +975,24 @@ public class documentManager extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Cuando presionas agregar todos los elementos del registro
         visualizarCampos();
+        LimpiarCampos();
+        documentoAux.setOperacion(1);
     }// GEN-LAST:event_jBAgregarActionPerformed
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBGuardarActionPerformed
+        Tabla tabla = new Tabla();
         // Guarda el campo encabezado en su variable correspondiente asociada a la clase
-        documento.setEncabezado(jTFEncabezado.getText());
+        documentoAux.setEncabezado(jTFEncabezado.getText());
         // Guarda el campo Tipo en su variable correspondiente asociada a la clase
-        documento.setTipo(jTFTipo.getText());
+        documentoAux.setTipo(jTFTipo.getText());
         // Guarda el campo Ubicacion en su variable correspondiente asociada a la clase
-        ubicacion.setUbicacion(jTFUbicacion.getText());
+        documentoAux.setUbicacion(jTFUbicacion.getText());
         // Guarda el campo Referencia en su variable correspondiente asociada a la clase
-        ubicacion.setReferencia(jTFReferencia.getText());
+        documentoAux.setReferencia(jTFReferencia.getText());
+        tabla.LlenarTabla(documentoAux, miConexion);
         // Se muestra el cuadro de dialogo
         jDGuardado.setVisible(true);
+        mostrarDocumentos();
     }// GEN-LAST:event_jBGuardarActionPerformed
 
     private void jBAgregarNCActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBAgregarNCActionPerformed
@@ -990,7 +1008,7 @@ public class documentManager extends javax.swing.JFrame {
         capUsuario.setTelefono(jTFTelefonoNC.getText());
         capUsuario.setCorreo(jTFCorreoNC.getText());
         capUsuario.setAsesor(jTFAsesorANC.getText());
-        tabla.LlenarTabla(capUsuario, conexion);
+        tabla.LlenarTabla(capUsuario, miConexion);
         System.out.print("Agregar" + capUsuario.getNombre());
     }// GEN-LAST:event_jBAgregarNCActionPerformed
 
@@ -1023,6 +1041,7 @@ public class documentManager extends javax.swing.JFrame {
     }// GEN-LAST:event_jBOkActionPerformed
 
     private void jBQuitarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBQuitarActionPerformed
+        
         jDEliminar.setVisible(true);
     }// GEN-LAST:event_jBQuitarActionPerformed
 
@@ -1031,11 +1050,25 @@ public class documentManager extends javax.swing.JFrame {
     }// GEN-LAST:event_jBNoActionPerformed
 
     private void jBSiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jBSiActionPerformed
+        Tabla tabla = new Tabla();
+        documentoAux.setOperacion(3);
+        // Guarda el campo encabezado en su variable correspondiente asociada a la clase
+        documentoAux.setEncabezado(jTFEncabezado.getText());
+        // Guarda el campo Tipo en su variable correspondiente asociada a la clase
+        documentoAux.setTipo(jTFTipo.getText());
+        // Guarda el campo Ubicacion en su variable correspondiente asociada a la clase
+        documentoAux.setUbicacion(jTFUbicacion.getText());
+        // Guarda el campo Referencia en su variable correspondiente asociada a la clase
+        documentoAux.setReferencia(jTFReferencia.getText());
+        tabla.LlenarTabla(documentoAux, miConexion);
+        // Se muestra el cuadro de dialogo
+        jDGuardado.setVisible(true);
+        mostrarDocumentos();
         jDEliminar.setVisible(false);
     }// GEN-LAST:event_jBSiActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {// GEN-FIRST:event_formWindowClosed
-        baseCliente.cerrarConexion();
+        conexion.cerrarConexion();
     }// GEN-LAST:event_formWindowClosed
 
     /**
@@ -1093,6 +1126,7 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JDialog jDEliminar;
     private javax.swing.JDialog jDGuardado;
     private javax.swing.JLabel jLConectadoC;
+    private javax.swing.JLabel jLConectadoM;
     private javax.swing.JList<String> jLDocsD;
     private DefaultListModel modeloDoc;
     private javax.swing.JLabel jLEncabezado;
@@ -1114,6 +1148,7 @@ public class documentManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
