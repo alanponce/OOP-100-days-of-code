@@ -1,4 +1,5 @@
 package equipo.de.baloncesto;
+import javax.swing.JOptionPane;
 public class EquipoDeBaloncesto {
     public static void main(String[] args) {
     /*Se declaran las instancias de las subclases de la clase padre Jugador, junto con sus
@@ -13,6 +14,21 @@ public class EquipoDeBaloncesto {
     JugadorAlero AleroVis = new JugadorAlero("Ángel",true,204,90,90);
     JugadorAlaPivot AlaPivotVis = new JugadorAlaPivot("Adolfo",true,200,65,90);
     JugadorPivot PivotVis = new JugadorPivot("Armando",true,212,75,80);
+    
+    JOptionPane.showMessageDialog(null, "Equipo 1");/*Imprime en pantalla a los miembros del equipo 1
+    junto con sus atributos.*/
+    Base.Stats();
+    Escolta.Stats();
+    Alero.Stats();
+    AlaPivot.Stats();
+    Pivot.Stats();
+    JOptionPane.showMessageDialog(null, "Equipo 2");/*Imprime en pantalla a los miembros del equipo 1
+    junto con sus atributos.*/
+    BaseVis.Stats();
+    EscoltaVis.Stats();
+    AleroVis.Stats();
+    AlaPivotVis.Stats();
+    PivotVis.Stats();
     
     Partido.setInicio((int)(Math.random()*2));/*Se declara el valor del atributo Inicio de la clase Partido
     como el resultado aleatorio de dos posibilidades*/

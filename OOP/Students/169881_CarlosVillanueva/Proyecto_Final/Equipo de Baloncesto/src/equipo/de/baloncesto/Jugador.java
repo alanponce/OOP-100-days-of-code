@@ -38,7 +38,7 @@ public abstract class Jugador {
         return Posicion;//Retorna la posición en la que se juega.
     }
 
-    public void setPosicion(String Posicion) {/*Se crea el setter para poder modificar al atributo.
+    public final void setPosicion(String Posicion) {/*Se crea el setter para poder modificar al atributo.
     El setter es final para evitar que se sobreescriba en las subclases.*/
         this.Posicion = Posicion;//El atributo va a tomar el valor de string que se declare en el setter.
     }
