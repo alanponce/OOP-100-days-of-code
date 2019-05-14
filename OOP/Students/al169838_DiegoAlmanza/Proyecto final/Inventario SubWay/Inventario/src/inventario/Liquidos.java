@@ -56,11 +56,11 @@ public class Liquidos {
     } 
     
     public void printL(){
-        System.out.print("Chipotle: "+chipotle+" Lt.");
-        System.out.print("Mostaza Dulce: "+dulce+" Lt.");
-        System.out.print("Mayonesa: "+mayonesa+" Lt.");
-        System.out.print("Mostaza: "+mostaza+" Lt.");
-        System.out.print("Ranch: "+ranch+" Lt.");
+        System.out.print("\nChipotle: "+chipotle+" Lt.");
+        System.out.print("\nMostaza Dulce: "+dulce+" Lt.");
+        System.out.print("\nMayonesa: "+mayonesa+" Lt.");
+        System.out.print("\nMostaza: "+mostaza+" Lt.");
+        System.out.print("\nRanch: "+ranch+" Lt.");
         
         
     }

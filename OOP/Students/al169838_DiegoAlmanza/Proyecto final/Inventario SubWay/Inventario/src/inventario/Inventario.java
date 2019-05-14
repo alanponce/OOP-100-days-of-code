@@ -8,16 +8,7 @@ import javax.swing.JOptionPane;
 public class Inventario {
     
     public static void main(String[] args) {
-        /*Scanner sc = new Scanner(System.in);
-            System.out.print("\n Ingrese el ID del producto: ");
-            int ID = sc.nextInt();
-            System.out.print("\n Ingrese la cantidad que se ingresara al almacen: ");
-            int Cant = sc.nextInt();
-            Vegetales v = new Vegetales();
-            v.Metervegetal(ID, Cant);
-            v.printV();
-            */
-            
+
             Scanner sc = new Scanner(System.in);
             boolean salir = false;
             Almacen a = new Almacen();
@@ -37,7 +28,7 @@ public class Inventario {
                     a.Sacar();
                     break;
                 case 3:
-                    v.printV();
+                    a.Mostrar();
                     break;
                 case 4:
                     break;
@@ -48,6 +39,6 @@ public class Inventario {
             }
             
         }        
-            
+          
     }  
 }

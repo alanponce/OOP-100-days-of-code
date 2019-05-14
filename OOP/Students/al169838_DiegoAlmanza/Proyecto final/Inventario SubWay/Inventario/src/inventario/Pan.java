@@ -55,11 +55,11 @@ public class Pan{
        
     
     public void printP(){
-        System.out.print("Ajo Rostizado: "+ajo);
-        System.out.print("Avena: "+avena);
-        System.out.print("Blanco: "+blanco);
-        System.out.print("Integral: "+integral);
-        System.out.print("Oregano parmesano: "+parmesano);
+        System.out.print("\nAjo Rostizado: "+ajo);
+        System.out.print("\nAvena: "+avena);
+        System.out.print("\nBlanco: "+blanco);
+        System.out.print("\nIntegral: "+integral);
+        System.out.print("\nOregano parmesano: "+parmesano);
         
     }
     
