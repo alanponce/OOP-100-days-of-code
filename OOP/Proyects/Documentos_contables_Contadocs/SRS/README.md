@@ -78,7 +78,7 @@ An especific case must be evaluated for take the better option to solve, so it's
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/history.png" width="390" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/fix.png" width="390" />  
 An employee start the tax procedures, when all documentation is complete. That, it avoid problems with SAT, so their system review and recept the documentation.All pays derived of transaction have to do by a customer, and SAT system will reflect that pays. SAT system solve the issuace of tax receipts, and they send probatory documentation to petitioner.The new documents are record in business system, then it's generated an invoice on service realized  Finally, the customer receipt the documentation probatory transaction and cover services.
 
-<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/procedures.png" width="380" />  <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/invoice.png" width="445" />  
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/procedures.png" width="370" />  <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/invoice.png" width="455" />  
 
 
 
@@ -88,15 +88,42 @@ An employee start the tax procedures, when all documentation is complete. That, 
 
 The user involved all collaborators but, only internal and externals employees can access to data, the next table describe the roles of interaction actors:
 
-<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/userCase.png" width="900" />  
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/read.png" width="800" />  
 
-Actor         | Role   
---------------|-----------
-Internal Employee      | people can access to all parts of fiscal accounting others internal business process 
-External Employee      | collaborator who help with some customers and special works
-Customer               | They are people in need of fiscal and administration accounting
-Technical support            | People who give support to company
-SAT| Goverment organization manager of paperwork related to collect taxes.
+ User  | Description
+ ----- | -------------
+ Name | Search documentation
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees need find a documentation of customer.
+ Actors | Administrator
+ Pre-conditions | The customer is active in database.
+ Flow | The internal employee require basic information about customer
+ Post-conditions | The system clean the search
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/create.png" width="800" />  
+ User  | Description
+ ----- | -------------
+ Name | Create a new customer
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees  register a new customer.
+ Actors | Administrator
+ Pre-conditions | The customer isn't active in database.
+ Flow | The internal employee require detailed information about customer to create this new instance.
+ Post-conditions | The database is upgrate with new information. 
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/update.png" width="800" />  
+ User  | Description
+ ----- | -------------
+ Name | Update information about customer client or delete documents.
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees  update a new document's customer.
+ Actors | Administrator
+ Pre-conditions | The customer is active in database.
+ Flow | The internal employee require basic information about customer.
+ Post-conditions | The database is upgrate with new information. 
+
+
 ## Scope
 The product purpose is contributed in process of information extract and use for all users. This project include all people who need information about costumers and their paperwork’s.
 
@@ -186,17 +213,35 @@ The system is limited to run in equipment support and had installed JDK 8.0 or l
 The computer through will access must be has internet connection. The software is distributed system and need an external database for work, then it's necessary connect to internet.
 
 # Specific requirements
-## External interfaces
 
+## Functional requirements
+The software allows read information about localization of documents in database, so it will be necesary that a user type a basic data about customer. Other function is upgrade the data stored, so it's possible add or delete information. Finally, it uses a system for add new customer to database.
 Software Engieener        | Customer   
 --------------------------|-----------
 Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
 There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
 There is a middle place, where document save?|Dropbox
 When a work wasn't finished, where is keep the documents?| On the desk in their folders.
+##Non functional requirements
+## External interfaces
 
-## Functions
-The software allows read information about localization of documents in database, so it will be necesary that an user type a basic data about customer. Other function is upgrate the data stored, so its possible add or delete information. Finally, it use a system for add new customer to database.
 
 ### Security
 Some considerations of customer software, it isn't necessary authenticate in application. However, the access to database need a user and password. So, a pool data will be in a public server, then the information traffic per day is minimum. In other situation will be use a provider of service with more benefits in relations with transactions of the database.
+
+# Appendices
+
+Software Engieener        | Customer   
+--------------------------|-----------
+Physical enviroment| 
+Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
+There is a middle place, where document save?|Dropbox
+There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
+When a work wasn't finished, where is keep the documents?| On the desk in their folders.
+Interfaces| 
+The system need a language additional to Spanish?|No, all users understand Spanish.
+What OS have the equipment of users?|Windows in different versions and mac OS.
+Do you use a tactile screen?| It isn't necessary, only one computer has a tactile screen. 
+Do you use some aditional user interface or device?| It isn't necessary, all employees work well with standard devices. 
+User and human factors| 
+The employees, what level skill need for work with the system| All employees have a level necesary for operate an accounting system. 
