@@ -231,7 +231,7 @@ Some considerations of customer software, it isn't necessary authenticate in app
 
 # Appendices
 
-Software Engieener        | Customer   
+Software Engineer        | Customer   
 --------------------------|-----------
 Physical enviroment| 
 Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
@@ -245,3 +245,12 @@ Do you use a tactile screen?| It isn't necessary, only one computer has a tactil
 Do you use some aditional user interface or device?| It isn't necessary, all employees work well with standard devices. 
 User and human factors| 
 The employees, what level skill need for work with the system| All employees have a level necesary for operate an accounting system. 
+It's necessary protect the client's information?|It's not neccesary, all information information have to available in business.
+Functionality|
+What is the main functionality of software?|It handle a documents and information.
+Who are manage the software?| I manage the system and our support engineer.
+It's necessary shortcut keys?|Yes, a software is easier when there are shorcut keys
+The software need adapt to other devices|No, we work in pcs with windows or mac
+The software need adapt to other systems|Maybe, it's necessary adapt to cloud computing, but this technology no yet available in the business.
+Security|
+Users need aditional information to access?|No, the simplicity is important
