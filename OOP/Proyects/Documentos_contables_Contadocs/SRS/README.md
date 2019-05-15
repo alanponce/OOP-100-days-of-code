@@ -101,6 +101,7 @@ The user involved all collaborators but, only internal and externals employees c
  Flow | The internal employee require basic information about customer
  Post-conditions | The system clean the search
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/create.png" width="800" />  
+
  User  | Description
  ----- | -------------
  Name | Create a new customer
@@ -111,7 +112,9 @@ The user involved all collaborators but, only internal and externals employees c
  Pre-conditions | The customer isn't active in database.
  Flow | The internal employee require detailed information about customer to create this new instance.
  Post-conditions | The database is upgrate with new information. 
+
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/update.png" width="800" />  
+
  User  | Description
  ----- | -------------
  Name | Update information about customer client or delete documents.
