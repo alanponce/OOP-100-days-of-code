@@ -5,7 +5,7 @@ public class EmpleadoAsalariado extends Empleado{ //establecemos una clase publi
 
 //Permite heredar los atributos de la clase empleados
     public EmpleadoAsalariado(String nombre, String apellido, String nss, double salario){
-        super(nombre, apellido, nss);
+        super(nombre, apellido, nss); //utilizamos super para invocaral constructor de la clase superior que comparta el mismo tipo de parametrización.
         establecerSalarioSemanal(salario);
     }
 
