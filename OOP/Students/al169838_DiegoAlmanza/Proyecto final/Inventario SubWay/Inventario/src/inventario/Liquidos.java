@@ -1,60 +1,38 @@
-
+//Paquete en el que se encontraran las calses usadas ene ste proyecto 
 package inventario;
 
-
-public class Liquidos {
-
+//clase liquidos que hereda de la calas eProductos
+public class Liquidos extends Productos{
+//variables privadas de tipo entero
     private int mayonesa;
     private int mostaza;
     private int dulce;
     private int chipotle;
     private int ranch;
 
-    
-    public Liquidos(){
-        mayonesa=0;
-        mostaza=0;
-        dulce=0;
-        chipotle=0;
-        ranch=0;
-    }
-    
-     public void Meterliquido(int l, int c){
-        if(l == 12){
-            Meterchipotle(c);
+    //constructor de la calse
+    public Liquidos(int id, int c){
+       //se invoca el constructor de la clase padre
+        super (id, c);
+        //dependiendo del id se agregara la cantidad a cada variable
+       if(id == 12){
+            chipotle += c;
         }
-        if(l == 13){
-            Meterdulce(c);
+        if(id == 13){
+            dulce += c;
         }
-        if(l == 14){
-            Metermayonesa(c);
+        if(id == 14){
+            mayonesa += c;
         }
-        if(l == 15){
-            Metermostaza(c);
+        if(id == 15){
+            mostaza += c;
         }
-        if(l == 16){
-            Meterranch(c);
+        if(id == 16){
+            ranch += c;
         }
     }
-     
-    public void Sacarliquido(int l, int c){
-        if(l == 12){
-            Sacarchipotle(c);
-        }
-        if(l == 13){
-            Sacardulce(c);
-        }
-        if(l == 14){
-            Sacarmayonesa(c);
-        }
-        if(l == 15){
-            Sacarmostaza(c);
-        }
-        if(l == 16){
-            Sacarranch(c);
-        }
-    } 
     
+    //metodo para saber el valor de cada variable
     public void printL(){
         System.out.print("\nChipotle: "+chipotle+" Lt.");
         System.out.print("\nMostaza Dulce: "+dulce+" Lt.");
@@ -66,45 +44,5 @@ public class Liquidos {
     }
     
     
-    private void Metermayonesa(int x){
-        mayonesa += x;
-    }
-    
-    private void Metermostaza(int x){
-        mostaza += x;
-    }
-    
-    private void Meterdulce(int x){
-        dulce += x;
-    }
-    
-    private void Meterchipotle(int x){
-        chipotle += x;
-    }
-    
-    private void Meterranch(int x){
-        ranch += x;
-    }
-    
-    private void Sacarmayonesa(int x){
-        mayonesa -= x;
-    }
-    
-    private void Sacarmostaza(int x){
-        mostaza -= x;
-    }
-    
-    private void Sacardulce(int x){
-        dulce -= x;
-    }
-    
-    private void Sacarchipotle(int x){
-        chipotle -= x;
-    }
-    
-    private void Sacarranch(int x){
-        ranch -= x;
-    }
-    
-   
+  
 }
