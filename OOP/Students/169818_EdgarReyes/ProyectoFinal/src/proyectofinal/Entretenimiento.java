@@ -6,7 +6,6 @@ public abstract class  Entretenimiento {
     private String clasificacion;
     private String genero;
     private String resena;
-    
     private int calificacion;
     
     
@@ -17,7 +16,6 @@ public abstract class  Entretenimiento {
         clasificacion = null;
         genero = null;
         resena = null;
-        
         calificacion = 0;
     }
     
@@ -64,15 +62,11 @@ public abstract class  Entretenimiento {
         this.resena = resena;
     }
 
-    
-
     public int getCalificacion() {
         return calificacion;
     }
 
     public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
-    }
-    
-    
+    }   
 }
