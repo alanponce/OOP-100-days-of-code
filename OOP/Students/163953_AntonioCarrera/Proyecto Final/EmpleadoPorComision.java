@@ -1,12 +1,11 @@
-﻿
-public class EmpleadoPorComision extends Empleado{
+public class EmpleadoPorComision extends Empleado{ //creamos una clase publica llamada empleado por comision y esta es una extension de nuestra clase empleado
     
 //atributos de la clase
     private double ventasBrutas;
     private double tarifaComision;
     
     public EmpleadoPorComision(String nombre, String apellido, String nss, double ventas, double tarifa){
-        super(nombre, apellido, nss);
+        super(nombre, apellido, nss); //utilizamos super para invocaral constructor de la clase superior que comparta el mismo tipo de parametrización.
         
         establecerVentasBrutas(ventas);
         establecerTarifaComision(tarifa);
@@ -45,7 +44,7 @@ public class EmpleadoPorComision extends Empleado{
         return obtenerTarifaComision() * obtenerVentasBrutas();
     }
     
-//Permite sobrevenir los métodos
+//Permite sobreescribir los métodos
     @Override
     public String toString(){
         return String.format("%s: %s\n%s: $%,.2f; %s: %.2f", "empleado por comisión", super.toString(), "ventas brutas", obtenerVentasBrutas(),
