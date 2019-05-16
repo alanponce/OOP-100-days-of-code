@@ -1,18 +1,18 @@
 ﻿
 public abstract class Empleado { //creamos una clase abstracta co modificador de acceso publico llamada empleado
     
-    private String primerNombre;
-    private String apellidoPaterno;
-    private String numeroSeguroSocial;
+    private String primerNombre;    //creamos datos privados de tipo string llamado primer nombre
+    private String apellidoPaterno; //creamos datos privados de tipo string llamado apellidoPaterno
+    private String numeroSeguroSocial;  //creamos datos privados de tipo string numeroSeguroSocial
     
-    //Constructor con tres argumentos.
+    //Creamos un constructor con tres argumentos.
     public Empleado( String nombre, String apellido, String nss ){
         
         primerNombre = nombre;
         apellidoPaterno = apellido;
         numeroSeguroSocial = nss;
         
-    }//Fin del constructor de empleado
+    }//Fin del constructor del empleado
     
     //Establece el primero nombre
     public void setPrimerNombre(String nombre){
@@ -45,7 +45,7 @@ public abstract class Empleado { //creamos una clase abstracta co modificador de
     }
     
     //Devuelve representación String de un objeto Empleado.
-    @Override
+    @Override //sobreescribe el metodo tostring de nuestra clase padre
     public String toString(){
         return String.format("%s %s\nnumero de seguro social: %s", getPrimerNombre(), getApellidoPaterno(), getNumeroSeguroSocial());
     }
