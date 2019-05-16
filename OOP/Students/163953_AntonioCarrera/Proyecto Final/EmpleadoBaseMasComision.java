@@ -1,12 +1,11 @@
-﻿
-public class EmpleadoBaseMasComision extends EmpleadoPorComision{
+public class EmpleadoBaseMasComision extends EmpleadoPorComision{ //creamos una clase publica llamada empleadosbasemascomision que es una extension de la clase empleadoporcomision
     
-    private double salarioBase;
+    private double salarioBase; //creamos un dato privado de tipo double llamado salariobase
     
 //Permite heredar los atributos de la clase empleado por comisión
     public EmpleadoBaseMasComision(String nombre, String apellido, String nss, double ventas, double tarifa, double salario){
     
-        super(nombre, apellido, nss, ventas, tarifa);
+        super(nombre, apellido, nss, ventas, tarifa);//utilizamos super para invocaral constructor de la clase superior que comparta el mismo tipo de parametrización.
         establecerSalarioBase(salario);
     }
     
