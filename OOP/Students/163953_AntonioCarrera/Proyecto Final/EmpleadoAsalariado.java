@@ -1,7 +1,7 @@
-﻿
-public class EmpleadoAsalariado extends Empleado{
+
+public class EmpleadoAsalariado extends Empleado{ //establecemos una clase publica llamada EmpleadoAsalariado que es una extencion de nuestra clase Empleado
     
-    private double salario;
+    private double salario;//creamos un dato privado de tipo double llamado salario
 
 //Permite heredar los atributos de la clase empleados
     public EmpleadoAsalariado(String nombre, String apellido, String nss, double salario){
@@ -9,7 +9,7 @@ public class EmpleadoAsalariado extends Empleado{
         establecerSalarioSemanal(salario);
     }
 
-    @Override
+    @Override //permite sobreescribir nuestro metodo ingresos de la clase padre
     public double ingresos(){
         return obtenerSalarioSemanal();
     }
