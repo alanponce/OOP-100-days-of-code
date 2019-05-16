@@ -1,5 +1,6 @@
 package equipo.de.baloncesto;
 import javax.swing.JOptionPane;
+
 public class Partido {
     /*Se declaran los atributos privados de la clase Partido, los cuales son estáticos para poder acceder a ellas
     sin necesidad de instanciar un objeto de esta clase.*/
@@ -8,7 +9,7 @@ public class Partido {
     private static int Distancia = 0;
     private static int Puntuacion1 = 0;
     private static int Puntuacion2 = 0;
-    private static String Jugadas = "";
+    private static String ResumenDeJugadas = "";
     private static int Inicio;
     
     public static int getTiempo() {//Se crea el getter para poder acceder al atributo.
@@ -59,12 +60,12 @@ public class Partido {
         se declare en el setter*/
     }
 
-    public static String getJugadas() {//Se crea el getter para poder acceder al atributo.
-        return Jugadas;//Retorna el texto almacenado dentro del atributo Jugadas de la clase Partido.
+    public static String getResumenDeJugadas() {//Se crea el getter para poder acceder al atributo.
+        return ResumenDeJugadas;//Retorna el texto almacenado dentro del atributo Jugadas de la clase Partido.
     }
 
-    public static void setJugadas(String Jugadas) {//Se crea el setter para poder modificar al atributo.
-        Partido.Jugadas = Jugadas;/*El atributo Jugadas de la clase Partido va a tomar el valor que 
+    public static void setResumenDeJugadas(String ResumenDeJugadas) {//Se crea el setter para poder modificar al atributo.
+        Partido.ResumenDeJugadas = ResumenDeJugadas;/*El atributo Jugadas de la clase Partido va a tomar el valor que 
         se declare en el setter*/
     }
     public static void Info(){/*Se crea el método info, el cual imprime en pantalla varios atributos
@@ -81,10 +82,10 @@ public class Partido {
         se declare en el setter*/
     }
     
-    public static void Resumen(){/*Se crea el método resúmen, el cual imprime en pantalla el texto
+    public static void ResumenDeJugadas(){/*Se crea el método resúmen, el cual imprime en pantalla el texto
         que tenga almacenado en el atributo Jugadas de la clase Partido. Después, borra el contenido
         almacenado del atributo para poder indicar un nuevo conjunto de jugadas.*/
-        JOptionPane.showMessageDialog(null,Partido.Jugadas);
-        Partido.Jugadas = "";
+        JOptionPane.showMessageDialog(null,Partido.ResumenDeJugadas);
+        Partido.ResumenDeJugadas = "";
     }
 }

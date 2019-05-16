@@ -1,73 +1,39 @@
-
 package equipo.de.baloncesto;
-
 import javax.swing.JOptionPane;
 
 public abstract class Jugador {
     /*Se declaran los atributos privados de la clase Jugador, los cuales pueden ser heredados por las
     instancias de sus subclases.*/
-    private String Nombre;
-    private String Posicion;
-    private int Estatura;
-    private int NivelPase;
-    private int NivelTiro;
+    private final String Nombre;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
+    private final String Posicion;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
+    private final int Estatura;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
+    private final int NivelPase;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
+    private final int NivelTiro;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
     private int Jugada;
-    private boolean Visitante;/*Este atributo se ha declarado boolean porque su función es indicar
-    si una instancia de la clase forma parte del equipo visitante, o si forma parte del equipo local.*/
+    private final boolean Visitante;/*Este atributo se ha declarado boolean porque su función es indicar
+    si una instancia de la clase forma parte del equipo visitante, o si forma parte del equipo local.
+    Además, es declarado final para que no se pueda modificar una vez inicializado.*/
     private static int Objetivo;/*Los atributos Objetivo y Decision se han declarado estáticos porque
     sus valores son compartidos con todas las instanciaciones de la clase*/
-    private static int Decision;
-    /*Se declaran los métodos abstractos de la clase Jugador, los cuales serán sobreescritos en 
-    sus subclases.*/
-    public abstract void Pasar();
-    public abstract void Tirar();
-    public abstract void Avanzar();
-    public abstract void Retroceder();
-    public abstract void Jugar();
-    
+    private static int DecisionDeJuego;
     public String getNombre() {//Se crea el getter para poder acceder al atributo.
         return Nombre;//Retorna el nombre de la instancia (Un jugador de baloncesto).
-    }
-
-    public final void setNombre(String Nombre) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.Nombre = Nombre;//El atributo va a tomar el valor de string que se declare en el setter.
     }
 
     public String getPosicion() {//Se crea el getter para poder acceder al atributo.
         return Posicion;//Retorna la posición en la que se juega.
     }
 
-    public final void setPosicion(String Posicion) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.Posicion = Posicion;//El atributo va a tomar el valor de string que se declare en el setter.
-    }
-
     public int getEstatura() {//Se crea el getter para poder acceder al atributo.
         return Estatura;//Retorna el valor de la estatura que posee el jugador.
-    }
-
-    public final void setEstatura(int Estatura) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.Estatura = Estatura;//El atributo va a tomar el valor entero que se declare en el setter.
     }
 
     public int getNivelPase() {//Se crea el getter para poder acceder al atributo.
         return NivelPase;//Retorna la destreza que posee el jugador al realizar pases.
     }
 
-    public final void setNivelPase(int NivelPase) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.NivelPase = NivelPase;//El atributo va a tomar el valor entero que se declare en el setter.
-    }
-
     public int getNivelTiro() {//Se crea el getter para poder acceder al atributo.
         return NivelTiro;//Retorna la destreza que posee el jugador al realizar tiros a canasta.
-    }
-
-    public final void setNivelTiro(int NivelTiro) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.NivelTiro = NivelTiro;//El atributo va a tomar el valor entero que se declare en el setter.
     }
 
     public static int getObjetivo() {//Se crea el getter para poder acceder al atributo.
@@ -88,13 +54,13 @@ public abstract class Jugador {
         this.Jugada = Jugada;//El atributo va a tomar el valor entero que se declare en el setter.
     }
 
-    public static int getDecision() {//Se crea el getter para poder acceder al atributo.
-        return Decision;/*Retorna un número entero que representa la acción que va
+    public static int getDecisionDeJuego() {//Se crea el getter para poder acceder al atributo.
+        return DecisionDeJuego;/*Retorna un número entero que representa la acción que va
         a realizar el jugador*/
     }
 
-    public static void setDecision(int Decision) {//Se crea el setter para poder modificar al atributo.
-        Jugador.Decision = Decision;//El atributo va a tomar el valor entero que se declare en el setter.
+    public static void setDecisionDeJuego(int DecisionDeJuego) {//Se crea el setter para poder modificar al atributo.
+        Jugador.DecisionDeJuego = DecisionDeJuego;//El atributo va a tomar el valor entero que se declare en el setter.
     }
 
     public boolean isVisitante() {/*Este método funciona como getter, pero como es de tipo boolean sólo 
@@ -102,12 +68,16 @@ public abstract class Jugador {
         return Visitante;//Retorna el valor que afirma o niega que el jugador sea del equipo visitante.
     }
 
-    public final void setVisitante(boolean Visitante) {/*Se crea el setter para poder modificar al atributo.
-    El setter es final para evitar que se sobreescriba en las subclases.*/
-        this.Visitante = Visitante;//El atributo va a tomar el valor booleano que se declare en el setter.
-    }
-
     public void Stats(){/*Este método imprime en pantalla el valor de los atributos que posee el jugador.*/
         JOptionPane.showMessageDialog(null,"Nombre: " + Nombre + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm" + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro);
+    }
+    public Jugador(String Nombre, String Posicion, boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+        //Se crea un constructor para inicializar los atributos de la clase.
+        this.Nombre = Nombre;
+        this.Posicion = Posicion;
+        this.Visitante = Visitante;
+        this.Estatura = Estatura;
+        this.NivelPase = NivelPase;
+        this.NivelTiro = NivelTiro;
     }
 }

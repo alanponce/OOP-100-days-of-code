@@ -1,17 +1,12 @@
 package equipo.de.baloncesto;
 
-public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot, la cual hereda atributos y
-    métodos de la clase padre Jugador*/
+public class JugadorAlaPivot extends Jugador implements Jugadas {/*Se crea la clase JugadorAlaPivot, la cual hereda atributos
+   de la clase padre Jugador y métodos de la interfaz Jugadas.*/
     
-   public JugadorAlaPivot(String Nombre,boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
-   /*Se crea un constructor para inicializar las instancias de la clase.*/
-   this.setNombre(Nombre);
-   this.setPosicion("Ala Pivot");/*Como cualquier jugador instanciado en esta clase es de la posición 
-   Ala Pivot, se indica desde el constructor.*/
-   this.setVisitante(Visitante);
-   this.setEstatura(Estatura);
-   this.setNivelPase(NivelPase);
-   this.setNivelTiro(NivelTiro);
+   public JugadorAlaPivot(String Nombre, String Posicion, boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
+   /*Se crea un constructor para inicializar las instancias de la clase y se utiliza super para llamar
+     al constructor de la clase padre Jugador.*/
+   super(Nombre, Posicion, Visitante, Estatura, NivelPase, NivelTiro);
 }
     @Override
     public void Retroceder(){/*El método Retroceder hace que el jugador se mueva hacia su
@@ -34,8 +29,8 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
                 Partido.setDistancia(-14);/*Ajusta la distancia actual del jugador para que no salga de los 
             límites de la cancha.*/
             }
-        Partido.setJugadas(Partido.getJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
-        /*Almacena en el atributo Jugadas de la clase Partido un texto que indica que el jugador ha 
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
+        /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
         retrocedido, y la distancia actual medida desde el centro de la cancha.*/
        }
     }
@@ -59,8 +54,8 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
             Partido.setDistancia(14);/*Ajusta la distancia actual del jugador para que no salga de los 
             límites de la cancha.*/
         }
-        Partido.setJugadas(Partido.getJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
-        /*Almacena en el atributo Jugadas de la clase Partido un texto que indica que el jugador ha 
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
+        /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
         avanzado, y la distancia actual medida desde el centro de la cancha.*/
     }}
     @Override
@@ -77,12 +72,12 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
     this.setObjetivo((int) (Math.random()*5+6));/*Este número aleatorio se castea como entero porque
     el método Math.random genera números que incluyen decimales.*/
     }
-    Partido.setJugadas(Partido.getJugadas()+this.getNombre() + " ha decidido tirar a canasta.\n");
+    Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre() + " ha decidido tirar a canasta.\n");
         if (this.getJugada()<=this.getNivelTiro()){/*Verifica si el número aleatorio generado es menor
             que el valor del atributo NivelTiro del objeto instanciado. En caso de serlo, realiza
             lo siguiente:*/
-            Partido.setJugadas(Partido.getJugadas()+this.getNombre()+" ha encestado con su tiro.\n");/*Almacena
-            el texto indicado en el atributo Jugadas de la clase Partido. Este texto indica que el jugador
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha encestado con su tiro.\n");/*Almacena
+            el texto indicado en el atributo ResumenDeJugadas de la clase Partido. Este texto indica que el jugador
             ha logrado encestar con su tiro.*/
             if(this.isVisitante()){/*Verifica si el jugador es local o visitante y dependiendo del resultado,
             añade los puntos al equipo correspondiente*/
@@ -97,8 +92,8 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
             {
             }
             else{
-            Partido.setJugadas(Partido.getJugadas()+"Ha sido un tiro de 3 puntos.\n");/*Almacena
-            el texto indicado en el atributo Jugadas de la clase Partido. El texto indica que el tiro ha sido
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+"Ha sido un tiro de 3 puntos.\n");/*Almacena
+            el texto indicado en el atributo ResumenDeJugadas de la clase Partido. El texto indica que el tiro ha sido
             de 3 puntos.*/
             Partido.setPuntuacion1(Partido.getPuntuacion1()+1);
             }
@@ -106,8 +101,8 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
             if (Partido.getDistancia()>=-7){/*Verifica la distancia donde fue lanzado el balón, si el tiro
             fue desde más de 7 metros de la canasta del equipo local, el equipo visitante recibe un punto más.*/
             if(this.isVisitante()){
-            Partido.setJugadas(Partido.getJugadas()+"Ha sido un tiro de 3 puntos.\n");/*Almacena
-            el texto indicado en el atributo Jugadas de la clase Partido. El texto indica que el tiro ha sido
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+"Ha sido un tiro de 3 puntos.\n");/*Almacena
+            el texto indicado en el atributo ResumenDeJugadas de la clase Partido. El texto indica que el tiro ha sido
             de 3 puntos.*/
             Partido.setPuntuacion2(Partido.getPuntuacion2()+1);
             }
@@ -116,13 +111,13 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
             }
         }
         else{
-            Partido.setJugadas(Partido.getJugadas()+this.getNombre()+" ha fallado su tiro.\n");/*Almacena
-            el texto indicado en el atributo Jugadas de la clase Partido. El texto indica que el tiro
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha fallado su tiro.\n");/*Almacena
+            el texto indicado en el atributo ResumenDeJugadas de la clase Partido. El texto indica que el tiro
             ha fallado.*/
         }
     //Una vez realizado el tiro, sucede lo siguiente:
     Partido.setTiempo(Partido.getTiempo()+1);//El tiempo del partido avanza un minuto.
-    Partido.Resumen();//Imprime en pantala un texto que contiene todas las jugadas realizadas antes del tiro.
+    Partido.ResumenDeJugadas();//Imprime en pantala un texto que contiene todas las jugadas realizadas antes del tiro.
     Partido.Info();//Imprime en pantalla el estado actual del partido.
     if(this.isVisitante()){/*Verifica si el jugador actual es local o visitante y ajusta la distancia para que
         el balón se encuentre del lado del equipo contrario.*/
@@ -142,8 +137,8 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
     public void Pasar(){//El método Pasar hace que el jugador pase el balón hacia uno de sus compañeros.
         this.setJugada((int) (Math.random()*(this.getNivelPase()+21)));/*Genera un número aleatorio entre
         1 y el valor del atributo NivelPase más 20.*/
-        Partido.setJugadas(Partido.getJugadas()+this.getNombre() + " ha decidido hacer un pase.\n");/*Almacena
-        el texto indicado en el atributo Jugadas de la clase Partido.*/
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre() + " ha decidido hacer un pase.\n");/*Almacena
+        el texto indicado en el atributo ResumenDeJugadas de la clase Partido.*/
         if (this.getJugada()<=this.getNivelPase()){/*Verifica si el número aleatorio generado es menor que
             el atributo NivelPase del objeto instanciado, en caso de serlo, realiza lo siguiente:*/
             if(this.isVisitante()){/*Verifica si el objeto instanciado es un jugador visitante.*/
@@ -162,14 +157,14 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
           decimales.*/
         }while(Jugador.getObjetivo()==3);    
         }
-            Partido.setJugadas(Partido.getJugadas()+"El pase de "+this.getNombre()+" ha sido exitoso.\n");/*Almacena
-        el texto indicado en el atributo Jugadas de la clase Partido. Este texto indica que el pase se ha realizado
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+"El pase de "+this.getNombre()+" ha sido exitoso.\n");/*Almacena
+        el texto indicado en el atributo ResumenDeJugadas de la clase Partido. Este texto indica que el pase se ha realizado
             con éxito.*/
         }
         else{/*Si el valor aleatorio es mayor que el atributo NivelPase del objeto instanciado, se realiza
             lo siguiente:*/
-            Partido.setJugadas(Partido.getJugadas()+"El pase de "+this.getNombre()+" ha fallado.\n");/*Almacena
-        el texto indicado en el atributo Jugadas de la clase Partido. El texto indica que el pase realizado
+            Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+"El pase de "+this.getNombre()+" ha fallado.\n");/*Almacena
+        el texto indicado en el atributo ResumenDeJugadas de la clase Partido. El texto indica que el pase realizado
         por el jugador ha fallado.*/
         if(this.isVisitante()){/*Se realiza el mismo método de verificación para ver si el objeto instanciado
             forma parte del equipo local o del visitante. Como en este caso el pase del jugador ha fallado, 
@@ -190,14 +185,14 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
     @Override
     public void Jugar(){/*El método Jugar hace que el jugador tome una desición en cuanto a lo que
         va a realizar una vez que tenga el balón*/
-        Partido.setJugadas(Partido.getJugadas()+this.getNombre()+" ha conseguido el balón.\n");/*Almacena
-        el texto indicado en el atributo Jugadas de la clase Partido. Este texto indica que el jugador
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha conseguido el balón.\n");/*Almacena
+        el texto indicado en el atributo ResumenDeJugadas de la clase Partido. Este texto indica que el jugador
         ha conseguido el balón.*/
         do{
-          Jugador.setDecision((int) (Math.random()*6+1));/*Genera un número al azar del 1 al 6.
+          Jugador.setDecisionDeJuego((int) (Math.random()*6+1));/*Genera un número al azar del 1 al 6.
           Este número aleatorio se castea como entero porque el método Math.random genera números 
           que incluyen decimales.*/
-        switch (Jugador.getDecision()){
+        switch (Jugador.getDecisionDeJuego()){
             case 1:
                 this.Avanzar();
                 break;
@@ -216,7 +211,7 @@ public class JugadorAlaPivot extends Jugador{/*Se crea la clase JugadorAlaPivot,
             case 6:
                 this.Pasar();
                 break;
-        }}while(Jugador.getDecision()<=2);/*Esto se repetirá hasta que el jugador decida pasar el balon
+        }}while(Jugador.getDecisionDeJuego()<=2);/*Esto se repetirá hasta que el jugador decida pasar el balon
         o tirar a canasta.*/
     }
 }
