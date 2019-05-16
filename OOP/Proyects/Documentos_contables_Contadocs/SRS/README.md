@@ -126,6 +126,32 @@ The user involved all collaborators but, only internal and externals employees c
  Flow | The internal employee require basic information about customer.
  Post-conditions | The database is upgrate with new information. 
 
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/updateE.png" width="800" />  
+
+ User  | Description
+ ----- | -------------
+ Name | Update information about customer client or delete documents.
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees  update a new document's customer.
+ Actors | Administrator
+ Pre-conditions | The customer is active in database.
+ Flow | The internal employee require basic information about customer.
+ Post-conditions | The database is upgrate with new information. 
+
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/readE.png" width="800" />  
+
+ User  | Description
+ ----- | -------------
+ Name | Update information about customer client or delete documents.
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees  update a new document's customer.
+ Actors | Administrator
+ Pre-conditions | The customer is active in database.
+ Flow | The internal employee require basic information about customer.
+ Post-conditions | The database is upgrate with new information. 
+
 
 ## Scope
 The product purpose is contributed in process of information extract and use for all users. This project include all people who need information about costumers and their paperwork’s.
@@ -171,6 +197,19 @@ The software is supported on three key classes, and other derived class gives su
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/DiagramaDeClase.png" width="900" />  
 
+
+
+
+# Specific requirements
+
+## Functional requirements
+The software allows read information about localization of documents in database, so it will be necesary that a user type a basic data about customer. Other function is upgrade the data stored, so it's possible add or delete information. Finally, it uses a system for add new customer to database.
+Software Engieener        | Customer   
+--------------------------|-----------
+Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
+There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
+There is a middle place, where document save?|Dropbox
+When a work wasn't finished, where is keep the documents?| On the desk in their folders.
 ### User interfaces
 The first perspective about software is getting in an interview with the costumer, here show some characteristics of software:
 
@@ -180,7 +219,7 @@ The system need a language additional to Spanish?|No, all users understand Spani
 What OS have the equipment of users?|Windows in different versions and mac OS.
 Do you use a tactile screen?| It isn't necessary, only one computer has a tactile screen. 
 
- Document Search, when the user insert name and last name of customer, the system lookin for all data related with the people related. If a document found have a digital version, then it show a hiperlink with its reference in selected enviroment. In case, the sofware find a phisical location, the answer will indicate the exact position. Finally, if the user don't find a available ducuments, the system indicate this situation.
+ Document Search, when a user inserts a name and last name of customer, the system looking for all data related with the people. If a document found is a digital version, then it shows a hyperlink with its reference in selected environment. In case, the software find a physical location, the answer will indicate the exact position. Finally, if the user doesn't find a available ducuments, the system indicate this situation.
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas.png" alt="consultas" width="400" />   <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas1Resp.png" alt="consultas con una respuesta" width="400" />
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/Consultas3Resultados.png" alt="consultas con tres resultados" width="400" /><img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/ConsultasSinRespuesta.png" alt="consultas con tres resultados" width="400" />
@@ -203,10 +242,7 @@ The software include a connection with other software elements allows interactio
 
 <img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/diagramaBD.png" width="900" align="center" />
 
-### Communications interfaces
-For share information is necesary use a SQL database for save the information, so it's possible keep upgrate the information about users and customer of business.
-### Memory
-The operations of software use a small amount of memory, all data is send to online database, so only is necesary 500MB in RAM
+##Non functional requirements
 ## Product 
 ### Educational level, experience y technical expertise
 
@@ -215,25 +251,18 @@ According data collect, study level isn’t relevant, because the collaborators 
 The system is limited to run in equipment support and had installed JDK 8.0 or later. The software is built in Java, so it's necessary all library and java core to work.
 The computer through will access must be has internet connection. The software is distributed system and need an external database for work, then it's necessary connect to internet.
 
-# Specific requirements
-
-## Functional requirements
-The software allows read information about localization of documents in database, so it will be necesary that a user type a basic data about customer. Other function is upgrade the data stored, so it's possible add or delete information. Finally, it uses a system for add new customer to database.
-Software Engieener        | Customer   
---------------------------|-----------
-Where will be computers with software?| In central office, and external employees will use in own laptops out of offices.
-There is some place in where the employees save documents?|Digital documents save in central pc, in dropbox service. And the externals employees will be connected to same repository.
-There is a middle place, where document save?|Dropbox
-When a work wasn't finished, where is keep the documents?| On the desk in their folders.
-##Non functional requirements
-## External interfaces
-
 
 ### Security
 Some considerations of customer software, it isn't necessary authenticate in application. However, the access to database need a user and password. So, a pool data will be in a public server, then the information traffic per day is minimum. In other situation will be use a provider of service with more benefits in relations with transactions of the database.
+## System requirements
 
+### Communications interfaces
+For share information is necesary use a SQL database for save the information, so it's possible keep upgrate the information about users and customer of business.
+### Memory
+The operations of software use a small amount of memory, all data is send to online database, so only is necesary 500MB in RAM
 # Appendices
 
+It get informaton throw a interview on 3/14/2019 by Paola Jurado, in this, Aracely P. represent a accounting company, she was exposed all software requeriments, and answered the next question about details of software:
 Software Engineer        | Customer   
 --------------------------|-----------
 Physical enviroment| 
