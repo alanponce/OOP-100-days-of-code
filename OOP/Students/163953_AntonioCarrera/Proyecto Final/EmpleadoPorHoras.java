@@ -1,12 +1,11 @@
-﻿
-public class EmpleadoPorHoras extends Empleado{
+public class EmpleadoPorHoras extends Empleado{//creamos nnuestra clase publica y usamos la palabra reservada extends para indicar que es una extension de la clase empleado
     
     private double sueldo;  //sueldo por hora
     private double horas;    //horas trabajadas.
     
 //Constructor sobrecargado
     public EmpleadoPorHoras(String nombre, String apellido, String nss, double salarioPorHoras, double horasTrabajadas){
-        super(nombre, apellido, nss);
+        super(nombre, apellido, nss);//utilizamos super para invocaral constructor de la clase superior que comparta el mismo tipo de parametrización.
         
         establecerSueldo(salarioPorHoras);
         establecerHoras(horasTrabajadas);
