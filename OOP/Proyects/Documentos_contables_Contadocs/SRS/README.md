@@ -151,6 +151,18 @@ The user involved all collaborators but, only internal and externals employees c
  Pre-conditions | The customer is active in database.
  Flow | The internal employee require basic information about customer.
  Post-conditions | The database is upgrate with new information. 
+<img src="https://github.com/RequirementEngineering/ch-re-al160000GeorgeRodriguez/blob/master/SRS/images/databaseT.png" width="800" />  
+
+ User  | Description
+ ----- | -------------
+ Name | Update information about customer client or delete documents.
+ Date | 20/04/2019
+ Author | George Rodríguez
+ Description | An internal employees  update a new document's customer.
+ Actors | Administrator
+ Pre-conditions | The customer is active in database.
+ Flow | The internal employee require basic information about customer.
+ Post-conditions | The database is upgrate with new information. 
 
 
 ## Scope
