@@ -9,10 +9,10 @@ package midocumento;
  *
  * @author George Rodríguez
  */
-public class MisDocumentos extends MisUbicaciones {
-    // Es el identificador único del documento
-    private Long id;
-    // Es el identificador único del cliente como clave secundaria
+public class Documentos extends Ubicaciones{
+ // Es el identificador único del documento
+ private Long id;
+ // Es el identificador único del cliente como clave secundaria
     private Long id_cliente;
     // Encabezado del documento
     private String encabezado;
@@ -20,15 +20,11 @@ public class MisDocumentos extends MisUbicaciones {
     private String tipo;
     // tipo de operacion a realizar 1 nuevo 2 actualizar 3 borrar
     private int operacion;
-
-    public Documentos() {
-    }
-
+    public Documentos(){}
     // Asigna un valor a Id
     public void setId(Long id) {
         this.id = id;
     }
-
     // Obtiene el valor actual de Id
     public Long getId() {
         return id;
@@ -38,14 +34,14 @@ public class MisDocumentos extends MisUbicaciones {
     public void setId_cliente(Long id_cliente) {
         this.id_cliente = id_cliente;
     }
-
+    
     // obtiene un valor a Id cliente
     public Long getId_cliente() {
         return id_cliente;
     }
-
+    
     // Asigna un valor a Encabezado
-    public void setEncabezado(String encabezado) {
+     public void setEncabezado(String encabezado) {
         this.encabezado = encabezado;
     }
 
@@ -53,20 +49,19 @@ public class MisDocumentos extends MisUbicaciones {
     public String getEncabezado() {
         return encabezado;
     }
-
+    
     // Asigna un valor a Tipo
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipo( String tipo) {
+        this.tipo= tipo;
     }
 
     // obtiene un valor a Tipo
     public String getTipo() {
         return tipo;
     }
-
     // Asigna un valor a Tipo
-    public void setOperacion(int operacion) {
-        this.operacion = operacion;
+    public void setOperacion( int operacion) {
+        this.operacion= operacion;
     }
 
     // obtiene un valor a operacion

@@ -1,10 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package midocumento;
 
 /**
  *
  * @author George Rodriguez
  */
-public class MisUbicaciones {
+public class Ubicaciones {
     // Guarda la ubicación del documento
     private String ubicacion;
     // La variable referencia identifica el lugar en donde se encuentra el documento

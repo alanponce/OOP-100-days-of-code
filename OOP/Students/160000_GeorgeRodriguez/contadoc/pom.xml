@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -12,12 +12,12 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
-   <properties>
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-  
+
 
   <dependencies>
 
@@ -27,7 +27,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -42,10 +42,10 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
+    <dependency> 
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>6.0.6 </version>
+      <version>8.0.11 </version>
     </dependency>
     <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
     <dependency>
@@ -60,15 +60,18 @@
       <version>3.4.GA </version>
       <scope>compile</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.jdesktop</groupId>
+      <artifactId>beansbinding</artifactId>
+      <version>1.2.1</version>
+    </dependency>
   </dependencies>
 
   <build>
-  <!-- we dont want the version to be part of the generated war file name -->
-  <finalName
->${project.artifactId}</finalName>
+    <!-- we dont want the version to be part of the generated war file name -->
+    <finalName>${project.artifactId}</finalName>
 
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -92,9 +95,11 @@
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
           <configuration>
+          <outputDirectory>${project.basedir}</outputDirectory>
             <archive>
               <manifest>
-                <mainClass>midocumento.app</mainClass>
+              <addClasspath>true</addClasspath>
+                <mainClass>midocumento.App</mainClass>
               </manifest>
             </archive>
           </configuration>
@@ -115,6 +120,43 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <configuration>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+              <manifest>
+                <mainClass>midocumento.App</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>analyze</id>
+              <goals>
+                <goal>analyze-only</goal>
+              </goals>
+              <configuration>
+                <failOnWarning>true</failOnWarning>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
