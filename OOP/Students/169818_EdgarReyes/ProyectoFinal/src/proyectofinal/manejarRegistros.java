@@ -4,7 +4,5 @@ public interface manejarRegistros {
     
     public void crearRegistro();
     
-    public void eliminarRegistro();
-    
     public void actualizarRegistro();
 }

@@ -6,20 +6,30 @@ public abstract class  Entretenimiento {
     private String clasificacion;
     private String genero;
     private String resena;
-    private int calificacion;
+    private float calificacion;
+    private static int numRegistro;
     
     
     //Constructor de la clase Entretenimiento
     Entretenimiento(){
-        nombre = null;
-        anioLanzamiento = 0;
-        clasificacion = null;
-        genero = null;
-        resena = null;
-        calificacion = 0;
+        this.nombre = null;
+        this.anioLanzamiento = 0;
+        this.clasificacion = null;
+        this.genero = null;
+        this.resena = null;
+        this.calificacion = 0;
+        this.numRegistro++;
     }
     
-    
+    Entretenimiento(String nombre, int anioLanzamiento, String clasificacion, String genero, String resena, float calificacion){
+        this.nombre = nombre;
+        this.anioLanzamiento = anioLanzamiento;
+        this.clasificacion = clasificacion;
+        this.genero = genero;
+        this.resena = resena;
+        this.calificacion = calificacion;
+        this.numRegistro++;
+    }
     
     //Métodos de la superclase Entretenimiento
     public String getNombre() {
@@ -62,11 +72,15 @@ public abstract class  Entretenimiento {
         this.resena = resena;
     }
 
-    public int getCalificacion() {
+    public float getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(int calificacion) {
+    public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;
     }   
+    
+    public int getNumRegistro(){
+        return this.numRegistro;
+    }
 }

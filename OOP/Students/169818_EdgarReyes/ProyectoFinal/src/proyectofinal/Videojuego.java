@@ -1,34 +1,55 @@
 
-package proyectofinal;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-public class Videojuego extends Entretenimiento implements manejarRegistros{
-   
-    private String desarrollador;
-    private String plataforma;
-    Scanner input = new Scanner(System.in);
+package proyectofinal;  //Paquete del proyecto
 
-    //Constructor de la clase Videojuego
+import java.util.InputMismatchException;    //Clase que muestra un mensaje de error si el simbolo obtenido no coincide con el tipo de dato
+
+import java.util.Scanner; //Clase usada para obtener la entrada de tipos primitivos de datos.
+
+public class Videojuego extends Entretenimiento implements manejarRegistros{   
+//Declaracion de la clase Videojuego que hereda metodos y atributos de la clase Entretenimiento, también implementa los metodos de la interfaz manejarRegistros
+    
+    /*Atributos de la clase. Son declarados como privados para que nada fuera de la clase los pueda modificar.*/
+    
+    private String desarrollador;   //Declaracion de la variable desarrollador que es de tipo String.
+    
+    private String plataforma;      //Declaracion de la variable plataforma que es de tipo String.
+    
+    Scanner input = new Scanner(System.in); 
+    
+    //Declaracion de un objeto de la clase Scanner que luego es instanciada y hace una llamada
+    //a su constructor que pasa como argumento el flujo de entrada estandar (System.in).
+    //Lo que hace el Scanner es que produce un valor escaneado desde el flujo de entrada estandar.
+
     Videojuego(){
+    //Constructor de la clase Videojuego
+    //Inicializa las variables de la clase como nulas.
         
-        desarrollador = null;
-        plataforma = null;
+        this.desarrollador = null;
+        this.plataforma = null;
     }
     
+    //Sobrecarga del constructor. Este toma como parametro dos variables de tipo String cuyo valor será asignado a los atributos de la clase.
+    Videojuego(String desarrollador, String plataforma){
+        this.desarrollador = desarrollador;
+        this.plataforma = plataforma;
+    }
 
-
+    //Metodo de la clase que regresa el valor de la variable desarrollador.
     public String getDesarrollador() {
         return desarrollador;
     }
 
+    //Metodo de la clase que toma como parametro un variable tipo String y se la asigna a la variable desarrollador.
     public void setDesarrollador(String desarrollador) {
         this.desarrollador = desarrollador;
     }
-
+    
+    //Metodo de la clase que toma como parametro un variable tipo String y se la asigna a la variable plataforma.
     public void setPlataforma(String plataforma){
         this.plataforma = plataforma;
     }
     
+    //Metodo de la clase que regresa el valor de la variable plataforma.
     public String getPlataforma(){
         return plataforma;
     }
@@ -36,14 +57,16 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
     //Sobrescritura de métodos de la interfaz manejarRegistros
     @Override
     public void mostrarDatos(){
-        System.out.println("Nombre:" + getNombre());    //Imprime el nombre concatenando el valor devuelto por la funcion heredada de la clase Entretenimiento.
-        System.out.println("Año de Lanzamiento: " + getAnioLanzamiento()); //Imprime el año de lanzamiento concatenando el valor devuelto por la funcion heredada de la clase Entretenimiento.
-        System.out.println("Clasificacion: " + getClasificacion()); //Imprime la clasificacion concatenando el valor devuelto por la funcion heredada de la clase Entretenimiento.
-        System.out.println("Genero: " + getGenero()); //Imprime el genero concatenando el valor devuelto por la funcion heredada de la clase Entretenimiento.
-        System.out.println("Reseña: " + getResena()); //Imprime la reseña concatenando el valor devuelto por la funcion heredada de la clase Entretenimiento.
-        System.out.println("Calificacion: " + getCalificacion());
-        System.out.println("Desarrollador: " + getDesarrollador());
-        System.out.println("Plataforma: " + plataforma); 
+        System.out.println("No. " + getNumRegistro()); //Imprime el numero de registro concatenando el valor devuelto por el metodo heredada de la clase Persona.
+        System.out.println("Nombre:" + getNombre());    //Imprime el nombre concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        System.out.println("Año de Lanzamiento: " + getAnioLanzamiento()); //Imprime el año de lanzamiento concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        System.out.println("Clasificacion: " + getClasificacion()); //Imprime la clasificacion concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        System.out.println("Genero: " + getGenero()); //Imprime el genero concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        System.out.println("Reseña: " + getResena()); //Imprime la reseña concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        System.out.println("Calificacion: " + getCalificacion()); //Imprime la calificacion concatenando el valor devuelto por el metodo heredada de la clase Entretenimiento.
+        
+        System.out.println("Desarrollador: " + getDesarrollador()); //Imprime el desarrollador concatenando el valor devuelto por el metodo de la misma clase Videojuego.
+        System.out.println("Plataforma: " + getPlataforma()); //Imprime la plataforma concatenando el valor devuelto por el metodo de la misma clase Videojuego.
         
         
     }
@@ -66,7 +89,7 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
         setClasificacion(clasificacion);                               //Usando el método heredado de la clase Entretenimiento se le establece una clasificacion al objeto.
         
         System.out.print("Ingrese el genero del videojuego: ");//Imprime un mensaje solicitando al usuario que ingrese el genero.
-        String genero = input.nextLine();//Asigna a la variable genero lo que el usuario teclee.
+        String genero = input.nextLine();//Asigna a la variable genero lo que el usuario teclee.r
         setGenero(genero);//Usando el método heredado de la clase Entretenimiento se le establece un genero al objeto.
         
         System.out.print("Ingrese una resena del videojuego: "); //Imprime un mensaje solicitando al usuario que ingrese una reseña.
@@ -74,7 +97,7 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
         setResena(resena); //Usando el método heredado de la clase Entretenimiento se le establece una reseña de lanzamiento al objeto.
         
         System.out.print("Ingrese la calificacion del videojuego: "); //Imprime un mensaje solicitando al usuario que ingrese la calificacion.
-        int calificacion = input.nextInt(); //Asigna a la variable calificacion lo que el usuario teclee.
+        float calificacion = input.nextFloat(); //Asigna a la variable calificacion lo que el usuario teclee.
         input.nextLine(); //El escaner avanza o salta una linea.
         setCalificacion(calificacion); //Usando el método heredado de la clase Entretenimiento se le establece una calificacio al objeto.
         
@@ -88,39 +111,24 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
        
     }
     
-    @Override
-    //Se sobrescribe el metodo de la interfaz
-    public void eliminarRegistro(){
-       
-    }
     
     @Override
     //Se sobrescribe el metodo de la interfaz
     public void actualizarRegistro(){
-        
-        
-         System.out.println("Nombre:" + getNombre());
-        System.out.println("Año de Lanzamiento: " + getAnioLanzamiento());
-        System.out.println("Clasificacion: " + getClasificacion());
-        System.out.println("Genero: " + getGenero());
-        System.out.println("Reseña: " + getResena());
-        System.out.println("Calificacion: " + getCalificacion());
-        System.out.println("Desarrollador: " + getDesarrollador());
-        System.out.println("Plataformas: " + getPlataforma());
-        
-        
         System.out.println("1.Nombre                      5.Resena");
         System.out.println("2.Ano de Lanzamiento          6.Calificacion");
         System.out.println("3.Clasificacion               7.Desarrollador");
         System.out.println("4.Genero                      8.Plataformas");
+        //Imprime las opciones de las categorias que se pueden actualizar.
         
-        boolean esNumero = false;
-        while(!esNumero)
-            try{
-                System.out.println("Ingrese la opcion a actualizar: ");
-                int opcion = input.nextInt();
-                input.nextLine();
-                esNumero = true;
+        boolean esNumero = false;   //Declaraciond de la variable esNumero como tipo boolean. Es inicializado con un valor de false.
+        while(!esNumero)    //Ciclo while que correrá mientras la variable esNumero sea false.
+            try{ //Se intentará correr el siguiente bloque de código, de no poder correrse se correrá lo que esté en el bloque de catch.
+                
+                System.out.println("Ingrese la opcion a actualizar: "); //Impime mensaje solicitando al usuario que ingrese una opcion de las anteriores.
+                int opcion = input.nextInt();//Declaracion de la variable opcion y se inicializa con el valor del escaneo del proximo simbolo.
+                input.nextLine(); //El escaner avanza o salta una linea.
+                esNumero = true;  //Cambia el valor de la variable esNumero a true.
                 
                 switch(opcion){
                     case 1: 
@@ -156,7 +164,7 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
                         
                     case 6:
                         System.out.print("Ingrese la calificacion del videojuego: "); //Imprime un mensaje solicitando al usuario que ingrese la calificacion.
-                        int calificacion = input.nextInt(); //Asigna a la variable calificacion lo que el usuario teclee.
+                        float calificacion = input.nextFloat(); //Asigna a la variable calificacion lo que el usuario teclee.
                         input.nextLine(); //El escaner avanza o salta una linea.
                         setCalificacion(calificacion); //Usando el método heredado de la clase Entretenimiento se le establece una calificacio al objeto.
                         break;
@@ -172,9 +180,10 @@ public class Videojuego extends Entretenimiento implements manejarRegistros{
                         break;
                      
                 }
-            }catch(InputMismatchException e){
-                System.out.println("Entrada invalida! Ingrese valores enteros.");
-                input.nextLine();
+            }catch(InputMismatchException e){ //Este bloque de codigo corre si es que un error se genera. 
+                //El error que puede ser lanzado es el de InputMismatchException que se lanza cuando en un escaneo la entrada no coicide con el tipo de dato entero.
+                System.out.println("Entrada invalida! Ingrese valores enteros."); //Imprime mensaje de error.
+                input.nextLine(); // //El escaner avanza o salta una linea.
             }
         
     }
