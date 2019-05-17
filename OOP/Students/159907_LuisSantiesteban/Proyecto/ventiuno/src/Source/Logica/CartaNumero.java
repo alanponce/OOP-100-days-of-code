@@ -11,7 +11,7 @@ package Source.Logica;
  */
 public class CartaNumero extends Carta{
 
-    public CartaNumero(String palo, String signo) {
+    public CartaNumero(String palo, String signo) {//constructor
         super(palo, signo);
         setValor();
         
@@ -19,7 +19,12 @@ public class CartaNumero extends Carta{
 
  
     public void setValor() {
-        super.setValor(Integer.parseInt(getSigno()));
+        super.setValor(Integer.parseInt(getSigno()));//se manda a llamar el constructor de la clase padre
+    }
+
+    @Override
+    void setValores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

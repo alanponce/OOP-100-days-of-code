@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author LESM
  */
 public class Jugador {
-    ArrayList<Carta> barajaJugador = new ArrayList<>();
+    ArrayList<Carta> barajaJugador = new ArrayList<>();//este array son las cartas que actualmente tiene el jugador
     boolean activo = true;
     boolean puntaje = true;
 
@@ -38,25 +38,26 @@ public class Jugador {
         this.activo = activo;
     }
     
-    public boolean tomaDecision(int total){
+    //esta es la IA de la maquina, funciona por probabilidad y dificultad
+    public boolean tomaDecision(int total,double dif){
         int numero = (int) (Math.random() * 101);
         if(total<10){
-            return numero<100;
+            return numero<(100*dif);
         }
         if(total<12){
-            return numero<80;
+            return numero<(80*dif);
         }
         if(total<14){
-            return numero<60;
+            return numero<(60*dif);
         }
         if(total<16){
-            return numero<50;
+            return numero<(50*dif);
         }
         if(total<18){
-            return numero<40;
+            return numero<(40*dif);
         }
         if(total<20){
-            return numero<20;
+            return numero<(20*dif);
         }
         return false;
         

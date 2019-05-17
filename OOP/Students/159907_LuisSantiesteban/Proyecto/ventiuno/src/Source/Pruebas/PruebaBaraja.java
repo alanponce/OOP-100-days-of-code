@@ -9,8 +9,10 @@ import Source.Logica.Carta;
 
 /**
  *
- * @author LESM
+ * @author Maste
  */
+
+//Imprime toda la baraja
 public class PruebaBaraja {
     public static void main(String[] args) {
         Baraja p = new Baraja();

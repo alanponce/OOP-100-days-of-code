@@ -9,20 +9,23 @@ package Source.Logica;
  *
  * @author LESM
  */
-public class Carta {
+//Clase abstracta 
+public abstract class Carta {
+    //Declaracion de los atributos de la clase (se utiliza la palabra private para garantizar la seguridad y que solo puedan ser modificados con getters y setters
     private String palo;
     private String signo;
     private int valor;  
     private boolean disponible;
 
-    public Carta(String palo, String signo) {
+    public Carta(String palo, String signo) {//constructor de la clases
         this.palo = palo;
         this.signo = signo;
         this.disponible = true;
     }
+    //metodo abstracto, se utiliza en la clase as para modificar el valos de 11 a 1
+    abstract  void setValores();
     
-    
-
+    //getters y setters de la clase
     public String getPalo() {
         return palo;
     }
