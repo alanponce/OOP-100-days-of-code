@@ -15,6 +15,15 @@ public class Restaurante {
      */
     public static void main(String[] args) {
         
+        //datos para pruebas
+        
+        Administrador a=new Administrador(1,"ivan Valdez","11/06/94","Administrador",457.8);
+        
+        a.agregarBebidas(1,"Corona", 25.5, "Cerveza", "Cerveza clara", "Corona",3.5);
+        a.agregarBebidas(2,"Limonada",15.5, "Agua Natural", "Agua sabor limon con azuvar", "Limon");
+        a.agregarBebidas(3,"Fanta", 20, "Refresco", "Refresco gasificado de naranja", "Naranja","coca-cola");
+        
+        
     }
     
 }
