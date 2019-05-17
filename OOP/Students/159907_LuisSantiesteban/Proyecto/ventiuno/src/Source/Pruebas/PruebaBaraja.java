@@ -9,7 +9,7 @@ import Source.Logica.Carta;
 
 /**
  *
- * @author Maste
+ * @author LESM
  */
 
 //Imprime toda la baraja
