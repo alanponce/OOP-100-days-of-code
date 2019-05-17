@@ -1,7 +1,8 @@
 package equipo.de.baloncesto;
 import javax.swing.JOptionPane;
 
-public abstract class Jugador {
+public abstract class Jugador {/*La clase Jugador contiene atributos propios de un jugador de baloncesto,
+    como la posición en la que juegan o su precisión en tiros y pases.*/
     /*Se declaran los atributos privados de la clase Jugador, los cuales pueden ser heredados por las
     instancias de sus subclases.*/
     private final String Nombre;//El atributo es final y no cuenta con setter para que no se pueda modificar una vez inicializado.
@@ -69,7 +70,12 @@ public abstract class Jugador {
     }
 
     public void Stats(){/*Este método imprime en pantalla el valor de los atributos que posee el jugador.*/
-        JOptionPane.showMessageDialog(null,"Nombre: " + Nombre + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm" + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro);
+        if(this.isVisitante()){
+        JOptionPane.showMessageDialog(null,"Nombre: " + Nombre + "\nEquipo: Visitante" + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm" + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro);    
+        }
+        else{
+        JOptionPane.showMessageDialog(null,"Nombre: " + Nombre + "\nEquipo: Local" + "\nPosición: " + Posicion + "\nEstatura: " + Estatura + " cm" + "\nPrecisión en pases: " + NivelPase + "\nPrecisión en tiros: " + NivelTiro);
+        }
     }
     public Jugador(String Nombre, String Posicion, boolean Visitante, int Estatura, int NivelPase, int NivelTiro){
         //Se crea un constructor para inicializar los atributos de la clase.

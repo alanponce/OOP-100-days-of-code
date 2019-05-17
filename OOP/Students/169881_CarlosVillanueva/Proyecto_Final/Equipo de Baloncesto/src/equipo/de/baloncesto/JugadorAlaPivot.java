@@ -29,9 +29,22 @@ public class JugadorAlaPivot extends Jugador implements Jugadas {/*Se crea la cl
                 Partido.setDistancia(-14);/*Ajusta la distancia actual del jugador para que no salga de los 
             límites de la cancha.*/
             }
-        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
+            /*El siguiente condicional if verifica la posición en la que se encuentra el balón, y dependiendo de
+        este valor, indicará la posición y si se encuentra dentro del lado local o del lado visitante.
+        Se utiliza Math.abs para mostrar el valor absoluto.*/
+        if(Partido.getDistancia()>0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central, dentro del lado del equipo visitante.\n");    
         /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
-        retrocedido, y la distancia actual medida desde el centro de la cancha.*/
+        retrocedido, y la distancia actual medida desde el centro de la cancha.*/   
+        }
+        else if(Partido.getDistancia()<0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central, dentro del lado del equipo local.\n");
+        /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
+        retrocedido, y la distancia actual medida desde el centro de la cancha.*/    
+        }
+        else if(Partido.getDistancia()==0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha retrocedido y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central.\n");
+        }
        }
     }
     @Override
@@ -54,9 +67,24 @@ public class JugadorAlaPivot extends Jugador implements Jugadas {/*Se crea la cl
             Partido.setDistancia(14);/*Ajusta la distancia actual del jugador para que no salga de los 
             límites de la cancha.*/
         }
-        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Partido.getDistancia() + " metros de la linea central.\n");
+        /*El siguiente condicional if verifica la posición en la que se encuentra el balón, y dependiendo de
+        este valor, indicará la posición y si se encuentra dentro del lado local o del lado visitante.
+        Se utiliza Math.abs para mostrar el valor absoluto.*/
+        if(Partido.getDistancia()>0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central, dentro del lado del equipo visitante.\n");
         /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
-        avanzado, y la distancia actual medida desde el centro de la cancha.*/
+        avanzado, y la distancia actual medida desde el centro de la cancha.*/    
+        }
+        else if(Partido.getDistancia()<0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central, dentro del lado del equipo local.\n");
+        /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
+        avanzado, y la distancia actual medida desde el centro de la cancha.*/    
+        }
+        else if(Partido.getDistancia()==0){
+        Partido.setResumenDeJugadas(Partido.getResumenDeJugadas()+this.getNombre()+" ha avanzado y ahora se encuentra a "+ Math.abs(Partido.getDistancia()) + " metros de la linea central.\n");
+        /*Almacena en el atributo ResumenDeJugadas de la clase Partido un texto que indica que el jugador ha 
+        avanzado, y la distancia actual medida desde el centro de la cancha.*/    
+        }
     }}
     @Override
     public void Tirar(){//El método Tirar hace que el jugador realice un tiro hacia la canasta enemiga
@@ -192,7 +220,9 @@ public class JugadorAlaPivot extends Jugador implements Jugadas {/*Se crea la cl
           Jugador.setDecisionDeJuego((int) (Math.random()*6+1));/*Genera un número al azar del 1 al 6.
           Este número aleatorio se castea como entero porque el método Math.random genera números 
           que incluyen decimales.*/
-        switch (Jugador.getDecisionDeJuego()){
+        switch (Jugador.getDecisionDeJuego()){/*Dependiendo del número generado, el jugador hará alguno 
+            de los siguientes métodos. Despues de cada case se agrega un break para que no se realice
+            otra jugada.*/
             case 1:
                 this.Avanzar();
                 break;
